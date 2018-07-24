@@ -1,0 +1,333 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="consigSalesCoverOption"><strong
+        translate="policy.cover.options.preshipment.option.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.preshipmentOptionFromBCC && policy.preshipmentOption == 'NONE'}">
+          <input disabled type="radio" id="preshipmentOption" ng-model="policy.preshipmentOption"
+                 value="NONE"/>
+          <span translate="none.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.preshipmentOptionFromBCC && policy.preshipmentOption == 'MA'}">
+          <input disabled type="radio" ng-model="policy.preshipmentOption" value="MA"/>
+          <span translate="policy.cover.options.preshipment.option.manufacturers.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.preshipmentOptionFromBCC && policy.preshipmentOption == 'SATA'}">
+          <input disabled type="radio" ng-model="policy.preshipmentOption" value="SATA"/>
+          <span translate="policy.cover.options.preshipment.option.services.and.trading.activities.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.preshipmentOptionFromBCC && policy.preshipmentOption == 'CONS'}">
+          <input disabled type="radio" ng-model="policy.preshipmentOption" value="CONS"/>
+          <span translate="policy.cover.options.preshipment.option.construction.label"></span>
+        </label>
+      </div>
+    </div>
+
+    <div ng-show="policy.preshipmentOption != 'NONE'" class="form-group">
+      <label class="col-sm-offset-4 col-sm-3 control-label"
+             translate="policy.cover.options.preshipment.option.max.delivery.period.label"></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.maxDeliveryPeriodFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.maxDeliveryPeriod | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+       	<div class="input-group">
+        	<day />
+        </div>
+      </div>
+    </div>
+    <!-- START defect #195 : Improvement of Preshipment option for Construction -->
+    <div ng-show="policy.preshipmentOption == 'CONS'" class="form-group">
+      <label class="col-sm-offset-4 col-sm-3 control-label"
+             translate="policy.cover.options.preshipment.construction.option.max.application.for.payment.period.label"></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.maxApplicationForPaymentPeriodFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.maxApplicationForPaymentPeriod | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+       	<div class="input-group">
+        	<day />
+        </div>
+      </div>
+    </div>
+
+    <div ng-show="policy.preshipmentOption == 'CONS'" class="form-group">
+      <label class="col-sm-offset-4 col-sm-3 control-label"
+             translate="policy.cover.options.preshipment.construction.option.max.retention.period.label"></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.maxRetentionPeriodFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.maxRetentionPeriod | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+       	<div class="input-group">
+        	<day />
+        </div>
+      </div>
+    </div>
+    <!-- END defect #195 : Improvement of Preshipment option for Construction -->
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="consigSalesCoverOption"><strong
+        translate="policy.cover.options.consignement.sales.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.consigSalesCoverOptionFromBCC && !policy.consigSalesCoverOption}">
+          <input disabled type="radio" id="consigSalesCoverOption"
+                 ng-model="policy.consigSalesCoverOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.consigSalesCoverOptionFromBCC && policy.consigSalesCoverOption}">
+          <input disabled type="radio" ng-model="policy.consigSalesCoverOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="cashAgainstDocCoverOption"><strong
+        translate="policy.cover.options.cash.against.document.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.cashAgainstDocCoverOptionFromBCC && !policy.cashAgainstDocCoverOption}">
+          <input disabled type="radio" id="cashAgainstDocCoverOption"
+                 ng-model="policy.cashAgainstDocCoverOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.cashAgainstDocCoverOptionFromBCC && policy.cashAgainstDocCoverOption}">
+          <input disabled type="radio" ng-model="policy.cashAgainstDocCoverOption"
+                 ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="politicalEventDocCoverOpt"><strong
+        translate="policy.cover.options.political.event.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.politicalEventDocCoverOptFromBCC && !policy.politicalEventDocCoverOpt}">
+          <input disabled type="radio" id="politicalEventDocCoverOpt"
+                 ng-model="policy.politicalEventDocCoverOpt" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline"ng-class="{'from-bcc': policy.politicalEventDocCoverOptFromBCC && policy.politicalEventDocCoverOpt}">
+          <input disabled type="radio" ng-model="policy.politicalEventDocCoverOpt" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="naturalDisasterCoverOpt"><strong
+        translate="policy.cover.options.natural.disaster.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.naturalDisasterCoverOptFromBCC && !policy.naturalDisasterCoverOpt}">
+          <input disabled type="radio" id="naturalDisasterCoverOpt"
+                 ng-model="policy.naturalDisasterCoverOpt" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.naturalDisasterCoverOptFromBCC && !policy.naturalDisasterCoverOpt}">
+          <input disabled type="radio" ng-model="policy.naturalDisasterCoverOpt" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="disputedDebtOption"><strong
+        translate="policy.cover.options.disputed.debt.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.disputedDebtOptionFromBCC && !policy.disputedDebtOption}">
+          <input disabled type="radio" id="disputedDebtOption"
+                 ng-model="policy.disputedDebtOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.disputedDebtOptionFromBCC && !policy.disputedDebtOption}">
+          <input disabled type="radio" ng-model="policy.disputedDebtOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+
+    <div ng-show="policy.disputedDebtOption" class="form-group">
+      <label class="col-sm-offset-4 col-sm-4 control-label"
+             translate="insured.percentage.label"></label>
+
+      <div ng-show="policy.disputedDebtOption" class="col-sm-1" ng-class="{'from-bcc': policy.disDebOptInsuredPercentageFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.disDebOptInsuredPercentage | atyNumber"></label>
+        </div>
+      </div>
+
+      <div ng-show="policy.disputedDebtOption" class="col-sm-1">
+      	  <div class="input-group">
+          	<percent />
+          </div>
+      </div>
+    </div>
+    <div ng-show="policy.disputedDebtOption" class="form-group">
+      <label class="col-sm-offset-4 col-sm-4 control-label"
+             translate="policy.cover.options.disputed.debt.max.individual.provisional.endemnity.amount.label"></label>
+
+      <div class="col-sm-3" ng-class="{'from-bcc': policy.disDebMaxIndProIndAmtFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.disDebMaxIndProIndAmt | atyNumber"></label>
+        </div>
+      </div>
+
+      <div class="col-sm-1">
+      	  <div class="input-group">
+          	<currency ng-bind="policy.contractCurrency"/>
+          </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="firstAdvancePaymentOption"><strong
+        translate="policy.cover.options.first.advance.payment.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.firstAdvancePaymentOptionFromBCC && !policy.firstAdvancePaymentOption}">
+          <input disabled type="radio" id="firstAdvancePaymentOption"
+                 ng-model="policy.firstAdvancePaymentOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.firstAdvancePaymentOptionFromBCC && !policy.firstAdvancePaymentOption}">
+          <input disabled type="radio" ng-model="policy.firstAdvancePaymentOption"
+                 ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+
+    <div ng-show="policy.firstAdvancePaymentOption" class="form-group">
+      <label class="col-sm-offset-4 col-sm-4 control-label"
+             translate="policy.cover.options.first.advance.payment.max.percentage.1st.advance.pay.label"></label>
+
+      <div ng-show="policy.firstAdvancePaymentOption" class="col-sm-1" ng-class="{'from-bcc': policy.firAdvPayMaxPer1stPayFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.firAdvPayMaxPer1stPay | atyNumber"></label>
+        </div>
+      </div>
+
+      <div ng-show="policy.firstAdvancePaymentOption" class="col-sm-1">
+      	  <div class="input-group">
+          	<percent />
+          </div>
+      </div>
+    </div>
+
+    <div ng-show="policy.firstAdvancePaymentOption" class="form-group">
+      <label class="col-sm-offset-4 col-sm-4 control-label"
+             translate="policy.cover.options.first.advance.payment.max.execution.period.label"></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.firAdvPayMaxExecPeriodFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.firAdvPayMaxExecPeriod | atyNumber"></label>
+        </div>
+      </div>
+
+      <div class="col-sm-1">
+      	<div class="input-group">
+          <day />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="extToAffiliateOption"><strong
+        translate="policy.cover.options.extension.to.affiliate.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.extToAffiliateOptionFromBCC && !policy.extToAffiliateOption}">
+          <input disabled="true" type="radio" id="extToAffiliateOption"
+                 ng-model="policy.extToAffiliateOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.extToAffiliateOptionFromBCC && !policy.extToAffiliateOption}">
+          <input disabled="true" type="radio" ng-model="policy.extToAffiliateOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="delcredereCoverOption"><strong
+        translate="policy.cover.options.delcredere.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.delcredereCoverOptionFromBCC && !policy.delcredereCoverOption}">
+          <input disabled type="radio" id="delcredereCoverOption"
+                 ng-model="policy.delcredereCoverOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.delcredereCoverOptionFromBCC && !policy.delcredereCoverOption}">
+          <input disabled type="radio" ng-model="policy.delcredereCoverOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="nonDelcredereCoverOption"><strong
+        translate="policy.cover.options.non.delcredere.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.nonDelcredereCoverOptionFromBCC && !policy.nonDelcredereCoverOption}">
+          <input disabled type="radio" id="nonDelcredereCoverOption"
+                 ng-model="policy.nonDelcredereCoverOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.nonDelcredereCoverOptionFromBCC && !policy.nonDelcredereCoverOption}">
+          <input disabled type="radio" ng-model="policy.nonDelcredereCoverOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>

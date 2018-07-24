@@ -1,0 +1,564 @@
+<!-- Risk Products -->
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <div class="form-group">
+      <label class="col-sm-3 control-label"><strong translate="policy.risk.mgt.risk.products.label"></strong></label>
+
+      <div class="col-sm-2">
+
+        <div class="checkbox disabled" ng-class="{'from-bcc': policy.riskProductClFromBCC}">
+          <label>
+            <input type="checkbox" ng-model="policy.riskProductCl"
+                   value="true" disabled checked />
+            <span translate="policy.risk.mgt.risk.products.cl.label"></span>
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-2">
+        <div class="checkbox" ng-class="{'from-bcc': policy.riskProductEclFromBCC}">
+          <label>
+            <input disabled type="checkbox" ng-model="policy.riskProductEcl"
+                   value="true"/>
+            <span translate="policy.risk.mgt.risk.products.ecl.label"></span>
+          </label>
+        </div>
+        </div>
+      <div class="col-sm-7" ng-show="policy.riskProductEcl">
+        <div class="row">
+          <label class="col-sm-3 control-label"
+                 translate="policy.risk.mgt.risk.products.ecl.limit.label"></label>
+
+          <div class="col-sm-4" ng-class="{'from-bcc': policy.eclLimitFromBCC}">
+            <div class="input-group">
+              <label class="form-control" ng-bind="policy.eclLimit | atyNumber"></label>
+            </div>
+          </div>
+          <div class="col-sm-2">
+            <div class="input-group">
+              <currency ng-bind="policy.contractCurrency"/>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-offset-3 col-sm-2">
+        <div class="checkbox" ng-class="{'from-bcc': policy.riskProductAtRatingFromBCC}">
+          <label>
+            <input disabled type="checkbox" ng-model="policy.riskProductAtRating"
+                   value="true"/>
+            <span translate="policy.risk.mgt.risk.products.atRating.label"></span>
+          </label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="row form-group" ng-show="policy.riskProductAtRating">
+          <label class="col-sm-3 control-label"
+                 translate="policy.risk.mgt.risk.products.at.rating.label"></label>
+
+          <div class="col-sm-9">
+            <table class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+              <colgroup>
+                <col span="1" class="col-sm-6">
+                <col span="1" class="col-sm-6">
+              </colgroup>
+              <thead>
+              <tr class="">
+                <th class="text-center">
+                  <p class="form-control-static"><strong
+                    translate="policy.risk.mgt.table.rating.1st.column.header.title"></strong></p>
+                </th>
+                <th class="text-center">
+                  <p class="form-control-static"><strong
+                    translate="policy.risk.mgt.table.rating.2nd.column.header.title"
+                    translate-values="{p0: policy.contractCurrency}"></strong></p>
+                </th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <td><p class="form-control-static">X</p></td>
+                <td><p class="form-control-static">0</p></td>
+              </tr>
+              <tr>
+                <td><p class="form-control-static">NR</p></td>
+                <td ng-class="{'from-bcc': policy.ratingNRCoverFromBCC}"><p class="form-control-static" ng-bind="policy.ratingNRCover | atyNumber"></p></td>
+              </tr>
+              <tr>
+                <td><p class="form-control-static">R</p></td>
+                <td ng-class="{'from-bcc': policy.ratingRCoverFromBCC}"><p class="form-control-static" ng-bind="policy.ratingRCover | atyNumber"></p></td>
+              </tr>
+              <tr>
+                <td><p class="form-control-static">@</p></td>
+                <td ng-class="{'from-bcc': policy.rating1ATCoverFromBCC}"><p class="form-control-static" ng-bind="policy.rating1ATCover | atyNumber"></p></td>
+              </tr>
+              <tr>
+                <td><p class="form-control-static">@@</p></td>
+                <td ng-class="{'from-bcc': policy.rating2ATCoverFromBCC}"><p class="form-control-static" ng-bind="policy.rating2ATCover | atyNumber"></p></td>
+              </tr>
+              <tr>
+                <td><p class="form-control-static">@@@</p></td>
+                <td ng-class="{'from-bcc': policy.rating3ATCoverFromBCC}"><p class="form-control-static" ng-bind="policy.rating3ATCover | atyNumber"></p></td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->
+<!-- Discretionary Credit Limit-->
+<div class="panel panel-default">
+  <div class="panel-body">
+
+    <div class="form-group">
+	      <label class="col-sm-3 control-label" for="discretionaryCreditLimit"><strong
+	        translate="policy.risk.mgt.dcl.label"></strong></label>
+
+	      <div class="col-sm-2">
+	        <label class="radio-inline" ng-class="{'from-bcc': policy.discretionaryCreditLimitFromBCC && !policy.discretionaryCreditLimit}">
+	          <input disabled type="radio" id="discretionaryCreditLimit"
+	                 ng-model="policy.discretionaryCreditLimit" ng-value="false"/>
+	          <span translate="no.label"></span>
+	        </label>
+	        <label class="radio-inline" ng-class="{'from-bcc': policy.discretionaryCreditLimitFromBCC && policy.discretionaryCreditLimit}">
+	          <input disabled type="radio" ng-model="policy.discretionaryCreditLimit" ng-value="true"/>
+	          <span translate="yes.label"></span>
+	        </label>
+	      </div>
+      </div>
+
+      <div class="form-group" ng-show="policy.discretionaryCreditLimit">
+      <!-- Specific ML -->
+      <div class="col-sm-offset-3 col-sm-2" ng-class="{'from-bcc': policy.specificMLFromBCC}">
+      	 <div class="checkbox">
+          <label>
+            <input disabled type="checkbox" ng-model="policy.specificML"
+                   value="true"/>
+            <span translate="policy.risk.specific.ml.label"></span>
+          </label>
+        </div>
+      </div>
+
+      <div class="col-sm-7" ng-show="policy.specificML">
+      	<label class="col-sm-3 control-label" translate="policy.risk.specific.ml.amount.label"></label>
+        <div class="col-sm-4" ng-class="{'from-bcc': policy.specificMLAmountFromBCC}">
+          <div class="input-group">
+            <label class="form-control" ng-bind="policy.specificMLAmount | atyNumber"></label>
+          </div>
+        </div>
+         <div class="col-sm-2">
+          <div class="input-group">
+          	<currency ng-bind="policy.contractCurrency"/>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Blind cover -->
+    <div ng-show="policy.discretionaryCreditLimit" class="panel panel-default">
+      <div class="panel-body">
+
+        <!-- First Column -->
+        <div class="col-sm-8">
+          <!-- Blind Cover checkbox-->
+          <div class="form-group">
+            <div class="col-sm-3" ng-class="{'from-bcc': policy.blindCoverFromBCC}">
+              <div class="checkbox">
+                <label>
+                  <input disabled type="checkbox" ng-model="policy.blindCover"
+                         value="true"/>
+                  <strong translate="policy.risk.mgt.dcl.blind.cover.label"></strong>
+                </label>
+              </div>
+            </div>
+          </div>
+          <!-- DCL Limit per Buyer -->
+          <div ng-show="policy.blindCover" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="policy.risk.mgt.dcl.limit.per.buyer.label"></label>
+
+            <div class="col-sm-4" ng-class="{'from-bcc': policy.blindCoverDCLLimitFromBCC}">
+              <div class="input-group">
+                <label class="form-control" ng-bind="policy.blindCoverDCLLimit | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="input-group">
+                <currency ng-bind="policy.contractCurrency"/>
+              </div>
+            </div>
+          </div>
+
+          <!-- Insured Percentage -->
+          <div ng-show="policy.blindCover" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="insured.percentage.label"></label>
+
+            <div class="col-sm-2" ng-class="{'from-bcc': policy.blindCoverInsuPercentFromBCC}">
+              <div class="input-group">
+                <label class="form-control" ng-bind="policy.blindCoverInsuPercent | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="input-group">
+                <percent />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Blind Cover Zone Countries -->
+        <div ng-show="policy.blindCover" class="col-sm-4 multi-select">
+          <div class=" selected-items">
+            <div class="form-group">
+              <label class="col-sm-12"><strong translate="policy.risk.mgt.dcl.blind.cover.zone.countries.label"></strong></label>
+            </div>
+            <div class="multi-content">
+              <ul ng-class="{'from-bcc': policy.blindCoverCountriesListFromBCC}" class="form-control-static">
+                <li ng-repeat="blindCoverCountry in policy.blindCoverCountriesList | atyOrderByTranslated: 'country.'" ng-class="{'removed':blindCoverCountry.removed}">
+                	<span translate="{{'country.'+blindCoverCountry.code}}"></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+    </div>
+
+    <div ng-show="policy.discretionaryCreditLimit" class="panel panel-default">
+      <div class="panel-body">
+        <div class="col-sm-8">
+          <!-- INFO REPORT checkbox-->
+          <div class="form-group">
+            <div class="col-sm-12" ng-class="{'from-bcc': policy.infoReportFromBCC}">
+              <div class="checkbox">
+                <label>
+                  <input disabled type="checkbox" ng-model="policy.infoReport"
+                         value="true"/>
+                  <strong translate="policy.risk.mgt.dcl.info.report.label"></strong>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div ng-show="policy.infoReport" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="policy.risk.mgt.dcl.limit.per.buyer.label"></label>
+
+            <div class="col-sm-4" ng-class="{'from-bcc': policy.infoReportDCLLimitFromBCC}">
+              <div class="input-group">
+                <label class="form-control" ng-bind="policy.infoReportDCLLimit | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="input-group">
+                <currency ng-bind="policy.contractCurrency"/>
+              </div>
+            </div>
+          </div>
+
+          <div ng-show="policy.infoReport" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="insured.percentage.label"></label>
+
+            <div class="col-sm-2" ng-class="{'from-bcc': policy.infoReportInsuPercentFromBCC}">
+              <div class="input-group">
+                <label class="form-control" ng-bind="policy.infoReportInsuPercent | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="input-group">
+                <percent />
+             </div>
+            </div>
+          </div>
+          
+			<!-- defect #689 : FR Feedback: Add "Information source" -->
+          <div ng-show="policy.infoReport" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="policy.risk.mgt.dcl.info.report.source.label"></label>
+
+            <div class="col-sm-4" ng-class="{'from-bcc': policy.infoReportSourceFromBCC}">
+              <div class="input-group">
+                <label class="form-control" ng-bind="policy.infoReportSource"></label>
+              </div>
+            </div>
+          </div>
+          <!-- -->
+
+          <!-- Satisfactory Trading Experience -->
+          <div class="form-group">
+            <div class="col-sm-12">
+              <div class="checkbox">
+                <label>
+                  <input disabled type="checkbox" ng-model="policy.satisfactoryTradingExperience"
+                         value="true"/>
+                  <strong translate="policy.risk.mgt.dcl.satisfactory.trading.experience.label"></strong>
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div ng-show="policy.satisfactoryTradingExperience" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="policy.risk.mgt.dcl.limit.per.buyer.label"></label>
+
+            <div class="col-sm-4">
+              <div class="input-group">
+                <label class="form-control" ng-bind="policy.satisfactoryTradingExperienceLimit | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="input-group">
+                <currency ng-bind="policy.contractCurrency"/>
+              </div>
+            </div>
+          </div>
+
+          <div ng-show="policy.satisfactoryTradingExperience" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="insured.percentage.label"></label>
+
+            <div class="col-sm-2">
+              <div class="input-group">
+                <label class="form-control" ng-bind="policy.satisfactoryTradingExperienceInsuPercent | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="input-group">
+                <percent />
+              </div>
+            </div>
+          </div>
+          <!-- -->
+
+          <!-- Credit Mgt Proc  -->
+          <div class="form-group">
+            <div class="col-sm-12">
+              <label class="radio-inline" ng-class="{'from-bcc': policy.dclSelfUnderWritingOptionFromBCC && policy.dclSelfUnderWritingOption == 'NONE'}">
+                <input disabled type="radio" ng-model="policy.dclSelfUnderWritingOption"
+                       value="NONE"/>
+                <span translate="policy.risk.mgt.dcl.no.self.underwriting.label"></span>
+              </label>
+              <label class="radio-inline" ng-class="{'from-bcc': policy.dclSelfUnderWritingOptionFromBCC && policy.dclSelfUnderWritingOption == 'STE'}">
+                <input disabled type="radio" ng-model="policy.dclSelfUnderWritingOption"
+                       value="STE"/>
+                <span translate="policy.risk.mgt.dcl.satisfactory.trading.experience.label"></span>
+              </label>
+              <label class="radio-inline" ng-class="{'from-bcc': policy.dclSelfUnderWritingOptionFromBCC && policy.dclSelfUnderWritingOption == 'CMP'}">
+                <input disabled type="radio" ng-model="policy.dclSelfUnderWritingOption"
+                       value="CMP"/>
+                <span translate="policy.risk.mgt.dcl.credit.mgt.proc.label"></span>
+              </label>
+              <label class="radio-inline" ng-class="{'from-bcc': policy.dclSelfUnderWritingOptionFromBCC && policy.dclSelfUnderWritingOption == 'CMPCZ'}">
+                <input disabled type="radio" ng-model="policy.dclSelfUnderWritingOption"
+                       value="CMPCZ"/>
+                <span translate="policy.risk.mgt.dcl.credit.mgt.proc.plus.cons.label"></span>
+              </label>
+            </div>
+          </div>
+
+          <div ng-show="isDCLSelfUnderWritingSelected()" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="policy.risk.mgt.dcl.limit.per.buyer.label"></label>
+
+            <div class="col-sm-4" ng-class="{'from-bcc': policy.dclSelfUnderWritingBuyerLimitFromBCC}">
+              <div class="input-group">
+                <label class="form-control" ng-bind="policy.dclSelfUnderWritingBuyerLimit | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="input-group">
+                <currency ng-bind="policy.contractCurrency"/>
+              </div>
+            </div>
+          </div>
+
+          <div ng-show="isDCLSelfUnderWritingSelected()" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="insured.percentage.label"></label>
+
+            <div class="col-sm-2" ng-class="{'from-bcc': policy.dclSelfUnderWritingInsuPercentFromBCC}">
+              <div class="input-group">
+                <label class="form-control" ng-bind="policy.dclSelfUnderWritingInsuPercent | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-2">
+              <div class="input-group">
+                <percent />
+              </div>
+            </div>
+          </div>
+
+		<!-- defect 690 : FR Feedback: Add "Credit Manager Contact" and "Procedure date" -->
+          <div ng-show="isDCLSelfUnderWritingSelected()" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="policy.risk.mgt.dcl.credit.mgt.procedure.manager.label"></label>
+
+            <div class="col-sm-4" ng-class="{'from-bcc': policy.dclSelfUnderWritingProcedureManagerFromBCC}">
+              <div class="input-group">
+                <label class="form-control" ng-bind="policy.dclSelfUnderWritingProcedureManager "></label>
+              </div>
+            </div>
+          </div>
+
+          <div ng-show="isDCLSelfUnderWritingSelected()" class="form-group">
+            <label class="col-sm-offset-2 col-sm-4 control-label"
+                   translate="policy.risk.mgt.dcl.credit.mgt.procedure.manager.label"></label>
+
+            <div class="col-sm-4" ng-class="{'from-bcc': policy.dclSelfUnderWritingProcedureDateFromBCC}">
+              	<div class="input-group">
+      				<label class="form-control" ng-bind="policy.dclSelfUnderWritingProcedureDate | date : 'MM.dd.yyyy'"></label>
+    			</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Discretionary Zone Countries -->
+        <div class="col-sm-4 multi-select">
+          <div class=" selected-items">
+            <div class="form-group">
+              <label class="col-sm-12"><strong translate="policy.risk.mgt.discretionary.zone.countries.label"></strong></label>
+            </div>
+            <div class="multi-content">
+              <ul ng-class="{'from-bcc': policy.discretionaryCountriesListFromBCC}" class="form-control-static">
+                <li ng-repeat="dclCountry in policy.discretionaryCountriesList | atyOrderByTranslated: 'country.'" ng-class="{'removed':dclCountry.removed}">
+                	<span translate="{{'country.'+dclCountry.code}}"></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+<!---->
+<!-- First Sales -->
+<div class="panel panel-default">
+  <div class="panel-body">
+  	<!-- FIRST COLUMN -->
+	    <div class="form-group">
+	      <label class="col-sm-3 control-label" for="firstSales"><strong
+	        translate="policy.risk.mgt.dcl.first.sales.label"></strong></label>
+
+	      <div class="col-sm-9">
+	        <label class="radio-inline" ng-class="{'from-bcc': policy.firstSalesFromBCC && !policy.firstSales}">
+	          <input disabled type="radio" id="firstSales"
+	                 ng-model="policy.firstSales" ng-value="false"/>
+	          <span translate="no.label"></span>
+	        </label>
+	        <label class="radio-inline" ng-class="{'from-bcc': policy.firstSalesFromBCC && policy.firstSales}">
+	          <input disabled type="radio" ng-model="policy.firstSales" ng-value="true"/>
+	          <span translate="yes.label"></span>
+	        </label>
+	      </div>
+	    </div>
+	    <div class="col-sm-8">
+		    <!-- Buyer Limit -->
+		    <div class="form-group" ng-show="policy.firstSales">
+		      <label class="col-sm-offset-2 col-sm-4 control-label"
+		             translate="policy.risk.mgt.dcl.limit.per.buyer.label"></label>
+
+		      <div class="col-sm-4" ng-class="{'from-bcc': policy.firstSalesDCLLimitFromBCC}">
+		        <div class="input-group">
+              <label class="form-control" ng-bind="policy.firstSalesDCLLimit | atyNumber"></label>
+		        </div>
+		      </div>
+		      <div class="col-sm-2">
+		        <div class="input-group">
+		          <currency ng-bind="policy.contractCurrency"/>
+		        </div>
+		      </div>
+		    </div>
+		    <!-- Insured Percentage -->
+		    <div class="form-group" ng-show="policy.firstSales">
+		      <label class="col-sm-offset-2 col-sm-4 control-label"
+		             translate="insured.percentage.label"></label>
+
+		      <div class="col-sm-2" ng-class="{'from-bcc': policy.firstSalesInsuPercentFromBCC}">
+		        <div class="input-group">
+              <label class="form-control" ng-bind="policy.firstSalesInsuPercent | atyNumber"></label>
+		        </div>
+		      </div>
+		      <div class="col-sm-2">
+		        <div class="input-group">
+		          <percent />
+		        </div>
+		      </div>
+		    </div>
+	    </div>
+    <!-- First Sales Zone Countries -->
+     <div ng-show="policy.firstSales" class="col-sm-4 multi-select">
+       <div class=" selected-items">
+         <div class="form-group">
+           <label class="col-sm-12"><strong translate="policy.risk.mgt.dcl.first.sales.zone.countries.label"></strong></label>
+         </div>
+         <div class="multi-content">
+           <ul ng-class="{'from-bcc': policy.firstSalesCountriesListFromBCC}" class="form-control-static">
+             <li ng-repeat="firstSalesCountry in policy.firstSalesCountriesList | atyOrderByTranslated: 'country.'" ng-class="{'removed':firstSalesCountry.removed}">
+             	<span translate="{{'country.'+firstSalesCountry.code}}"></span>
+             </li>
+           </ul>
+         </div>
+       </div>
+
+     </div>
+  </div>
+</div>
+<!---->
+<!-- Maximum amount of Credit Decision -->
+<div class="panel panel-default" ng-hide="isDeclarationBasisCreditLimitSelected()">
+  <div class="panel-body">
+  	<!-- declaration basis = turnover -->
+    <div class="form-group" ng-show="policy.declarationBasis == 'TO'">
+      <label class="col-sm-3 control-label"><strong
+        translate="policy.risk.mgt.dcl.max.amount.of.credit.decision.label"></strong></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.maxAmountOfCreditDecisionTurnoverFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.maxAmountOfCreditDecisionTurnover | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="input-group">
+          <percent />
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <p class="form-control-static" translate="policy.risk.mgt.dcl.max.amount.of.credit.decision.turnover.unite.label"></p>
+      </div>
+    </div>
+
+    <!-- declaration basis = outstading -->
+    <div class="form-group" ng-show="policy.declarationBasis == 'OS'">
+      <label class="col-sm-3 control-label"><strong
+        translate="policy.risk.mgt.dcl.max.amount.of.credit.decision.label"></strong></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.maxAmountOfCreditDecisionOutstandingFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.maxAmountOfCreditDecisionOutstanding | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="input-group">
+          <percent />
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <p class="form-control-static" translate="policy.risk.mgt.dcl.max.amount.of.credit.decision.outstanding.unite.label"></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->

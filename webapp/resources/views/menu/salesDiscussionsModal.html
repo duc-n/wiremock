@@ -1,0 +1,43 @@
+<form name="salesDiscussionForm"
+	class="form form-horizontal form-custom">
+	<div class="modal-header">
+		<span> <h3 class="modal-title" translate="sales.discussions.title"></h3></span> <span class="badge label-success" translate="sales.discussions.count.msg"
+						translate-values="{p0: salesDiscussions.length}"  ></span>
+		<button type="button" ng-click="close()" class="close"
+			data-dismiss="modal" aria-hidden="true">
+			<i class="fa fa-close"></i>
+		</button>
+	</div>
+	<div class="modal-body" >
+	<div style=" padding-left : 2rem;max-height: 30rem;overflow-y: scroll;"  scroll-to-bottom="salesDiscussions">
+		<div >
+			<div class="form-group col-sm-12"
+				ng-repeat="salesDiscussion in salesDiscussions">
+				 <span class=" label-success badge">{{$index + 1}}</span>
+				<strong translate="sales.discussions.user.date.label"
+					translate-values="{p0:salesDiscussion.discussionBy,p1:salesDiscussion.discussionDate}"></strong>
+				<pre ng-bind="salesDiscussion.comments"></pre>
+			</div>
+		</div>
+
+		<div class="input-group" />
+		</div>
+	</div>
+	<div class="modal-footer" >
+		<div class="col-sm-10" style="text-align: right">
+			<div class="input-group">
+				<textarea class="form-control" id="comment"
+					ng-model="salesDiscussion.comments" name="comment" aty-maxlength="3900"
+					ng-maxlength="3900" required />
+			</div>
+		</div>
+		<div class="col-sm-2 fixed-bottom" style="text-align: left;">
+			<button class="btn btn-primary" type="button"
+				ng-click="addSalesDiscussion(salesDiscussionForm)"
+				ng-disabled="!salesDiscussion.comments"
+				
+				translate="sales.discussions.add.comment.btn"></button>
+		</div>
+	</div>
+</form>
+

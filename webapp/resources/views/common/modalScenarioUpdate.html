@@ -1,0 +1,65 @@
+<form name="scenarioUpdateForm" class="form form-horizontal form-custom">
+  <div class="modal-header">
+    <h3 class="modal-title" translate="scenario.update.title"></h3>
+    <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><i
+      class="fa fa-close"></i></button>
+  </div>
+  <div class="modal-body">
+    <fieldset>
+      <div class="form-group">
+        <label class="col-sm-4 control-label"><strong
+          translate="scenario.name"></strong></label>
+
+        <div class="col-sm-4">
+          <div class="input-group">
+            <input type="text" id="name" class="form-control" ng-model="scenarioUpdate.scenarioName" required
+                   aty-maxlength="20"/>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="col-sm-4 control-label" for="description"><strong
+          translate="scenario.description"></strong></label>
+
+        <div class="col-sm-8">
+          <div class="input-group">
+            <input type="text" id="description" class="form-control" ng-model="scenarioUpdate.scenarioDescription"
+                   aty-maxlength="50"/>
+          </div>
+        </div>
+      </div>
+      
+       <div class="form-group">
+        <label class="col-sm-4 control-label" for="createdByFullName"><strong
+          translate="scenario.createdby.fullname"></strong></label>
+
+        <div class="col-sm-8">
+          <div class="input-group">
+            <input ng-disabled="true" type="text" id="createdByFullName" class="form-control" ng-model="scenarioUpdate.createdByFullName"
+                   aty-maxlength="50"/>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-group" ng-if="showState()">
+        <div class="col-sm-12">
+	        <label class="radio-inline" for="state_active">
+	          <input ng-disabled="false" type="radio" id="state_active"
+	                 ng-model="scenarioUpdate.state" value="ACTIVE"/>
+	          <span translate="scenario.state.active.label"></span>
+	        </label>
+	        <label class="radio-inline" for="state_inactive">
+	          <input ng-disabled="false" type="radio" id="state_inactive"
+	                 ng-model="scenarioUpdate.state" value="INACTIVE"/>
+	          <span translate="scenario.state.inactive.label"></span>
+	        </label>
+      	</div>
+      </div>
+    </fieldset>
+  </div>
+
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-disabled="!scenarioUpdateForm.$valid" ng-click="update(scenarioUpdateForm)" translate="scenario.update.save.button"></button>
+    <button class="btn btn-default" type="button" ng-click="close()" translate="scenario.update.cancel.button"></button>
+  </div>
+</form>

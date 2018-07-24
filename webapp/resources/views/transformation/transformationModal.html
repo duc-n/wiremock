@@ -1,0 +1,101 @@
+<div class="modal-header printableArea">
+  <h3 class="modal-title" translate="transformation.report.title"></h3>
+  <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><i
+    class="fa fa-close"></i></button>
+</div>
+
+<div class="modal-body printableArea">
+  <form class="aty-form form form-horizontal form-custom" id="transformationReport" novalidate>
+    <div class="container" ng-controller="AccordionCtrl">
+      <div class="contentcol row">
+        <div id="content" class="col-sm-12 content-area">
+          <div class="content row">
+            <div class="col-sm-12">
+              <!-- -->
+              <accordion close-others="false">
+                <accordion-group class="content content-accordion" is-open="true">
+                  <accordion-heading>
+                    <span translate="policy.cover.title"></span>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/transformation/cover.html'"></fieldset>
+                </accordion-group>
+
+                <accordion-group class="content content-accordion" is-open="true">
+                  <accordion-heading>
+                    <span translate="policy.cover.options.title"></span>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/transformation/coverOption.html'"></fieldset>
+                </accordion-group>
+
+                <accordion-group class="content content-accordion" is-open="true">
+                  <accordion-heading>
+                    <span translate="policy.risk.management.title"></span>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/transformation/risk.html'"></fieldset>
+                </accordion-group>
+
+                <accordion-group class="content content-accordion" is-open="true">
+                  <accordion-heading>
+                    <span translate="policy.risk.options.title"></span>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/transformation/riskOption.html'"></fieldset>
+                </accordion-group>
+
+                <accordion-group class="content content-accordion" is-open="true">
+                  <accordion-heading>
+                    <span translate="policy.indemnification.title"></span>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/transformation/indemnification.html'"></fieldset>
+                </accordion-group>
+
+                <accordion-group class="content content-accordion" is-open="true">
+                  <accordion-heading>
+                    <span translate="policy.claims.options.title"></span>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/transformation/claimOption.html'"></fieldset>
+                </accordion-group>
+
+                <accordion-group class="content content-accordion" is-open="true">
+                  <accordion-heading>
+                    <span translate="policy.services.options.title"></span>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/transformation/serviceOption.html'"></fieldset>
+                </accordion-group>
+
+                <accordion-group class="content content-accordion" is-open="true">
+                  <accordion-heading>
+                    <span translate="policy.activities.title"></span>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/transformation/activities.html'"></fieldset>
+                </accordion-group>
+
+                <accordion-group class="content content-accordion" is-open="true">
+                  <accordion-heading>
+                    <span translate="policy.duration.title"></span>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/transformation/duration.html'"></fieldset>
+                </accordion-group>
+
+                <accordion-group class="content content-accordion" is-open="true" ng-if="policy.fimInfosAmountFromBCC">
+                  <accordion-heading>
+                    <span translate="policy.miscellaneous.title"></span>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/transformation/miscellaneous.html'"></fieldset>
+                </accordion-group>
+
+              </accordion>
+            </div>
+            <div class="col-sm-12 text-right">
+              <button class="btn btn-primary" type="button" ng-click="print()"><i class="fa fa-print"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button class="btn btn-primary" type="button" ng-click="close()" translate="close.title"></button>
+</div>
+

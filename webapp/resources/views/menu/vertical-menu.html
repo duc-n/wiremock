@@ -1,0 +1,29 @@
+<ul>
+
+
+<li ng-if="openDiscussionsVisible()"><a ng-click="openDiscussions()"  popover-html="showPopoverGlobalMessage()"  popover-trigger="mouseenter" popover-placement="right" ><i ng-class="SalesDiscussionsDataService.getCommentsCount() ? 'fa fa-commenting-o':'fa fa-comment-o'"></i></a></li>
+  
+ <li ng-if="saveVisible()"><a ng-click="save()" popover="{{'vertical.menu.save.btn'|translate}}" popover-trigger="mouseenter" popover-placement="right" ng-disabled="ScenarioDataService.saveInProgress"><i class="fa fa-floppy-o"></i></a></li>
+
+
+  <li ng-if="saveAsVisible()"><a ng-click="scenarioSaveAs()" popover="{{'vertical.menu.save.as.btn'|translate}}" popover-trigger="mouseenter" popover-placement="right"><i class="fa fa-files-o"></i></a></li>
+
+  <li ng-if="diagnosisVisible()"><a ng-click="openDiagnosis()" popover="{{'vertical.menu.diagnosis.btn'|translate}}" popover-trigger="mouseenter" popover-placement="right"><i class="fa fa-pencil-square-o"></i></a></li>
+
+  <li ng-if="favouriteVisible()"><a ng-click="scenarioFavorite()" popover="{{'vertical.menu.scenario.favorite.btn'|translate}}" popover-trigger="mouseenter" popover-placement="right"><i class="fa fa-star-o"></i></a></li>
+
+  <!--  <li><a ng-click="print()" popover="{{'vertical.menu.print.btn'|translate}}" popover-trigger="mouseenter" popover-placement="right"><i class="fa fa-print"></i></a></li>-->
+
+	<!-- defect #368 : Button to force Save of Policy in BC COntract -->	
+  <li ng-if="saveInCubeVisible()"><a ng-click="saveContractInCube()" popover="{{'vertical.menu.save.contract.in.cube.btn'|translate}}" popover-trigger="mouseenter" popover-placement="right"><i class="fa fa-cube"></i></a></li>
+ 
+  <li ng-if="xmlVisible()"><a ng-click="getBcContractXml()" popover="{{'vertical.menu.bc.contract.btn'|translate}}" popover-trigger="mouseenter" popover-placement="right"><i class="fa fa-link"></i></a></li>
+
+  <li ng-if="reportVisible()"><a ng-click="openTransformationReport()" popover="{{'vertical.menu.transformation.report.btn'|translate}}" popover-trigger="mouseenter" popover-placement="right"><i class="fa fa-list-alt"></i></a></li>
+  
+  <li><a ng-click="exportCase()" popover="{{'vertical.menu.case.export.btn'|translate}}" popover-trigger="mouseenter" popover-placement="right"><i class="fa fa-file-excel-o"></i></a></li>
+	<!-- defect #944 : Service to list java fields names and content for Excel Export -->	
+  <li><a ng-if="exportBdocDataJsonVisible()" ng-click="exportBdocDataJson()" popover="Export Json" popover-trigger="mouseenter" popover-placement="right"><i class="fa fa-download"></i></a></li>
+
+  <li><a du-smooth-scroll="access-shortcuts-wrapper" popover="{{'back.to.top.of.page'|translate}}" popover-trigger="mouseenter" popover-placement="right"><i class="fa fa-chevron-up"></i></a></li>
+</ul>

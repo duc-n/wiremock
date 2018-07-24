@@ -1,0 +1,100 @@
+<!-- Flexible Waiting Period Option -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="flexWaitingPeriod"><strong
+        translate="policy.claims.flex.wait.period.label"></strong></label>
+
+      <div class="col-sm-2">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.flexWaitingPeriodFromBCC && !policy.flexWaitingPeriod}">
+          <input disabled type="radio" id="flexWaitingPeriod"
+                 ng-model="policy.flexWaitingPeriod" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.flexWaitingPeriodFromBCC && policy.flexWaitingPeriod}">
+          <input disabled type="radio" ng-model="policy.flexWaitingPeriod" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+
+      <div class="col-sm-6" ng-show="policy.flexWaitingPeriod">
+        <table class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+          <colgroup>
+            <col span="1" class="col-sm-6">
+            <col span="1" class="col-sm-6">
+          </colgroup>
+          <thead>
+          <tr class="">
+            <th class="text-center">
+              <p class="form-control-static"><strong
+                translate="policy.claims.waiting.period.label"></strong></p>
+            </th>
+            <th class="text-center">
+              <p class="form-control-static"><strong
+                translate="policy.claims.insured.percentage.label"
+                translate-values="{p0: policy.contractCurrency}"></strong></p>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          	  <tr>
+	            <td><p class="form-control-static" translate="policy.claims.months.contract.label"
+                		translate-values="{p0: policy.waitingPeriodAfterNOA , p1:(policy.waitingPeriodAfterNOA > 1?'s':'')}"></p></td>
+	            <td><p class="form-control-static"
+	            		translate="policy.claims.contractual.insured.percentage.label"></p>
+	            </td>
+	          </tr>
+	          <tr ng-repeat="line in policy.waitingPeriodCharacteristics" ng-class="{'from-bcc': policy.waitingPeriodCharacteristicsFromBCC}">
+	            <td ng-if="!$first"><p class="form-control-static"
+	            		translate="policy.claims.months.label"
+	            		translate-values="{p0: line.duration , p1:(line.duration > 1?'s':'')}"></p></td>
+	            <td ng-if="!$first"><p class="form-control-static"
+	            		translate="policy.claims.contractual.insured.percentage.minus.points.label"
+                		translate-values="{p0: line.reductionPoint , p1:(line.reductionPoint > 1?'s':'')}"></p>
+	            </td>
+	          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!---->
+<!-- Aggreagate First Loss Option -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="aggreagateFirstLoss"><strong
+        translate="policy.claims.aggr.first.loss.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.aggreagateFirstLossFromBCC && !policy.aggreagateFirstLoss}">
+          <input disabled type="radio" id="aggreagateFirstLoss"
+                 ng-model="policy.aggreagateFirstLoss" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.aggreagateFirstLossFromBCC && policy.aggreagateFirstLoss}">
+          <input disabled type="radio" ng-model="policy.aggreagateFirstLoss" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+    <div class="form-group" ng-show="policy.aggreagateFirstLoss">
+      <label class="col-sm-offset-4 col-sm-3 control-label"
+             translate="policy.claims.aggr.first.loss.value.label"></label>
+
+      <div class="col-sm-3" ng-class="{'from-bcc': policy.aggreagateFirstLossAmountFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.aggreagateFirstLossAmount | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="input-group">
+          <currency ng-bind="policy.contractCurrency"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->

@@ -1,0 +1,250 @@
+<div class="row">
+  <div class="col-sm-12">
+    <table class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+      <colgroup>
+        <col span="1" class="col-sm-2">
+        <col span="1" class="col-sm-3">
+        <col span="1" class="col-sm-3">
+        <col span="1" class="col-sm-2">
+        <col span="1" class="col-sm-2">
+      </colgroup>
+      <thead>
+      
+      
+       <tr class="">
+        <th colspan="3" class="text-right"> <div class="checkbox">
+      <span>
+      
+       <i id="toggle-debtors-details-btn" class="{{showDebtorsDetails?'fa fa-minus-square-o':'fa fa-plus-square-o'}}" aria-hidden="true" data-toggle="collapse" data-target=".bonusCollapse" ng-click="toggleDebtorsDetailsClickHandler();"></i>
+        <span><strong translate="questionnaire.debtors.checkbox.details">  </strong></span>
+      </span>
+    </div></th>
+        <th class="text-right"  colspan="2" ng-if="showDebtorsDetails" ></th>
+        
+      </tr>
+      
+      <tr class="">
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="questionnaire.debtors.outstanding.breakdown.column"
+          translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong></p></th>
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="questionnaire.debtors.global.outstanding.column"
+          translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong></p></th>
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="questionnaire.debtors.number.debtors.column"></strong></p></th>
+        
+          <th class="text-center"  ng-if="showDebtorsDetails" ><p class="form-control-static"><strong
+          translate="questionnaire.debtors.number.debtors.export.column"></strong></p></th>
+          <th class="text-center"  ng-if="showDebtorsDetails" ><p class="form-control-static"><strong
+          translate="questionnaire.debtors.number.debtors.domestic.column"></strong></p></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="outstanding in questionnaire.specificQuestionnaire.outstandingBreakdown[questionnaire.specificQuestionnaire.contractCurrency]">
+        
+        
+        <!-- Column  : Outstanding Breakdown  -->
+        
+        <td ng-if="$first" ng-init="maxBound=outstanding">
+          <label class="control-label" translate="questionnaire.debtors.from.to"
+                 translate-values="{p0: '0',p1:'{{maxBound|atyNumber}}'}"></label>
+        </td>
+       
+        <td ng-if="!($first || $last)"
+            ng-init="minBound=(questionnaire.specificQuestionnaire.outstandingBreakdown[questionnaire.specificQuestionnaire.contractCurrency][$index -1] + 1);maxBound=outstanding">
+          <label class="control-label" translate="questionnaire.debtors.from.to"
+                 translate-values="{p0: '{{minBound|atyNumber}}',p1:'{{maxBound|atyNumber}}'}"></label>
+        </td>
+        <td ng-if="$last"
+            ng-init="minBound=(outstanding -1)">
+          <label class="control-label" translate="questionnaire.debtors.above"
+                 translate-values="{p0: '{{minBound|atyNumber}}'}"></label>
+        </td>
+        
+         <!-- Column  : Global Outstanding Amount   -->
+        
+        <td ng-if="$first"
+            ng-init="minBound=0;maxBound=outstanding">
+          <div class="col-sm-offset-1 col-sm-10">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.debtorOutstandings[$index].globalsOutstanding" name="debtorOutstandings[{{$index}}].globalsOutstanding"
+                     id="globalsOutstanding{{$index}}" aty-maxlength="15"
+                     ng-change="validateDebtorOutStanding($index,minBound,maxBound,true);" ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+        </td>
+        
+         <td ng-if="!($first || $last)"
+            ng-init="minBound=(questionnaire.specificQuestionnaire.outstandingBreakdown[questionnaire.specificQuestionnaire.contractCurrency][$index -1] + 1);maxBound=outstanding">
+          <div class="col-sm-offset-1 col-sm-10">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.debtorOutstandings[$index].globalsOutstanding"
+                     id="globalsOutstanding{{$index}}" aty-maxlength="15" name="debtorOutstandings[{{$index}}].globalsOutstanding"
+                     ng-change="validateDebtorOutStanding($index,minBound,maxBound,true);" ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+        </td>
+        
+          <td ng-if="$last"
+            ng-init="minBound=(questionnaire.specificQuestionnaire.outstandingBreakdown[questionnaire.specificQuestionnaire.contractCurrency][$index -1] + 1)">
+          <div class="col-sm-offset-1 col-sm-10">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.debtorOutstandings[$index].globalsOutstanding"
+                     id="globalsOutstanding{{$index}}" aty-maxlength="15" name="debtorOutstandings[{{$index}}].globalsOutstanding"
+                     ng-change="validateDebtorOutStanding($index,minBound,maxBound,true);" ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+        </td>
+        
+        <!-- Column  : numberDebtors-Total   -->
+        
+        <td ng-if="$first"
+            ng-init="minBound=0;maxBound=outstanding">
+          <div class="col-sm-offset-3 col-sm-6">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.debtorOutstandings[$index].numberDebtors" name="debtorOutstandings[{{$index}}].numberDebtors"
+                     id="numberDebtors{{$index}}" aty-maxlength="4"
+                     ng-change="validateDebtorOutStanding($index,minBound,maxBound,true);" ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+        </td>
+      
+        <td ng-if="!($first || $last)"
+            ng-init="minBound=(questionnaire.specificQuestionnaire.outstandingBreakdown[questionnaire.specificQuestionnaire.contractCurrency][$index -1] + 1);maxBound=outstanding">
+          <div class="col-sm-offset-3 col-sm-6">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.debtorOutstandings[$index].numberDebtors"
+                     id="numberDebtors{{$index}}" aty-maxlength="4" name="debtorOutstandings[{{$index}}].numberDebtors"
+                     ng-change="validateDebtorOutStanding($index,minBound,maxBound,true);" ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+        </td>
+      
+        <td ng-if="$last"
+            ng-init="minBound=(questionnaire.specificQuestionnaire.outstandingBreakdown[questionnaire.specificQuestionnaire.contractCurrency][$index -1] + 1)">
+          <div class="col-sm-offset-3 col-sm-6">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.debtorOutstandings[$index].numberDebtors"
+                     id="numberDebtors{{$index}}" aty-maxlength="4" name="debtorOutstandings[{{$index}}].numberDebtors"
+                     ng-change="validateDebtorOutStanding($index,minBound,null,true);" ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+        </td>
+        
+         <!-- Column  : numberDebtors-Export   -->
+         
+         
+         
+          
+        
+         <td ng-if="$first" ng-show="showDebtorsDetails" ng-init="minBound=0;maxBound=outstanding">
+         <div class="col-sm-offset-1 col-sm-10">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.debtorOutstandings[$index].numberDebtorsExport"
+                     id="numberDebtorsExport{{$index}}" aty-maxlength="15" name="debtorOutstandings[{{$index}}].numberDebtorsExport" 
+                     ng-change="validateDebtorOutStanding($index,minBound,maxBound,true);" ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+         </td>
+         
+         
+         
+          <td ng-if="!($first || $last)" ng-show="showDebtorsDetails"
+            ng-init="minBound=(questionnaire.specificQuestionnaire.outstandingBreakdown[questionnaire.specificQuestionnaire.contractCurrency][$index -1] + 1);maxBound=outstanding">
+         <div class="col-sm-offset-1 col-sm-10">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.debtorOutstandings[$index].numberDebtorsExport"
+                     id="numberDebtorsExport{{$index}}" aty-maxlength="15" name="debtorOutstandings[{{$index}}].numberDebtorsExport" 
+                     ng-change="validateDebtorOutStanding($index,minBound,maxBound,true);" ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+         </td>
+         
+         
+          <td ng-if="$last" ng-show="showDebtorsDetails" ng-init="minBound=(questionnaire.specificQuestionnaire.outstandingBreakdown[questionnaire.specificQuestionnaire.contractCurrency][$index -1] + 1)">
+         <div class="col-sm-offset-1 col-sm-10">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.debtorOutstandings[$index].numberDebtorsExport"
+                     id="numberDebtorsExport{{$index}}" aty-maxlength="15" name="debtorOutstandings[{{$index}}].numberDebtorsExport" 
+                     ng-change="validateDebtorOutStanding($index,minBound,null,true);" ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+         </td>
+         
+         <!-- Column  : numberDebtors-Domestic   -->
+         <td ng-show="showDebtorsDetails">
+        <div class="col-sm-offset-1 col-sm-10">
+            <div class="input-group">
+              <input  ng-disabled="true" type="number"   class="form-control text-center"
+                     value="{{numberDebtorsDomesticCompute(questionnaire.specificQuestionnaire.debtorOutstandings[$index].numberDebtors,questionnaire.specificQuestionnaire.debtorOutstandings[$index].numberDebtorsExport)}}" ng-model="questionnaire.specificQuestionnaire.debtorOutstandings[$index].numberDebtorsDomestic"
+                     id="numberDebtorsDomestic{{$index}}" aty-maxlength="15" name="debtorOutstandings[{{$index}}].numberDebtorsDomestic" />
+            </div>
+          </div>
+        </td>
+        
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- GREATEST OUTSTANDING -->
+  <div class="row">
+  <div class="col-sm-12">
+	  <table class="table table-cofanet table-condensed table-responsive align-center">
+	      <colgroup>
+	        <col span="1" class="col-sm-4">
+	        <col span="1" class="col-sm-4">
+	        <col span="1" class="col-sm-3">
+	      </colgroup>
+	      <tbody>
+	      	<tr>
+	      		<td>
+	      			<label class="control-label" for="greatestOutstanding">
+	      			<strong translate="questionnaire.debtors.greatest.outstanding"></strong></label>
+	      		</td>
+	      		<td>
+	      			<div class="col-sm-offset-1 col-sm-10">
+		      			<div class="input-group">
+					      <input type="number" aty-input-number id="greatestOutstanding" class="form-control" name="greatestOutstanding"
+					             ng-model="questionnaire.specificQuestionnaire.greatestOutstanding" aty-maxlength="15" ng-maxlength="15" ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration"
+					             ng-class="validateGreatestOutstanding()"
+					             />
+					    </div>
+				    </div>
+	      		</td>
+	      		<td></td>
+	      	</tr>
+	      </tbody>
+	  </table>
+  </div>
+
+<!--   <div class="col-sm-3"> -->
+<!--     <div class="input-group"> -->
+<!--       <input type="number" aty-input-number id="greatestOutstanding" class="form-control" name="greatestOutstanding" -->
+<!--              ng-model="questionnaire.greatestOutstanding" aty-maxlength="15" ng-maxlength="15" ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration" -->
+<!--              /> -->
+<!--     </div> -->
+<!--   </div> -->
+<!--   <div class="col-sm-1"> -->
+<!--     <currency ng-bind="questionnaire.specificQuestionnaire.contractCurrency"/> -->
+<!--   </div> -->
+</div>

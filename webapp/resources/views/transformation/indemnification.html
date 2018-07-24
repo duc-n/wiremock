@@ -1,0 +1,216 @@
+<!-- Notification Threshold... -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <!-- Notification Threshold -->
+    <div class="form-group">
+      <label class="col-sm-3 control-label"><strong translate="policy.indem.notif.threshold.label"></strong></label>
+
+      <div ng-show="policy.notificationThreshold" class="col-sm-3"
+           ng-class="{'from-bcc': policy.notificationThresholdFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.notificationThreshold | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <currency ng-bind="policy.contractCurrency"/>
+      </div>
+    </div>
+    <!--Time limit for the Notification...-->
+    <div class="form-inline col-sm-12">
+      <div class="form-group">
+        <label class="form-control-static"><strong translate="policy.indem.time.limit.noa.label"></strong></label>
+        <label ng-class="{'from-bcc': policy.timeLimitNOAFromBCC}"
+               class="form-control width-50 margin-left-20 input-visible-print"
+               ng-bind="policy.timeLimitNOA | atyNumber"></label>
+       <span class="control-label margin-left-10" translate="policy.indem.time.limit.noa.description.label"
+             translate-values="{p0:policy.indemDelayNOAAfterInsolvency}"></span>
+      </div>
+    </div>
+
+    <!--Waiting period... -->
+    <div class="form-group">
+      <label class="form-control-static col-sm-3">
+        <strong translate="policy.indem.wait.period.noa.before.label"></strong>
+      </label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.waitingPeriodAfterNOAFromBCC}">
+        <div class="input-group">
+          <label class="form-control input-visible-print" ng-bind="policy.waitingPeriodAfterNOA | atyNumber"></label>
+        </div>
+      </div>
+      <label class="form-control-static col-sm-8">
+        <strong translate="policy.indem.wait.period.noa.after.label"></strong>
+      </label>
+    </div>
+    <div class="form-group">
+      <!--Maximum Liability-->
+      <label class="col-sm-3 control-label"><strong
+        translate="policy.indem.max.liability.label"></strong></label>
+
+      <div class="col-sm-3">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.contractualMLBasisFromBCC && policy.contractualMLBasis == 'AMNT'}">
+          <input disabled type="radio" ng-model="policy.contractualMLBasis" value="AMNT"/>
+          <span translate="policy.indem.contractual.ml.basis.amount.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.contractualMLBasisFromBCC && policy.contractualMLBasis == 'FACT'}">
+          <input disabled type="radio" ng-model="policy.contractualMLBasis" value="FACT"/>
+          <span translate="policy.indem.contractual.ml.basis.factor.label"></span>
+        </label>
+      </div>
+
+      <div class="col-sm-3" ng-if="policy.contractualMLBasis == 'AMNT'"
+           ng-class="{'from-bcc': policy.maxLiabilityAmountFromBCC}">
+        <!--Amount of -->
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.maxLiabilityAmount | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-3" ng-if="policy.contractualMLBasis == 'AMNT'">
+        <!--Amount of -->
+        <currency ng-bind="policy.contractCurrency"/>
+      </div>
+
+      <div class="col-sm-1" ng-if="policy.contractualMLBasis == 'FACT'"
+           ng-class="{'from-bcc': policy.maxLiabilityMultipleFromBCC}">
+        <!--Factor of -->
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.maxLiabilityMultiple | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-5" ng-if="policy.contractualMLBasis == 'FACT'">
+        <!--Factor of -->
+        <label class="control-label" translate="policy.indem.minimum.premium.after.label"></label>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -->
+<!-- Deductible -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-3" for="deductible"><strong translate="policy.indem.deductible.label"></strong></label>
+
+      <div class="col-sm-9">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.deductibleFromBCC && policy.deductible == 'NONE'}">
+          <input disabled type="radio" id="deductible"
+                 ng-model="policy.deductible" value="NONE"/>
+          <span translate="none.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.deductibleFromBCC && policy.deductible == 'EEL'}">
+          <input disabled type="radio" ng-model="policy.deductible" value="EEL"/>
+          <span translate="policy.indem.deductible.each.and.every.loss.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.deductibleFromBCC && policy.deductible == 'MNR'}">
+          <input disabled type="radio" ng-model="policy.deductible" value="MNR"/>
+          <span translate="policy.indem.deductible.min.retention.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.deductibleFromBCC && policy.deductible == 'NQL'}">
+          <input disabled type="radio" ng-model="policy.deductible" value="NQL"/>
+          <span translate="policy.indem.deductible.non.qualif.loss.label"></span>
+        </label>
+      </div>
+    </div>
+    <div class="row form-group" ng-show="policy.deductible == 'EEL'">
+
+      <div class="col-sm-3 col-sm-offset-4" ng-class="{'from-bcc': policy.outstandingBreakdownFromBCC}">
+        <div class="input-group">
+          <select disabled class="form-control"
+                  ng-options="key as value for (key, value) in policy.outstandingBreakdown"
+                  ng-model="policy.eelosAmount" convert-to-number/>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <currency ng-bind="policy.contractCurrency"/>
+      </div>
+      <div class="col-sm-4">
+        <p class="form-control-static" translate="policy.indem.deductible.eelos.description.label"></p>
+      </div>
+    </div>
+    <div class="row form-group" ng-show="policy.deductible == 'MNR'">
+      <div class="col-sm-3 col-sm-offset-4" ng-class="{'from-bcc': policy.outstandingBreakdownFromBCC}">
+        <div class="input-group">
+          <select disabled class="form-control"
+                  ng-options="key as value for (key, value) in policy.outstandingBreakdown"
+                  ng-model="policy.minrtAmount" convert-to-number/>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <currency ng-bind="policy.contractCurrency"/>
+      </div>
+      <div class="col-sm-4">
+        <p class="form-control-static" translate="policy.indem.deductible.minrt.description.label"></p>
+      </div>
+    </div>
+    <div class="row form-group" ng-show="policy.deductible == 'NQL'">
+      <div class="col-sm-3 col-sm-offset-4" ng-class="{'from-bcc': policy.nqlAmountFromBCC}">
+        <div class="input-group">
+          <select disabled class="form-control"
+                  ng-options="key as value for (key, value) in policy.outstandingBreakdown" ng-model="policy.nqlAmount"
+                  convert-to-number/>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <currency ng-bind="policy.contractCurrency"/>
+      </div>
+      <div class="col-sm-4">
+        <p class="form-control-static" translate="policy.indem.deductible.nql.description.label"></p>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- -->
+<!-- Recovery notification period -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-3 control-label"><strong
+        translate="policy.indem.recovery.notif.period.before.label"></strong></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.recoveryNotificationPeriodFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.recoveryNotificationPeriod | atyNumber"></label>
+        </div>
+      </div>
+      <label class="col-sm-8 control-label"><strong translate="policy.indem.recovery.notif.period.after.label"></strong></label>
+    </div>
+  </div>
+</div>
+<!-- -->
+<!-- Debt collection provider -->
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-3 control-label"><strong
+				translate="policy.indem.debt.collec.prov.label"></strong></label>
+
+			<div class="form-inline col-sm-9">
+				<label class="radio-inline" ng-class="{'from-bcc': policy.debtCollectProviderFromBCC && policy.debtCollectProvider == 'CF'}"> <input
+					disabled type="radio"
+					ng-model="policy.debtCollectProvider" value="CF" /> <span
+					translate="policy.indem.debt.collec.prov.coface"></span>
+				</label> <label class="radio-inline" ng-class="{'from-bcc': policy.debtCollectProviderFromBCC && policy.debtCollectProvider == 'PH'}"> <input
+					disabled type="radio"
+					ng-model="policy.debtCollectProvider" value="PH" /> <span
+					translate="policy.indem.debt.collec.prov.policy.holder"></span>
+				</label>				
+			</div>
+		</div>
+		<!-- Full Mandate -->
+		<div class="form-group" ng-if="policy.debtCollectProvider == 'CF'">
+			<div class="col-sm-offset-3 col-sm-9">
+				<label class="radio-inline" ng-class="{'from-bcc': policy.mandateOptionFromBCC && policy.mandateOption == 'FM'}"> <input
+					disabled type="radio" id="mandateOption"
+					ng-model="policy.mandateOption" value="FM" /> <span
+					translate="policy.indem.debt.collec.prov.coface.full.mandate"></span>
+				</label> <label class="radio-inline" ng-class="{'from-bcc': policy.mandateOptionFromBCC && policy.mandateOption == 'LM'}"> <input
+					disabled type="radio"
+					ng-model="policy.mandateOption" value="LM" /> <span
+					translate="policy.indem.debt.collec.prov.coface.light.mandate"></span>
+				</label>
+			</div>
+
+		</div>
+	</div>
+</div>

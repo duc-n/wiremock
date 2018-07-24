@@ -1,0 +1,98 @@
+{
+  "smartCase": false,
+  "smartCofalinkStatus": false,
+  "smartServiceResult": null,
+  "fileTransferredToGCC": false,
+  "transfertToGCCXmlAvailable": false,
+  "newBusiness": true,
+  "renewal": false,
+  "transform": false,
+  "checkMigration": false,
+  "clo": false,
+  "salesDiscussionsCount": 0,
+  "cancellationProjectReason": null,
+  "cancellationProjectDate": null,
+  "projectCancelledByFullName": null,
+  "creationDate": 1530027699955,
+  "createdByFullName": null,
+  "contractStatus": "PROJECT",
+  "progressStatus": "QUOTE_DONE",
+  "contractCancelled": false,
+  "id": 3915560,
+  "contractId": "CONT-01-325043487",
+  "contractNumber": "534905",
+  "oldContractNumber": null,
+  "portfolioNumber": "534905",
+  "prospectVisible": {
+    
+  },
+  "allowCreateRequest": false,
+  "buyerStudyResult": {
+    "portfolioLines": [
+      
+    ],
+    "easyNumbers": [
+      
+    ],
+    "portfolioTotals": {
+      "totalRequestAmount": 0,
+      "totalRequestAnsweredAmount": 0,
+      "totalAcceptedAmount": 0,
+      "requestAcceptedRate": null,
+      "requestAcceptedAnsweredRate": null,
+      "nbRequests": 0,
+      "maxCLRequest": null,
+      "nbDecisions": 0,
+      "dras": null,
+      "requestedTotalByDra": null,
+      "acceptedTotalByDra": null,
+      "totalFullAcceptedAmount": null,
+      "totalPendingAmount": null,
+      "totalPartialAcceptedAmount": null,
+      "totalRefusalAmount": null,
+      "totalFullAcceptedPercentage": 0.0,
+      "totalPendingPercentage": 0.0,
+      "totalPartialAcceptedPercentage": 0.0,
+      "totalRefusalPercentage": 0.0
+    }
+  },
+  "contractCurrency": "EUR",
+  "pricingObsolete": null,
+  "scenarioPricingObsolete": {
+    "3917187": false,
+    "3915202": false,
+    "3916673": false,
+    "3920087": false,
+    "3916278": false,
+    "3919508": false
+  },
+  "hasQuoted": {
+    "3917187": true,
+    "3915202": true,
+    "3916673": true,
+    "3920087": true,
+    "3916278": true,
+    "3919508": true
+  },
+  "currentUsedCapacity": null,
+  "estimatedMaxCapacity": 750000000,
+  "companyName": "FFF FABRICATION FRANCAISE DE FERMETURES",
+  "easyNumber": "00000147870338",
+  "buyerStudyDoc": {
+    "visible": true,
+    "template": "AUTY_BUYERSTUDY_MODEL_FRA",
+    "format": "PDF"
+  },
+  "nbBUYERSTUDYDownloaded": 0,
+  "projectContract": true,
+  "buyerStudyEditionLanguages": [
+    {
+      "isoCode": "fr",
+      "label": "Français"
+    },
+    {
+      "isoCode": "en",
+      "label": "English"
+    }
+  ]
+}

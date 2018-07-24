@@ -1,0 +1,60 @@
+<form name="cancelProjectyForm"
+	class="form form-horizontal form-custom">
+	
+	
+	<spinner class="aty-data-loading" name="cancelProjetSpinner">
+			<div class="messaging">
+				<!--<i class="fa fa-refresh fa-spin"></i>-->
+				<div class="la-ball-circus la-2x">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<h1 translate="spinner.cancel.project"></h1>
+			</div>
+			</spinner>
+	<div class="modal-header">
+		<h3 class="modal-title"
+			translate="finalization.contract.status.follow.up.modal.title"></h3>
+		<button type="button" ng-click="close()" class="close"
+			data-dismiss="modal" aria-hidden="true">
+			<i class="fa fa-close"></i>
+		</button>
+	</div>
+	<div class="modal-body">
+
+		<fieldset>
+			<div class="form-group">
+				<label class="col-sm-5 control-label"><strong
+					translate="finalization.contract.status.follow.up.modal.cancellation.reason.label"></strong></label>
+
+				<div class="col-sm-7">
+				
+				
+				
+					<select class="form-control" type="text" required
+						ng-model="finalization.cancellationProjectReason" id="status" ng-options="key as value | translate for (key, value) in finalization.cancellationProjectReasonList">
+						<option value="" selected="selected" ></option>
+						
+					</select>
+				</div>
+			</div>
+
+			<div>
+				
+				
+				<p ng-bind-html="'finalization.contract.status.follow.up.modal.confirm.msg' | translate"></p> </div>
+		</fieldset>
+	</div>
+
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button"
+			ng-disabled="!cancelProjectyForm.$valid"
+			ng-click="submit(cancelProjectyForm)"
+			translate="finalization.cancel.project.confirm.btn"></button>
+		<button class="btn btn-default" type="button" ng-click="close()"
+			translate="finalization.cancel.project.cancel.btn"></button>
+	</div>
+</form>

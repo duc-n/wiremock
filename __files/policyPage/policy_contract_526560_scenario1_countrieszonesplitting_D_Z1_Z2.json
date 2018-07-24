@@ -1,0 +1,3241 @@
+{
+  "AREA1": {
+    "counter": 0,
+    "dragging": false,
+    "areaNumber": 1,
+    "allowedTypes": [
+      
+    ],
+    "type": null,
+    "countries": [
+      {
+        "code": "FRA",
+        "area": 1,
+        "coveredCountryZone": "D",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "WLF",
+        "area": 1,
+        "coveredCountryZone": "D",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NCL",
+        "area": 1,
+        "coveredCountryZone": "D",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PYF",
+        "area": 1,
+        "coveredCountryZone": "D",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MCO",
+        "area": 1,
+        "coveredCountryZone": "D",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      }
+    ]
+  },
+  "EXCLUDED": {
+    "counter": 0,
+    "dragging": false,
+    "areaNumber": 0,
+    "allowedTypes": [
+      
+    ],
+    "type": null,
+    "countries": [
+      {
+        "code": "GNQ",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NRU",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SSD",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      }
+    ]
+  },
+  "AREA3": {
+    "counter": 0,
+    "dragging": false,
+    "areaNumber": 3,
+    "allowedTypes": [
+      
+    ],
+    "type": null,
+    "countries": [
+      {
+        "code": "DMA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "POL",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "COL",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MDG",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KNA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LTU",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LBN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LAO",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SVK",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AZE",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TWN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CYP",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LVA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GRD",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ZMB",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AGO",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MUS",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SWZ",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BHR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BFA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MKD",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LSO",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TUV",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KHM",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "QAT",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "OMN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BRA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BMU",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR2",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ALB",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ISR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PER",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ETH",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SUR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "VCT",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "VUT",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KWT",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "RWA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LBR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SGP",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "JOR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MAR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "HND",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NGA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR6",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ARG",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BRB",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "COK",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BIH",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BWA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PSE",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TCD",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PAK",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ECU",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NIC",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TUR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CMR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "HUN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PAN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "UKR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PHL",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MRT",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SEN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LKA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GUY",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MMR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GHA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MLT",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NAM",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TCA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "EGY",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GEO",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TZA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "IDN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TTO",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR3",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NER",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MDV",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "JAM",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MHL",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MNE",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BRN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BGR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KGZ",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TJK",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GAB",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "IND",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MDA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KAZ",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "THA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "URY",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "VNM",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GIN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "HKG",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BGD",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "COM",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MNG",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR5",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PRY",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SYC",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KEN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GMB",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GTM",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KIR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ZAF",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DZA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "EST",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MEX",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DJI",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BHS",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CIV",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KOR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MAC",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CHN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MLI",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "STP",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "WSM",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SAU",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NPL",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PNG",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ABW",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CZE",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "HRV",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MWI",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CRI",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR7",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ATG",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BLR",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "FJI",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "RUS",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "UZB",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "HTI",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CHL",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CPV",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MYS",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ROU",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LCA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SRB",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SLE",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "COG",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR1",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BEN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SLB",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TON",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DOM",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SVN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TUN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR4",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "COD",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BTN",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TGO",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SLV",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BOL",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TKM",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "UGA",
+        "area": 3,
+        "coveredCountryZone": "Z2",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      }
+    ]
+  },
+  "AREA2": {
+    "counter": 0,
+    "dragging": false,
+    "areaNumber": 2,
+    "allowedTypes": [
+      
+    ],
+    "type": null,
+    "countries": [
+      {
+        "code": "LUX",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "JPN",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AU1",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ISL",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CHE",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DNK",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NZL",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DEU",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CAN",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AUT",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DN1",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GB1",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PRT",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ESP",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NOR",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "US2",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NZ1",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GRC",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "FIN",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GB2",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "IOT",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ITA",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GBR",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AUS",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "IRL",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SWE",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GIB",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ANT",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NLD",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "VAT",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AND",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BEL",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SMR",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "USA",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LIE",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "US1",
+        "area": 2,
+        "coveredCountryZone": "Z1",
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      }
+    ]
+  },
+  "GLOBAL": {
+    "counter": 0,
+    "dragging": false,
+    "areaNumber": 0,
+    "allowedTypes": [
+      
+    ],
+    "type": null,
+    "countries": [
+      {
+        "code": "MDA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TJK",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KGZ",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DN1",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "COM",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KAZ",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LKA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SLV",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MHL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR3",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GNQ",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PNG",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AND",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TUN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BRB",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "STP",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TON",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GAB",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "HTI",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ZAF",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "IRL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MLI",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NZ1",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GMB",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BWA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BHS",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CIV",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NPL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AUS",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "URY",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ITA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GIN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KEN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BGR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GTM",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CAN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KHM",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MYS",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR7",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CHL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BEN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ROU",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AUT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TKM",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BOL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CRI",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TGO",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BTN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "COD",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PYF",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "FJI",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GB1",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BGD",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "IDN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SVN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LBN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NER",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ALB",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NZL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR4",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CMR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "JPN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "COG",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TUV",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "OMN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NOR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR6",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BMU",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SWZ",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GRD",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LAO",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "POL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SLE",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SUR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MUS",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "RUS",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LSO",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MDG",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "EGY",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SGP",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LBR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NCL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "HND",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KIR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KOR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "QAT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GBR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BEL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SEN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KWT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MRT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TCD",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "VAT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MKD",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MLT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MMR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "HUN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ARG",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BHR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SSD",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MAR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ECU",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PSE",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PAK",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "FRA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LIE",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "HKG",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "WSM",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DJI",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "JAM",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MDV",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "VNM",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GHA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "THA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TTO",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "UGA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ANT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CHN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR5",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GEO",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "USA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "UZB",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SAU",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SYC",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BRN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MNE",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LUX",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CHE",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PRY",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DZA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "IND",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MEX",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CZE",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GRC",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LCA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MWI",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MCO",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ATG",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NLD",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BLR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "EST",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SVK",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LVA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "US2",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CYP",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "FIN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AGO",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TZA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "CPV",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AU1",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DOM",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR1",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PRT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BIH",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BRA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DEU",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GB2",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NAM",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "COL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SMR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AR2",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SLB",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SRB",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "VUT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "KNA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "VCT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NRU",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "AZE",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "WLF",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "BFA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PAN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ISL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PHL",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "RWA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ETH",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GUY",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "HRV",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ABW",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ISR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DNK",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "IOT",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "PER",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "GIB",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MAC",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "UKR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "US1",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NGA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TWN",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "COK",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "SWE",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TCA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ZMB",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "TUR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "DMA",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "MNG",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "JOR",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "ESP",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "NIC",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      },
+      {
+        "code": "LTU",
+        "area": null,
+        "coveredCountryZone": null,
+        "selected": false,
+        "disabled": false,
+        "removed": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "smartCase": false,
+  "smartCofalinkStatus": false,
+  "smartServiceResult": null,
+  "fileTransferredToGCC": false,
+  "transfertToGCCXmlAvailable": false,
+  "newBusiness": false,
+  "renewal": false,
+  "transform": true,
+  "checkMigration": false,
+  "clo": false,
+  "salesDiscussionsCount": 0,
+  "cancellationProjectReason": null,
+  "cancellationProjectDate": null,
+  "projectCancelledByFullName": null,
+  "creationDate": 1531901461643,
+  "createdByFullName": null,
+  "contractStatus": "PROJECT",
+  "progressStatus": "INIT",
+  "contractCancelled": false,
+  "id": 2546832,
+  "contractId": "CONT-01-282788687",
+  "contractNumber": "526555",
+  "oldContractNumber": "500414",
+  "portfolioNumber": "526555",
+  "prospectVisible": {
+    
+  },
+  "allowCreateRequest": false,
+  "buyerStudyResult": {
+    "portfolioLines": [
+      
+    ],
+    "easyNumbers": [
+      
+    ],
+    "portfolioTotals": {
+      "totalRequestAmount": 0,
+      "totalRequestAnsweredAmount": 0,
+      "totalAcceptedAmount": 0,
+      "requestAcceptedRate": null,
+      "requestAcceptedAnsweredRate": null,
+      "nbRequests": 0,
+      "maxCLRequest": null,
+      "nbDecisions": 0,
+      "dras": null,
+      "requestedTotalByDra": null,
+      "acceptedTotalByDra": null,
+      "totalFullAcceptedAmount": null,
+      "totalPendingAmount": null,
+      "totalPartialAcceptedAmount": null,
+      "totalRefusalAmount": null,
+      "totalFullAcceptedPercentage": 0.0,
+      "totalPendingPercentage": 0.0,
+      "totalPartialAcceptedPercentage": 0.0,
+      "totalRefusalPercentage": 0.0
+    }
+  },
+  "contractCurrency": "EUR",
+  "pricingObsolete": null,
+  "scenarioPricingObsolete": {
+    "2546470": false
+  },
+  "hasQuoted": {
+    "2546470": true
+  },
+  "currentUsedCapacity": null,
+  "estimatedMaxCapacity": null,
+  "companyName": "2F OUEST",
+  "easyNumber": "00000064527036",
+  "buyerStudyDoc": {
+    "visible": true,
+    "template": "AUTY_BUYERSTUDY_MODEL_GRP",
+    "format": "PDF"
+  },
+  "nbBUYERSTUDYDownloaded": 0,
+  "projectContract": false,
+  "buyerStudyEditionLanguages": [
+    {
+      "isoCode": "fr",
+      "label": "Français"
+    },
+    {
+      "isoCode": "en",
+      "label": "English"
+    },
+    {
+      "isoCode": "nl",
+      "label": "Nederlands"
+    },
+    {
+      "isoCode": "es",
+      "label": "Español"
+    },
+    {
+      "isoCode": "de",
+      "label": "Deutsch"
+    }
+  ]
+}

@@ -1,0 +1,944 @@
+{
+  "propertiesEnvironment": {
+    "searchPageLength": 20,
+    "questionnaireMaxNumberBuyers": 5,
+    "searchCompanyViewUrl": "http://friadatp01.coface.dns:10121/companyView/search/begin.do?returnUrl=http%3A%2F%2Ffriadaut01.coface.dns%3A43121%2FautonomyView%2FreceiveCompanyViewResponse&applicationId=AUTONOMY",
+    "policyPepsViewUrl": "http://friadmid01.coface.dns:27121/pepsAgentView/jsf/simulation/show.jsf?simulationId={0}&projectId={1}",
+    "searchContractFollowupViewCubeCompanyUrl": "http://friadatp01.coface.dns:42121/contractFollowupView/faces/Cube/Company/companyDetails.jsf?easyNumber={0}&applicationId=Autonomy&organization={1}",
+    "searchContractFollowupViewUrl": "http://friadatp01.coface.dns:42121/contractFollowupView/faces/Cube/Company/companyDetails.jsf?easyNumber={0}&applicationId=Autonomy&organization={1}&returnUrl=http%3A%2F%2Ffriadaut01.coface.dns%3A43121%2FautonomyView%2FreceiveContractfollowupviewResponse%3FreturnValue%3D%7B0%7D%26fileId%3D%7B1%7D",
+    "searchPartnerContractFollowupViewUrl": "http://friadatp01.coface.dns:42121/contractFollowupView/faces/Cube/globalSearch.jsf?applicationId=Autonomy&organization={0}&returnUrl=/http%3A%2F%2Ffriadaut01.coface.dns%3A43121%2FautonomyView%2FreceiveContractfollowupviewPartnerResponse%3FreturnValue%3D%7B0%7D%26fileId%3D%7B1%7D",
+    "buyerStudyCofanetViewUrl": "http://cofanetiadpa.coface.com/subscriberonlineview/portfolio?contractId={contractId}",
+    "buyerStudyCofanetViewLogoutUrl": "https://cofanetiadpa.coface.com/subscriberonlineservices/api/public/authentication/logout",
+    "buyerStudyPortalViewWebUrl": "http://friadatp01.coface.dns:7121/portalViewWeb/?tokenFromLoginAs={0}",
+    "elanLoginUrl": "http://frdevsso01.coface.dns:50121/SSO/",
+    "fileNetWebServiceUrl": "http://frdevfln01.coface.dns:10121/coface-webservices/rest/doxdcm/urlPolicy/{0}",
+    "searchAffiliateFromCubeViewUrl": "http://friadatp01.coface.dns:42121/contractFollowupView/faces/Cube/globalSearch.jsf?applicationId=Autonomy&organization={0}&returnUrl=http%3A%2F%2Ffriadaut01.coface.dns%3A43121%2FautonomyView%2FreceiveSearchAffiliateResponse%3FreturnValue%3D%7B0%7D%26fileId%3D%7B1%7D%26policyId%3D%7B2%7D",
+    "sessionDuration": 1800,
+    "updateSmart": true,
+    "dateFormat": "dd/MM/yyyy",
+    "policyMaxNumberAffiliates": 10
+  },
+  "userManager": {
+    "accountId": "X1220701",
+    "title": "Mr",
+    "lastName": "SINI",
+    "firstName": "Jean-Carlo",
+    "fullName": "Jean-Carlo SINI",
+    "email": "jeancarlo.sini@coface.com",
+    "phone": null,
+    "mobilePhone": null,
+    "type": null,
+    "groups": null,
+    "isoCountryCode": "FRA",
+    "orgEmployeeType": null,
+    "subscriberId": null,
+    "currentLanguage": "en",
+    "languages": [
+      {
+        "isoCode": "de",
+        "label": "Deutsch"
+      },
+      {
+        "isoCode": "en",
+        "label": "English"
+      },
+      {
+        "isoCode": "es",
+        "label": "Español"
+      },
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      },
+      {
+        "isoCode": "nl",
+        "label": "Nederlands"
+      },
+      {
+        "isoCode": "keys",
+        "label": "Keys"
+      }
+    ],
+    "hasSupervisionRight": true,
+    "hasBackofficeRight": true,
+    "technicalAdministrator": true,
+    "pepsAuthorized": true,
+    "hasAdminUploadRight": true,
+    "hasSupersedeNegotiationRight": true,
+    "hasSpecialClausesViewRight": true,
+    "hasContractEditionRight": true,
+    "hasGenerateWordDocumentRight": true,
+    "hasCountryAreaMoveRight": true,
+    "currentRateInPercent": true,
+    "currentRateLabel": "%",
+    "rateInPercents": [
+      {
+        "rateInPercent": true,
+        "label": "%"
+      },
+      {
+        "rateInPercent": false,
+        "label": "‰"
+      }
+    ],
+    "pricingPlatforms": [
+      {
+        "code": "grp_DEU_west",
+        "label": "Germany – West",
+        "entities": [
+          "CDE",
+          "CKI",
+          "CDK",
+          "CSV",
+          "CNL"
+        ]
+      },
+      {
+        "code": "grp_DEU_SF",
+        "label": "Germany - Structu...",
+        "entities": [
+          "CDK",
+          "CNL",
+          "CKI",
+          "CSV",
+          "CDE"
+        ]
+      },
+      {
+        "code": "grp_GDD",
+        "label": " CGS-Central",
+        "entities": [
+          "CTH",
+          "CUAQ",
+          "CBR",
+          "CBG",
+          "CLU",
+          "CMY",
+          "SOR",
+          "CAS",
+          "CBT",
+          "CPH",
+          "CSA",
+          "CRO",
+          "CCZ",
+          "CCH",
+          "CSK",
+          "CID",
+          "CVE",
+          "BDI",
+          "SBC",
+          "CPE",
+          "CSG",
+          "CAT",
+          "CIN",
+          "CDUB",
+          "EDC",
+          "CNL",
+          "CCN",
+          "CDK",
+          "CAR",
+          "CHK",
+          "CPL",
+          "CMX",
+          "HRV",
+          "CAI",
+          "COA",
+          "CRAK",
+          "CCO",
+          "CEE",
+          "CIE",
+          "CMA",
+          "PAN",
+          "CWA",
+          "CVN",
+          "ECGE",
+          "ECIE",
+          "SEP",
+          "CSWA",
+          "CLD",
+          "CUK",
+          "CSHA",
+          "CDE",
+          "CKI",
+          "CHU",
+          "CBE",
+          "CIB",
+          "CLV",
+          "CFUJ",
+          "CEMS",
+          "CPT",
+          "CAE",
+          "CEC",
+          "CJP",
+          "CTW",
+          "CKR",
+          "CNA",
+          "CSV",
+          "CTR",
+          "CHI",
+          "CSI",
+          "CRS",
+          "CEG"
+        ]
+      },
+      {
+        "code": "grp_AUS",
+        "label": "Australia",
+        "entities": [
+          "COA"
+        ]
+      },
+      {
+        "code": "grp_CHN",
+        "label": "China",
+        "entities": [
+          "CCN"
+        ]
+      },
+      {
+        "code": "grp_HKG",
+        "label": "Hong Kong",
+        "entities": [
+          "CCN",
+          "CTW",
+          "CHK"
+        ]
+      },
+      {
+        "code": "grp_IND",
+        "label": "India",
+        "entities": [
+          "CIN"
+        ]
+      },
+      {
+        "code": "grp_IDN",
+        "label": "Indonesia",
+        "entities": [
+          "CID"
+        ]
+      },
+      {
+        "code": "grp_JPN",
+        "label": "Japan",
+        "entities": [
+          "CKR",
+          "CJP"
+        ]
+      },
+      {
+        "code": "grp_MYS",
+        "label": "Malaysia",
+        "entities": [
+          "CMY"
+        ]
+      },
+      {
+        "code": "grp_PHL",
+        "label": "Philippines",
+        "entities": [
+          "CPH"
+        ]
+      },
+      {
+        "code": "grp_SGP",
+        "label": "Singapore",
+        "entities": [
+          "CMY",
+          "CID",
+          "CSG",
+          "CTH",
+          "CIN",
+          "CPH",
+          "CVN",
+          "COA"
+        ]
+      },
+      {
+        "code": "grp_KOR",
+        "label": "South Korea",
+        "entities": [
+          "CKR"
+        ]
+      },
+      {
+        "code": "grp_TWN",
+        "label": "Taiwan",
+        "entities": [
+          "CTW"
+        ]
+      },
+      {
+        "code": "grp_THA",
+        "label": "Thailand",
+        "entities": [
+          "CTH"
+        ]
+      },
+      {
+        "code": "grp_VNM",
+        "label": "Viet Nam",
+        "entities": [
+          "CVN"
+        ]
+      },
+      {
+        "code": "grp_AUT",
+        "label": "Austria",
+        "entities": [
+          "HRV",
+          "CRO",
+          "CLV",
+          "CAT",
+          "CPL",
+          "CBT",
+          "CCZ",
+          "CBG",
+          "CHU",
+          "CSK",
+          "CSI",
+          "CRS"
+        ]
+      },
+      {
+        "code": "grp_BGR",
+        "label": "Bulgaria",
+        "entities": [
+          "CBG"
+        ]
+      },
+      {
+        "code": "grp_CZE",
+        "label": "Czech Republic",
+        "entities": [
+          "CCZ"
+        ]
+      },
+      {
+        "code": "grp_HUN",
+        "label": "Hungary",
+        "entities": [
+          "CHU"
+        ]
+      },
+      {
+        "code": "grp_LVA",
+        "label": "Latvia",
+        "entities": [
+          "CLV",
+          "CBT"
+        ]
+      },
+      {
+        "code": "grp_LTU",
+        "label": "Lithuania",
+        "entities": [
+          "CLV",
+          "CBT"
+        ]
+      },
+      {
+        "code": "grp_POL",
+        "label": "Poland",
+        "entities": [
+          "CPL"
+        ]
+      },
+      {
+        "code": "grp_ROU",
+        "label": "Romania",
+        "entities": [
+          "CRO"
+        ]
+      },
+      {
+        "code": "grp_SVK",
+        "label": "Slovakia",
+        "entities": [
+          "CSK"
+        ]
+      },
+      {
+        "code": "grp_ARG",
+        "label": "Argentina",
+        "entities": [
+          "CAR"
+        ]
+      },
+      {
+        "code": "grp_BRA",
+        "label": "Brazil",
+        "entities": [
+          "CBR",
+          "SBC"
+        ]
+      },
+      {
+        "code": "grp_CHL",
+        "label": "Chile",
+        "entities": [
+          "CHI"
+        ]
+      },
+      {
+        "code": "grp_COL",
+        "label": "Colombia",
+        "entities": [
+          "CCO"
+        ]
+      },
+      {
+        "code": "grp_ECU",
+        "label": "Ecuador",
+        "entities": [
+          "CEC"
+        ]
+      },
+      {
+        "code": "grp_MEX",
+        "label": "Mexico",
+        "entities": [
+          "CMX"
+        ]
+      },
+      {
+        "code": "grp_PER",
+        "label": "Peru",
+        "entities": [
+          "CPE"
+        ]
+      },
+      {
+        "code": "grp_VEN",
+        "label": "Venezuela",
+        "entities": [
+          "CVE"
+        ]
+      },
+      {
+        "code": "grp_CUK",
+        "label": "UK and Ireland",
+        "entities": [
+          "CUK",
+          "CIE"
+        ]
+      },
+      {
+        "code": "grp_BDI",
+        "label": "Israel",
+        "entities": [
+          "BDI"
+        ]
+      },
+      {
+        "code": "grp_UAE",
+        "label": "Emirates",
+        "entities": [
+          "CAE",
+          "CDUB",
+          "CUAQ",
+          "CFUJ",
+          "CSHA",
+          "CEMS",
+          "CRAK"
+        ]
+      },
+      {
+        "code": "grp_ITA",
+        "label": "Italy",
+        "entities": [
+          "CAI"
+        ]
+      },
+      {
+        "code": "grp_DZA",
+        "label": "North Africa",
+        "entities": [
+          "CMA",
+          "CWA",
+          "CAE",
+          "CAS",
+          "CSWA",
+          "CEG"
+        ]
+      },
+      {
+        "code": "grp_ECGE",
+        "label": "Partner ECGE",
+        "entities": [
+          "ECGE"
+        ]
+      },
+      {
+        "code": "grp_ECIE",
+        "label": "Partner ECIE",
+        "entities": [
+          "ECIE"
+        ]
+      },
+      {
+        "code": "grp_SEP",
+        "label": "Partner SEP",
+        "entities": [
+          "SEP"
+        ]
+      },
+      {
+        "code": "grp_ZAF",
+        "label": "South Africa",
+        "entities": [
+          "CSA"
+        ]
+      },
+      {
+        "code": "grp_TUR",
+        "label": "Turkey",
+        "entities": [
+          "CTR"
+        ]
+      },
+      {
+        "code": "grp_CSWA",
+        "label": "West Africa",
+        "entities": [
+          "CSWA"
+        ]
+      },
+      {
+        "code": "grp_AUDIT",
+        "label": "Audit",
+        "entities": [
+          
+        ]
+      },
+      {
+        "code": "admin_dpa",
+        "label": "Admin DPA",
+        "entities": [
+          "AAFR",
+          "AAC",
+          "BDI",
+          "CEC",
+          "CVE",
+          "CAS",
+          "CAR",
+          "CAI",
+          "COA",
+          "CAT",
+          "CBE",
+          "CBR",
+          "CBG",
+          "CEMS",
+          "CSWA",
+          "CHI",
+          "CCN",
+          "CCO",
+          "CCZ",
+          "CDK",
+          "CDE",
+          "CDUB",
+          "CAE",
+          "CEE",
+          "CFUJ",
+          "CHK",
+          "CHU",
+          "CIB",
+          "CIN",
+          "CID",
+          "CIE",
+          "CJP",
+          "CLD",
+          "CLV",
+          "CLU",
+          "CMY",
+          "CMX",
+          "CMA",
+          "CNL",
+          "CNA",
+          "PAN",
+          "CPE",
+          "CPH",
+          "CPL",
+          "CPT",
+          "CRAK",
+          "CRO",
+          "CKI",
+          "CWA",
+          "CSHA",
+          "CSG",
+          "CSK",
+          "CSA",
+          "CCH",
+          "CSV",
+          "CTW",
+          "CTH",
+          "CUAQ",
+          "CTR",
+          "CUK",
+          "CVN",
+          "ECGE",
+          "ECIE",
+          "EDC",
+          "FIM",
+          "GDL",
+          "KMPF",
+          "KMPN",
+          "CBT",
+          "NFA",
+          "CCF",
+          "SBC",
+          "SOR",
+          "SEP",
+          "CUFR",
+          "CKR",
+          "CEG",
+          "HRV",
+          "CSI",
+          "CRS"
+        ]
+      },
+      {
+        "code": "admin_global",
+        "label": "Global Admin",
+        "entities": [
+          "AAFR",
+          "AAC",
+          "BDI",
+          "CEC",
+          "CVE",
+          "CAS",
+          "CSHA",
+          "CCF",
+          "SBC",
+          "SOR",
+          "SEP",
+          "CUFR",
+          "CKR",
+          "CTH",
+          "CTR",
+          "CUK",
+          "CUAQ",
+          "CVN",
+          "ECGE",
+          "ECIE",
+          "EDC",
+          "FIM",
+          "GDL",
+          "KMPF",
+          "KMPN",
+          "CBT",
+          "NFA",
+          "COA",
+          "CAR",
+          "CAI",
+          "CAT",
+          "CBE",
+          "CBR",
+          "CBG",
+          "CEMS",
+          "CSWA",
+          "CHI",
+          "CCN",
+          "CCO",
+          "CCZ",
+          "CDK",
+          "CDE",
+          "CDUB",
+          "CAE",
+          "CEE",
+          "CFUJ",
+          "CHK",
+          "CHU",
+          "CIB",
+          "CIN",
+          "CID",
+          "CIE",
+          "CJP",
+          "CLD",
+          "CLV",
+          "CLU",
+          "CMY",
+          "CMX",
+          "CMA",
+          "CNL",
+          "CNA",
+          "PAN",
+          "CPE",
+          "CRAK",
+          "CPH",
+          "CPL",
+          "CPT",
+          "CRO",
+          "CKI",
+          "CWA",
+          "CSG",
+          "CSK",
+          "CSA",
+          "CCH",
+          "CSV",
+          "CTW",
+          "HRV",
+          "CSI",
+          "CRS",
+          "CEG"
+        ]
+      },
+      {
+        "code": "grp_HRV",
+        "label": "Croatia",
+        "entities": [
+          "HRV"
+        ]
+      },
+      {
+        "code": "grp_SCC",
+        "label": "Commercial Underw...",
+        "entities": [
+          
+        ]
+      },
+      {
+        "code": "grp_BEL",
+        "label": "Belgium",
+        "entities": [
+          "CBE"
+        ]
+      },
+      {
+        "code": "grp_FRA_GC",
+        "label": "France - Grande c...",
+        "entities": [
+          "CLD"
+        ]
+      },
+      {
+        "code": "grp_FRA_Reseau",
+        "label": "France - Reseau",
+        "entities": [
+          "CLD"
+        ]
+      },
+      {
+        "code": "grp_LUX",
+        "label": "Luxembourg",
+        "entities": [
+          "CLU"
+        ]
+      },
+      {
+        "code": "grp_PRT",
+        "label": "Portugal",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_CENTRAL",
+        "label": "Spain - CENTRAL",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_CREDIFACE",
+        "label": "Spain - CREDIFACE",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_DTA",
+        "label": "Spain - DTA",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_DTAR",
+        "label": "Spain - DTAR",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_DTC",
+        "label": "Spain - DTC",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_DTCV",
+        "label": "Spain - DTCV",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_DTM",
+        "label": "Spain - DTM",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_DTN",
+        "label": "Spain - DTN",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_DTNO",
+        "label": "Spain - DTNO",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_DTS",
+        "label": "Spain - DTS",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_ESP_DTV",
+        "label": "Spain - DTV",
+        "entities": [
+          "CIB",
+          "CPT"
+        ]
+      },
+      {
+        "code": "grp_CHE",
+        "label": "Switzerland",
+        "entities": [
+          "CCH"
+        ]
+      },
+      {
+        "code": "grp_CAN",
+        "label": "Canada",
+        "entities": [
+          "CNA",
+          "EDC"
+        ]
+      },
+      {
+        "code": "grp_USA",
+        "label": "United States",
+        "entities": [
+          "CNA",
+          "EDC"
+        ]
+      },
+      {
+        "code": "grp_DNK",
+        "label": "Denmark",
+        "entities": [
+          "CDK"
+        ]
+      },
+      {
+        "code": "grp_DEU_KA",
+        "label": "Germany - Zentrale",
+        "entities": [
+          "CKI",
+          "CSV",
+          "CDK",
+          "CNL",
+          "CDE"
+        ]
+      },
+      {
+        "code": "grp_DEU_north",
+        "label": "Germany - North",
+        "entities": [
+          "CSV",
+          "CDK",
+          "CNL",
+          "CDE"
+        ]
+      },
+      {
+        "code": "grp_DEU_south",
+        "label": "Germany - South",
+        "entities": [
+          "CSV",
+          "CDK",
+          "CNL",
+          "CDE"
+        ]
+      },
+      {
+        "code": "grp_NLD",
+        "label": "Netherlands",
+        "entities": [
+          "CSV",
+          "CNL"
+        ]
+      },
+      {
+        "code": "grp_RUS",
+        "label": "Russian Federation",
+        "entities": [
+          "CKI"
+        ]
+      },
+      {
+        "code": "grp_SWE",
+        "label": "Sweden",
+        "entities": [
+          "CNL",
+          "CSV"
+        ]
+      },
+      {
+        "code": "grp_DEU",
+        "label": "Germany",
+        "entities": [
+          "CDK",
+          "CDE",
+          "CNL",
+          "CKI",
+          "CSV"
+        ]
+      },
+      {
+        "code": "grp_SRB",
+        "label": "Serbia",
+        "entities": [
+          "CRS"
+        ]
+      },
+      {
+        "code": "grp_FRA_Souscription",
+        "label": "France - Souscrip...",
+        "entities": [
+          "CLD"
+        ]
+      },
+      {
+        "code": "grp_SLO",
+        "label": "Slovenia",
+        "entities": [
+          "CSI"
+        ]
+      }
+    ],
+    "derogationLevel": 2,
+    "managedEmployees": null
+  }
+}

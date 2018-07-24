@@ -1,0 +1,117 @@
+<script type="text/ng-template" id="jsonDynamicContentTree">
+
+<div ng-repeat="(key, value) in field"
+	ng-init="parentKey = $parent.parentKey">
+	<!-- Value of key is Boolean -->
+	<div ng-if="typeOfObject(value) === 'boolean'" class="col-sm-12">
+		<div class="form-inline">
+			<label>
+			<input type="checkbox" ng-model="field[key]" ng-disabled="isJsonDynamicContentReadOnly()" />
+				<span ng-if="parentKey" translate="{{::jsonDynamicContent.translations[parentKey + '.' +  key]}}"></span>
+				<span ng-if="!parentKey" translate="{{::jsonDynamicContent.translations[key]}}"></span>			 
+			</label>
+
+			<atyDerogation
+					ng-if="!parentKey && derogationService.getDerogationLevel('specialClauses.'+key) != null"
+					drg-input="field[key]" drg-section="specialClausesDerogation"
+					drg-field="specialClauses.{{key}}" />
+		</div>
+	</div>
+
+	<!-- Value of key is String -->
+	<div ng-if="typeOfObject(value) === 'string'" class="col-sm-12">
+		<div class="checkbox">
+			<label class="col-sm-6"> <span ng-if="parentKey"
+				translate="{{::jsonDynamicContent.translations[parentKey + '.' +  key]}}"></span>
+				<span ng-if="!parentKey"
+				translate="{{::jsonDynamicContent.translations[key]}}"></span>
+			</label>
+			<div class="col-sm-6">
+				<input type="text" ng-model="field[key]"
+					ng-disabled="isJsonDynamicContentReadOnly()" />
+			</div>
+		</div>
+	</div>
+
+	<!-- Label : Value of key is object -->
+	<label
+		ng-if="typeOfObject(value) === 'object' && value.option === false"
+		class="col-sm-12 control-label"> <strong ng-if="parentKey"
+		translate="{{::jsonDynamicContent.translations[parentKey + '.' +  key]}}"></strong>
+		<strong ng-if="!parentKey"
+		translate="{{::jsonDynamicContent.translations[key]}}"></strong>
+	</label>
+
+	<div class="form-inline">		
+			<label ng-if="typeOfObject(value) === 'object' && value.option === true">
+				<input type="checkbox"
+				ng-model="value.selected"
+				ng-disabled="isJsonDynamicContentReadOnly()" /> <strong
+				ng-if="parentKey"
+				translate="{{::jsonDynamicContent.translations[parentKey + '.' +  key]}}"></strong>
+				<strong ng-if="!parentKey"
+				translate="{{::jsonDynamicContent.translations[key]}}"></strong>
+
+			</label>
+			
+			<atyDerogation
+				ng-if="!parentKey && derogationService.getDerogationLevel('specialClauses.'+key) != null"
+				drg-input="value.selected" drg-section="specialClausesDerogation"
+				drg-field="specialClauses.{{key}}" />
+			
+	</div>
+
+	<!-- Call recursive on Object -->
+	<div
+		ng-if="typeOfObject(value) === 'object' && ((value.option === true && value.selected === true) || value.option === false) "
+		class="col-sm-offset-3 col-sm-9">
+		<div class="form-group" ng-repeat="field in value.items"
+			ng-include="'jsonDynamicContentTree'"
+			ng-init="parentKey = $parent.parentKey ? $parent.parentKey + '.' + key : key"></div>
+	</div>
+</div>
+
+</script>
+
+<div class="form-group col-sm-12"
+	ng-repeat="field in jsonDynamicContent.data"
+	ng-include="'jsonDynamicContentTree'"></div>
+
+
+<!-- Obsolete options -->
+<div class="form-group  col-sm-12" ng-if="obsoleteOptions != null">
+
+	<label translate="json.dynamic.obsolete.options" class="col-sm-4"></label>
+	<div class="col-sm-8">
+		<table
+			class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+			<colgroup>
+				<col span="1" class="col-sm-6">
+				<col span="1" class="col-sm-6">
+			</colgroup>
+			<thead>
+				<tr class="">
+					<th class="text-center">
+						<p class="form-control-static">
+							<strong
+								translate="{{::jsonDynamicContent.translations['obsolete.option.key']}}"></strong>
+						</p>
+					</th>
+					<th class="text-center">
+						<p class="form-control-static">
+							<strong
+								translate="{{::jsonDynamicContent.translations['obsolete.option.value']}}"></strong>
+						</p>
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="(key, value) in obsoleteOptions">
+					<td><p class="form-control-static">{{::key}}</p></td>
+					<td><p class="form-control-static">{{::value}}</p></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+

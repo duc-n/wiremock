@@ -1,0 +1,222 @@
+<div class="panel-heading">
+	<p class="panel-title" translate="search.criteria" />
+</div>
+<div class="panel-body">
+	<div class="filter-wrapper">
+		<div class="container-fluid">
+			<form >
+				<fieldset>
+					<div class="form-group">
+						<div class="row">
+							
+							<div class="col-sm-2">
+								<label class="control-label" for="contractReference"
+									translate="search.contract.number"></label>
+							</div>
+							<div class="col-sm-2">
+								<label class="control-label" for="salesName"
+									translate="search.sales.name"></label>
+							</div>
+							<div class="col-sm-6">
+								<label class="control-label" for="startDate"
+									translate="search.date.range"></label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-2">
+								<input class="form-control" type="text"
+									ng-model="formCriteria.contractReference"
+									id="contractReference" />
+							</div>
+							<div class="col-sm-2">
+								<input class="form-control" type="text"
+									ng-model="formCriteria.salesName" id="salesName" />
+							</div>
+							<div class="col-sm-3">
+								<div class="input-group">
+									<input readonly class="form-control" type="text"
+										ng-model="formCriteria.startDate" id="startDate"
+										datepicker-popup="{{format}}" is-open="status.dateBeginOpened"
+										datepicker-options="dateOptions" close-text="Close" /> <span
+										class="input-group-btn"><button type="button"
+											class="btn btn-default" ng-click="dateBeginOpen()">
+											<i class="fa fa-calendar"></i>
+										</button></span>
+								</div>
+							</div>
+							<div class="col-sm-3">
+								<div class="input-group">
+									<input readonly class="form-control" type="text"
+										ng-model="formCriteria.endDate" id="endDate"
+										datepicker-popup="{{format}}" is-open="status.dateEndOpened"
+										min-date="formCriteria.startDate"
+										datepicker-options="dateOptions" close-text="Close" /> <span
+										class="input-group-btn"><button type="button"
+											class="btn btn-default" ng-click="dateEndOpen()">
+											<i class="fa fa-calendar"></i>
+										</button></span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="row">
+							
+							<div class="col-sm-2">
+								<label class="control-label" for="companyName"
+									translate="search.company.name"></label>
+							</div>
+							<div class="col-sm-2">
+								<label class="control-label" for="business"
+									translate="search.business"></label>
+							</div>
+							<!--
+							<div class="col-sm-2">
+								<label class="control-label" for="derogation"
+									translate="search.derogation"></label>
+							</div>
+							-->
+<!--Defect 945:Home page - status on cases progress-->
+							<div class="col-sm-3">
+								<label class="control-label" for="progressStatus"
+									translate="search.contract.progress.status"></label>
+								<input  ng-model="formCriteria.progressStatusStrict" type="checkbox" ng-true-value="false" ng-false-value="true" >
+								<i  popover="{{'search.contract.progress.status.strict.info'|translate}}"  popover-trigger="mouseenter" class="fa fa-info-circle fa-lg ng-scope"></i>
+									
+							</div>
+
+							<div class="col-sm-2">
+								<label class="control-label" for="status"
+									translate="search.contratct.status"></label>
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-sm-2">
+								<input class="form-control" type="text"
+									ng-model="formCriteria.companyName" id="companyName" />
+							</div>
+							<div class="col-sm-2">
+								<select class="form-control" ng-model="formCriteria.business" 
+									id="business">
+									<option value="" selected="selected" 
+										translate="business.option.all"></option>
+									<option value="NEW" translate="business.option.new"></option>
+                  <option value="RENEWAL" translate="business.option.renewal"></option>
+									<option value="TRANSF" translate="business.option.transform"></option>
+									<option value="CHECK_MIGRATION"
+										translate="business.option.check.migration"></option>
+									<option value="CLO" translate="business.option.clo"></option>
+								</select>
+							</div>
+						<!--	
+							<div class="col-sm-2">
+								<select class="form-control" ng-model="formCriteria.derogation"
+									id="derogation">
+									<option value="" selected="selected"
+										translate="derogation.option.all"></option>
+									<option value="ND" translate="derogation.option.no"></option>
+									<option value="PD" translate="derogation.option.pending"></option>
+									<option value="VD" translate="derogation.option.validated"></option>
+								</select>
+							</div>
+						-->
+
+						<div class="col-sm-3">
+							<select class="form-control" ng-model="formCriteria.progressStatus"
+								id="progressStatus">
+								<option value="" selected="selected"
+										translate="scenario.progress.status.enum.all"></option>
+									<option value="INIT" translate="scenario.progress.status.enum.initialization"></option>
+									<option value="QUOTE_REQ" translate="scenario.progress.status.enum.quotation.request"></option>
+									<option value="QUOTE_DONE" translate="scenario.progress.status.enum.quoted"></option>
+									<option value="DEROG_REQ" translate="scenario.progress.status.enum.derogation.request"></option>
+									<option value="DEROG_DONE" translate="scenario.progress.status.enum.derogation.validated"></option>
+									<option value="NBI_DONE" translate="scenario.progress.status.enum.offer.edition"></option>
+									<option value="CONTRACT_REQ" translate="scenario.progress.status.enum.contract.edition.request"></option>
+									<option value="CONTRACT_DONE" translate="scenario.progress.status.enum.contract.edition"></option>
+									<option value="TRANSFER" translate="scenario.progress.status.enum.transferred"></option>
+							</select>
+						</div>
+							<div class="col-sm-2">
+								<select class="form-control" type="text"
+									ng-model="formCriteria.contractStatus" id="status" >
+									<option value="" selected="selected"
+										translate="contract.status.option.all"></option>
+										<option value="PROJECT" translate="contract.status.enum.project"></option>
+										<option value="SIGNED" translate="contract.status.enum.signed"></option>
+									<option value="CANCELLED" translate="contract.status.enum.cancelled"></option>
+									<option value="PROJECT_CANCELLED" translate="contract.status.enum.project.cancelled"></option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="search-toolbar text-right">
+					<div class="row" style="margin-bottom: 1rem">
+						<button ng-click="openCompanyView()" class="btn btn-xs btn-primary" type="button"
+							popover="{{'search.new.case' | translate}}"
+							popover-trigger="mouseenter">
+							<i class="fa fa-plus"></i>
+						</button>
+						
+						<button ng-click="openCreateCLOCaseDialog()"
+							class="btn btn-primary" type="button"
+							popover="{{'search.new.clo.case' | translate}}"
+							popover-trigger="mouseenter">
+							<i class="fa fa-bar-chart"></i>
+						</button>
+						<button ng-click="openTransformContractDialog()"
+							class="btn btn-primary" type="button"
+							popover="{{'search.transform.contract' | translate}}"
+							popover-trigger="mouseenter">
+							<i class="fa fa-retweet"></i>
+						</button>
+				</div>
+				
+			
+				
+				<div class="row">
+				
+				<button type="submit" ng-click="search()" class="btn btn-primary" 
+							popover="{{'search.search' | translate}}"
+							popover-trigger="mouseenter"  >
+							<i class="fa fa-search"></i>
+						</button>
+						<button ng-click="reset()" class="btn btn-primary" type="button"
+							popover="{{'search.reset.filters' | translate}}"
+							popover-trigger="mouseenter">
+							<i class="fa fa-eraser"></i>
+						</button>
+						
+						<button ng-click="changeCasesOwner()" type="button"
+							ng-disabled="casesSelected.length == 0" 
+							class="btn btn-primary"
+							popover="{{'search.change.cases.owner.button' | translate}}"
+							popover-trigger="mouseenter">
+							<i class="fa fa-exchange"></i>
+						</button>
+						
+						<button
+							ng-if="hasSupervisionRight && !SearchService.isSearchExportInProgress()" type="button"
+							ng-disabled="SearchService.isSearchExportInProgress()"
+							ng-click="exportSearchResult()" class="btn btn-primary"
+							popover="{{ 'search.export.result' | translate}}"
+							popover-trigger="mouseenter">
+							<i class="fa fa-download"></i>
+						</button>
+						<i
+							ng-if="hasSupervisionRight && SearchService.isSearchExportInProgress()"
+							popover="{{ 'spinner.cases.exporting.title' | translate}}"
+							popover-trigger="mouseenter">
+							<button
+								ng-if="hasSupervisionRight && SearchService.isSearchExportInProgress()" type="button"
+								ng-disabled="true" class="btn btn-primary">
+								<i class="fa fa-download"></i>
+							</button>
+						</i>
+				</div></div>
+						
+				</fieldset>
+			</form>
+		</div>
+	</div>
+</div>

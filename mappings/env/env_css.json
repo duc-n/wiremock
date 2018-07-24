@@ -1,0 +1,13 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPattern": "/autonomyView/dynaresources/styles/env.css"
+    },
+    "response": {
+        "status": 200,
+        "body": "@media all {.header-wrapper .header-toolbar .header-toolbar-user {background:#E06E2B none;color:#FFFFFF;border-color:#E06E2B;}",
+        "headers": {
+            "Content-Type": "text/css;charset=UTF-8"
+        }
+    }
+}

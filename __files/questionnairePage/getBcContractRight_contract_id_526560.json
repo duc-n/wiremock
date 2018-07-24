@@ -1,0 +1,16 @@
+{
+  "supervisor": true,
+  "newBusiness": true,
+  "transform": false,
+  "renewal": false,
+  "checkMigration": false,
+  "clo": false,
+  "isoCountryCode": "FRA",
+  "companyName": "DANONE",
+  "contractNumber": "526517",
+  "contractId": "CONT-01-282667186",
+  "salesFunnelTechnicalId": null,
+  "entityOrganizationId": "01-ORGA-ORGCT",
+  "transferToGCC": false,
+  "contractCancelled": false
+}

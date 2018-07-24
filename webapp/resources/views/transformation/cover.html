@@ -1,0 +1,140 @@
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong translate="policy.cover.contract.currency.label"></strong></label>
+
+  <div ng-show="policy.contractCurrency" class="col-sm-8" ng-class="{'from-bcc': policy.contractCurrencyFromBCC}">
+    <label class="form-control-static" translate="{{'currency.'+policy.contractCurrency}}"></label>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="policyPrinciple"><strong
+    translate="policy.cover.policy.principle.label"></strong></label>
+
+  <div class="col-sm-8">
+    <label class="radio-inline" ng-class="{'from-bcc': policy.policyPrincipleFromBCC && policy.policyPrinciple == 'RA'}">
+      <input disabled type="radio" id="policyPrinciple" ng-model="policy.policyPrinciple" value="RA"/>
+      <span translate="policy.cover.risk.attaching.label"></span>
+    </label>
+    <label class="radio-inline" ng-class="{'from-bcc': policy.policyPrincipleFromBCC && policy.policyPrinciple == 'LO'}">
+      <input disabled type="radio" ng-model="policy.policyPrinciple" value="LO"/>
+      <span translate="policy.cover.loss.occuring.label"></span>
+    </label>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="causeOfLoss"><strong
+    translate="policy.cover.loss.cause.label"></strong></label>
+
+  <div class="col-sm-8">
+    <label class="radio-inline" ng-class="{'from-bcc': policy.causeOfLossFromBCC && policy.causeOfLoss =='CO'}">
+      <input disabled type="radio" name="causeOfLoss" id="causeOfLoss" ng-model="policy.causeOfLoss" value="CO"/>
+      <span translate="policy.cover.loss.cause.commercial.label"></span>
+    </label>
+    <label class="radio-inline" ng-class="{'from-bcc': policy.causeOfLossFromBCC && policy.causeOfLoss =='IO'}">
+      <input disabled type="radio" name="causeOfLoss" ng-model="policy.causeOfLoss" value="IO"/>
+      <span translate="policy.cover.loss.cause.insolvency.label"></span>
+    </label>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong translate="policy.cover.covered.activity.label"></strong></label>
+
+  <div class="col-sm-8" ng-class="{'from-bcc': policy.activitySectorFromBCC}">
+    <p ng-show="policy.activitySector" class="form-control-static" translate="{{'sector.'+policy.activitySector}}"></p>
+  </div>
+</div>
+
+<div class="form-group multi-select">
+  <label class="col-sm-4 control-label"><strong translate="policy.cover.covered.countries.label"></strong></label>
+
+  <div class="col-sm-8 selected-items" ng-class="{'from-bcc': policy.coveredCountriesListFromBCC}">
+    <div class="multi-content multi-column">
+      <ul class="form-control-static">
+        <li class="ellipsis" ng-repeat="key in policy.coveredCountriesList | atyOrderByTranslated: 'country.'"><span translate="{{'country.'+key}}"></span></li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong
+    translate="insured.percentage.label"></strong></label>
+
+  <div class="col-sm-1" ng-class="{'from-bcc': policy.coverInsuredPercentageFromBCC}">
+    <div class="input-group">
+      <label class="form-control" ng-bind="policy.coverInsuredPercentage | atyNumber"></label>
+    </div>
+  </div>
+  <div class="col-sm-1">
+    <div class="input-group">
+      <percent/>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong
+    translate="policy.cover.domestic.vat.coverage.label"></strong></label>
+
+  <div class="col-sm-8">
+    <label class="radio-inline" ng-class="{'from-bcc': policy.domesticVatCoverageFromBCC && !policy.domesticVatCoverage}">
+      <input disabled type="radio" ng-model="policy.domesticVatCoverage" ng-value="false"/>
+      <span translate="no.label"></span>
+    </label>
+    <label class="radio-inline" ng-class="{'from-bcc': policy.domesticVatCoverageFromBCC && !policy.domesticVatCoverage}">
+      <input disabled type="radio" ng-model="policy.domesticVatCoverage" ng-value="true"/>
+      <span translate="yes.label"></span>
+    </label>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong
+    translate="policy.cover.max.invoicing.period.label"></strong></label>
+
+  <div class="col-sm-1" ng-class="{'from-bcc': policy.maxInvoicingPeriodFromBCC}">
+    <div class="input-group">
+      <label class="form-control" ng-bind="policy.maxInvoicingPeriod | atyNumber"></label>
+    </div>
+  </div>
+
+  <div class="col-sm-6">
+    <div class="input-group">
+      <p class="form-control-static" translate="policy.cover.days.from.delivery.label"></p>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong
+    translate="policy.cover.max.domestic.credit.period.label"></strong></label>
+
+  <div class="col-sm-1" ng-class="{'from-bcc': policy.maxDomesticCreditPeriodFromBCC}">
+    <div class="input-group">
+      <label class="form-control" ng-bind="policy.maxDomesticCreditPeriod | atyNumber"></label>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="input-group">
+      <p class="form-control-static" translate="policy.cover.days.from.invoice.date.label"></p>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong
+    translate="policy.cover.max.export.credit.period.label"></strong></label>
+
+  <div class="col-sm-1" ng-class="{'from-bcc': policy.maxExportCreditPeriodFromBCC}">
+    <div class="input-group">
+      <label class="form-control" ng-bind="policy.maxExportCreditPeriod | atyNumber"></label>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="input-group">
+      <p class="form-control-static" translate="policy.cover.days.from.invoice.date.label"></p>
+    </div>
+  </div>
+</div>

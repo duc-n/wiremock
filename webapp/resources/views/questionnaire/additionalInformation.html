@@ -1,0 +1,217 @@
+<!-- defect #623 : FR Feedback: Additional data to define the competition context in the questionnaire  -->
+<div class="form-group">
+	<label class="col-sm-12 control-label"><strong
+		translate="questionnaire.additional.information.competition.context"></strong></label>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-offset-1 col-sm-3 control-label"
+		for="currentInsurer"><strong
+		translate="questionnaire.additional.information.current.insuer"></strong></label>
+
+	<div class="col-sm-3">
+		<select ng-disabled="::questionnaire.isReadOnly"
+			ng-model="questionnaire.currentInsurerServiceProvider"
+			ng-options="key as value for (key, value) in serviceProviders"
+			class="form-control" required>
+		</select>
+	</div>
+	<div class="col-sm-5">
+		<input
+			ng-show="questionnaire.currentInsurerServiceProvider == 'OTHER'"
+			ng-disabled="::questionnaire.isReadOnly" type="text"
+			id="currentInsurer" name="currentInsurer" class="form-control"
+			ng-model="questionnaire.currentInsurer" />
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-offset-1 col-sm-3 control-label"
+		for="inCompetitionWith"><strong
+		translate="questionnaire.additional.information.in.competition.with"></strong></label>
+
+	<div class="col-sm-3">
+		<select ng-disabled="::questionnaire.isReadOnly"
+			ng-model="questionnaire.inCompetitionWithServiceProvider"
+			ng-options="key as value for (key, value) in serviceProviders"
+			class="form-control" required>
+		</select>
+	</div>
+	<div class="col-sm-5">
+		<input
+			ng-show="questionnaire.inCompetitionWithServiceProvider == 'OTHER'"
+			ng-disabled="::questionnaire.isReadOnly" type="text"
+			id="inCompetitionWith" name="inCompetitionWith"
+			ng-model="questionnaire.inCompetitionWith" class="form-control" />
+	</div>
+</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-12 control-label"><strong
+		translate="questionnaire.additional.information.recommended.rates"></strong></label>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-offset-1 col-sm-3 control-label"
+		for="areaAndRate1"><strong
+		translate="questionnaire.additional.information.area.and.rate.1"></strong></label>
+
+	<div class="col-sm-5">
+		<div class="input-group">
+			<input ng-disabled="::questionnaire.isReadOnly" id="areaAndRate1"
+				name="areaAndRate1" class="form-control"
+				ng-model="questionnaire.areaAndRate1" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-offset-1 col-sm-3 control-label"
+		for="areaAndRate2"><strong
+		translate="questionnaire.additional.information.area.and.rate.2"></strong></label>
+
+	<div class="col-sm-5">
+		<div class="input-group">
+			<input ng-disabled="::questionnaire.isReadOnly" id="areaAndRate2"
+				name="areaAndRate1" class="form-control"
+				ng-model="questionnaire.areaAndRate2" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-offset-1 col-sm-3 control-label"
+		for="areaAndRate3"><strong
+		translate="questionnaire.additional.information.area.and.rate.3"></strong></label>
+
+	<div class="col-sm-5">
+		<div class="input-group">
+			<input ng-disabled="::questionnaire.isReadOnly" id="areaAndRate3"
+				name="areaAndRate1" class="form-control"
+				ng-model="questionnaire.areaAndRate3" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-4 control-label" for="recommendedMinPremium"><strong
+		translate="questionnaire.additional.information.recommended.min.premium"></strong></label>
+
+	<div class="col-sm-5">
+		<div class="input-group">
+			<input ng-disabled="::questionnaire.isReadOnly" type="number"
+				id="recommendedMinPremium" name="recommendedMinPremium"
+				class="form-control" ng-model="questionnaire.recommendedMinPremium"
+				aty-input-number aty-decimal />
+		</div>
+	</div>
+</div>
+
+<!-- Comments-->
+<div class="form-group">
+	<label class="col-sm-4 control-label" for="comments"><strong
+		translate="questionnaire.additional.information.comments"></strong> <i
+		popover="{{'questionnaire.additional.information.commments.tooltip.label'|translate}}"
+		popover-trigger="mouseenter" class="fa fa-info-circle"></i> </label>
+
+	<div class="hidden-print col-sm-8">
+		<textarea rows="5" class="form-control" id="comments"
+			ng-model="questionnaire.comments" name="comments"
+			aty-maxlength="1000" ng-maxlength="1000"
+			popover="{{'form.invalid.length.field'|translate : '{p0: 1000}'}}"
+			popover-toggle="questionnaireForm.businessSubForm.comments.$invalid"
+			popover-trigger="focus" ng-disabled="::questionnaire.isReadOnly" />
+	</div>
+	<div class="visible-print col-sm-9">
+		<div class="form-control-static" ng-bind="questionnaire.comments"></div>
+	</div>
+</div>
+
+<!-- Partner-->
+<div class="form-group">
+	<label class="col-sm-4 control-label" for="partner"><strong
+		translate="questionnaire.additional.information.partner"></strong> </label>
+
+	<div class="col-sm-8">
+		<label class="radio-inline"> <input
+			ng-disabled="::questionnaire.isReadOnly" type="radio" id="partner"
+			ng-model="questionnaire.partner" value="NONE" /> <span
+			translate="questionnaire.additional.information.partner.none"></span>
+		</label> <label class="radio-inline"> <input
+			ng-disabled="::questionnaire.isReadOnly" type="radio"
+			ng-model="questionnaire.partner" value="BROKER" /> <span
+			translate="questionnaire.additional.information.partner.broker"></span>
+		</label> <label class="radio-inline"> <input
+			ng-disabled="::questionnaire.isReadOnly" type="radio"
+			ng-model="questionnaire.partner" value="BANK" /> <span
+			translate="questionnaire.additional.information.partner.bank"></span>
+		</label> <label class="radio-inline"> <input
+			ng-disabled="::questionnaire.isReadOnly" type="radio"
+			ng-model="questionnaire.partner" value="OTHERS" /> <span
+			translate="questionnaire.additional.information.partner.others"></span>
+		</label>
+	</div>
+</div>
+
+
+<div ng-show="questionnaire.partner != 'NONE'">
+	<div class="form-group">
+		<label class="col-sm-2 col-sm-offset-4 control-label"
+			for="partnerName"
+			translate="questionnaire.additional.information.partner.broker.name"></label>
+
+		<div class="col-sm-6" ng-if="questionnaire.partner == 'OTHERS'">
+			<input ng-disabled="::questionnaire.isReadOnly" type="text"
+				id="partnerName" name="partnerName" class="form-control"
+				ng-model="questionnaire.partnerName" aty-maxlength="50"
+				ng-maxlength="50" />
+		</div>
+
+		<div class="col-sm-6"
+			ng-if="questionnaire.partner == 'BROKER' || questionnaire.partner == 'BANK'">
+			<select class="form-control need-for-pricing"
+				ng-model="questionnaire.partnerRoleReferenceId"
+				ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration || !questionnaire.partners.length">
+				<option value="" translate="select.partner.option.label"
+					ng-if="!questionnaire.partnerRoleReferenceId"></option>
+				<option
+					ng-repeat="partner in questionnaire.partners track by partner.cardId"
+					value="{{::partner.cardId}}"
+					ng-selected="questionnaire.partnerRoleReferenceId == partner.cardId">{{::partner.name}}
+					- {{::partner.city}} - {{::partner.cardId}}</option>
+			</select>
+		</div>
+	</div>
+
+	<div class="form-group form-inline"
+		ng-if="questionnaire.partner == 'BROKER' || questionnaire.partner == 'BANK'">
+		<div class="col-sm-4 col-sm-offset-4">
+			<a class="btn btn-primary" ng-click="getPartnerRoleReferenceId()" id="partnerRoleRef-btn"
+				translate="questionnaire.additional.information.partner.btn"></a>
+		</div>
+	</div>
+
+	<!-- 	<div class="form-group"> -->
+	<!-- 		<div class="col-sm-12" ng-if="questionnaire.partnerCompanyName"> -->
+	<!-- 			<span translate="questionnaire.additional.information.partner.selected.desc" -->
+	<!-- 				translate-values="{p0: questionnaire.partnerRoleReferenceId,p1:questionnaire.partnerCompanyName}"> -->
+	<!-- 				</span> -->
+	<!-- 		</div> -->
+	<!-- 	</div> -->
+
+</div>
+
+<!-- Request Quotation-->
+<div class="form-group" ng-if="::!questionnaire.pricingRight">
+	<div class="col-sm-4 col-sm-offset-4">
+		<i ng-if="questionnaire.specificQuestionnaire.requestQuoteTaskId != null || buttonRequestQuotationDisabled || ScenarioDataService.getCurrentScenario().isReadOnly"
+			popover-html="requestQuoteButtonTooltip" popover-trigger="mouseenter"
+			class="fa fa-info-circle fa-lg"></i>
+		<button type="button"
+			ng-disabled="questionnaire.specificQuestionnaire.requestQuoteTaskId != null || buttonRequestQuotationDisabled || ScenarioDataService.getCurrentScenario().isReadOnly"
+			ng-click="requestQuotation()" class="btn btn-primary"
+			translate="policy.quote.request.btn"></button>
+	</div>
+
+</div>

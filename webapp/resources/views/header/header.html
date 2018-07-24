@@ -1,0 +1,30 @@
+<!-- -->
+<div class="container">
+  <div class="row header-toolbar">
+    <div class="col-sm-6">
+      <p class="header-toolbar-info" translate="application.name"></p>
+    </div>
+    <div class="col-sm-6">
+
+      <div class="header-toolbar-user dropdown">
+        <!-- -->
+        <a onclick="return false;" href="#" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false" role="button" id="nav-is-user-trigger">{{user.fullName}} <i class="fa fa-angle-down"></i></a>
+        <ul class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="nav-is-user-trigger">
+          <!--
+          <li role="presentation" class="dropdown-header">{{user.lastName + " " + user.firstName}}</li>
+          <li role="presentation" class="divider"></li>
+          -->
+          <li role="presentation"><a role="menuitem" ng-click="userPreferencesView()" tabindex="-1" href="" translate="header.menu.option2"></a></li>
+          <li role="presentation"><a role="menuitem" ng-click="logout()" tabindex="-1" href="" translate="header.menu.option1"></a></li>
+        </ul>
+        <!-- /-->
+      </div>
+    </div>
+
+  </div>
+</div>
+<form action="/autonomyView/logout" id="logoutForm" method="post">
+  <!-- csrf hidden input included automagically -->
+  <input type="hidden" name="_csrf" value="" id="_csrf">
+</form>
+<!-- -->

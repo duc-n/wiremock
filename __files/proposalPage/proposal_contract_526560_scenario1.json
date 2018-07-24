@@ -1,0 +1,369 @@
+{
+  "smartCase": false,
+  "smartCofalinkStatus": false,
+  "smartServiceResult": null,
+  "fileTransferredToGCC": false,
+  "transfertToGCCXmlAvailable": false,
+  "newBusiness": true,
+  "renewal": false,
+  "transform": false,
+  "checkMigration": false,
+  "clo": false,
+  "salesDiscussionsCount": 2,
+  "cancellationProjectReason": null,
+  "cancellationProjectDate": null,
+  "projectCancelledByFullName": null,
+  "creationDate": 1531932296882,
+  "createdByFullName": null,
+  "contractStatus": "PROJECT",
+  "progressStatus": "QUOTE_DONE",
+  "contractCancelled": false,
+  "id": 2550557,
+  "nbContractDownloaded": 0,
+  "nbNBIDownloaded": 0,
+  "nbBUYERSTUDYDownloaded": 0,
+  "commercialComment": null,
+  "scenarioPricingObsolete": false,
+  "hasQuoted": true,
+  "derogationPending": true,
+  "nbDerogationAccepted": 16,
+  "nbDerogationPending": 20,
+  "scenarioName": null,
+  "scenarioDescription": null,
+  "validationDerogationRight": true,
+  "displayClauseName": false,
+  "displayClauseDescription": false,
+  "displayAllClauses": false,
+  "checkValidationActive": false,
+  "hasPriceForValidScenario": false,
+  "buyerStudyDoc": {
+    "visible": true,
+    "template": "AUTY_BUYERSTUDY_MODEL_GRP",
+    "format": "PDF"
+  },
+  "nbiDoc": {
+    "visible": true,
+    "template": "AUTY_NBI_MODEL_FRA",
+    "format": "PDF"
+  },
+  "contractDoc": {
+    "visible": true,
+    "template": "AUTY_CONTRACT_MODEL_FRA",
+    "format": "WORD"
+  },
+  "buyerStudyDocType": null,
+  "nbiDocType": null,
+  "contractDocType": null,
+  "filenetUrl": "https://edms-ua.coface.dns/navigator/bookmark.jsp?desktop=DOXDCM&repositoryId=DOXDCM&docid={88D0DE02-07FB-4C20-BF71-598341B54397}",
+  "requestContractEditionTaskId": null,
+  "firstInsPeriodFrom": 1533074400000,
+  "firstInsPeriodTo": 1569794400000,
+  "contactInformationEmpty": false,
+  "accessNBIWordDocument": true,
+  "accessContractWordDocument": true,
+  "docBuyerStudyName": null,
+  "docNbiName": null,
+  "docContractName": null,
+  "docXmlName": null,
+  "docExcelQuestionnaireName": null,
+  "editionCodeLang": null,
+  "buyerStudyEditionLanguages": [
+    {
+      "isoCode": "fr",
+      "label": "Français"
+    },
+    {
+      "isoCode": "en",
+      "label": "English"
+    },
+    {
+      "isoCode": "nl",
+      "label": "Nederlands"
+    },
+    {
+      "isoCode": "es",
+      "label": "Español"
+    },
+    {
+      "isoCode": "de",
+      "label": "Deutsch"
+    }
+  ],
+  "nbiEditionLanguages": [
+    {
+      "isoCode": "fr",
+      "label": "Français"
+    },
+    {
+      "isoCode": "en",
+      "label": "English"
+    },
+    {
+      "isoCode": "nl",
+      "label": "Nederlands"
+    },
+    {
+      "isoCode": "de",
+      "label": "Deutsch"
+    }
+  ],
+  "contractEditionLanguages": [
+    {
+      "isoCode": "fr",
+      "label": "Français"
+    },
+    {
+      "isoCode": "de",
+      "label": "Deutsch"
+    }
+  ],
+  "derogationSummary": {
+    "derogationsAccepted": [
+      {
+        "level": 6,
+        "derogationSubject": null,
+        "derogationField": "mlBuyerEnabled",
+        "value": "true",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 6,
+        "derogationSubject": null,
+        "derogationField": "eclLimit",
+        "value": "19000",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 6,
+        "derogationSubject": null,
+        "derogationField": "infoReportDCLLimit",
+        "value": "12000",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 6,
+        "derogationSubject": null,
+        "derogationField": "blindCoverInsuPercent",
+        "value": "65",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 6,
+        "derogationSubject": null,
+        "derogationField": "firstSalesDCLLimit",
+        "value": "5000",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 6,
+        "derogationSubject": null,
+        "derogationField": "firstSalesInsuPercent",
+        "value": "60",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 6,
+        "derogationSubject": null,
+        "derogationField": "otherCurrenciesAllowed",
+        "value": "true",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 5,
+        "derogationSubject": null,
+        "derogationField": "specialClauses.C_RIS_HOLDC_02_ST",
+        "value": "true",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 5,
+        "derogationSubject": null,
+        "derogationField": "satisfactoryTradingExperienceLimit",
+        "value": "35000",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 5,
+        "derogationSubject": null,
+        "derogationField": "blindCoverDCLLimit",
+        "value": "17000",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 5,
+        "derogationSubject": null,
+        "derogationField": "dclSelfUnderWritingBuyerLimit",
+        "value": "30000",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 4,
+        "derogationSubject": null,
+        "derogationField": "infoReportInsuPercent",
+        "value": "91",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 4,
+        "derogationSubject": null,
+        "derogationField": "notificationThreshold",
+        "value": "150",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 4,
+        "derogationSubject": null,
+        "derogationField": "timeLimitNOA",
+        "value": "31",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      },
+      {
+        "level": 4,
+        "derogationSubject": null,
+        "derogationField": "coverInsuredPercentage",
+        "value": "91",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "19/07/2018"
+      },
+      {
+        "level": 4,
+        "derogationSubject": null,
+        "derogationField": "waitingPeriodAfterNOA",
+        "value": "4",
+        "acceptedBy": "Jean-Christophe CARLIER",
+        "acceptedDate": "18/07/2018"
+      }
+    ],
+    "nbDerogationsAccepted": 16,
+    "pendingsDerogations": [
+      {
+        "level": 6,
+        "nbPendings": 3
+      },
+      {
+        "level": 5,
+        "nbPendings": 2
+      },
+      {
+        "level": 4,
+        "nbPendings": 4
+      },
+      {
+        "level": 3,
+        "nbPendings": 1
+      },
+      {
+        "level": 2,
+        "nbPendings": 3
+      },
+      {
+        "level": 1,
+        "nbPendings": 5
+      },
+      {
+        "level": 0,
+        "nbPendings": 2
+      }
+    ],
+    "nbPendingDerogations": 20
+  },
+  "docNbiEditedBy": null,
+  "docNbiEditedDate": null,
+  "docContractEditedBy": null,
+  "docContractEditedDate": null,
+  "derogationWorkflow": {
+    "currentStep": "STD",
+    "derogationProcesses": [
+      {
+        "index": null,
+        "userInfo": {
+          "accountId": "FR1E1571",
+          "firstName": "Jean-Christophe",
+          "lastName": "CARLIER",
+          "info": "Jean-Christophe CARLIER",
+          "fullName": "Jean-Christophe CARLIER"
+        },
+        "statusI18n": "proposal.derogation.process.creation.label",
+        "processDate": "18/07/2018",
+        "currentLevel": "STD",
+        "nextLevel": null,
+        "comments": null
+      }
+    ],
+    "validateButtonDisable": true,
+    "validationButtonDisableStatus": "PENDING_DEROGATION",
+    "validateButtonDisableStatusI18N": "proposal.derogation.process.level.pending.derogation.tooltip",
+    "pendingLevels": [
+      6
+    ],
+    "validateButton18NValue": "proposal.derogation.process.button.validation.label",
+    "derogationWorkflowFinished": false,
+    "derogationWorkflowStopped": false,
+    "derogationSummary": null
+  },
+  "discussions": [
+    {
+      "id": 2555373,
+      "discussionDate": "18/07/2018 19:27",
+      "discussionBy": "Jean-Christophe CARLIER",
+      "discussionById": "FR1E1571",
+      "comments": "essai",
+      "sendToId": null,
+      "parentDiscussionId": null,
+      "waitForResponse": false,
+      "subDiscussion": null,
+      "urlContext": null
+    },
+    {
+      "id": 2555374,
+      "discussionDate": "18/07/2018 19:27",
+      "discussionBy": "Jean-Christophe CARLIER",
+      "discussionById": "FR1E1571",
+      "comments": "answer",
+      "sendToId": null,
+      "parentDiscussionId": null,
+      "waitForResponse": false,
+      "subDiscussion": null,
+      "urlContext": null
+    }
+  ],
+  "contractCurrency": "EUR",
+  "nbiWordGenerationReason": null,
+  "nbiWordGenerationBy": null,
+  "nbiWordGenerationDate": null,
+  "contractWordGenerationReason": null,
+  "contractWordGenerationBy": null,
+  "contractWordGenerationDate": null,
+  "contractEditionCodeLang": "fr",
+  "signedQuestionnary": false,
+  "backofficeComments": null,
+  "ignoredFields": [
+    "id",
+    "nbContractDownloaded",
+    "nbNBIDownloaded",
+    "nbBUYERSTUDYDownloaded",
+    "docBuyerStudyName",
+    "docNbiName",
+    "docContractName",
+    "docXmlName",
+    "docExcelQuestionnaireName",
+    "nbiWordGenerationBy",
+    "contractWordGenerationBy",
+    "nbiWordGenerationDate",
+    "contractWordGenerationDate"
+  ]
+}

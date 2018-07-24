@@ -1,0 +1,73 @@
+
+<div class="form-group col-sm-12">
+	<table
+		class="table table-cofanet table-bordered table-striped table-responsive fixed-layout">
+		<colgroup>
+			<col span="1" class="col-sm-1">
+			<col span="1" class="col-sm-2">
+			<col span="1" class="col-sm-2">
+			<col span="1" class="col-sm-2">
+			<col span="1" class="col-sm-5">
+		</colgroup>
+		<thead>
+			<tr>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="proposal.derogation.process.column.level.label"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="proposal.derogation.process.column.action.label"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong
+							translate="proposal.derogation.process.column.user.label"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong
+							translate="proposal.derogation.process.column.date.label"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong
+							translate="proposal.derogation.process.column.comments.label"></strong>
+					</p></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr	ng-repeat="derogationProcess in proposal.derogationWorkflow.derogationProcesses">				
+				<td ng-bind="{{derogationProcess.currentLevel==='STD'}} ? '{{derogationProcess.currentLevel}}' : 'L'+ '{{derogationProcess.currentLevel}}'"></td>
+				<td translate="{{derogationProcess.statusI18n}}"></td>
+				<td ng-bind="derogationProcess.userInfo.info"></td>
+				<td ng-bind="derogationProcess.processDate"></td>
+				<td ng-bind="derogationProcess.comments"></td>
+				
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+
+<div class="form-group">
+
+	<span class="control-label col-sm-3">
+		<strong	translate="proposal.derogation.process.current.step.label"></strong>
+		<strong ng-bind="proposal.derogationWorkflow.currentStep"></strong>
+	</span>
+	
+	<div class="col-sm-9">
+		<div>
+			<a class="btn btn-primary"			
+				ng-disabled="proposal.derogationWorkflow.validateButtonDisable || proposal.derogationWorkflow.derogationWorkflowFinished || proposal.derogationWorkflow.derogationWorkflowStopped"
+				ng-click="requestValidationProcess()" id="requestValidationProcess-btn"
+				translate="{{proposal.derogationWorkflow.validateButton18NValue}}"> </a>
+				<i ng-if="proposal.derogationWorkflow.validateButtonDisable" popover="{{proposal.derogationWorkflow.validateButtonDisableStatusI18N | translate}}"
+				popover-trigger="mouseenter" class="fa fa-info-circle fa-lg"
+				></i>
+				
+			<a class="btn btn-primary"			
+				ng-disabled="proposal.derogationWorkflow.derogationWorkflowFinished || proposal.derogationWorkflow.derogationWorkflowStopped"
+				ng-click="requestStopProcess()" id="requestStopProcess-btn"
+				translate="proposal.derogation.process.stop.button"> </a>
+		</div>
+	</div>
+
+</div>

@@ -1,0 +1,48 @@
+{
+  "code": 0,
+  "messages": null,
+  "errors": null,
+  "data": {
+    "currentStep": "L2",
+    "derogationProcesses": [
+      {
+        "index": null,
+        "userInfo": {
+          "accountId": "X1281601",
+          "firstName": "Laurent",
+          "lastName": "MIGNOT",
+          "info": "Laurent MIGNOT",
+          "fullName": "Laurent MIGNOT"
+        },
+        "statusI18n": "proposal.derogation.process.creation.label",
+        "processDate": "26/06/2018",
+        "currentLevel": "STD",
+        "nextLevel": null,
+        "comments": null
+      },
+      {
+        "index": null,
+        "userInfo": {
+          "accountId": "X1220701",
+          "firstName": "Jean-Carlo",
+          "lastName": "SINI",
+          "info": "Jean-Carlo SINI",
+          "fullName": "Jean-Carlo SINI"
+        },
+        "statusI18n": "proposal.derogation.process.finished.label",
+        "processDate": "27/06/2018",
+        "currentLevel": "2",
+        "nextLevel": null,
+        "comments": "test"
+      }
+    ],
+    "validateButtonDisable": false,
+    "validationButtonDisableStatus": null,
+    "validateButtonDisableStatusI18N": null,
+    "pendingLevels": null,
+    "validateButton18NValue": "proposal.derogation.process.button.validation.finished.label",
+    "derogationWorkflowFinished": true,
+    "derogationWorkflowStopped": false,
+    "derogationSummary": null
+  }
+}

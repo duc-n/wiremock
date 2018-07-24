@@ -1,0 +1,16 @@
+{
+  "supervisor": true,
+  "newBusiness": false,
+  "transform": false,
+  "renewal": false,
+  "checkMigration": true,
+  "clo": false,
+  "isoCountryCode": "BEL",
+  "companyName": "EUROGLAS",
+  "contractNumber": "522532",
+  "contractId": "CONT-01-244702527",
+  "salesFunnelTechnicalId": null,
+  "entityOrganizationId": "01-ORGA-ORGCT",
+  "transferToGCC": false,
+  "contractCancelled": false
+}

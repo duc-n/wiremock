@@ -1,0 +1,92 @@
+{
+  "smartCase": false,
+  "smartCofalinkStatus": false,
+  "smartServiceResult": null,
+  "fileTransferredToGCC": false,
+  "transfertToGCCXmlAvailable": false,
+  "newBusiness": false,
+  "renewal": false,
+  "transform": false,
+  "checkMigration": false,
+  "clo": true,
+  "salesDiscussionsCount": 0,
+  "cancellationProjectReason": null,
+  "cancellationProjectDate": null,
+  "projectCancelledByFullName": null,
+  "creationDate": 1518687034881,
+  "createdByFullName": null,
+  "contractStatus": "PROJECT",
+  "progressStatus": "INIT",
+  "contractCancelled": false,
+  "id": 1894117,
+  "contractId": "CONT-01-214237269",
+  "contractNumber": "518776",
+  "oldContractNumber": null,
+  "portfolioNumber": "   518776",
+  "prospectVisible": {
+    
+  },
+  "allowCreateRequest": false,
+  "buyerStudyResult": {
+    "portfolioLines": [
+      
+    ],
+    "easyNumbers": [
+      
+    ],
+    "portfolioTotals": {
+      "totalRequestAmount": 0,
+      "totalRequestAnsweredAmount": 0,
+      "totalAcceptedAmount": 0,
+      "requestAcceptedRate": null,
+      "requestAcceptedAnsweredRate": null,
+      "nbRequests": 0,
+      "maxCLRequest": null,
+      "nbDecisions": 0,
+      "dras": null,
+      "requestedTotalByDra": null,
+      "acceptedTotalByDra": null,
+      "totalFullAcceptedAmount": null,
+      "totalPendingAmount": null,
+      "totalPartialAcceptedAmount": null,
+      "totalRefusalAmount": null,
+      "totalFullAcceptedPercentage": 0.0,
+      "totalPendingPercentage": 0.0,
+      "totalPartialAcceptedPercentage": 0.0,
+      "totalRefusalPercentage": 0.0
+    }
+  },
+  "contractCurrency": "EUR",
+  "pricingObsolete": null,
+  "scenarioPricingObsolete": {
+    "1894057": false
+  },
+  "hasQuoted": {
+    "1894057": true
+  },
+  "currentUsedCapacity": null,
+  "estimatedMaxCapacity": null,
+  "companyName": "SPAAS KAARSEN",
+  "easyNumber": "00000289035650",
+  "buyerStudyDoc": {
+    "visible": true,
+    "template": "AUTY_BUYERSTUDY_MODEL_GRP",
+    "format": "PDF"
+  },
+  "nbBUYERSTUDYDownloaded": 2,
+  "projectContract": true,
+  "buyerStudyEditionLanguages": [
+    {
+      "isoCode": "fr",
+      "label": "Français"
+    },
+    {
+      "isoCode": "en",
+      "label": "English"
+    },
+    {
+      "isoCode": "nl",
+      "label": "Nederlands"
+    }
+  ]
+}

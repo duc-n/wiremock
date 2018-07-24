@@ -1,0 +1,19 @@
+{
+  "code": 0,
+  "messages": null,
+  "errors": null,
+  "data": [
+    {
+      "id": 3922247,
+      "discussionDate": "27/06/2018 14:54",
+      "discussionBy": "Jean-Carlo SINI",
+      "discussionById": "X1220701",
+      "comments": "test",
+      "sendToId": "X1281601",
+      "parentDiscussionId": null,
+      "waitForResponse": true,
+      "subDiscussion": null,
+      "urlContext": null
+    }
+  ]
+}

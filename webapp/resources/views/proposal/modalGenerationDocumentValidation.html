@@ -1,0 +1,107 @@
+<spinner class="aty-data-loading" name="generationDocumentSpinner">
+<div class="messaging">
+	<div class="la-ball-circus la-2x">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<h1 translate="spinner.data.loading.title"></h1>
+</div>
+</spinner>
+<form name="generationDocumentValidationForm"
+	class="form form-horizontal form-custom">
+	<div class="modal-header">
+		<h3 class="modal-title"
+			translate="document.generation.validation.title"></h3>
+		<button type="button" ng-click="close()" class="close"
+			data-dismiss="modal" aria-hidden="true">
+			<i class="fa fa-close"></i>
+		</button>
+	</div>
+	<div class="modal-body">
+		<fieldset>
+			<div class="form-group" ng-if="documentType === 'CONTRACT'">
+				<label class="col-sm-4 control-label"><strong
+					translate="policy.duration.1st.insurance.period.label"></strong></label>
+
+				<div class="col-sm-4">
+					<div class="input-group">
+						<input readonly required class="form-control" type="text"
+							ng-model="proposal.firstInsPeriodFrom" id="firstInsPeriodFrom"
+							ng-change="adjustFirstInsPeriodTo()"
+							datepicker-popup="{{format}}"
+							is-open="statusDate.firstInsPeriodFromOpened"
+							datepicker-options="dateOptions" close-text="Close" /> <span
+							class="input-group-btn"><button type="button"
+								class="btn btn-default" ng-click="openFirstInsPeriodFrom()">
+								<i class="fa fa-calendar"></i>
+							</button></span>
+					</div>
+				</div>
+
+				<div class="col-sm-4">
+					<div class="input-group">
+						<input readonly required class="form-control" type="text"
+							ng-model="proposal.firstInsPeriodTo" id="firstInsPeriodTo"
+							datepicker-popup="{{format}}"
+							is-open="statusDate.firstInsPeriodToOpened"
+							min-date="firstInsPeriodFrom" datepicker-options="dateOptions"
+							close-text="Close" /> <span class="input-group-btn"><button
+								type="button" class="btn btn-default"
+								ng-click="openFirstInsPeriodTo()">
+								<i class="fa fa-calendar"></i>
+							</button></span>
+					</div>
+				</div>
+			</div>
+
+			<div class="form-group" ng-if="availableLanguages.length > 1">
+				<label class="col-sm-4 control-label"><strong
+					translate="proposal.edition.lang.label"></strong></label>
+
+				<div class="col-sm-4">
+					<select class="form-control" ng-model="editionOptions.lang">
+						<option ng-selected="language.isoCode == editionOptions.lang"
+							ng-repeat="language in availableLanguages"
+							value="{{language.isoCode}}">{{language.label}}</option>
+					</select>
+				</div>
+			</div>
+		</fieldset>
+		
+		<!-- Defect #760 : Audit trail Manual Editions in Word-->
+		<fieldset ng-if="::isWordGenerationRequest()">
+			
+			<div translate="proposal.request.validation.word.generation.reason.description"></div>
+			
+			<div class="form-group">
+				<label class="col-sm-2 control-label"><strong
+					translate="proposal.request.validation.word.generation.reason.label"></strong></label>
+
+				<div class="col-sm-10">
+					<div class="input-group">
+						<textarea class="form-control" id="reason"
+							ng-if="documentType === 'CONTRACT'" ng-model="proposal.contractWordGenerationReason" name="reason"
+							aty-maxlength="1000" ng-maxlength="1000" required />
+							
+						<textarea class="form-control" id="reason"
+							ng-if="documentType === 'NBI'" ng-model="proposal.nbiWordGenerationReason" name="reason"
+							aty-maxlength="1000" ng-maxlength="1000" required />	
+					</div>
+				</div>
+			</div>
+			
+		</fieldset>
+		<!-- END Defect #760 : Audit trail Manual Editions in Word-->
+	</div>
+
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button"
+			ng-disabled="!generationDocumentValidationForm.$valid || generationInProgess"
+			ng-click="generate()" translate="period.validation.generate.button"></button>
+		<button class="btn btn-default" type="button" ng-click="close()"
+			translate="period.validation.cancel.button"></button>
+	</div>
+</form>

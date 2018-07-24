@@ -1,0 +1,294 @@
+<!-- Declaration Basis... -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <!-- Declaration Basis -->
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="declarationBasis"><strong
+        translate="policy.activities.declaration.basis.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.declarationBasisFromBCC && policy.declarationBasis == 'TO'}">
+          <input disabled type="radio" id="declarationBasis"
+                 ng-model="policy.declarationBasis" value="TO"/>
+          <span translate="policy.activities.declaration.basis.turnover.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.declarationBasisFromBCC && policy.declarationBasis == 'OS'}">
+          <input disabled type="radio" ng-model="policy.declarationBasis" value="OS"/>
+          <span translate="policy.activities.declaration.basis.outstanding.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.declarationBasisFromBCC && policy.declarationBasis == 'CL'}">
+          <input disabled type="radio" ng-model="policy.declarationBasis" value="CL"/>
+          <span translate="policy.activities.declaration.basis.cl.label"></span>
+        </label>
+      </div>
+    </div>
+    <!---->
+    <!-- Declaration Period -->
+    <div class="form-group">
+      <label class="col-sm-4 control-label"><strong
+        translate="policy.activities.declaration.period.label"></strong></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.declarationPeriodFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.declarationPeriod | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="input-group">
+          <p class="form-control-static" translate="policy.activities.declaration.period.description.label"></p>
+        </div>
+      </div>
+
+    </div>
+
+    <!---->
+    <!-- Reporting Period -->
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="reportingPeriod"><strong
+        translate="policy.activities.reporting.period.label"></strong></label>
+
+      <div class="col-sm-4">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.reportingPeriodFromBCC && policy.reportingPeriod == 'MO'}">
+          <input disabled type="radio" id="reportingPeriod"
+                 ng-model="policy.reportingPeriod" value="MO"/>
+          <span translate="policy.activities.reporting.period.monthly.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.reportingPeriodFromBCC && policy.reportingPeriod == 'QU'}">
+          <input disabled type="radio" ng-model="policy.reportingPeriod" value="QU"/>
+          <span translate="policy.activities.reporting.period.quaterly.label"/>
+        </label>
+      </div>
+    </div>
+    <!---->
+  </div>
+</div>
+<!---->
+
+<!-- Bonus... -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <!-- Labels -->
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="bonusOption"><strong
+        translate="policy.activities.bonus.option.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.bonusOptionFromBCC} && policy.bonusOption == 'NONE'">
+          <input disabled type="radio" id="bonusOption"
+                 ng-model="policy.bonusOption" value="NONE"/>
+          <span translate="none.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.bonusOptionFromBCC} && policy.bonusOption == 'BONUS'">
+          <input disabled type="radio" ng-model="policy.bonusOption" value="BONUS"/>
+          <span translate="policy.activities.bonus.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.bonusOptionFromBCC} && policy.bonusOption == 'NCB'">
+          <input disabled type="radio" ng-model="policy.bonusOption" value="NCB"/>
+          <span translate="policy.activities.no.claim.bonus.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.bonusOptionFromBCC} && policy.bonusOption == 'PS'">
+          <input disabled type="radio" ng-model="policy.bonusOption" value="PS"/>
+          <span translate="policy.activities.profit.sharing.label"></span>
+        </label>
+      </div>
+    </div>
+    <!-- reduction pourcentage -->
+    <div class="row form-group" ng-show="policy.bonusOption == 'NCB'">
+      	<label class="col-sm-3 col-sm-offset-4 control-label"
+             translate="policy.activities.reduc.percentage.label">
+        </label>
+      	<div class="col-sm-1" ng-class="{'from-bcc': policy.reducPercentFromBCC}">
+        	<div class="input-group">
+          		<label class="form-control" ng-bind="policy.reducPercent | atyNumber"></label>
+        	</div>
+      	</div>
+      	<div class="col-sm-1">
+        	<div class="input-group">
+          		<percent/>
+      		</div>
+    	</div>
+    </div>
+
+	<!-- START defect #228 : Policy-Activities Profit Share: specific parameters -->
+    <div class="row form-group" ng-show="policy.bonusOption == 'PS'">
+      	<label class="col-sm-3 col-sm-offset-4 control-label"
+             translate="policy.activities.premium.cost.percentage.label">
+        </label>
+      	<div class="col-sm-1" ng-class="{'from-bcc': policy.premiumCostPercentFromBCC}">
+        	<div class="input-group">
+          		<label class="form-control" ng-bind="policy.premiumCostPercent | atyNumber"></label>
+        	</div>
+      	</div>
+      	<div class="col-sm-1">
+        	<div class="input-group">
+          		<percent/>
+      		</div>
+    	</div>
+    </div>
+
+    <div class="row form-group" ng-show="policy.bonusOption == 'PS'">
+      	<label class="col-sm-3 col-sm-offset-4 control-label"
+             translate="policy.activities.profit.share.percentage.label">
+        </label>
+      	<div class="col-sm-1" ng-class="{'from-bcc': policy.profitSharePercentFromBCC}">
+        	<div class="input-group">
+          		<label class="form-control" ng-bind="policy.profitSharePercent | atyNumber"></label>
+        	</div>
+      	</div>
+      	<div class="col-sm-1">
+        	<div class="input-group">
+          		<percent/>
+      		</div>
+    	</div>
+    </div>
+    
+    <div class="row form-group" ng-show="policy.bonusOption == 'PS'">
+      	<label class="col-sm-3 col-sm-offset-4 control-label"
+             translate="policy.activities.profitshare.period.label">
+        </label>
+        
+        <div class="col-sm-3" ng-class="{'from-bcc': policy.profitSharePeriodFromBCC}">
+        	<div class="input-group">
+          		<label class="form-control" translate="policy.activities.profitshare.period.year_{{::policy.profitSharePeriod}}" ></label>
+        	</div>
+      	</div>
+    </div>
+    
+	<!-- FIN defect #228 : Policy-Activities Profit Share: specific parameters -->
+
+    <!-- Table -->
+    <div class="col-sm-6 col-sm-offset-4" ng-show="policy.bonusOption == 'BONUS'">
+      <table class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+        <colgroup>
+          <col span="1" class="col-sm-3">
+          <col span="1" class="col-sm-7">
+        </colgroup>
+        <thead>
+        <tr>
+          <th class="text-center"><p class="form-control-static"><strong
+            translate="policy.activities.loss.ratio.colum.title"></strong></p></th>
+          <th class="text-center"><p class="form-control-static"><strong
+            translate="policy.activities.bonus.second.colum.title"></strong></p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><label class="control-label" translate="policy.activities.0.x.label" translate-values="{p0:policy.bonus_0_X_Limit}"></label></td>
+          <td ng-class="{'from-bcc': policy.bonus_0_XFromBCC}">
+            <div class="col-sm-offset-4 col-sm-3">
+              <div class="input-group ">
+                <label class="form-control text-center" ng-bind="policy.bonus_0_X | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><label class="control-label" translate="policy.activities.x.y.label" translate-values="{p0:policy.bonus_0_X_Limit,p1:policy.bonus_X_Y_Limit}"></label></td>
+          <td ng-class="{'from-bcc': policy.bonus_X_YFromBCC}">
+            <div class="col-sm-offset-4 col-sm-3">
+              <div class="input-group ">
+                <label class="form-control text-center" ng-bind="policy.bonus_X_Y | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><label class="control-label" translate="policy.activities.y.z.label" translate-values="{p0:policy.bonus_X_Y_Limit,p1:policy.bonus_Y_Z_Limit}"></label></td>
+          <td ng-class="{'from-bcc': policy.bonus_Y_ZFromBCC}">
+            <div class="col-sm-offset-4 col-sm-3">
+              <div class="input-group ">
+                <label class="form-control text-center" ng-bind="policy.bonus_Y_Z | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!---->
+
+<!-- Malus... -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row form-group">
+      <label class="col-sm-4 control-label" for="malusOption"><strong
+        translate="policy.activities.malus.option.label"></strong></label>
+      <!-- Malus-->
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.malusOptionFromBCC && !policy.malusOption}">
+          <input disabled type="radio" id="malusOption"
+                 ng-model="policy.malusOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.malusOptionFromBCC && policy.malusOption}">
+          <input disabled type="radio" ng-model="policy.malusOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+    <!-- Table -->
+    <div class="col-sm-6 col-sm-offset-4" ng-show="policy.malusOption">
+      <table class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+        <colgroup>
+          <col span="1" class="col-sm-3">
+          <col span="1" class="col-sm-7">
+        </colgroup>
+        <thead>
+        <tr>
+          <th class="text-center"><p class="form-control-static"><strong
+            translate="policy.activities.loss.ratio.colum.title"></strong></p></th>
+          <th class="text-center"><p class="form-control-static"><strong
+            translate="policy.activities.malus.second.colum.title"></strong></p></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td><label class="control-label" translate="policy.activities.0.x.label" translate-values="{p0:policy.malus_0_X_Limit}"></label></td>
+          <td ng-class="{'from-bcc': policy.malus_0_XFromBCC}">
+            <div class="col-sm-offset-4 col-sm-3">
+              <div class="input-group ">
+                <label class="form-control text-center" ng-bind="policy.malus_0_X | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><label class="control-label" translate="policy.activities.x.y.label" translate-values="{p0:policy.malus_0_X_Limit,p1:policy.malus_X_Y_Limit}"></label></td>
+          <td ng-class="{'from-bcc': policy.malus_X_YFromBCC}">
+            <div class="col-sm-offset-4 col-sm-3">
+              <div class="input-group ">
+                <label class="form-control text-center" ng-bind="policy.malus_X_Y | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+          </td>
+        </tr>
+        <tr>
+          <td><label class="control-label" translate="policy.activities.y.z.label" translate-values="{p0:policy.malus_X_Y_Limit,p1:policy.malus_Y_Z_Limit}"></label></td>
+          <td ng-class="{'from-bcc': policy.malus_Y_ZFromBCC}">
+            <div class="col-sm-offset-4 col-sm-3">
+              <div class="input-group ">
+                <label class="form-control text-center" ng-bind="policy.malus_Y_Z | atyNumber"></label>
+              </div>
+            </div>
+            <div class="col-sm-1">
+            </div>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!---->

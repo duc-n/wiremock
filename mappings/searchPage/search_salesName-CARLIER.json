@@ -1,0 +1,25 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/autonomyView/rest/cases/search",
+    "bodyPatterns": [
+      {
+        "contains": "caseId=&salesName=CARLIER&startDate=&endDate=&companyName=&derogation=&status=&offset=0"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "searchPage/search_salesName-CARLIER.json",
+    "headers": {
+      "Content-Type": "application/json",
+			"Access-Control-Allow-Origin" : "http://127.0.0.1:8080",
+			"Access-Control-Allow-Methods" : "POST, PUT, GET, OPTIONS",
+			"Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding",
+			"X-Content-Type-Options" : "nosniff",
+			"x-frame-options" : "DENY",
+			"Access-Control-Allow-Credentials" : "true",
+			"x-xss-protection" : "1; mode=block"
+    }
+  }
+}

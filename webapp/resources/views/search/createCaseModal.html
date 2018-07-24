@@ -1,0 +1,41 @@
+<form name="createCaseForm" class="form form-horizontal form-custom">
+  <div class="modal-header">
+    <h3 class="modal-title" translate="create.case.modal.title"></h3>
+    <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><i
+      class="fa fa-close"></i></button>
+  </div>
+  <div class="modal-body">
+    <div class="form-group">
+      <label class="col-sm-12 control-label"><strong
+        translate="{{message}}"></strong></label>
+    </div>
+    
+    <fieldset ng-if="cases" class="max-height-400 scrollable-y">
+      <!-- existing cases -->
+      <div class="form-group" ng-include="'views/search/existingCasesInfo.html'" bs-modifiable="true"></div>
+    </fieldset>
+
+    <div class="form-group" ng-if="hasSupervisionRight">
+      <label class="col-sm-4 control-label" for="contractTest"><strong
+        translate="create.case.contract.type.test.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline">
+          <input type="radio" id="contractTest"
+                 ng-model="param.contractTest" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input type="radio" ng-model="param.contractTest" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-disabled="!createCaseForm.$valid"
+            ng-click="createCase(createCaseForm)" translate="confirm.popup.ok.btn"></button>
+    <button class="btn btn-default" type="button" ng-click="close()"
+            translate="confirm.popup.cancel.btn"></button>
+  </div>
+</form>

@@ -1,0 +1,389 @@
+<spinner class="aty-data-loading" name="contractGenerationDocumentSpinner">
+<div class="messaging">
+	<div class="la-ball-circus la-2x">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<h1 translate="spinner.data.loading.title"></h1>
+</div>
+</spinner>
+
+
+<div class="form-group col-sm-12">
+	<span class="control-label" translate="finalization.description.text"></span>
+</div>
+
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong translate="questionnaire.additional.information.partner"></strong></label>
+
+  <div class="col-sm-8">
+    <p class="form-control-static" ng-bind="finalization.partner|translate"></p>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong translate="questionnaire.additional.information.partner.broker.name"></strong></label>
+
+  <div class="col-sm-8">
+    <p class="form-control-static" ng-bind="finalization.partnerName"></p>
+  </div>
+</div>
+
+<div class="form-group">	
+	<label class="col-sm-4 control-label" for="signatoryContactEnable"><strong
+		translate="questionnaire.company.signatory.contact.option.label"></strong></label>		
+	
+	<div class="col-sm-5">
+		<label class="radio-inline">
+			<input type="radio" ng-disabled="finalization.isReadOnly" id="signatoryContactEnable" ng-model="finalization.signatoryContactEnable"
+			ng-value="true"/> 
+			<span translate="yes.label"></span>
+		</label>
+		
+		 <label class="radio-inline"> 
+		 	<input type="radio" ng-disabled="finalization.isReadOnly"
+			ng-model="finalization.signatoryContactEnable" ng-value="false"/> <span
+			translate="no.label"></span>
+		</label>
+	</div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong translate="questionnaire.company.civility.label"></strong></label>
+
+  <div ng-class="{'hidden': finalization.signatoryContactEnable}" class="col-sm-2">
+    <select ng-disabled="finalization.isReadOnly" ng-required="!finalization.signatoryContactEnable" ng-model="finalization.civility" class="form-control"
+            ng-options="key as value for (key, value) in civilities" ></select>
+  </div>
+  
+  <div ng-class="{'hidden': !finalization.signatoryContactEnable}" class="col-sm-2">
+    <select ng-disabled="finalization.isReadOnly" ng-required="finalization.signatoryContactEnable" ng-model="finalization.signatoryCivility" class="form-control"
+            ng-options="key as value for (key, value) in civilities" ></select>
+  </div>
+  
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="lastName"><strong
+    translate="questionnaire.company.lastname.label"></strong></label>
+
+  <div ng-class="{'hidden': finalization.signatoryContactEnable}" class="col-sm-4">
+    <input ng-disabled="finalization.isReadOnly" ng-required="!finalization.signatoryContactEnable" type="text" class="form-control" ng-model="finalization.lastName" id="lastName" name="lastName"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+  </div>
+  
+  <div ng-class="{'hidden': !finalization.signatoryContactEnable}" class="col-sm-4">
+    <input ng-disabled="finalization.isReadOnly" ng-required="finalization.signatoryContactEnable" type="text" class="form-control" ng-model="finalization.signatoryLastName" id="signatoryLastName" name="signatoryLastName"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="firstName"><strong
+    translate="questionnaire.company.firstname.label"></strong></label>
+
+  <div ng-class="{'hidden': finalization.signatoryContactEnable}" class="col-sm-4">
+    <input ng-disabled="finalization.isReadOnly" type="text" class="form-control" ng-model="finalization.firstName" id="firstName" name="firstName"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+
+  </div>
+  <div ng-class="{'hidden': !finalization.signatoryContactEnable}" class="col-sm-4">
+    <input ng-disabled="finalization.isReadOnly" type="text" class="form-control" ng-model="finalization.signatoryFirstName" id="signatoryFirstName" name="signatoryFirstName"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="companyJobTitle"><strong
+    translate="questionnaire.company.job.label"></strong></label>
+
+  <div ng-class="{'hidden': finalization.signatoryContactEnable}" class="col-sm-4">
+    <input ng-disabled="finalization.isReadOnly" ng-required="!finalization.signatoryContactEnable" class="form-control" ng-model="finalization.companyJobTitle" id="companyJobTitle" name="companyJobTitle"
+           aty-maxlength="255" ng-maxlength="255"
+           />
+  </div>
+  <div ng-class="{'hidden': !finalization.signatoryContactEnable}" class="col-sm-4">
+    <input ng-disabled="finalization.isReadOnly" ng-required="finalization.signatoryContactEnable" class="form-control" ng-model="finalization.signatoryJobTitle" id="signatoryJobTitle" name="signatoryJobTitle"
+           aty-maxlength="255" ng-maxlength="255"
+           />
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="companyPhone"><strong
+    translate="questionnaire.company.phone.label"></strong></label>
+
+  <div ng-class="{'hidden': finalization.signatoryContactEnable}" class="col-sm-3">
+    <input ng-disabled="finalization.isReadOnly" type="tel" class="form-control" ng-model="finalization.companyPhone" id="companyPhone" name="companyPhone"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+  </div>
+  <div ng-class="{'hidden': !finalization.signatoryContactEnable}" class="col-sm-3">
+    <input ng-disabled="finalization.isReadOnly" type="tel" class="form-control" ng-model="finalization.signatoryPhone" id="signatoryPhone" name="signatoryPhone"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="companyMobilePhone"><strong
+    translate="questionnaire.company.contact.mobile.phone.label"></strong></label>
+
+  <div ng-class="{'hidden': finalization.signatoryContactEnable}" class="col-sm-3">
+    <input ng-disabled="finalization.isReadOnly" class="form-control" ng-model="finalization.companyMobilePhone" id="companyMobilePhone" name="companyMobilePhone"
+           ng-required="finalization.agreementElectronicSignature && !finalization.signatoryContactEnable" aty-maxlength="50" ng-maxlength="50"/>
+  </div>
+  
+    <div ng-class="{'hidden': !finalization.signatoryContactEnable}" class="col-sm-3">
+    <input ng-disabled="finalization.isReadOnly" class="form-control" ng-model="finalization.signatoryMobilePhone" ng-required="finalization.agreementElectronicSignature && finalization.signatoryContactEnable" id="signatoryMobilePhone" name="signatoryMobilePhone"
+           aty-maxlength="50" ng-maxlength="50"/>
+  </div>
+
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="companyEmail"><strong
+    translate="questionnaire.company.email.label"></strong></label>
+
+  <div ng-class="{'hidden': finalization.signatoryContactEnable}" class="col-sm-4">
+    <input ng-disabled="finalization.isReadOnly" type="email" class="form-control" ng-model="finalization.companyEmail" id="companyEmail" name="companyEmail"
+           aty-maxlength="100" ng-maxlength="100"
+           ng-pattern='/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'
+           popover="{{'form.invalid.email'|translate : '{p0: 100}'}}"
+           ng-required="finalization.agreementElectronicSignature && !finalization.signatoryContactEnable"
+           popover-enable="finalizationForm.finalizationContractGenerationSubForm.companyEmail.$error.pattern || finalizationForm.finalizationContractGenerationSubForm.companyEmail.$error.maxlength"
+           popover-trigger="focus"
+           />
+  </div>         
+  <div ng-class="{'hidden': !finalization.signatoryContactEnable}" class="col-sm-4">
+    <input ng-disabled="finalization.isReadOnly" type="email" class="form-control" ng-model="finalization.signatoryEmail" ng-required="finalization.agreementElectronicSignature && finalization.signatoryContactEnable" id="signatoryEmail" name="signatoryEmail"
+           aty-maxlength="100" ng-maxlength="100"
+           ng-pattern='/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'
+           popover="{{'form.invalid.email'|translate : '{p0: 100}'}}"
+           popover-enable="finalizationForm.companySubForm.signatoryEmail.$error.pattern || finalizationForm.finalizationContractGenerationSubForm.signatoryEmail.$error.maxlength"
+           popover-trigger="focus"
+           />
+  </div>
+</div>
+
+<div class="form-group">	
+	<label class="col-sm-4 control-label" for="contractSigneElectronic"><strong
+		translate="questionnaire.company.agreement.electronic.signature.label"></strong></label>		
+	
+	<div class="col-sm-3">
+		<label class="radio-inline">
+			<input ng-disabled="finalization.isReadOnly" type="radio" id="contractSigneElectronic" ng-model="finalization.agreementElectronicSignature"
+			ng-value="true"/> 
+			<span translate="yes.label"></span>
+		</label>
+		
+		 <label class="radio-inline"> 
+		 	<input ng-disabled="finalization.isReadOnly" type="radio"
+			ng-model="finalization.agreementElectronicSignature" ng-value="false"/> 
+			<span translate="no.label"></span>
+		</label>
+	</div>
+</div>
+<!-- Signed questionnaire available -->
+<div class="form-group">	
+	<label class="col-sm-4 control-label" for="signedQuestionnary"><strong
+		translate="finalization.contract.have.signed.questionnary.label"></strong></label>		
+	
+	<div class="col-sm-3">
+		<label class="radio-inline">
+			<input ng-disabled="finalization.isReadOnly" type="radio" id="contractSigneElectronic" ng-model="finalization.proposal.signedQuestionnary"
+			ng-value="true"/> 
+			<span translate="yes.label"></span>
+		</label>
+		
+		 <label class="radio-inline"> 
+		 	<input ng-disabled="finalization.isReadOnly" type="radio"
+			ng-model="finalization.proposal.signedQuestionnary" ng-value="false"/> 
+			<span translate="no.label"></span>
+		</label>
+	</div>
+</div>
+
+<!-- Additional Comments BackOffice -->
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="backofficeComments"><strong
+    translate="finalization.contract.additional.comments"></strong>
+    <i
+      popover="{{'finalization.contract.additional.comments.tooltip'|translate}}"
+      popover-trigger="mouseenter"
+      class="fa fa-info-circle"></i>
+  </label>
+
+  <div class="col-sm-8">
+    <textarea ng-disabled="finalization.isReadOnly" class="form-control" id="backofficeComments" ng-model="finalization.proposal.backofficeComments" name="backofficeComments"
+              aty-maxlength="1000" ng-maxlength="1000"/>
+  </div>
+  
+</div>
+
+<!-- Language Edition -->
+<div class="form-group">
+	<label class="col-sm-4 control-label"><strong
+		translate="policy.duration.1st.insurance.period.label"></strong></label>
+
+	<div class="col-sm-3">
+		<div class="input-group">
+			<input ng-disabled="finalization.isReadOnly" readonly required class="form-control" type="text"
+				ng-model="finalization.proposal.firstInsPeriodFrom" id="firstInsPeriodFrom"
+				ng-change="adjustFirstInsPeriodTo()"
+				datepicker-popup="{{format}}"
+				is-open="statusDate.firstInsPeriodFromOpened"
+				datepicker-options="dateOptions" close-text="Close" /> <span
+				class="input-group-btn"><button type="button" ng-disabled="finalization.isReadOnly"
+					class="btn btn-default" ng-click="openFirstInsPeriodFrom()">
+					<i class="fa fa-calendar"></i>
+				</button></span>
+		</div>
+	</div>
+
+	<div class="col-sm-3">
+		<div class="input-group">
+			<input ng-disabled="finalization.isReadOnly" readonly required class="form-control" type="text"
+				ng-model="finalization.proposal.firstInsPeriodTo" id="firstInsPeriodTo"
+				datepicker-popup="{{format}}"
+				is-open="statusDate.firstInsPeriodToOpened"
+				min-date="firstInsPeriodFrom" datepicker-options="dateOptions"
+				close-text="Close" /> <span class="input-group-btn"><button
+					type="button" class="btn btn-default" ng-disabled="finalization.isReadOnly"
+					ng-click="openFirstInsPeriodTo()">
+					<i class="fa fa-calendar"></i>
+				</button></span>
+		</div>
+	</div>
+</div>
+
+<div class="form-group" ng-if="availableLanguages.length > 1">
+	<label class="col-sm-4 control-label"><strong
+		translate="proposal.edition.lang.label"></strong></label>
+
+	<div class="col-sm-3">
+		<select class="form-control" ng-model="finalization.proposal.contractEditionCodeLang">
+			<option ng-repeat="language in availableLanguages"	value="{{language.isoCode}}">{{language.label}}</option>
+		</select>
+	</div>
+</div>
+
+
+<div ng-if="isWordGenerationRequest">
+			
+	<div translate="proposal.request.validation.word.generation.reason.description"></div>
+	
+	<div class="form-group">
+		<label class="col-sm-4 control-label"><strong
+			translate="proposal.request.validation.word.generation.reason.label"></strong></label>
+
+		<div class="col-sm-8">
+			<div class="input-group">
+				<textarea class="form-control" id="reason" ng-model="finalization.proposal.contractWordGenerationReason" name="reason"
+					aty-maxlength="1000" ng-maxlength="1000" required />
+				
+			</div>
+		</div>
+	</div>
+</div>
+
+<!-- GENERATE CONTRACT BUTTON -->
+<div class="form-group" ng-if="finalization.proposal.contractDoc.visible">
+	<div class="col-sm-4" ng-if="!user.hasContractEditionRight">
+		<a class="btn btn-primary"
+			ng-disabled="finalization.proposal.requestContractEditionTaskId != null ||
+			 isGenerateContractDisable() || (isWordGenerationRequest && finalization.proposal.contractWordGenerationReason.length > 0)
+			 || !ScenarioDataService.getCurrentScenario().favorite"
+			ng-click="requestContractEditionProcess()"
+			translate="proposal.request.contract.edition.button"> 
+		</a> 
+		<i	popover="{{contractButtonDisabledTooltip.message |translate}}"
+			popover-trigger="mouseenter"
+			ng-class="{'fa fa-info-circle fa-lg': isGenerateContractDisable()}">
+		</i>
+		<i
+			popover="{{'finalization.transfer.gcc.button.disabled.not.favorite.tooltip'|translate}}"
+			popover-trigger="mouseenter"
+			ng-class="{'fa fa-info-circle fa-lg': !isGenerateContractDisable() && finalization.hasContractId && !ScenarioDataService.getCurrentScenario().favorite}">
+		</i>
+	</div>
+	<div class="col-sm-4" ng-if="user.hasContractEditionRight">
+		<a class="btn btn-primary" ng-disabled="isGenerateContractDisable() || !ScenarioDataService.getCurrentScenario().favorite"
+			ng-click="createContract()" id="createContract-btn"
+			translate="proposal.generate.contract.button"> 
+		</a> 
+			
+		<i popover="{{contractButtonDisabledTooltip.message |translate}}"
+			popover-trigger="mouseenter"
+			ng-class="{'fa fa-info-circle fa-lg': isGenerateContractDisable()}">
+		</i>
+		
+		<i
+			popover="{{'finalization.transfer.gcc.button.disabled.not.favorite.tooltip'|translate}}"
+			popover-trigger="mouseenter"
+			ng-class="{'fa fa-info-circle fa-lg': !isGenerateContractDisable() && finalization.hasContractId && !ScenarioDataService.getCurrentScenario().favorite}">
+		</i>
+	</div>
+
+	<div class="col-sm-2" ng-if="finalization.proposal.nbContractDownloaded > 0">
+		<span class="download-link"> <a class="fa-stack text-center"
+			ng-click="getContract()" id="getContract-btn"
+			popover="{{'proposal.contract.download.button.tooltip' | translate}}"
+			popover-trigger="mouseenter" ng-if="contractDocVisible()"> 
+			<i class="fa fa-2x"
+				ng-class="{'fa-file-word-o':finalization.proposal.contractDocType == 'WORD','fa-file-pdf-o':finalization.proposal.contractDocType == 'PDF'}">
+			</i>
+		</a>
+		
+		 <a class="fa-stack text-center" ng-if="user.hasSupervisionRight"
+			ng-click="getProductXml()"
+			id="getProductXml-btn"
+			popover="{{'proposal.xml.download.button.tooltip' | translate}}"
+			popover-trigger="mouseenter"> <i class="fa fa-file-o fa-stack-2x"></i>
+				<strong class="fa-stack-text">XML</strong>
+		</a>
+		</span>
+	</div>
+
+	<span
+		ng-if="finalization.proposal.docContractEditedDate && !finalization.proposal.contractWordGenerationBy"
+		class="col-sm-6"
+		translate="proposal.editions.documents.edition.date.title"
+		translate-values="{p0:finalization.proposal.docContractEditedDate,p1:finalization.proposal.docContractEditedBy.info}">
+	</span> <span
+		ng-if="finalization.proposal.docContractEditedDate && finalization.proposal.contractWordGenerationBy"
+		class="col-sm-6" translate="proposal.editions.documents.word.msg"
+		translate-values="{p0:finalization.proposal.contractWordGenerationDate,p1:finalization.proposal.contractWordGenerationBy.info, p2:finalization.proposal.contractWordGenerationReason}">
+	</span>
+</div>
+
+<!-- DOWNLOAD QUESTIONNAIRE LINKED TO PROPOSITION (defect #776) -->
+<div class="form-group"
+	ng-if="finalization.proposal.nbiDoc.visible && finalization.proposal.nbNBIDownloaded > 0 && finalization.proposal.docExcelQuestionnaireName != null">
+	<div class="col-sm-4">
+		<span translate="proposal.questionnaire.excel.download.label"></span>
+	</div>
+	<div class="col-sm-2">
+		<a class="fa-stack text-center" ng-click="getQuestionnaireExcelFile()"
+			id="getQuestionnaireExcelFile-btn"
+			popover="{{'proposal.questionnaire.excel.download.button.tooltip' | translate}}"
+			popover-trigger="mouseenter"> <i class="fa fa-file-excel-o fa-2x"></i>
+		</a>
+	</div>
+</div>
+
+<!-- OPEN FILENET BUTTON -->
+<div class="form-group" ng-if="finalization.proposal.filenetUrl">
+	<div class="col-sm-3">
+		<a class="btn btn-primary" href="{{finalization.proposal.filenetUrl}}" id="filenetUrl-btn"
+			target="_blank" translate="proposal.open.file.net.button"></a>
+	</div>
+</div>

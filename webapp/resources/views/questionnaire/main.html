@@ -1,0 +1,109 @@
+<!-- BEGIn cols -->
+<form name="questionnaireForm" ng-submit="submitForm($event)"
+      class="aty-form form form-horizontal form-custom" bs-modifiable="false" novalidate>
+  <div class="container" ng-controller="AccordionCtrl">
+    <div class="contentcol row">
+      <div id="content" class="col-sm-12 content-area">
+        <div class="content row">
+          <div class="col-sm-12">
+            <!-- -->
+            <accordion close-others="oneAtATime">
+            <!-- COMPANY IDENTIFICATION -->
+              <ng-form name="companySubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion">
+					<accordion-heading >
+	                    <div><span translate="questionnaire.company.title" id="companyAccordionTitle"></span></div>
+	                </accordion-heading>
+					
+                 	 <fieldset ng-include="'views/questionnaire/company.html'"></fieldset>
+
+                </accordion-group>
+              </ng-form>
+            
+            <!-- MANDATORY FIGURE -->
+              <ng-form name="figuresSubForm" class="aty-sub-form" ng-if="::!(questionnaire.checkMigration || questionnaire.clo
+              )">
+                <accordion-group class="content content-accordion">
+                	<accordion-heading >
+	                    <div><span translate="questionnaire.figures.title" id="figuresAccordionTitle"></span></div>
+	                </accordion-heading>
+                  	<fieldset ng-include="'views/questionnaire/figures.html'" bs-modifiable="true"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+			<!-- BUSINESS DESCRIPTION -->
+              <ng-form name="businessSubForm" class="aty-sub-form" ng-if="::!(questionnaire.checkMigration || questionnaire.clo
+              )">
+                <accordion-group class="content content-accordion">
+                  	<accordion-heading >
+	                    <div><span translate="questionnaire.business.title" id="businessAccordionTitle"></span></div>
+	                </accordion-heading>
+                 	<fieldset ng-include="'views/questionnaire/business.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+<!--               <ng-form name="turnoverSubForm" class="aty-sub-form" ng-if="questionnaire.newBusiness"> -->
+<!--                 <accordion-group class="content content-accordion" -->
+<!--                                  heading="{{'questionnaire.turnover.title' | translate}}"> -->
+<!--                   <fieldset ng-include="'views/questionnaire/turnover.html'"></fieldset> -->
+<!--                 </accordion-group> -->
+<!--               </ng-form> -->
+
+			<!-- ANALYSIS OF CREDIT SALES TURNOVER -->
+              <ng-form name="creditSalesSubForm" class="aty-sub-form" ng-if="::questionnaire.newBusiness">
+                <accordion-group class="content content-accordion" >
+                  <accordion-heading >
+	                  <div><span translate="questionnaire.credit.sales.title" id="creditSalesAccordionTitle"></span></div>
+	               </accordion-heading>
+                  <fieldset ng-include="'views/questionnaire/creditSales.html'" bs-modifiable="true"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+			<!-- DEBTORS OUTSANDING BREAKDOWN -->
+              <ng-form name="debtorsOutstandingSubForm" class="aty-sub-form" ng-if="::questionnaire.newBusiness">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading >
+	                  <div><span translate="questionnaire.debtor.title" id="debtorsOutstandingAccordionTitle"></span></div>
+	              </accordion-heading>
+                  <fieldset ng-include="'views/questionnaire/debtorsOutstanding.html'" bs-modifiable="true"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+			<!-- ANALYSIS OF BAD DEBTS EXPERIENCE -->
+              <ng-form name="badDebtorsSubForm" class="aty-sub-form" ng-if="::questionnaire.newBusiness" ng-click="validateTurnoverExperienceForYear(0);validateTurnoverExperienceForYear(1);validateTurnoverExperienceForYear(2);validateTurnoverExperienceForYear(3);">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading >
+	                  <div><span translate="questionnaire.bad.debtors.title" id="badDebtorsAccordionTitle"></span></div>
+	              </accordion-heading>
+                  <fieldset ng-include="'views/questionnaire/badDebtors.html'" bs-modifiable="true"></fieldset>
+                </accordion-group>
+              </ng-form>
+              
+             <!-- CREDIT SALES PRINCIPAL BUYERS -->
+                <!-- defect #113 : Questionnaire Hide last Fan Fold CREDIT SALES PRINCIPAL BUYERS-->	
+              <ng-form name="buyersSubForm" class="aty-sub-form" ng-if="::questionnaire.newBusiness">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading >
+	                  <div><span translate="questionnaire.buyers.title" id="buyersAccordionTitle"></span></div>
+	              </accordion-heading>
+                  <fieldset ng-include="'views/questionnaire/buyers.html'" bs-modifiable="true"></fieldset>
+                </accordion-group>
+              </ng-form>
+              
+              <!-- ADDITIONAL INFORMATION -->
+               <ng-form name="additionalInformationSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion" is-open="$parent.$parent.additionalInformationAccordionOpened">
+                   <accordion-heading >
+	                  <div><span translate="questionnaire.additional.information.title" id="additionalInformationAccordionTitle"></span></div>
+	              </accordion-heading>
+                  <fieldset ng-include="'views/questionnaire/additionalInformation.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+			
+            </accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

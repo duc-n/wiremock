@@ -1,0 +1,491 @@
+<div class="panel panel-default" bs-modifiable="true">
+	<div class="panel-body">
+
+		<div class="form-group">
+			<label class="col-sm-4 control-label"><strong
+				translate="policy.cover.options.preshipment.option.label"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" id="preshipmentOption"
+					ng-model="policy.preshipmentOption" value="NONE" /> <span
+					translate="none.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.preshipmentOption" value="MA" /> <span
+					translate="policy.cover.options.preshipment.option.manufacturers.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.preshipmentOption" value="SATA" /> <span
+					translate="policy.cover.options.preshipment.option.services.and.trading.activities.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.preshipmentOption" value="CONS" /> <span
+					translate="policy.cover.options.preshipment.option.construction.label"></span>
+				</label>
+			</div>
+		</div>
+
+		<div ng-show="isPreshipmentSelected()" class="form-group">
+			<label class="col-sm-offset-4 col-sm-3 control-label"
+				for="maxDeliveryPeriod"
+				translate="policy.cover.options.preshipment.option.max.delivery.period.label"></label>
+
+			<div class="col-sm-1">
+				<div class="input-group">
+					<input
+						ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+						type="number" aty-input-number id="maxDeliveryPeriod"
+						name="maxDeliveryPeriod" class="form-control"
+						ng-model="policy.maxDeliveryPeriod" aty-maxlength="5" />
+
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="input-group">
+					<day />
+					<atyDerogation drg-input="policy.maxDeliveryPeriod"
+						drg-section="coverOptionDerogation" drg-field="maxDeliveryPeriod"
+						drg-visible="isPreshipmentSelected()" />
+				</div>
+			</div>
+		</div>
+		<!-- START defect #195 : Improvement of Preshipment option for Construction -->
+		<div ng-show="isPreshipmentConstructionSelected()" class="form-group">
+			<label class="col-sm-offset-4 col-sm-3 control-label"
+				for="maxApplicationForPaymentPeriod"
+				translate="policy.cover.options.preshipment.construction.option.max.application.for.payment.period.label"></label>
+
+			<div class="col-sm-1">
+				<div class="input-group">
+					<input
+						ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+						type="number" aty-input-number id="maxApplicationForPaymentPeriod"
+						name="maxApplicationForPaymentPeriod" class="form-control"
+						ng-model="policy.maxApplicationForPaymentPeriod" aty-maxlength="5" />
+
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="input-group">
+					<day />
+					<atyDerogation drg-input="policy.maxApplicationForPaymentPeriod"
+						drg-section="coverOptionDerogation"
+						drg-field="maxApplicationForPaymentPeriod"
+						drg-visible="isPreshipmentConstructionSelected()" />
+				</div>
+			</div>
+		</div>
+
+		<div ng-show="isPreshipmentConstructionSelected()" class="form-group">
+			<label class="col-sm-offset-4 col-sm-3 control-label"
+				for="maxRetentionPeriod"
+				translate="policy.cover.options.preshipment.construction.option.max.retention.period.label"></label>
+
+			<div class="col-sm-1">
+				<div class="input-group">
+					<input
+						ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+						type="number" aty-input-number id="maxRetentionPeriod"
+						name="maxRetentionPeriod" class="form-control"
+						ng-model="policy.maxRetentionPeriod" aty-maxlength="5" />
+
+				</div>
+			</div>
+			<div class="col-sm-4">
+				<div class="input-group">
+					<day />
+					<atyDerogation drg-input="policy.maxRetentionPeriod"
+						drg-section="coverOptionDerogation" drg-field="maxRetentionPeriod"
+						drg-visible="isPreshipmentConstructionSelected()" />
+				</div>
+			</div>
+		</div>
+
+		<!-- END defect #195 : Improvement of Preshipment option for Construction -->
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="consigSalesCoverOption"><strong
+				translate="policy.cover.options.consignement.sales.label"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					id="consigSalesCoverOption"
+					ng-model="policy.consigSalesCoverOption" ng-value="false" /> <span
+					translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.consigSalesCoverOption" ng-value="true" /> <span
+					translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="cashAgainstDocCoverOption"><strong
+				translate="policy.cover.options.cash.against.document.label"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					id="cashAgainstDocCoverOption"
+					ng-model="policy.cashAgainstDocCoverOption" ng-value="false" /> <span
+					translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.cashAgainstDocCoverOption" ng-value="true" /> <span
+					translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="panel panel-default" bs-modifiable="true">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="politicalEventDocCoverOpt"><strong
+				translate="policy.cover.options.political.event.label"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" id="politicalEventDocCoverOpt"
+					ng-model="policy.politicalEventDocCoverOpt" ng-value="false" /> <span
+					translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.politicalEventDocCoverOpt"
+					ng-value="true" /> <span translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="panel panel-default" bs-modifiable="true">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="naturalDisasterCoverOpt"><strong
+				translate="policy.cover.options.natural.disaster.label"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" id="naturalDisasterCoverOpt"
+					ng-model="policy.naturalDisasterCoverOpt" ng-value="false" /> <span
+					translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.naturalDisasterCoverOpt"
+					ng-value="true" /> <span translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="panel panel-default" bs-modifiable="true">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="disputedDebtOption"><strong
+				translate="policy.cover.options.disputed.debt.label"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" id="disputedDebtOption"
+					ng-model="policy.disputedDebtOption" ng-value="false" /> <span
+					translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.disputedDebtOption" ng-value="true" />
+					<span translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+
+		<div ng-if="policy.disputedDebtOption" class="form-group">
+			<label class="col-sm-offset-4 col-sm-3 control-label"
+				for="disDebOptInsuredPercentage"
+				translate="insured.percentage.label"></label>
+
+			<div ng-if="policy.disputedDebtOption" class="col-sm-1">
+				<div class="input-group">
+					<input
+						ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+						type="number" aty-input-number id="disDebOptInsuredPercentage"
+						name="disDebOptInsuredPercentage" class="form-control"
+						ng-model="policy.disDebOptInsuredPercentage" aty-maxlength="3" />
+				</div>
+			</div>
+
+			<div ng-show="policy.disputedDebtOption" class="col-sm-4">
+				<div class="input-group">
+					<percent />
+					<atyDerogation drg-input="policy.disDebOptInsuredPercentage"
+						drg-section="coverOptionDerogation"
+						drg-field="disDebOptInsuredPercentage"
+						drg-visible="policy.disputedDebtOption" />
+				</div>
+			</div>
+		</div>
+		<div ng-show="policy.disputedDebtOption" class="form-group">
+			<label class="col-sm-offset-4 col-sm-3 control-label"
+				for="disDebMaxIndProIndAmt"
+				translate="policy.cover.options.disputed.debt.max.individual.provisional.endemnity.amount.label"></label>
+
+			<div class="col-sm-3">
+				<div class="input-group">
+					<input
+						ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+						type="number" aty-input-number id="disDebMaxIndProIndAmt"
+						name="disDebMaxIndProIndAmt" class="form-control"
+						ng-model="policy.disDebMaxIndProIndAmt" aty-maxlength="15" />
+				</div>
+			</div>
+
+			<div class="col-sm-2">
+				<div class="input-group">
+					<currency ng-bind="policy.contractCurrency" />
+					<atyDerogation drg-input="policy.disDebMaxIndProIndAmt"
+						drg-section="coverOptionDerogation"
+						drg-field="disDebMaxIndProIndAmt"
+						drg-visible="policy.disputedDebtOption" />
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="firstAdvancePaymentOption"><strong
+				translate="policy.cover.options.first.advance.payment.label"></strong>
+				<i
+				popover="{{'first.advance.payment.option.tooltip.label'|translate}}"
+				popover-trigger="mouseenter" class="fa fa-info-circle"></i></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					id="firstAdvancePaymentOption"
+					ng-model="policy.firstAdvancePaymentOption" ng-value="false" /> <span
+					translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.firstAdvancePaymentOption" ng-value="true" /> <span
+					translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+
+		<div ng-if="policy.firstAdvancePaymentOption" class="form-group">
+			<label class="col-sm-offset-4 col-sm-4 control-label"
+				for="firAdvPayMaxPer1stPayPercentage"
+				translate="policy.cover.options.first.advance.payment.max.percentage.1st.advance.pay.label"></label>
+
+			<div ng-if="policy.firstAdvancePaymentOption" class="col-sm-1">
+				<div class="input-group">
+					<input ng-disabled="policy.isReadOnly" type="number"
+						aty-input-number id="firAdvPayMaxPer1stPayPercentage"
+						name="firAdvPayMaxPer1stPayPercentage" class="form-control"
+						ng-model="policy.firAdvPayMaxPer1stPayPercentage"
+						aty-maxlength="3" />
+				</div>
+			</div>
+
+			<div ng-show="policy.firstAdvancePaymentOption" class="col-sm-3">
+				<div class="input-group">
+					<percent />
+					<atyDerogation drg-input="policy.firAdvPayMaxPer1stPayPercentage "
+						drg-section="coverOptionDerogation"
+						drg-field="firAdvPayMaxPer1stPayPercentage"
+						drg-visible="policy.firstAdvancePaymentOption" />
+				</div>
+			</div>
+		</div>
+
+		<div ng-show="policy.firstAdvancePaymentOption" class="form-group">
+			<label class="col-sm-offset-4 col-sm-4 control-label"
+				for="firAdvPayMaxExecPeriod"
+				translate="policy.cover.options.first.advance.payment.max.execution.period.label"></label>
+
+			<div class="col-sm-1">
+				<div class="input-group">
+					<input ng-disabled="policy.isReadOnly" type="number"
+						aty-input-number id="firAdvPayMaxExecPeriod"
+						name="firAdvPayMaxExecPeriod" class="form-control"
+						ng-model="policy.firAdvPayMaxExecPeriod" aty-maxlength="3" />
+				</div>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="input-group">
+					<day />
+					<atyDerogation drg-input="policy.firAdvPayMaxExecPeriod"
+						drg-section="coverOptionDerogation"
+						drg-field="firAdvPayMaxExecPeriod"
+						drg-visible="policy.firstAdvancePaymentOption" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<spinner class="aty-data-loading" name="extensionAffiliateSpinner">
+	<div class="messaging">
+		<div class="la-ball-circus la-2x">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<h1 translate="spinner.affiliate.progress.title"></h1>
+	</div>
+	</spinner>
+	<div class="panel-body">
+		
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="extToAffiliateOption"><strong
+				translate="policy.cover.options.extension.to.affiliate.label"></strong>
+				<i popover="{{'extension.to.affiliate.label'|translate}}"
+				popover-trigger="mouseenter" class="fa fa-info-circle"></i></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio"
+					id="extToAffiliateOption" ng-model="policy.extToAffiliateOption"
+					ng-value="false" /> <span translate="no.label"></span>
+				</label> <label class="radio-inline"> <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio"
+					ng-model="policy.extToAffiliateOption" ng-value="true" /> <span
+					translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+		
+		<div class="form-group" ng-if="policy.extToAffiliateOption && policy.affiliates.length === 0">
+      		<label class="col-sm-12 control-label"><strong
+        translate="policy.cover.options.extension.to.affiliate.no.affiliate.text"></strong></label>
+    	</div>
+		
+		<div class="row" ng-if="policy.extToAffiliateOption">
+			<div class="col-sm-12">
+				<table 
+					class="table table-cofanet table-bordered table-striped table-responsive fixed-layout align-center">
+
+					<colgroup>
+						<col  class="col-sm-1">
+						<col  class="col-sm-4">
+						<col  class="col-sm-3">
+						<col  class="col-sm-2">
+						<col  class="col-sm-2">
+					</colgroup>
+
+					<thead>
+					<tr class="">
+						<th class="text-center"><p class="form-control-static">
+								<strong translate="policy.cover.options.extension.affiliate.label"></strong>
+							</p></th>
+						
+						<th class="text-center"><p class="form-control-static">
+								<strong translate="policy.cover.options.extension.affiliate.name.column"
+									></strong>
+							</p></th>
+							<th class="text-center"><p class="form-control-static">
+								<strong translate="policy.cover.options.extension.affiliate.role.ref.column"></strong>
+							</p></th>
+						<th class="text-center"><p class="form-control-static">
+								<strong translate="policy.cover.options.extension.affiliate.city.column"></strong>
+							</p></th>
+						<th  ng-if="!(policy.isReadOnly || policy.isNegotiationReadOnly)"><span class="input-group-btn">
+								<button ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" ng-hide="policy.affiliates.length"
+									class="btn btn-default" popover="{{'plus.label'|translate}}"
+									popover-trigger="mouseenter" type="button"
+									ng-click="addAffiliate()">
+									<i class="fa fa-plus"></i>
+								</button>
+						</span></th >
+						</tr>
+					</thead>
+					<tbody>
+						<tr ng-repeat="affiliate in policy.affiliates">
+							<td><span translate="policy.cover.options.extension.affiliate.label"></span> {{$index +1}}</td>
+							<td ng-bind="affiliate.companyName"></td>
+								<td ng-bind="affiliate.roleRef"></td>
+								<td ng-bind="affiliate.city"></td>
+							<td ng-if="!(policy.isReadOnly || policy.isNegotiationReadOnly)" class="text-left"><span class="input-group-btn">
+									<button ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" class="btn btn-default"
+										popover="{{'remove.title'|translate}}"
+										popover-trigger="mouseenter" type="button"
+										ng-click="removeAffiliate('{{affiliate.roleRef}}')">
+										<i class="fa fa-trash"></i>
+									</button>
+									<button ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" ng-show="$last && $index < maxNumberAffiliates" class="btn btn-default"
+										popover="{{'plus.label'|translate}}"
+										popover-trigger="mouseenter" type="button"
+										ng-click="addAffiliate()">
+										<i class="fa fa-plus"></i>
+									</button>
+							</span></td>
+
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+	</div>
+</div>
+
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="delcredereCoverOption"><strong
+				translate="policy.cover.options.delcredere.label"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					id="delcredereCoverOption" ng-model="policy.delcredereCoverOption"
+					ng-value="false" /> <span translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.delcredereCoverOption" ng-value="true" /> <span
+					translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-4 control-label" for="nonDelcredereCoverOption"><strong
+				translate="policy.cover.options.non.delcredere.label"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					id="nonDelcredereCoverOption"
+					ng-model="policy.nonDelcredereCoverOption" ng-value="false" /> <span
+					translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.nonDelcredereCoverOption" ng-value="true" /> <span
+					translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>

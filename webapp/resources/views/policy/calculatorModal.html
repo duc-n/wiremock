@@ -1,0 +1,476 @@
+<form name="calculatorForm" id="calculatorForm" class="aty-form form form-horizontal form-custom">
+  <ng-form name="calculatorSubForm" class="aty-sub-form">
+    <div class="modal-header">
+      <h3 class="modal-title" translate="calculator.modal.title"></h3>
+      <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><i
+        class="fa fa-close"></i></button>
+    </div>
+    <div class="modal-body">
+      <!-- 1st line -->
+      <div class="form-group">
+        <!-- Premium rates before options -->
+        <div class="panel panel-default col-sm-6">
+          <div class="panel-heading">
+            <div class="row">
+              <label class="col-sm-offset-8 col-sm-4" translate="help.calc.current.contract.label"></label>
+            </div>
+          </div>
+          <div class="panel-body">
+            <div class="col-sm-4">
+              <label class="control-label" translate="help.calc.premium.rates.before.options.label"></label>
+            </div>
+            <div class="col-sm-8">
+              <!-- Domestic -->
+              <div class="form-group" ng-if="splitPremium == 'DE' || splitPremium == 'THREE'">
+                <label class="col-sm-6 control-label" translate="help.calc.domestic.rates.label"
+                       for="domesticRateBeforeOptions"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <input ng-disabled="isReadOnly" type="number" aty-input-number id="domesticRateBeforeOptions"
+                           name="domesticRateBeforeOptions" class="form-control text-center"
+                           ng-model="calculator.domesticRateBeforeOptions" aty-decimal max="100"
+                           ng-change="domesticRateAfterOptions();domesticEstimationBeforeOptions();domesticEstimationOptions();totalPremiumOptDomestic();"/>
+                  </div>
+                </div>
+              </div>
+              <!-- Export -->
+              <div class="form-group" ng-if="splitPremium == 'DE'">
+                <label class="col-sm-6 control-label" translate="help.calc.export.rates.label"
+                       for="exportRateBeforeOptions"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <input ng-disabled="isReadOnly" type="number" aty-input-number id="exportRateBeforeOptions"
+                           name="exportRateBeforeOptions" class="form-control text-center"
+                           ng-model="calculator.exportRateBeforeOptions" aty-decimal max="100"
+                           ng-change="exportRateAfterOptions();exportEstimationBeforeOptions();exportEstimationOptions();totalPremiumOptExport();"/>
+                  </div>
+                </div>
+              </div>
+              <!-- Global -->
+              <div class="form-group" ng-if="splitPremium == 'GD' || splitPremium == 'GE' || splitPremium == 'GDE'">
+                <label class="col-sm-6 control-label" translate="help.calc.global.rates.label"
+                       for="globalRateBeforeOptions"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <input ng-disabled="isReadOnly" type="number" aty-input-number id="globalRateBeforeOptions"
+                           name="globalRateBeforeOptions" class="form-control text-center"
+                           ng-model="calculator.globalRateBeforeOptions" aty-decimal max="100"
+                           ng-change="globalRateAfterOptions();globalEstimationBeforeOptions();globalEstimationOptions();totalPremiumOptGlobal();"/>
+                  </div>
+                </div>
+              </div>
+              <!-- Zone 1 -->
+              <div class="form-group" ng-if="splitPremium == 'Z' || splitPremium == 'THREE'">
+                <label class="col-sm-6 control-label" translate="help.calc.zone1.rates.label"
+                       for="zone1RateBeforeOptions"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <input ng-disabled="isReadOnly" type="number" aty-input-number id="zone1RateBeforeOptions"
+                           name="zone1RateBeforeOptions" class="form-control text-center"
+                           ng-model="calculator.zone1RateBeforeOptions" aty-decimal max="100"
+                           ng-change="zone1RateAfterOptions();zone1EstimationBeforeOptions();zone1EstimationOptions();totalPremiumOptZone1();"/>
+                  </div>
+                </div>
+              </div>
+              <!-- Zone 2 -->
+              <div class="form-group" ng-if="splitPremium == 'Z' || splitPremium == 'THREE'">
+                <label class="col-sm-6 control-label" translate="help.calc.zone2.rates.label"
+                       for="zone2RateBeforeOptions"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <input ng-disabled="isReadOnly" type="number" aty-input-number id="zone2RateBeforeOptions"
+                           name="zone2RateBeforeOptions" class="form-control text-center"
+                           ng-model="calculator.zone2RateBeforeOptions" aty-decimal max="100"
+                           ng-change="zone2RateAfterOptions();zone2EstimationBeforeOptions();zone2EstimationOptions();totalPremiumOptZone2();"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Turnovers for estimation in value - Estimation Premium before options in value -->
+        <div class="panel panel-default col-sm-6">
+          <div class="panel-heading">
+            <div class="row">
+              <label class="col-sm-offset-2 col-sm-5" translate="help.calc.to.estimation.in.value.label"></label>
+              <label class="col-sm-5" translate="help.calc.estimation.premium.before.option.in.value.label"></label>
+            </div>
+          </div>
+          <div class="panel-body">
+            <!-- Domestic -->
+            <div class="form-group" ng-if="splitPremium == 'DE' || splitPremium == 'THREE'">
+              <label class="col-sm-2 control-label" translate="help.calc.domestic.label"
+                     for="domesticTurnoverEstimation"></label>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <input ng-disabled="isReadOnly" type="number" aty-input-number id="domesticTurnoverEstimation"
+                         name="domesticTurnoverEstimation" class="form-control"
+                         ng-model="calculator.domesticTurnoverEstimation" aty-maxlength="15"
+                         ng-change="domesticEstimationBeforeOptions();domesticEstimationOptions();totalPremiumOptDomestic();"/>
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.domesticEstimationBeforeOptions | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Export -->
+            <div class="form-group" ng-if="splitPremium == 'DE'">
+              <label class="col-sm-2 control-label" translate="help.calc.export.label"
+                     for="exportTurnoverEstimation"></label>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <input ng-disabled="isReadOnly" type="number" aty-input-number id="exportTurnoverEstimation"
+                         name="exportTurnoverEstimation" class="form-control"
+                         ng-model="calculator.exportTurnoverEstimation" aty-maxlength="15"
+                         ng-change="exportEstimationBeforeOptions();exportEstimationOptions();totalPremiumOptExport();"/>
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.exportEstimationBeforeOptions | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Global -->
+            <div class="form-group" ng-if="splitPremium == 'GD' || splitPremium == 'GE' || splitPremium == 'GDE'">
+              <label class="col-sm-2 control-label" translate="help.calc.global.label"
+                     for="globalTurnoverEstimation"></label>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <input ng-disabled="isReadOnly" type="number" aty-input-number id="globalTurnoverEstimation"
+                         name="globalTurnoverEstimation" class="form-control"
+                         ng-model="calculator.globalTurnoverEstimation" aty-maxlength="15"
+                         ng-change="globalEstimationBeforeOptions();globalEstimationOptions();totalPremiumOptGlobal();"/>
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.globalEstimationBeforeOptions | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Zone 1 -->
+            <div class="form-group" ng-if="splitPremium == 'Z' || splitPremium == 'THREE'">
+              <label class="col-sm-2 control-label" translate="help.calc.zone1.label"
+                     for="zone1TurnoverEstimation"></label>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <input ng-disabled="isReadOnly" type="number" aty-input-number id="zone1TurnoverEstimation"
+                         name="zone1TurnoverEstimation" class="form-control"
+                         ng-model="calculator.zone1TurnoverEstimation" aty-maxlength="15"
+                         ng-change="zone1EstimationBeforeOptions();zone1EstimationOptions();totalPremiumOptZone1();"/>
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.zone1EstimationBeforeOptions | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Zone 2 -->
+            <div class="form-group" ng-if="splitPremium == 'Z' || splitPremium == 'THREE'">
+              <label class="col-sm-2 control-label" translate="help.calc.zone2.label"
+                     for="zone2TurnoverEstimation"></label>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <input ng-disabled="isReadOnly" type="number" aty-input-number id="zone2TurnoverEstimation"
+                         name="zone2TurnoverEstimation" class="form-control"
+                         ng-model="calculator.zone2TurnoverEstimation" aty-maxlength="15"
+                         ng-change="zone2EstimationBeforeOptions();zone2EstimationOptions();totalPremiumOptZone2();"/>
+                </div>
+              </div>
+              <div class="col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.zone2EstimationBeforeOptions | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2nd line -->
+      <div class="form-group">
+
+        <!-- Options rates (as a % of premium rates) -->
+        <div class="panel panel-default col-sm-6">
+          <!--<div class="panel-heading"></div>-->
+          <div class="panel-body">
+            <div class="col-sm-4">
+              <label class="control-label" translate="help.calc.options.rates.label"></label>
+            </div>
+            <div class="col-sm-8">
+              <!-- Disputed debts -->
+              <div class="form-group">
+                <label class="col-sm-6 control-label" translate="help.calc.disputed.debts.label"
+                       for="disputedDebtsRate"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <input ng-disabled="isReadOnly" type="number" aty-input-number id="disputedDebtsRate"
+                           name="disputedDebtsRate" class="form-control text-center"
+                           ng-model="calculator.disputedDebtsRate" aty-decimal max="100"
+                           ng-change="allOptionsRate();
+			                     			domesticRateAfterOptions();domesticEstimationOptions();totalPremiumOptDomestic();
+			                     			exportRateAfterOptions();exportEstimationOptions();totalPremiumOptExport();
+											globalRateAfterOptions();globalEstimationOptions();totalPremiumOptGlobal();
+											zone1RateAfterOptions();zone1EstimationOptions();totalPremiumOptZone1();
+											zone2RateAfterOptions();zone2EstimationOptions();totalPremiumOptZone2();"/>
+                  </div>
+                </div>
+              </div>
+              <!-- Extension MCP -->
+              <div class="form-group">
+                <label class="col-sm-6 control-label" translate="help.calc.extension.mcp.label"
+                       for="extensionMCPRate"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <input ng-disabled="isReadOnly" type="number" aty-input-number id="extensionMCPRate"
+                           name="extensionMCPRate" class="form-control text-center"
+                           ng-model="calculator.extensionMCPRate" aty-decimal max="100"
+                           ng-change="allOptionsRate();
+			                     			domesticRateAfterOptions();domesticEstimationOptions();totalPremiumOptDomestic();
+			                     			exportRateAfterOptions();exportEstimationOptions();totalPremiumOptExport();
+											globalRateAfterOptions();globalEstimationOptions();totalPremiumOptGlobal();
+											zone1RateAfterOptions();zone1EstimationOptions();totalPremiumOptZone1();
+											zone2RateAfterOptions();zone2EstimationOptions();totalPremiumOptZone2();"/>
+                  </div>
+                </div>
+              </div>
+              <!-- B/Pending Order -->
+              <div class="form-group">
+                <label class="col-sm-6 control-label" translate="help.calc.binding.pending.order.label"
+                       for="bindingPendingOrderRate"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <input ng-disabled="isReadOnly" type="number" aty-input-number id="bindingPendingOrderRate"
+                           name="bindingPendingOrderRate" class="form-control text-center"
+                           ng-model="calculator.bindingPendingOrderRate" aty-decimal max="100"
+                           ng-change="allOptionsRate();
+			                     			domesticRateAfterOptions();domesticEstimationOptions();totalPremiumOptDomestic();
+			                     			exportRateAfterOptions();exportEstimationOptions();totalPremiumOptExport();
+											globalRateAfterOptions();globalEstimationOptions();totalPremiumOptGlobal();
+											zone1RateAfterOptions();zone1EstimationOptions();totalPremiumOptZone1();
+											zone2RateAfterOptions();zone2EstimationOptions();totalPremiumOptZone2();"/>
+                  </div>
+                </div>
+              </div>
+              <!-- Preshipment -->
+              <div class="form-group">
+                <label class="col-sm-6 control-label" translate="help.calc.preshipment.label"
+                       for="preshipmentRate"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <input ng-disabled="isReadOnly" type="number" aty-input-number id="preshipmentRate"
+                           name="preshipmentRate" class="form-control text-center"
+                           ng-model="calculator.preshipmentRate" aty-decimal max="100"
+                           ng-change="allOptionsRate();
+			                     			domesticRateAfterOptions();domesticEstimationOptions();totalPremiumOptDomestic();
+			                     			exportRateAfterOptions();exportEstimationOptions();totalPremiumOptExport();
+											globalRateAfterOptions();globalEstimationOptions();totalPremiumOptGlobal();
+											zone1RateAfterOptions();zone1EstimationOptions();totalPremiumOptZone1();
+											zone2RateAfterOptions();zone2EstimationOptions();totalPremiumOptZone2();"/>
+                  </div>
+                </div>
+              </div>
+              <!-- All options -->
+              <div class="form-group">
+                <label class="col-sm-6 control-label" translate="help.calc.all.options.label"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <p class="form-control-static" ng-bind="calculator.allOptionsRate"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Estimation options in value -->
+        <div class="panel panel-default col-sm-6">
+          <div class="panel-heading">
+            <div class="row">
+              <label class="col-sm-offset-7 col-sm-5" translate="help.calc.estimation.options.in.value.label"></label>
+            </div>
+          </div>
+          <div class="panel-body">
+            <!-- Domestic -->
+            <div class="form-group" ng-if="splitPremium == 'DE' || splitPremium == 'THREE'">
+              <label class="col-sm-2 control-label" translate="help.calc.domestic.label"></label>
+              <div class="col-sm-offset-5 col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.domesticEstimationOptions | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Export -->
+            <div class="form-group" ng-if="splitPremium == 'DE'">
+              <label class="col-sm-2 control-label" translate="help.calc.export.label"></label>
+              <div class="col-sm-offset-5 col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.exportEstimationOptions | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Global -->
+            <div class="form-group" ng-if="splitPremium == 'GD' || splitPremium == 'GE' || splitPremium == 'GDE'">
+              <label class="col-sm-2 control-label" translate="help.calc.global.label"></label>
+              <div class="col-sm-offset-5 col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.globalEstimationOptions | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Zone 1 -->
+            <div class="form-group" ng-if="splitPremium == 'Z' || splitPremium == 'THREE'">
+              <label class="col-sm-2 control-label" translate="help.calc.zone1.label"></label>
+              <div class="col-sm-offset-5 col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.zone1EstimationOptions | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Zone 2 -->
+            <div class="form-group" ng-if="splitPremium == 'Z' || splitPremium == 'THREE'">
+              <label class="col-sm-2 control-label" translate="help.calc.zone2.label"></label>
+              <div class="col-sm-offset-5 col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.zone2EstimationOptions | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3rd line -->
+      <div class="form-group">
+        <!-- Premium rates with options -->
+        <div class="panel panel-default col-sm-6">
+          <div class="panel-body">
+            <div class="col-sm-4">
+              <label class="control-label" translate="help.calc.premium.rates.with.options.label"></label>
+            </div>
+            <div class="col-sm-8">
+              <!-- Domestic -->
+              <div class="form-group" ng-if="splitPremium == 'DE' || splitPremium == 'THREE'">
+                <label class="col-sm-6 control-label" translate="help.calc.domestic.rates.label"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <p class="form-control-static" ng-bind="calculator.domesticRateAfterOptions"></p>
+                  </div>
+                </div>
+              </div>
+              <!-- Export -->
+              <div class="form-group" ng-if="splitPremium == 'DE'">
+                <label class="col-sm-6 control-label" translate="help.calc.export.rates.label"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <p class="form-control-static" ng-bind="calculator.exportRateAfterOptions"></p>
+                  </div>
+                </div>
+              </div>
+              <!-- Global -->
+              <div class="form-group" ng-if="splitPremium == 'GD' || splitPremium == 'GE' || splitPremium == 'GDE'">
+                <label class="col-sm-6 control-label" translate="help.calc.global.rates.label"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <p class="form-control-static" ng-bind="calculator.globalRateAfterOptions"></p>
+                  </div>
+                </div>
+              </div>
+              <!-- Zone 1 -->
+              <div class="form-group" ng-if="splitPremium == 'Z' || splitPremium == 'THREE'">
+                <label class="col-sm-6 control-label" translate="help.calc.zone1.rates.label"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <p class="form-control-static" ng-bind="calculator.zone1RateAfterOptions"></p>
+                  </div>
+                </div>
+              </div>
+              <!-- Zone 2 -->
+              <div class="form-group" ng-if="splitPremium == 'Z' || splitPremium == 'THREE'">
+                <label class="col-sm-6 control-label" translate="help.calc.zone2.rates.label"></label>
+                <div class="col-sm-offset-1 col-sm-4 text-center">
+                  <div class="input-group">
+                    <p class="form-control-static" ng-bind="calculator.zone2RateAfterOptions"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Total Premium + options -->
+        <div class="panel panel-default col-sm-6">
+          <div class="panel-heading">
+            <div class="row">
+              <label class="col-sm-offset-7 col-sm-5" translate="help.calc.total.premium.options.label"></label>
+            </div>
+          </div>
+          <div class="panel-body">
+            <!-- Domestic -->
+            <div class="form-group" ng-if="splitPremium == 'DE' || splitPremium == 'THREE'">
+              <label class="col-sm-2 control-label" translate="help.calc.domestic.label"></label>
+              <div class="col-sm-offset-5 col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.totalPremiumOptDomestic | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Export -->
+            <div class="form-group" ng-if="splitPremium == 'DE'">
+              <label class="col-sm-2 control-label" translate="help.calc.export.label"></label>
+              <div class="col-sm-offset-5 col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.totalPremiumOptExport | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Global -->
+            <div class="form-group" ng-if="splitPremium == 'GD' || splitPremium == 'GE' || splitPremium == 'GDE'">
+              <label class="col-sm-2 control-label" translate="help.calc.global.label"></label>
+              <div class="col-sm-offset-5 col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.totalPremiumOptGlobal | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Zone 1 -->
+            <div class="form-group" ng-if="splitPremium == 'Z' || splitPremium == 'THREE'">
+              <label class="col-sm-2 control-label" translate="help.calc.zone1.label"></label>
+              <div class="col-sm-offset-5 col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.totalPremiumOptZone1 | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+            <!-- Zone 2 -->
+            <div class="form-group" ng-if="splitPremium == 'Z' || splitPremium == 'THREE'">
+              <label class="col-sm-2 control-label" translate="help.calc.zone2.label"></label>
+              <div class="col-sm-offset-5 col-sm-5">
+                <div class="input-group">
+                  <p class="form-control-static" ng-bind="calculator.totalPremiumOptZone2 | atyNumber"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- 4nd line -->
+      <div class="form-group" ng-if="!isReadOnly">
+        <!-- form information message -->
+        <div class="col-sm-12">
+          <p class="form-control-static text-right" translate="help.calc.form.information.message"></p>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button ng-if="!isReadOnly" class="btn btn-primary" type="button" ng-click="validate()"
+              translate="help.calc.validate.button.label"></button>
+      <button class="btn btn-default" type="button" ng-click="close()"
+              translate="cancel.label"></button>
+    </div>
+  </ng-form>
+</form>

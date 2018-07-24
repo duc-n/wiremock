@@ -1,0 +1,101 @@
+<!-- Flexible Waiting Period Option -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="flexWaitingPeriod"><strong
+        translate="policy.claims.flex.wait.period.label"></strong></label>
+
+      <div class="col-sm-2">
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" id="flexWaitingPeriod"
+                 ng-model="policy.flexWaitingPeriod" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" ng-model="policy.flexWaitingPeriod" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+
+      <div class="col-sm-6" ng-if="isFlexibleWaitingPeriodTableVisible()">
+        <table class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+          <colgroup>
+            <col span="1" class="col-sm-6">
+            <col span="1" class="col-sm-6">
+          </colgroup>
+          <thead>
+          <tr class="">
+            <th class="text-center">
+              <p class="form-control-static"><strong
+                translate="policy.claims.waiting.period.label"></strong></p>
+            </th>
+            <th class="text-center">
+              <p class="form-control-static"><strong
+                translate="policy.claims.insured.percentage.label"
+                translate-values="{p0: policy.contractCurrency}"></strong></p>
+            </th>
+          </tr>
+          </thead>
+          <tbody>
+          	  <tr>
+	            <td><p class="form-control-static" translate="policy.claims.months.contract.label"
+                		translate-values="{p0: policy.waitingPeriodAfterNOA , p1:(policy.waitingPeriodAfterNOA > 1?'s':'')}"></p></td>
+	            <td><p class="form-control-static" ng-bind="policy.coverInsuredPercentage"></p>
+	            </td>
+	          </tr>
+	          <!-- Defect #432  -->
+	          <tr ng-repeat="(key, value) in policy.durationReductionMap" ng-if="policy.waitingPeriodAfterNOA-key>1">
+	            <td>
+	            	<p class="form-control-static"
+	            		translate="policy.claims.months.label"
+	            		translate-values="{p0: policy.waitingPeriodAfterNOA - key , p1:(policy.waitingPeriodAfterNOA - key > 1?'s':'')}"></p></td>
+	            <td>
+	            	<p class="form-control-static" ng-bind="policy.coverInsuredPercentage - value"></p>
+	            </td>
+	          </tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+</div>
+<!---->
+<!-- Aggreagate First Loss Option -->
+<div class="panel panel-default" bs-modifiable="true">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label" for="aggreagateFirstLoss"><strong
+        translate="policy.claims.aggr.first.loss.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" id="aggreagateFirstLoss"
+                 ng-model="policy.aggreagateFirstLoss" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" ng-model="policy.aggreagateFirstLoss" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+    <div class="form-group" ng-show="policy.aggreagateFirstLoss">
+      <label class="col-sm-offset-4 col-sm-3 control-label" for="aggreagateFirstLossAmount"
+             translate="policy.claims.aggr.first.loss.value.label"></label>
+
+      <div class="col-sm-3">
+        <div class="input-group">
+          <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number class="form-control" id="aggreagateFirstLossAmount" name="aggreagateFirstLossAmount"
+                 ng-model="policy.aggreagateFirstLossAmount" aty-maxlength="15"/>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <div class="input-group">
+          <currency ng-bind="policy.contractCurrency"/>          
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!---->

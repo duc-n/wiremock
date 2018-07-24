@@ -1,0 +1,16 @@
+{
+  "supervisor": true,
+  "newBusiness": false,
+  "transform": false,
+  "renewal": false,
+  "checkMigration": false,
+  "clo": true,
+  "isoCountryCode": "BEL",
+  "companyName": "SPAAS KAARSEN",
+  "contractNumber": "518776",
+  "contractId": "CONT-01-214237269",
+  "salesFunnelTechnicalId": null,
+  "entityOrganizationId": "01-ORGA-ORGCT",
+  "transferToGCC": false,
+  "contractCancelled": false
+}

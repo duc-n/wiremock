@@ -1,0 +1,81 @@
+<div class="row">
+  <div class="col-sm-12">
+    <table id="buyers-table" class="table table-cofanet table-condensed table-bordered table-responsive">
+      <colgroup>
+        <col span="1" class="col-sm-2 text-center">
+        <col span="1" class="col-sm-3 text-center">
+        <col span="1" class="col-sm-3 text-center">
+        <col span="1" class="col-sm-1 text-center">
+        <col span="1" class="col-sm-2 text-center">
+        <col span="1" class="col-sm-1 text-left">
+      </colgroup>
+      <thead>
+      <tr class="">
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="country.label"></strong></p></th>
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="questionnaire.bad.debts.company.name"></strong></p></th>
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="questionnaire.bad.debts.maximum.outstanding"
+          translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong></p></th>
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="questionnaire.bad.debts.terms.payment"></strong></p></th>
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="comment.label"></strong></p></th>
+        <th><span class="input-group-btn">
+            <button ng-disabled="::questionnaire.isReadOnly" ng-hide="questionnaire.buyers.length" class="btn btn-default"
+                    popover="{{'plus.label'|translate}}" popover-trigger="mouseenter" type="button" ng-click="addBuyerCreditSales()"><i
+              class="fa fa-plus"></i></button>
+      </span></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr ng-repeat="buyer in questionnaire.buyers">
+        <td>
+          <countryselect ng-model="buyer.country" required ng-disabled="::questionnaire.isReadOnly"/>
+        </td>
+        <td>
+          <input type="text" class="form-control"
+                 ng-model="buyer.companyName" required ng-disabled="::questionnaire.isReadOnly"/>
+        </td>
+        <td class="text-center">
+          <div class="col-sm-12">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="buyer.maximumOutstanding"
+                     id="maximumOutstanding{{$index}}" name="buyers[{{$index}}].maximumOutstanding" aty-maxlength="15" required 
+                     ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+        </td>
+        <td class="text-center">
+          <div class="input-group">
+            <input type="number" aty-input-number  class="form-control text-center"
+                   ng-model="buyer.termsPayment"
+                   id="termsPayment{{$index}}" name="buyers[{{$index}}].termsPayment" aty-maxlength="3" required
+                   ng-disabled="::questionnaire.isReadOnly"
+                   />
+          </div>
+        </td>
+        <td>
+          <div class="input-group col-sm-12">
+            <input type="text" class="form-control" ng-model="buyer.comment" ng-disabled="::questionnaire.isReadOnly"/>
+          </div>
+        </td>
+        <td>
+          <span class="input-group-btn">
+            <button class="btn btn-default" popover="{{'remove.title'|translate}}" popover-trigger="mouseenter" type="button"
+                    ng-click="removeBuyerCreditSales($index)" ng-disabled="::questionnaire.isReadOnly"><i
+              class="fa fa-trash"></i></button>
+            <button ng-show="$last && $index < maxNumberBuyers" class="btn btn-default"
+                    popover="{{'plus.label'|translate}}" popover-trigger="mouseenter" type="button"
+                    ng-click="addBuyerCreditSales()" ng-disabled="::questionnaire.isReadOnly"><i
+              class="fa fa-plus"></i></button>
+          </span>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

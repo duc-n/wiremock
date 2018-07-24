@@ -1,0 +1,53 @@
+{
+  "content": {
+    "data": [
+      {
+        "freeUpLoad": {
+          "option": true,
+          "selected": false,
+          "items": [
+            {
+              "nbMonths": "1"
+            },
+            {
+              "nbBuyers": ""
+            }
+          ]
+        }
+      },
+      {
+        "electronicSignature": {
+          "option": true,
+          "selected": false,
+          "items": [
+            
+          ]
+        }
+      },
+      {
+        "boRequest": {
+          "option": false,
+          "selected": false,
+          "items": [
+            {
+              "boParis": true
+            },
+            {
+              "boLyon": false
+            }
+          ]
+        }
+      }
+    ],
+    "translations": {
+      "freeUpLoad": "Chargement gratuit du portefeuille",
+      "freeUpLoad.nbBuyers": "limite du nombre d'acheteurs (optionnel) : ",
+      "freeUpLoad.nbMonths": "dans un dÃ©lai de : (mois) ",
+      "electronicSignature": "Accord prospect pour signature Ã©lectronique du Contrat",
+      "boRequest": "Consignes du Back Office",
+      "boRequest.boParis": "Dossier gÃ©rÃ© par le Back Office de PARIS",
+      "boRequest.boLyon": "Dossier gÃ©rÃ© par le Back Office de LYON"
+    }
+  },
+  "obsoleteOptions": null
+}

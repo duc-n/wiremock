@@ -1,0 +1,59 @@
+<!-- First Insurance Period -->
+<div class="form-group">
+	<label class="col-sm-3 control-label" for="contractPeriod">
+		<strong translate="policy.duration.1st.insurance.period.label"></strong>
+	</label>
+
+	<div class="col-sm-3">
+		<div class="input-group">
+			<input readonly required class="form-control" type="text" ng-model="policy.firstInsPeriodFrom" id="firstInsPeriodFrom"
+				ng-change="adjustFirstInsPeriodTo()" datepicker-popup="{{format}}" is-open="statusDate.firstInsPeriodFromOpened" datepicker-options="dateOptions"
+				close-text="Close" />
+			<span class="input-group-btn">
+				<button ng-disabled="policy.isReadOnly" type="button" class="btn btn-default" ng-click="openFirstInsPeriodFrom()">
+					<i class="fa fa-calendar"></i>
+				</button>
+			</span>
+		</div>
+	</div>
+
+	<div class="col-sm-3">
+		<div class="input-group">
+			<input readonly required class="form-control" type="text" ng-model="policy.firstInsPeriodTo" id="firstInsPeriodTo"
+				ng-change="computeMinPremiumProrated()" datepicker-popup="{{format}}" is-open="statusDate.firstInsPeriodToOpened"
+				min-date="policy.firstInsPeriodFrom" datepicker-options="dateOptions" close-text="Close" />
+			<span class="input-group-btn">
+				<button ng-disabled="policy.isReadOnly" type="button" class="btn btn-default" ng-click="openFirstInsPeriodTo()">
+					<i class="fa fa-calendar"></i>
+				</button>
+			</span>
+		</div>
+	</div>
+	<label ng-if="periodInMonth" class="col-sm-3 control-label text-danger" translate="policy.duration.first.insurance.period.month"
+		translate-values="{p0:periodInMonth}"></label>
+
+</div>
+
+
+<!---->
+
+<!-- Contract Period -->
+<div class="form-group" bs-modifiable="true">
+	<label class="col-sm-3 control-label" for="contractPeriod">
+		<strong translate="policy.duration.contract.period.label"></strong>
+	</label>
+
+	<div class="col-sm-2">
+		<select ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" class="form-control need-for-pricing" id="contractPeriod"
+			ng-model="policy.contractPeriod" convert-to-number>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+		</select>
+	</div>
+	<div class="col-sm-6">
+		<p class="form-control-static" translate="policy.duration.contract.period.description.label"></p>
+	</div>
+</div>
+<!---->
+

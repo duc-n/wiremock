@@ -1,0 +1,12 @@
+{
+    "request": {
+        "method": "GET",
+        "urlPattern": "/autonomyView/rest/keepSessionAlive"
+    },
+    "response": {
+        "status": 200,        
+        "headers": {
+            "Content-Type": "text/css;charset=UTF-8"
+        }
+    }
+}

@@ -1,0 +1,873 @@
+<!-- Risk Products -->
+<div class="panel panel-default">
+	<div class="panel-body">
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label"><strong
+				translate="policy.risk.mgt.risk.products.label"></strong></label>
+
+			<div class="col-sm-2">
+
+				<div class="checkbox disabled">
+					<label> <input type="checkbox"
+						ng-model="policy.riskProductCl" value="true" disabled checked /> <span
+						translate="policy.risk.mgt.risk.products.cl.label"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-3 col-sm-2">
+				<div class="checkbox">
+					<label> <input ng-disabled="policy.isReadOnly"
+						type="checkbox" ng-model="policy.riskProductEcl" value="true" /> <span
+						translate="policy.risk.mgt.risk.products.ecl.label"></span>
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-7" ng-show="policy.riskProductEcl">
+				<div class="row">
+					<label class="col-sm-3 control-label" for="eclLimit"
+						translate="policy.risk.mgt.risk.products.ecl.limit.label"></label>
+
+					<div class="col-sm-4">
+						<div class="input-group">
+							<input ng-disabled="policy.isReadOnly" type="number" ng-change="computeEclPercentEAP()"
+								aty-input-number id="eclLimit" name="eclLimit"
+								class="form-control" ng-model="policy.eclLimit"
+								aty-maxlength="15" />
+						</div>
+					</div>
+					<div class="col-sm-5">
+						<div class="input-group">
+							<currency ng-bind="policy.contractCurrency" />
+							<atyDerogation  drg-id="eclLimit-derogation" drg-input="policy.eclLimit"
+								drg-section="riskDerogation" drg-field="eclLimit"
+								
+								drg-visible="policy.riskProductEcl" /> 
+								<!--  drg-visible="false" />-->
+								
+						<atyDerogation  drg-input="policy.eclPercentEAP"
+									drg-section="riskDerogation" drg-field="eclPercentEAP"
+									drg-visible="isEclPercentEAPVisible()" />
+																
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-sm-offset-3 col-sm-2">
+				<div class="checkbox">
+					<label> <input ng-disabled="policy.isReadOnly"
+						type="checkbox" ng-model="policy.riskProductAtRating" value="true" />
+						<span translate="policy.risk.mgt.risk.products.atRating.label"></span>
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-7">
+				<div class="row form-group" ng-if="policy.riskProductAtRating">
+					<label class="col-sm-3 control-label" for="eclLimit"
+						translate="policy.risk.mgt.risk.products.at.rating.label"></label>
+
+					<div class="col-sm-9">
+						<table
+							class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+							<colgroup>
+								<col span="1" class="col-sm-6">
+								<col span="1" class="col-sm-6">
+							</colgroup>
+							<thead>
+								<tr class="">
+									<th class="text-center">
+										<p class="form-control-static">
+											<strong
+												translate="policy.risk.mgt.table.rating.1st.column.header.title"></strong>
+										</p>
+									</th>
+									<th class="text-center">
+										<p class="form-control-static">
+											<strong
+												translate="policy.risk.mgt.table.rating.2nd.column.header.title"
+												translate-values="{p0: policy.contractCurrency}"></strong>
+										</p>
+									</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td><p class="form-control-static">X</p></td>
+									<td><p class="form-control-static">0</p></td>
+								</tr>
+								<tr>
+									<td><p class="form-control-static">NR</p></td>
+									<td><p class="form-control-static"
+											ng-bind="policy.ratingNRCover | atyNumber"></p></td>
+								</tr>
+								<tr>
+									<td><p class="form-control-static">R</p></td>
+									<td><p class="form-control-static"
+											ng-bind="policy.ratingRCover | atyNumber"></p></td>
+								</tr>
+								<tr>
+									<td><p class="form-control-static">@</p></td>
+									<td><p class="form-control-static"
+											ng-bind="policy.rating1ATCover | atyNumber"></p></td>
+								</tr>
+								<tr>
+									<td><p class="form-control-static">@@</p></td>
+									<td><p class="form-control-static"
+											ng-bind="policy.rating2ATCover | atyNumber"></p></td>
+								</tr>
+								<tr>
+									<td><p class="form-control-static">@@@</p></td>
+									<td><p class="form-control-static"
+											ng-bind="policy.rating3ATCover | atyNumber"></p></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!---->
+<!-- Discretionary Credit Limit-->
+<div class="panel panel-default">
+	<div class="panel-body">
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label" for="discretionaryCreditLimit"><strong
+				translate="policy.risk.mgt.dcl.label"></strong></label>
+
+			<div class="col-sm-2">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					id="discretionaryCreditLimit"
+					ng-model="policy.discretionaryCreditLimit" ng-value="false" /> <span
+					translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.discretionaryCreditLimit" ng-value="true" /> <span
+					translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+
+		<div class="form-group" ng-show="policy.discretionaryCreditLimit">
+			<!-- Specific ML -->
+			<div class="col-sm-offset-3 col-sm-2">
+				<div class="checkbox">
+					<label> <input ng-disabled="policy.isReadOnly"
+						type="checkbox" ng-model="policy.specificML" value="true" /> <span
+						translate="policy.risk.specific.ml.label"></span>
+					</label>
+				</div>
+			</div>
+
+			<div class="col-sm-7" ng-show="policy.specificML">
+				<label class="col-sm-3 control-label"
+					translate="policy.risk.specific.ml.amount.label"></label>
+				<div class="col-sm-4">
+					<div class="input-group">
+						<input type="number" ng-disabled="policy.isReadOnly"
+							aty-input-number id="specificMLAmount" aty-maxlength="15"
+							ng-maxlength="15" name="specificMLAmount" class="form-control"
+							ng-model="policy.specificMLAmount" />
+					</div>
+				</div>
+				<div class="col-sm-5">
+					<div class="input-group">
+						<currency ng-bind="policy.contractCurrency" />
+						<atyDerogation drg-input="policy.specificMLAmount"
+							drg-section="riskDerogation" drg-field="specificMLAmount"
+							drg-visible="policy.discretionaryCreditLimit && policy.specificML" />
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!-- Blind cover -->
+		<div ng-show="policy.discretionaryCreditLimit"
+			class="panel panel-default">
+			<div class="panel-body">
+
+				<!-- First Column -->
+				<div class="col-sm-8">
+					<!-- Blind Cover checkbox-->
+					<div class="form-group">
+						<div class="col-sm-3">
+							<div class="checkbox">
+								<label> <input ng-disabled="policy.isReadOnly"
+									type="checkbox" ng-model="policy.blindCover" value="true" /> <strong
+									translate="policy.risk.mgt.dcl.blind.cover.label"></strong>
+								</label>
+							</div>
+						</div>
+					</div>
+					<!-- DCL Limit per Buyer -->
+					<div ng-show="policy.blindCover" class="form-group">
+						<label class="col-sm-4 control-label"
+							for="blindCoverDCLLimit"
+							translate="policy.risk.mgt.dcl.limit.per.buyer.label"></label>
+
+						<div class="col-sm-4">
+							<div class="input-group">
+								<input ng-disabled="policy.isReadOnly" type="number"
+									aty-input-number id="blindCoverDCLLimit" ng-change="computeBlindCoverPercent()"
+									name="blindCoverDCLLimit" class="form-control"
+									ng-model="policy.blindCoverDCLLimit" aty-maxlength="15" />
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="input-group">
+								<currency ng-bind="policy.contractCurrency" />
+								<atyDerogation drg-input="policy.blindCoverDCLLimit"
+									drg-section="riskDerogation" drg-field="blindCoverDCLLimit"
+									drg-visible="policy.discretionaryCreditLimit && policy.blindCover" />
+								
+								<atyDerogation drg-input="policy.blindCoverPercent"
+									drg-section="riskDerogation" drg-field="blindCoverPercent"
+									drg-visible="policy.discretionaryCreditLimit && policy.blindCover" />
+							</div>
+						</div>
+					</div>
+
+					<!-- Insured Percentage -->
+					<div ng-show="policy.blindCover" class="form-group">
+						<label class="col-sm-4 control-label"
+							for="blindCoverInsuPercent" translate="insured.percentage.label"></label>
+
+						<div class="col-sm-2">
+							<div class="input-group">
+								<input ng-disabled="policy.isReadOnly" type="number"
+									aty-input-number id="blindCoverInsuPercent"
+									name="blindCoverInsuPercent" class="form-control"
+									ng-model="policy.blindCoverInsuPercent" aty-maxlength="3" />
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="input-group">
+								<percent />
+								<atyDerogation drg-input="policy.blindCoverInsuPercent"
+									drg-section="riskDerogation" drg-field="blindCoverInsuPercent"
+									drg-visible="policy.discretionaryCreditLimit && policy.blindCover" />
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Blind Cover Zone Countries -->
+				<div ng-if="policy.blindCover"
+					class="col-sm-4 multi-select notToPrint">
+					<div class="selected-items">
+						<div class="form-group">
+							<label class="col-sm-12"><strong
+								translate="policy.risk.mgt.dcl.blind.cover.zone.countries.label"></strong></label>
+						</div>
+						<div class="multi-content">
+							<ul class="form-control-static" dnd-list
+								dnd-drop="onDrop(policy.blindCoverCountriesList,item,index)"
+								dnd-disable-if="policy.isReadOnly" dnd-allowed-types="policy.blindCoverCountriesList.allowedTypes">
+								<li
+									ng-repeat="country in policy.blindCoverCountriesList.countries | searchCountryFilter:searchServOptCountry track by country.code "
+									dnd-draggable="getSelectedItemsIncluding(policy.blindCoverCountriesList, country)"
+									dnd-dragstart="onDragstart(policy.blindCoverCountriesList, event)"
+									dnd-moved="onMoved(policy.blindCoverCountriesList, true);serviceOptionCoveredCountryMovedHandle('BCC',policy.blindCover,policy.blindCoverCountriesList)"
+									dnd-dragend="policy.blindCoverCountriesList.dragging = false"
+									dnd-selected="onSelected(policy.blindCoverCountriesList,country,event)"
+									dnd-type="policy.blindCoverCountriesList.type" ng-class="{'selected': country.selected}"
+									ng-hide="policy.blindCoverCountriesList.dragging && country.selected"
+									class="ellipsis" iso="{{::country.code}}"><span
+									translate="{{::'country.'+country.code}}"></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<div class="form-group"></div>
+				<!-- Blind Cover Zone Countries Excluded-->
+				<div ng-if="policy.blindCover"
+					class="col-sm-offset-8 col-sm-4 multi-select notToPrint">
+					<div class=" selected-items">
+						<div class="form-group">
+							<label class="col-sm-12"><strong
+								translate="policy.service.option.not.covered.countries.label"></strong></label>
+						</div>
+						<div class="multi-content">
+							<ul class="form-control-static" dnd-list
+								dnd-drop="onDrop(policy.excludedBlindCoverCountriesList,item,index)"
+								dnd-disable-if="policy.isReadOnly" dnd-allowed-types="policy.excludedBlindCoverCountriesList.allowedTypes">
+								<li
+									ng-repeat="country in policy.excludedBlindCoverCountriesList.countries | searchCountryFilter:searchServOptCountry track by country.code "
+									dnd-draggable="getSelectedItemsIncluding(policy.excludedBlindCoverCountriesList, country)"
+									dnd-dragstart="onDragstart(policy.excludedBlindCoverCountriesList, event)"
+									dnd-moved="onMoved(policy.excludedBlindCoverCountriesList,true)"
+									dnd-dragend="policy.excludedBlindCoverCountriesList.dragging = false"
+									dnd-selected="onSelected(policy.excludedBlindCoverCountriesList,country,event,true)"
+									dnd-type="policy.excludedBlindCoverCountriesList.type" ng-class="{'selected': country.selected, 'disabled' : country.disabled}"
+									dnd-disable-if="isCountryExcludedInCover(country)"
+									ng-hide="policy.excludedBlindCoverCountriesList.dragging && country.selected"
+									class="ellipsis" iso="{{::country.code}}"><span
+									translate="{{::'country.'+country.code}}"></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+		<div ng-show="policy.discretionaryCreditLimit"
+			class="panel panel-default">
+			<div class="panel-body">
+				<div class="col-sm-8">
+					<!-- INFO REPORT checkbox-->
+					<div class="form-group">
+						<div class="col-sm-12">
+							<div class="checkbox">
+								<label> <input ng-disabled="policy.isReadOnly"
+									type="checkbox" ng-model="policy.infoReport" value="true" /> <strong
+									translate="policy.risk.mgt.dcl.info.report.label"></strong>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div ng-show="policy.infoReport" class="form-group">
+						<label class="col-sm-offset-1 col-sm-4 control-label"
+							for="infoReportDCLLimit"
+							translate="policy.risk.mgt.dcl.limit.per.buyer.label"></label>
+
+						<div class="col-sm-3">
+							<div class="input-group">
+								<input ng-disabled="policy.isReadOnly" type="number" ng-change="computeDclInfoReportPercentEAP()"
+									aty-input-number id="infoReportDCLLimit"
+									name="infoReportDCLLimit" class="form-control"
+									ng-model="policy.infoReportDCLLimit" aty-maxlength="15" />
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="input-group">
+								<currency ng-bind="policy.contractCurrency" />
+								<atyDerogation  drg-input="policy.infoReportDCLLimit"
+									drg-section="riskDerogation" drg-field="infoReportDCLLimit"
+									drg-visible="policy.discretionaryCreditLimit && policy.infoReport" />
+									
+								<atyDerogation  drg-input="policy.dclInfoReportPercentEAP"
+									drg-section="riskDerogation" drg-field="dclInfoReportPercentEAP"
+									drg-visible="isDclInfoReportPercentEAPVisible()" /> 
+							</div>
+						</div>
+					</div>
+
+					<div ng-show="policy.infoReport" class="form-group">
+						<label class="col-sm-offset-1 col-sm-4 control-label"
+							for="infoReportInsuPercent" translate="insured.percentage.label"></label>
+
+						<div class="col-sm-2">
+							<div class="input-group">
+								<input ng-disabled="policy.isReadOnly"
+									id="infoReportInsuPercent" name="infoReportInsuPercent"
+									type="number" aty-input-number class="form-control"
+									ng-model="policy.infoReportInsuPercent" aty-maxlength="3" />
+							</div>
+						</div>
+						<div class="col-sm-5">
+							<div class="input-group">
+								<percent />
+								<atyDerogation drg-input="policy.infoReportInsuPercent"
+									drg-section="riskDerogation" drg-field="infoReportInsuPercent"
+									drg-visible="policy.discretionaryCreditLimit && policy.infoReport" />
+							</div>
+						</div>
+					</div>
+					<!-- -->
+
+					<!-- Satisfactory Trading Experience -->
+					<div class="form-group">
+						<div class="col-sm-12">
+							<div class="checkbox">
+								<label> <input ng-disabled="policy.isReadOnly"
+									type="checkbox" ng-model="policy.satisfactoryTradingExperience"
+									value="true" /> <strong
+									translate="policy.risk.mgt.dcl.satisfactory.trading.experience.label"></strong>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div ng-show="policy.satisfactoryTradingExperience"
+						class="form-group">
+						<label class="col-sm-offset-1 col-sm-4 control-label"
+							for="satisfactoryTradingExperienceLimit"
+							translate="policy.risk.mgt.dcl.limit.per.buyer.label"></label>
+
+						<div class="col-sm-3">
+							<div class="input-group">
+								<input ng-disabled="policy.isReadOnly" type="number" ng-change="computeDclSatisfExperiencePercentEAP()"
+									aty-input-number id="satisfactoryTradingExperienceLimit"
+									name="satisfactoryTradingExperienceLimit" class="form-control"
+									ng-model="policy.satisfactoryTradingExperienceLimit"
+									aty-maxlength="15" />
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="input-group">
+								<currency ng-bind="policy.contractCurrency" />
+								<atyDerogation id="satisfactoryTradingExperienceLimit-derogation"
+									drg-input="policy.satisfactoryTradingExperienceLimit"
+									drg-section="riskDerogation"
+									drg-field="satisfactoryTradingExperienceLimit"
+									drg-visible="policy.discretionaryCreditLimit && policy.satisfactoryTradingExperience" />
+									
+									 <atyDerogation
+									drg-input="policy.dclSatisfExperiencePercentEAP"
+									drg-section="riskDerogation"
+									drg-field="dclSatisfExperiencePercentEAP"
+									drg-visible="isDclSatisfExperiencePercentEAPVisible()" />
+							</div>
+						</div>
+					</div>
+
+					<div ng-show="policy.satisfactoryTradingExperience"
+						class="form-group">
+						<label class="col-sm-offset-1 col-sm-4 control-label"
+							for="satisfactoryTradingExperienceInsuPercent"
+							translate="insured.percentage.label"></label>
+
+						<div class="col-sm-2">
+							<div class="input-group">
+								<input ng-disabled="policy.isReadOnly"
+									id="satisfactoryTradingExperienceInsuPercent"
+									name="satisfactoryTradingExperienceInsuPercent" type="number"
+									aty-input-number class="form-control"
+									ng-model="policy.satisfactoryTradingExperienceInsuPercent"
+									aty-maxlength="3" />
+							</div>
+						</div>
+						<div class="col-sm-5">
+							<div class="input-group">
+								<percent />
+								<atyDerogation
+									drg-input="policy.satisfactoryTradingExperienceInsuPercent"
+									drg-section="riskDerogation"
+									drg-field="satisfactoryTradingExperienceInsuPercent"
+									drg-visible="policy.discretionaryCreditLimit && policy.satisfactoryTradingExperience" />
+							</div>
+						</div>
+					</div>
+			
+
+					<!-- Credit Mgt Proc -->
+					<div class="form-group">
+						<div class="hidden-print col-sm-6">
+							<div class="radio">
+								<label> <input ng-disabled="policy.isReadOnly"
+									type="radio" ng-model="policy.dclSelfUnderWritingOption"
+									value="NONE" /> <strong
+									translate="policy.risk.mgt.dcl.no.self.underwriting.label"></strong>
+								</label>
+							</div>
+							<div class="radio">
+								<label> <input ng-disabled="policy.isReadOnly"
+									type="radio" ng-model="policy.dclSelfUnderWritingOption"
+									value="CMP" /> <strong
+									translate="policy.risk.mgt.dcl.credit.mgt.proc.label"></strong>
+								</label>
+							</div>
+						</div>
+						<div class="hidden-print col-sm-6">
+							<div class="radio">
+								<label> <input ng-disabled="policy.isReadOnly"
+									type="radio" ng-model="policy.dclSelfUnderWritingOption"
+									value="CMPCZ" /> <strong
+									translate="policy.risk.mgt.dcl.credit.mgt.proc.plus.cons.label"></strong>
+								</label>
+							</div>
+						</div>
+					</div>
+
+					<div ng-show="isDCLSelfUnderWritingSelected()" class="form-group">
+						<label class="col-sm-offset-1 col-sm-4 control-label"
+							for="dclSelfUnderWritingBuyerLimit"
+							translate="policy.risk.mgt.dcl.limit.per.buyer.label"></label>
+
+						<div class="col-sm-3">
+							<div class="input-group">
+								<input ng-disabled="policy.isReadOnly" type="number" ng-change="computeDclMgtProcedurePercentEAP()"
+									aty-input-number id="dclSelfUnderWritingBuyerLimit"
+									name="dclSelfUnderWritingBuyerLimit" class="form-control"
+									ng-model="policy.dclSelfUnderWritingBuyerLimit"
+									aty-maxlength="15" required />
+							</div>
+						</div>
+						<div class="col-sm-4">
+							<div class="input-group">
+								<currency ng-bind="policy.contractCurrency" />
+								<atyDerogation id="dclSelfUnderWritingBuyerLimit-derogation" drg-input="policy.dclSelfUnderWritingBuyerLimit" 
+									drg-section="riskDerogation"
+									drg-field="dclSelfUnderWritingBuyerLimit"
+									drg-visible="policy.discretionaryCreditLimit && isDCLSelfUnderWritingSelected()" />
+									
+									 <atyDerogation drg-input="policy.dclMgtProcedurePercentEAP"
+									drg-section="riskDerogation"
+									drg-field="dclMgtProcedurePercentEAP"
+									drg-visible="isDclMgtProcedurePercentEAPVisible()" /> 
+							</div>
+						</div>
+					</div>
+
+					<div ng-show="isDCLSelfUnderWritingSelected()" class="form-group">
+						<label class="col-sm-offset-1 col-sm-4 control-label"
+							for="dclSelfUnderWritingInsuPercent"
+							translate="insured.percentage.label"></label>
+
+						<div class="col-sm-2">
+							<div class="input-group">
+								<input ng-disabled="policy.isReadOnly" type="number"
+									id="dclSelfUnderWritingInsuPercent" aty-input-number
+									name="dclSelfUnderWritingInsuPercent" class="form-control"
+									ng-model="policy.dclSelfUnderWritingInsuPercent"
+									aty-maxlength="3" required/>
+							</div>
+						</div>
+						<div class="col-sm-5">
+							<div class="input-group">
+								<percent />
+								<atyDerogation drg-input="policy.dclSelfUnderWritingInsuPercent"
+									drg-section="riskDerogation"
+									drg-field="dclSelfUnderWritingInsuPercent"
+									drg-visible="policy.discretionaryCreditLimit && isDCLSelfUnderWritingSelected()" />
+							</div>
+						</div>
+					</div>
+
+					<!-- defect 690 : FR Feedback: Add "Credit Manager Contact" and "Procedure date" -->
+					<div ng-if="isDCLSelfUnderWritingSelected()" class="form-group">
+						<label class="col-sm-offset-1 col-sm-4 control-label"
+							for="dclSelfUnderWritingProcedureManager"
+							translate="policy.risk.mgt.dcl.credit.mgt.procedure.manager.label"></label>
+
+						<div class="col-sm-4">
+							<div class="input-group">
+								<input ng-disabled="policy.isReadOnly"
+									id="dclSelfUnderWritingProcedureManager"
+									name="dclSelfUnderWritingProcedureManager" class="form-control"
+									ng-model="policy.dclSelfUnderWritingProcedureManager" required/>
+							</div>
+						</div>
+					</div>
+
+					<div ng-if="isDCLSelfUnderWritingSelected()" class="form-group">
+						<label class="col-sm-offset-1 col-sm-4 control-label"
+							for="dclSelfUnderWritingProcedureDate"
+							translate="policy.risk.mgt.dcl.credit.mgt.procedure.date.label"></label>
+
+						<div class="col-sm-4">
+							<div class="input-group">
+								<input readonly class="form-control" type="text"
+									ng-model="policy.dclSelfUnderWritingProcedureDate"
+									id="dclSelfUnderWritingProcedureDate"
+									datepicker-popup="{{format}}"
+									is-open="statusDate.dclSelfUnderWritingProcedureDateOpened"
+									datepicker-options="dateOptions" close-text="Close" required /> <span
+									class="input-group-btn"><button
+										ng-disabled="policy.isReadOnly" type="button"
+										class="btn btn-default"
+										ng-click="openDclSelfUnderWritingProcedureDate()">
+										<i class="fa fa-calendar" ></i>
+									</button></span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Discretionary Zone Countries -->
+				<div class="col-sm-4 multi-select notToPrint">
+					<div class=" selected-items">
+						<div class="form-group">
+							<label class="col-sm-12"><strong
+								translate="policy.risk.mgt.discretionary.zone.countries.label"></strong></label>
+						</div>
+						<div class="multi-content">
+							<ul class="form-control-static" dnd-list
+								dnd-drop="onDrop(policy.discretionaryCountriesList,item,index)"
+								dnd-disable-if="policy.isReadOnly" dnd-allowed-types="policy.discretionaryCountriesList.allowedTypes">
+								<li
+									ng-repeat="country in policy.discretionaryCountriesList.countries | searchCountryFilter:searchServOptCountry track by country.code "
+									dnd-draggable="getSelectedItemsIncluding(policy.discretionaryCountriesList, country)"
+									dnd-dragstart="onDragstart(policy.discretionaryCountriesList, event)"
+									dnd-moved="onMoved(policy.discretionaryCountriesList,true);serviceOptionCoveredCountryMovedHandle('BCC',policy.discretionaryCreditLimit,policy.discretionaryCountriesList)"
+									dnd-dragend="policy.discretionaryCountriesList.dragging = false"
+									dnd-selected="onSelected(policy.discretionaryCountriesList,country,event)"
+									dnd-type="policy.discretionaryCountriesList.type" ng-class="{'selected': country.selected}"
+									ng-hide="policy.discretionaryCountriesList.dragging && country.selected"
+									class="ellipsis" iso="{{::country.code}}"><span
+									translate="{{::'country.'+country.code}}"></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+
+				<div class="form-group"></div>
+				<!-- DCL Countries Excluded-->
+				<div class="col-sm-offset-8 col-sm-4 multi-select notToPrint">
+					<div class=" selected-items">
+						<div class="form-group">
+							<label class="col-sm-12"><strong
+								translate="policy.service.option.not.covered.countries.label"></strong></label>
+						</div>
+						<div class="multi-content">
+							<ul class="form-control-static" dnd-list
+								dnd-drop="onDrop(policy.excludedDiscretionaryCountriesList,item,index)"
+								dnd-disable-if="policy.isReadOnly" dnd-allowed-types="policy.excludedDiscretionaryCountriesList.allowedTypes">
+								<li
+									ng-repeat="country in policy.excludedDiscretionaryCountriesList.countries | searchCountryFilter:searchServOptCountry track by country.code "
+									dnd-draggable="getSelectedItemsIncluding(policy.excludedDiscretionaryCountriesList, country)"
+									dnd-dragstart="onDragstart(policy.excludedDiscretionaryCountriesList, event)"
+									dnd-moved="onMoved(policy.excludedDiscretionaryCountriesList,true)"
+									dnd-dragend="policy.excludedDiscretionaryCountriesList.dragging = false"
+									dnd-selected="onSelected(policy.excludedDiscretionaryCountriesList,country,event,true)"
+									dnd-type="policy.excludedDiscretionaryCountriesList.type" ng-class="{'selected': country.selected, 'disabled' : country.disabled}"
+									dnd-disable-if="isCountryExcludedInCover(country)"
+									ng-hide="policy.excludedDiscretionaryCountriesList.dragging && country.selected"
+									class="ellipsis" iso="{{::country.code}}"><span
+									translate="{{::'country.'+country.code}}"></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+
+
+				<!-- Printable section-->
+				<!-- Discretionary Zone Countries -->
+				<!-- //Defect 492, to be placed into a template due to performance problem
+        <div class="col-sm-12 multi-select toPrint">
+          <div class=" selected-items">
+            <div class="form-group">
+              <label class="col-sm-12"><strong translate="policy.risk.mgt.discretionary.zone.countries.label"></strong></label>
+            </div>
+            <div class="multi-content multi-column">
+              <ul class="form-control-static">
+                <li ng-repeat="dclCountry in policy.discretionaryCountriesList | atyIntersections: policy.zoneDom.countries : policy.zone2.countries : policy.zone1.countries | atyOrderByTranslated: 'country.'">
+                	<span translate="{{::'country.'+dclCountry.code}}"></span>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        -->
+				<!-- Printable section-->
+
+			</div>
+		</div>
+	</div>
+</div>
+<!---->
+<!-- First Sales -->
+<div class="panel panel-default">
+	<div class="panel-body">
+		<!-- FIRST COLUMN -->
+		<div class="form-group">
+			<label class="col-sm-3 control-label" for="firstSales"><strong
+				translate="policy.risk.mgt.dcl.first.sales.label"></strong></label>
+
+			<div class="col-sm-9">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio" id="firstSales"
+					ng-model="policy.firstSales" ng-value="false" /> <span
+					translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.firstSales" ng-value="true" /> <span
+					translate="yes.label"></span>
+				</label>
+			</div>
+		</div>
+		<div class="col-sm-8">
+			<!-- Buyer Limit -->
+			<div class="form-group" ng-show="policy.firstSales">
+				<label class="col-sm-offset-1 col-sm-4 control-label"
+					for="firstSalesDCLLimit"
+					translate="policy.risk.mgt.dcl.limit.per.buyer.label"></label>
+
+				<div class="col-sm-4">
+					<div class="input-group">
+						<input ng-disabled="policy.isReadOnly" type="number"
+							aty-input-number id="firstSalesDCLLimit"
+							name="firstSalesDCLLimit" class="form-control"
+							ng-model="policy.firstSalesDCLLimit" aty-maxlength="15" />
+					</div>
+				</div>
+				<div class="col-sm-3">
+					<div class="input-group">
+						<currency ng-bind="policy.contractCurrency" />
+						<atyDerogation drg-input="policy.firstSalesDCLLimit"
+							drg-section="riskDerogation" drg-field="firstSalesDCLLimit"
+							drg-visible="policy.firstSales" />
+					</div>
+				</div>
+			</div>
+			<!-- Insured Percentage -->
+			<div class="form-group" ng-show="policy.firstSales">
+				<label class="col-sm-offset-1 col-sm-4 control-label"
+					for="firstSalesInsuPercent" translate="insured.percentage.label"></label>
+
+				<div class="col-sm-2">
+					<div class="input-group">
+						<input ng-disabled="policy.isReadOnly" type="number"
+							aty-input-number id="firstSalesInsuPercent"
+							name="firstSalesInsuPercent" class="form-control"
+							ng-model="policy.firstSalesInsuPercent" aty-maxlength="3" />
+					</div>
+				</div>
+				<div class="col-sm-5">
+					<div class="input-group">
+						<percent />
+						<atyDerogation drg-input="policy.firstSalesInsuPercent"
+							drg-section="riskDerogation" drg-field="firstSalesInsuPercent"
+							drg-visible="policy.firstSales" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- First Sales Zone Countries -->
+		<div ng-if="policy.firstSales"
+			class="col-sm-4 multi-select notToPrint">
+			<div class=" selected-items">
+				<div class="form-group">
+					<label class="col-sm-12"><strong
+						translate="policy.risk.mgt.dcl.first.sales.zone.countries.label"></strong></label>
+				</div>
+				<div class="multi-content">
+					<ul class="form-control-static" dnd-list="">
+						<li
+							ng-repeat="firstSalesCountry in policy.firstSalesCountriesList | atyIntersections: policy.area1.countries : policy.area2.countries : policy.area3.countries | atyOrderByTranslated: 'country.'">
+							<span translate="{{::'country.'+firstSalesCountry.code}}"></span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- Printable section-->
+		<!-- First Sales Zone Countries -->
+		<!-- //Defect 492, to be placed into a template due to performance problem
+    <div ng-if="policy.firstSales" class="col-sm-offset-2 col-sm-10 multi-select toPrint">
+      <div class=" selected-items">
+        <div class="form-group">
+          <label class="col-sm-12"><strong translate="policy.risk.mgt.dcl.first.sales.zone.countries.label"></strong></label>
+        </div>
+        <div class="multi-content multi-column">
+          <ul class="form-control-static">
+            <li ng-repeat="firstSalesCountry in policy.firstSalesCountriesList | atyIntersections: policy.zoneDom.countries : policy.zone2.countries : policy.zone1.countries | atyOrderByTranslated: 'country.'">
+            	<span translate="{{::'country.'+firstSalesCountry.code}}"></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    -->
+		<!-- Printable section-->
+	</div>
+</div>
+<!---->
+<!-- Maximum amount of Credit Decision -->
+<div class="panel panel-default"
+	ng-hide="isDeclarationBasisCreditLimitSelected()">
+	<div class="panel-body">
+		<!-- declaration basis = turnover -->
+		<div class="form-group" ng-show="isDeclarationBasisTurnoverSelected()">
+			<label class="col-sm-3 control-label"
+				for="maxAmountOfCreditDecisionTurnover"><strong
+				translate="policy.risk.mgt.dcl.max.amount.of.credit.decision.label"></strong></label>
+
+			<div class="col-sm-1">
+				<div class="input-group">
+					<input ng-disabled="policy.isReadOnly" type="number"
+						aty-input-number id="maxAmountOfCreditDecisionTurnover"
+						name="maxAmountOfCreditDecisionTurnover" class="form-control"
+						ng-model="policy.maxAmountOfCreditDecisionTurnover"
+						aty-maxlength="3" />
+				</div>
+			</div>
+			<div class="col-sm-8">
+				<div class="input-group">
+					<percent />
+          <span translate="policy.risk.mgt.dcl.max.amount.of.credit.decision.turnover.unite.label"></span>
+					<atyDerogation drg-input="policy.maxAmountOfCreditDecisionTurnover"
+						drg-section="riskDerogation"
+						drg-field="maxAmountOfCreditDecisionTurnover"
+						drg-visible="isDeclarationBasisTurnoverSelected()" />
+				</div>
+			</div>
+		</div>
+
+		<!-- declaration basis = outstading -->
+		<div class="form-group"
+			ng-show="isDeclarationBasisOutstandingSelected()">
+			<label class="col-sm-3 control-label"
+				for="maxAmountOfCreditDecisionOutstanding"><strong
+				translate="policy.risk.mgt.dcl.max.amount.of.credit.decision.label"></strong></label>
+
+			<div class="col-sm-1">
+				<div class="input-group">
+					<input ng-disabled="policy.isReadOnly" type="number"
+						aty-input-number id="maxAmountOfCreditDecisionOutstanding"
+						name="maxAmountOfCreditDecisionOutstanding" class="form-control"
+						ng-model="policy.maxAmountOfCreditDecisionOutstanding"
+						aty-maxlength="3" />
+				</div>
+			</div>
+			<div class="col-sm-1">
+				<div class="input-group">
+					<percent />
+					<atyDerogation
+						drg-input="policy.maxAmountOfCreditDecisionOutstanding"
+						drg-section="riskDerogation"
+						drg-field="maxAmountOfCreditDecisionOutstanding"
+						drg-visible="isDeclarationBasisOutstandingSelected()" />
+				</div>
+			</div>
+			<div class="col-sm-7">
+				<p class="form-control-static"
+					translate="policy.risk.mgt.dcl.max.amount.of.credit.decision.outstanding.unite.label"></p>
+			</div>
+		</div>
+	</div>
+</div>
+<!---->
+<!-- Allow other currencies for agreement request -->
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-3 control-label" for="otherCurrenciesAllowed"><strong
+				translate="policy.risk.allow.other.currencies.label"></strong></label>
+
+			<div class="col-sm-2">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					id="otherCurrenciesAllowed"
+					ng-model="policy.otherCurrenciesAllowed" ng-value="false" /> <span
+					translate="no.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.otherCurrenciesAllowed" ng-value="true" /> <span
+					translate="yes.label"></span>
+				</label>
+			</div>
+			<div class="col-sm-1">
+				<div class="input-group">
+					<atyDerogation drg-input="policy.otherCurrenciesAllowed"
+						drg-section="riskDerogation" drg-field="otherCurrenciesAllowed"
+						drg-visible="true" />
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!---->

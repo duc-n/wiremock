@@ -1,0 +1,346 @@
+<spinner class="aty-data-loading" name="quoteSpinner">
+<div class="messaging">
+	<div class="la-ball-circus la-2x">
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+		<div></div>
+	</div>
+	<h1 translate="spinner.quotation.progress.title"></h1>
+</div>
+</spinner>
+
+<script type="text/ng-template" id="quoteButtonPopoverTemplate.html">
+        <div><strong>{{quoteButtonTooltip}}<strong></div>
+        <div class="form-group">
+          <label>Popup Title:</label>
+        </div>
+</script>
+
+<!-- ============= 1st line ============ -->
+<!-- Sales Margin-->
+<div class="form-group" bs-modifiable="true">
+	<label class="col-sm-3 control-label" for="margin">
+		<strong translate="policy.pricing.margin.label"></strong>
+	</label>
+
+	<div class="col-sm-1">
+		<div class="input-group">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number id="margin" name="margin"
+				class="form-control need-for-pricing" ng-model="policy.margin" ng-change="checkQuoteAndRequestQuoteBtn()" aty-maxlength="3" />
+		</div>
+	</div>
+
+	<div class="col-sm-2">
+		<div class="input-group">
+			<percent />
+			<atyDerogation ng-if="policy.negotiatedMargin == null" drg-input="policy.margin" drg-section="pricingDerogation" drg-field="margin"
+				drg-lower="true" />
+		</div>
+	</div>
+
+	<!-- defect #519 :  Margin after price negotiation -->
+	<!-- defect #622 : FR Feedback: Hide Sales margin negotiated if no Peps rights -->
+	<label class="col-sm-3 control-label" ng-show="showNegotiatedMargin()">
+		<strong translate="policy.pricing.negotiated.margin.after.negotiating.label" translate-values="{p0: policy.negotiatedMargin}"></strong>
+	</label>
+
+	<div class="col-sm-1" ng-show="showNegotiatedMargin()">
+		<div class="input-group">
+			<atyDerogation drg-input="policy.negotiatedMargin" drg-section="pricingDerogation" drg-field="negotiatedMargin" drg-lower="true" />
+		</div>
+	</div>
+
+	<!-- Re-Quote button -->
+	<div class="col-sm-2 text-right pull-right" ng-if="::showPEPSRight()">
+		<i popover-html="quoteButtonTooltip" popover-trigger="mouseenter" class="fa fa-info-circle fa-lg" ng-if="policy.isReadOnly || buttonQuoteDisabled"></i>
+		<button type="button" ng-disabled="policy.isReadOnly || buttonQuoteDisabled" ng-click="quote()" class="btn btn-primary" id="quote-btn"
+			translate="policy.pricing.button.quote"></button>
+	</div>
+
+	<!-- Quotation Request button -->
+	<div class="col-sm-4 text-right pull-right" ng-if="::!showPEPSRight()">
+		<i popover-html="quoteButtonTooltip" popover-trigger="mouseenter" class="fa fa-info-circle fa-lg"
+			ng-if="policy.contactInformationEmpty || policy.isReadOnly || buttonQuoteDisabled || policy.requestQuoteTaskId != null"></i>
+		<button type="button" ng-disabled="policy.contactInformationEmpty || policy.isReadOnly || buttonQuoteDisabled || policy.requestQuoteTaskId != null"
+			ng-click="requestQuotation()" class="btn btn-primary" id="requestQuotation-btn" translate="policy.quote.request.btn"></button>
+	</div>
+
+</div>
+
+<!-- ============= 2nd line ============ -->
+<!-- Min Premium Rate -->
+<div class="form-group" bs-modifiable="true">
+	<label class="col-sm-3 control-label" for="minPremiumRate">
+		<strong translate="policy.pricing.min.premium.rate.label"></strong>
+	</label>
+
+	<div class="col-sm-1">
+		<div class="input-group">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number id="minPremiumRate" name="minPremiumRate"
+				class="form-control need-for-pricing" ng-model="policy.minPremiumRate" ng-change="checkQuoteAndRequestQuoteBtn()" aty-maxlength="3" />
+		</div>
+	</div>
+
+	<div class="col-sm-2">
+		<div class="input-group">
+			<percent />
+			<atyDerogation ng-if="policy.negotiatedMinPremiumRate == null" drg-input="policy.minPremiumRate" drg-section="pricingDerogation"
+				drg-field="minPremiumRate" drg-lower="true" />
+		</div>
+	</div>
+	<!-- defect #519 : MP Ratio after price negotiation  -->
+	<label class="col-sm-3 control-label" ng-if="policy.negotiatedMinPremiumRate != null">
+		<strong translate="policy.pricing.min.premium.rate.after.negotiating.label" translate-values="{p0: policy.negotiatedMinPremiumRate}"></strong>
+	</label>
+
+	<div class="col-sm-3" ng-show="policy.negotiatedMinPremiumRate != null">
+		<div class="input-group">
+			<atyDerogation drg-input="policy.negotiatedMinPremiumRate" drg-section="pricingDerogation" drg-field="negotiatedMinPremiumRate" drg-lower="true" />
+		</div>
+	</div>
+</div>
+
+<!-- ============= 3th line ============ -->
+<!-- Fees Reduction & Deposit-->
+<div class="form-group" bs-modifiable="true">
+	<label class="col-sm-3 control-label" for="feesReduction">
+		<strong translate="policy.pricing.fees.reduction.label"></strong>
+	</label>
+
+	<div class="col-sm-1">
+		<div class="input-group">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number id="feesReduction" name="feesReduction"
+				class="form-control need-for-pricing" ng-model="policy.feesReduction" aty-maxlength="3" />
+		</div>
+	</div>
+
+	<div class="col-sm-2">
+		<div class="input-group">
+			<percent />
+			<atyDerogation drg-input="policy.feesReduction" drg-visible="true" drg-section="pricingDerogation" drg-field="feesReduction" />
+		</div>
+	</div>
+
+	<!-- defect #688 : FR Feedback: Prorata Minimum Premium -->
+	<label class="col-sm-2 control-label" for="minPremiumProrated" ng-show="isMinPremiumProratedVisible">
+		<strong translate="policy.pricing.min.premium.prorated.label"></strong>
+	</label>
+
+	<div class="col-sm-2" ng-show="isMinPremiumProratedVisible">
+		<div class="input-group">
+			<input ng-disabled="true" type="number" aty-input-number class="form-control" id="minPremiumProrated" name="minPremiumProrated"
+				bs-modifiable="false" ng-model="policy.minPremiumProrated" aty-maxlength="15" />
+		</div>
+	</div>
+	<!-- defect #688 : FR Feedback: Prorata Minimum Premium -->
+
+	<div class="col-sm-2 text-right pull-right" ng-if="!isButtonPepsHidden()">
+		<!-- defect #965 : Price obsolescence and Negotiation Consistency -->
+		<i popover="pricing.obsolete.block.peps.access" popover-trigger="mouseenter" class="fa fa-info-circle fa-lg"
+			ng-if="ScenarioDataService.getPricingObsolete()"></i>
+		<button type="button" id="negociatePeps-btn" ng-disabled="ScenarioDataService.getPricingObsolete()" ng-click="save(openPepsView)"
+			class="btn btn-primary" translate="policy.pricing.button.peps"></button>
+	</div>
+
+</div>
+
+
+<!-- ============= 5th line ============ -->
+<div class="form-group">
+	<!-- Select pricingPlatforms -->
+	<label class="col-sm-3 control-label" for="pricingPlatform" ng-if="showPricingPlatformList()">
+		<strong translate="create.case.select.platform.label"></strong>
+	</label>
+
+	<div class="col-sm-4" ng-if="showPricingPlatformList()">
+		<select class="form-control need-for-pricing" ng-model="policy.pricingPlatform" id="pricingPlatform" ng-change="checkQuoteAndRequestQuoteBtn()"
+			ng-options="pricingPlatform as pricingPlatform.label for pricingPlatform in policy.pricingPlatformList | orderBy:'label' track by pricingPlatform.code">
+			<option value="" translate="create.case.select.platform.label"></option>
+		</select>
+	</div>
+
+	<!-- PricingPlatform has been used for quotation -->
+	<label class="col-sm-3 control-label" ng-if="showFilePricingPlatform()">
+		<strong translate="policy.pricing.platform.label"></strong>
+	</label>
+
+	<div ng-if="showFilePricingPlatform()" class="col-sm-4">
+		<div class="input-group">
+			<p class="form-control-static" ng-bind="policy.pricingPlatform.label"></p>
+		</div>
+	</div>
+
+	<label class="col-sm-2 control-label">
+		<strong translate="policy.pricing.entity.label"></strong>
+	</label>
+
+	<div class="col-sm-2">
+		<div class="input-group">
+			<p class="form-control-static" ng-bind="policy.pricingEntity"></p>
+		</div>
+	</div>
+</div>
+
+<!-- ============= 6th line ============ -->
+<!-- defect #369 : FR Feedback DSO - the questionary value shall be adjustable for Pricing computation. -->
+<div class="form-group" bs-modifiable="true">
+	<label class="col-sm-3 control-label">
+		<strong translate="policy.pricing.dso.prospect.value.label"></strong>
+	</label>
+
+	<div class="col-sm-2">
+		<div class="input-group">
+			<p class="form-control-static" ng-bind="::policy.theoriticalDSO"></p>
+		</div>
+	</div>
+
+	<label class="col-sm-2 control-label" for="appliedDSO">
+		<strong translate="policy.pricing.applied.dso.label"></strong>
+	</label>
+
+	<div class="col-sm-2">
+		<div class="input-group">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number id="appliedDSO" name="appliedDSO"
+				class="form-control need-for-pricing" ng-model="policy.appliedDSO" aty-maxlength="5" ng-change="checkQuoteAndRequestQuoteBtn()" />
+		</div>
+	</div>
+
+	<div class="col-sm-3">
+		<div class="input-group">
+			<day />
+			<atyDerogation drg-input="policy.appliedDSO" drg-section="pricingDerogation" drg-threshold-dynamic="policy.appliedDSOProspectThd"
+				drg-field="appliedDSOProspect" drg-lower="true" />
+
+			<atyDerogation drg-input="policy.appliedDSO" drg-section="pricingDerogation" drg-lower="true" drg-field="appliedDSO" />
+		</div>
+	</div>
+</div>
+
+<!-- ============= 7th line ============ -->
+
+<!-- Quotation Summary -->
+<div class="panel panel-default">
+	<div class="panel-heading" translate="policy.pricing.quotation.summary.title" />
+	<div class="panel-body">
+		<div class="row">
+			<div class="col-sm-12">
+				<table class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+					<colgroup>
+						<col span="1" class="text-left col-sm-3">
+						<col span="1" class="text-center col-sm-3" ng-if="policy.transform || policy.renewal">
+						<col span="1" class="text-center col-sm-2" ng-if="::showPEPSRight()">
+						<col span="1" class="text-center col-sm-2">
+					</colgroup>
+					<thead>
+						<tr>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="policy.pricing.table.header.ocde"></strong>
+								</p></th>
+							<th class="text-center" ng-if="policy.transform || policy.renewal">
+								<div class="col-sm-6">
+									<p class="form-control-static">
+										<strong translate="policy.pricing.table.header.historical.price"></strong>
+									</p>
+								</div>
+								<div class="col-sm-6 text-right" ng-if="policy.transform || policy.renewal">
+									<p class="form-control-static">
+										<!-- Disable this function at the moment because of the defect 1035 : zone -->
+										<!--  <button type="button" ng-if="policy.transform || policy.renewal" id="openCalculator-btn" ng-click="openCalculator()" class="btn btn-primary"
+											translate="policy.pricing.help.calc.button"></button>-->
+									</p>
+								</div>
+							</th>
+							<th class="text-center" ng-if="::showPEPSRight()"><p class="form-control-static">
+									<strong translate="policy.pricing.table.header.reference.price"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="policy.pricing.table.header.negotiated.price"></strong>
+								</p></th>
+						</tr>
+					</thead>
+					<tbody ng-class="{'pricing-obsolete': policy.scenarioPricingObsolete}">
+						<!-- AREA 1 -->
+						<tr>
+							<td class="text-left"><p class="form-control-static" translate="{{getAreaTitle(1)}}"></p></td>
+							<td ng-if="policy.transform || policy.renewal">
+								<p class="form-control-static"
+									ng-bind="policy.quotationSummary.historicalRate1 | atyNumber:authService.getSession().currentRateLabel:authService.getSession().currentRateInPercent"></p>
+							</td>
+							<td ng-if="::showPEPSRight()"><p class="form-control-static"
+									ng-bind="policy.quotationSummary.rate1 | atyNumber:authService.getSession().currentRateLabel:authService.getSession().currentRateInPercent"></p></td>
+							<td>
+								<div class="input-group">
+									<span
+										ng-bind="policy.quotationSummary.negotiatedRate1 | atyNumber:authService.getSession().currentRateLabel:authService.getSession().currentRateInPercent"></span>
+									<atyDerogation drg-input="policy.quotationSummary.negotiatedRate1" drg-section="pricingDerogation"
+										drg-threshold-dynamic="policy.quotationSummary.historicalRate1" drg-field="negotiatedRate1" drg-lower="true" />
+								</div>
+							</td>
+						</tr>
+						
+						<!-- AREA 2 -->
+						<tr ng-show="policy.rates > 1">
+							<td class="text-left"><p class="form-control-static" translate="{{getAreaTitle(2)}}"></p></td>
+							<td ng-if="policy.transform || policy.renewal">
+								<p class="form-control-static"
+									ng-bind="policy.quotationSummary.historicalRate2 | atyNumber:authService.getSession().currentRateLabel:authService.getSession().currentRateInPercent"></p>
+							</td>
+							<td ng-if="::showPEPSRight()"><p class="form-control-static"
+									ng-bind="policy.quotationSummary.rate2 | atyNumber:authService.getSession().currentRateLabel:authService.getSession().currentRateInPercent"></p></td>
+							<td>
+								<div class="input-group">
+									<span
+										ng-bind="policy.quotationSummary.negotiatedRate2 | atyNumber:authService.getSession().currentRateLabel:authService.getSession().currentRateInPercent"></span>
+									<atyDerogation drg-input="policy.quotationSummary.negotiatedRate2" drg-section="pricingDerogation"
+										drg-threshold-dynamic="policy.quotationSummary.historicalRate2" drg-field="negotiatedRate2" drg-lower="true" />
+								</div>
+							</td>
+						</tr>
+						
+						<!-- AREA 3 -->
+						<tr ng-show="policy.rates === 3">
+							<td class="text-left"><p class="form-control-static" translate="{{getAreaTitle(3)}}"></p></td>
+							<td ng-if="policy.transform || policy.renewal">
+								<p class="form-control-static"
+									ng-bind="policy.quotationSummary.historicalRate3 | atyNumber:authService.getSession().currentRateLabel:authService.getSession().currentRateInPercent"></p>
+							</td>
+							<td ng-if="::showPEPSRight()"><p class="form-control-static"
+									ng-bind="policy.quotationSummary.rate3 | atyNumber:authService.getSession().currentRateLabel:authService.getSession().currentRateInPercent"></p></td>
+							<td>
+								<div class="input-group">
+									<span
+										ng-bind="policy.quotationSummary.negotiatedRate3 | atyNumber:authService.getSession().currentRateLabel:authService.getSession().currentRateInPercent"></span>
+									<atyDerogation drg-input="policy.quotationSummary.negotiatedRate3" drg-section="pricingDerogation"
+										drg-threshold-dynamic="policy.quotationSummary.historicalRate3" drg-field="negotiatedRate3" drg-lower="true" />
+								</div>
+							</td>
+						</tr>
+						
+					
+						<!-- MINIMUM PREMIUM -->
+						<tr>
+							<td class="text-left"><p class="form-control-static" translate="policy.pricing.table.mp" translate-values="{p0: policy.contractCurrency}"></p></td>
+							<td ng-if="policy.transform || policy.renewal" class="empty-cell"></td>
+							<td ng-if="::showPEPSRight()"><p class="form-control-static" ng-bind="policy.quotationSummary.minimumPremium | atyNumber"></p></td>
+							<td>
+								<div class="input-group">
+									<p class="form-control-static" ng-bind="policy.quotationSummary.negotiatedMinimumPremium | atyNumber"></p>
+								</div>
+							</td>
+						</tr>
+						<!-- EXPECTED PREMIUM -->
+						<tr>
+							<td class="text-left"><p class="form-control-static" translate="policy.pricing.table.expected.premium"
+									translate-values="{p0: policy.contractCurrency}"></p></td>
+							<td ng-if="policy.transform || policy.renewal" class="empty-cell"></td>
+							<td ng-if="::showPEPSRight()"><p class="form-control-static" ng-bind="policy.quotationSummary.expectedPremium | atyNumber"></p></td>
+							<td><p class="form-control-static" ng-bind="policy.quotationSummary.negotiatedExpectedPremium | atyNumber"></p></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>

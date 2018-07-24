@@ -1,0 +1,67 @@
+<!-- BEGIn cols -->
+<form name="proposalForm" ng-submit="submitForm($event)"
+	class="aty-form form form-horizontal form-custom" bs-modifiable="true"
+	novalidate>
+	<div class="container" ng-controller="AccordionCtrl">
+		<div class="contentcol row">
+			<div id="content" class="col-sm-12 content-area">
+				<div class="content row">
+					<div class="col-sm-12">
+					
+						<accordion close-others="false">
+				            <!-- DEROGATIONS AUDIT TRAIL -->
+				              <ng-form name="derogationAuditTrailSubForm" class="aty-sub-form">
+				                <accordion-group class="content content-accordion" is-open="true">
+									<accordion-heading >
+					                    <div><span translate="proposal.derogation.audit.trail.title" id="derogationAuditTrailAccordionTitle"></span></div>
+					                </accordion-heading>
+									
+				                 	 <fieldset ng-include="'views/proposal/derogationAuditTrail.html'"></fieldset>
+				
+				                </accordion-group>
+				              </ng-form>           
+	          			
+	          				  <!-- DEROGATIONS WORKFLOW -->
+				              <ng-form name="derogationsWorkflowSubForm" class="aty-sub-form">
+				                <accordion-group class="content content-accordion">
+									<accordion-heading >
+					                    <div><span translate="proposal.derogations.workflow.title" id="derogationsWorkflowAccordionTitle"></span></div>
+					                </accordion-heading>
+									
+				                 	 <fieldset ng-include="'views/proposal/derogationsWorkflow.html'"></fieldset>
+				
+				                </accordion-group>
+				              </ng-form> 
+				              
+				              <!-- DISCUSSIONS -->
+				              <ng-form name="discussionsSubForm" class="aty-sub-form">
+				                <accordion-group class="content content-accordion">
+									<accordion-heading >
+					                    <div><span translate="proposal.discussions.title" id="discussionsAccordionTitle"></span></div>
+					                </accordion-heading>
+									
+				                 	 <fieldset ng-include="'views/proposal/discussions.html'"></fieldset>
+				
+				                </accordion-group>
+				              </ng-form>
+				              
+				               <!-- EDITIONS & DOCUMENTS -->
+				              <ng-form name="editionsDocumentsSubForm" class="aty-sub-form">
+				                <accordion-group class="content content-accordion">
+									<accordion-heading >
+					                    <div><span translate="proposal.editions.documents" id="editionsDocumentsAccordionTitle"></span></div>
+					                </accordion-heading>
+									
+				                 	 <fieldset ng-include="'views/proposal/editionsDocuments.html'"></fieldset>
+				
+				                </accordion-group>
+				              </ng-form>        
+	          			</accordion>
+							
+					</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</form>

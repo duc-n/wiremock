@@ -1,0 +1,303 @@
+<!doctype html>
+<html class="no-js" ng-app="autonomyApp">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title translate="browser.title"></title>
+<meta name="description" content="">
+<!-- Mobile IE allows us to activate ClearType technology for smoothing fonts for easy reading -->
+<meta http-equiv="cleartype" content="on">
+
+<!-- Mobile viewport optimized: h5bp.com/viewport -->
+<meta name="viewport"
+	content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<!-- CSS -->
+<!-- Less Basis (bootstrap + fonts + carrousel) -->
+<!-- Gen -->
+<!-- build:css(resources) styles/main.css -->
+<link rel="stylesheet" href="styles/gen.css">
+<!-- endbuild -->
+
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700'
+	rel='stylesheet' type='text/css'>
+<!-- build:css(resources) styles/vendor.css -->
+<link rel="stylesheet"
+	href="bower_components/angular-chart.js/dist/angular-chart.css" />
+<link rel="stylesheet"
+	href="bower_components/angular-ui-select/dist/select.css" />
+<!-- endbuild -->
+
+<link rel="stylesheet" href="http://localhost:8888/autonomyView/dynaresources/styles/env.css">
+
+<!-- Autonomy  v1.33.2 build  30/08/2017 -->
+
+</head>
+<body class="page-is-fullwidth" id="site-wrapper">
+
+	<noscript>
+		<p>
+			<span lang="fr">JavaScript désactivé - Ce site requiert
+				l'activation de JavaScript.</span><br>
+			<span lang="en">JavaScript is deactivated - This site requires
+				JavaScript.</span>
+		</p>
+	</noscript>
+
+	<div id="screen">
+		<!--[if lt IE 9]>
+  <div class="browser-ie-alert">
+    <p lang="fr">Ce site requiert Microsoft Internet Explorer 9 minimum. SVP, mettez-le à jour.</p>
+    <p lang="en">This website requires Microsoft Internet Explorer browser 9 minimum; please update.</p>
+  </div>
+  <![endif]-->
+		<div growl></div>
+		<spinner class="aty-app-loading" name="loadingAppSpinner" group="global" show="true">
+		<div class="animated-container">
+			<div class="messaging">
+				<div class="la-ball-scale-multiple la-2x">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<h1 translate="spinner.app.loading"></h1>
+			</div>
+		</div>
+		</spinner>
+		<spinner class="aty-data-loading" name="loadingDataSpinner" group="global">
+		<div class="messaging">
+			<div class="la-ball-circus la-2x">
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<h1 translate="spinner.data.loading.title"></h1>
+		</div>
+		</spinner>
+		<spinner class="aty-app-loading" name="caseSpinner" group="global">
+		<div class="animated-container">
+			<div class="messaging">
+				<div class="la-ball-circus la-2x">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<h1 translate="spinner.case.creating.title"></h1>
+			</div>
+		</div>
+		</spinner>
+		<spinner class="aty-app-loading" name="changeCaseOwnerSpinner" group="global">
+		<div class="animated-container">
+			<div class="messaging">
+				<div class="la-ball-circus la-2x">
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<h1 translate="spinner.change.case.owner.title"></h1>
+			</div>
+		</div>
+		</spinner>
+
+		<style type="text/css">
+.aty-app-loading {
+	position: absolute;
+	z-index: 100000;
+}
+
+.aty-app-loading div.animated-container {
+	background-color: #6a7b9c;
+	bottom: 0px;
+	left: 0px;
+	opacity: 0.8;
+	position: fixed;
+	right: 0px;
+	top: 0px;
+}
+/* Used to initialize the ng-leave animation state. */
+/*.aty-app-loading div.animated-container.ng-leave {*/
+/*opacity: 1.0 ;*/
+/*transition: all linear 200ms ;*/
+/*-webkit-transition: all linear 200ms ;*/
+/*}*/
+/* Used to set the end properties of the ng-leave animation state. */
+/*.aty-app-loading div.animated-container.ng-leave-active {*/
+/*opacity: 0 ;*/
+/*}*/
+.aty-app-loading div.messaging {
+	left: 0px;
+	margin-top: -37px;
+	position: absolute;
+	right: 0px;
+	text-align: center;
+	top: 50%;
+}
+
+.aty-app-loading div.messaging>div {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.aty-app-loading h1 {
+	color: #ffffff;
+	font-family: 'Open Sans';
+	font-size: 26px;
+	line-height: 35px;
+	margin: 0px 0px 20px 0px;
+}
+
+.aty-app-loading p {
+	font-size: 18px;
+	line-height: 14px;
+	margin: 0px 0px 0px 0px;
+}
+</style>
+
+		<!-- SHORTCUTS -->
+		<div id="access-shortcuts-wrapper">
+			<ul class="nav">
+				<li><a href="#content">Aller au contenu</a></li>
+				<li><a href="#nav-primary">Aller à la navigation</a></li>
+			</ul>
+		</div>
+
+		<!-- BEGIN HEADER -->
+		<header id="header" class="header header-wrapper" ui-view="header"></header>
+		<!-- END HEADER -->
+
+		<!-- NAV desktop -->
+		<!-- BEGIN NAV PC -->
+		<div ng-if="$state.current.name !== 'app'" ui-view="menu"></div>
+		<!-- END NAV PC -->
+		<!-- END NAV desktop -->
+
+		<!-- BEGIN vertical Menu -->
+		<div ng-if="$state.current.name !== 'app'" ui-view="vertical-menu"
+			class="pages-links"></div>
+		<!-- END vertical Menu -->
+
+		<!-- BEGIN MAINcontent -->
+		<main role="main" class="main" ui-view="content"></main>
+		<!-- END MAINcontent -->
+
+		<!-- BEGIN FOOTER -->
+		<footer class="footer footer-wrapper" role="contentinfo"
+			ui-view="footer"></footer>
+		<!-- END FOOTER -->
+
+	</div>
+
+	<div id="printSection"></div>
+	<!-- Scripts -->
+	<!-- HTML5 & CSS3 features detection -->
+	<script src="scripts/libs/modernizr.custom.min.js"></script>
+	<!-- -->
+	<script>
+  var iosDragDropShim = { enableEnterLeave: true };
+</script>
+
+	<!-- build:js(resources) scripts/vendor.js -->
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script
+		src="bower_components/datatables/media/js/jquery.dataTables.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<script src="bower_components/angular-animate/angular-animate.js"></script>
+	<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+	<script src="bower_components/angular-touch/angular-touch.js"></script>
+	<script src="bower_components/angular-local-storage/dist/angular-local-storage.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+	<script src="bower_components/angular-translate/angular-translate.js"></script>
+	<script src="bower_components/angular-translate-storage-cookie/angular-translate-storage-cookie.js"></script>
+	<script src="bower_components/angular-spinners/dist/angular-spinners.js"></script>
+	<script src="bower_components/angular-datatables/dist/angular-datatables.js"></script>
+	<script src="bower_components/angular-datatables/dist/plugins/bootstrap/angular-datatables.bootstrap.js"></script>
+	<script src="bower_components/angular-scroll/angular-scroll.js"></script>
+	<script src="bower_components/angular-confirm-modal/angular-confirm.js"></script>
+	<script src="bower_components/angular-popover-toggle/popover-toggle.js"></script>
+	<script src="bower_components/angular-growl-v2/build/angular-growl.js"></script>
+	<script src="bower_components/angular-input-modified/dist/angular-input-modified.js"></script>
+	<script src="bower_components/Chart.js/Chart.min.js"></script>
+	<script src="bower_components/angular-chart.js/dist/angular-chart.min.js"></script>
+	<script src="bower_components/ng-onload/release/ng-onload.min.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="bower_components/ng-csv/build/ng-csv.min.js"></script>
+	<script src="bower_components/sockjs/sockjs.js"></script>
+	<script src="bower_components/ng-stomp/ng-stomp.js"></script>
+	<script src="bower_components/stomp-websocket/lib/stomp.min.js"></script>
+	<script src="bower_components/angular-drag-and-drop-lists/angular-drag-and-drop-lists.js"></script>
+	<script src="bower_components/drag-drop-webkit-mobile/ios-drag-drop.js"></script>
+	<script src="bower_components/ng-idle/angular-idle.min.js"></script>
+	<script src="bower_components/angular-ui-select/dist/select.js"></script>
+	<script src="bower_components/angular-file-saver/dist/angular-file-saver.bundle.min.js"></script>
+	<!-- endbower -->
+	<!-- endbuild -->
+
+	<!-- build:js(resources) scripts/scripts.js -->
+	<script src="scripts/angular-ny-logger.js"></script>
+
+	<script src="scripts/filters/filters.js"></script>
+	<script src="scripts/directives/directives.js"></script>
+	<script src="scripts/services/nomenclatureService.js"></script>
+
+	<script src="scripts/controllers/authController.js"></script>
+	<script src="scripts/services/authService.js"></script>
+
+	<script src="scripts/controllers/searchController.js"></script>
+	<script src="scripts/services/searchService.js"></script>
+
+	<script src="scripts/controllers/questionnaireController.js"></script>
+	<script src="scripts/services/questionnaireService.js"></script>
+
+	<script src="scripts/controllers/buyerStudyController.js"></script>
+	<script src="scripts/services/buyerStudyService.js"></script>
+
+	<script src="scripts/controllers/policyController.js"></script>
+	<script src="scripts/services/policyService.js"></script>
+	<script src="scripts/services/derogationService.js"></script>
+
+	<script src="scripts/controllers/proposalController.js"></script>
+	<script src="scripts/services/proposalService.js"></script>
+
+	<script src="scripts/controllers/finalizationController.js"></script>
+	<script src="scripts/services/finalizationService.js"></script>
+
+	<script src="scripts/controllers/diagnosisController.js"></script>
+	<script src="scripts/services/diagnosisService.js"></script>
+
+	<script src="scripts/controllers/menuController.js"></script>
+	<script src="scripts/controllers/verticalMenuController.js"></script>
+	<script src="scripts/services/verticalMenuService.js"></script>
+
+	<script src="scripts/services/scenarioService.js"></script>
+	<script src="scripts/services/contractService.js"></script>
+
+	<script src="scripts/controllers/transformationController.js"></script>
+	<script src="scripts/services/transformationService.js"></script>
+
+	<script src="scripts/controllers/calculatorController.js"></script>
+
+	<script src="scripts/controllers/graphController.js"></script>
+
+	<script src="scripts/controllers/transformContractController.js"></script>
+	<script src="scripts/controllers/generationDocumentValidationController.js"></script>
+
+	<!-- Defect #21: Interactions with SMART - Update Sales Funnel -->
+	<script src="scripts/services/smartService.js"></script>
+	
+	
+	<!-- Defect #985: Evolution : Create a new Discussions zone common to all scenarios of a case - -->
+	<script src="scripts/controllers/salesDiscussionsController.js"></script>
+	<script src="scripts/services/salesDiscussionsService.js"></script>
+
+	<script src="scripts/app.js"></script>
+
+	<script src="scripts/script.js"></script>
+
+	<!-- endbuild -->
+</body>
+</html>

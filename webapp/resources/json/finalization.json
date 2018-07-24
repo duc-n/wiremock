@@ -1,0 +1,256 @@
+{
+  "smartCase": false,
+  "smartCofalinkStatus": false,
+  "smartServiceResult": null,
+  "fileTransferredToGCC": false,
+  "transfertToGCCXmlAvailable": false,
+  "newBusiness": true,
+  "renewal": false,
+  "transform": false,
+  "checkMigration": false,
+  "clo": false,
+  "salesDiscussionsCount": 0,
+  "cancellationProjectReason": null,
+  "cancellationProjectDate": null,
+  "projectCancelledByFullName": null,
+  "creationDate": 1530027699955,
+  "createdByFullName": "Laurent MIGNOT",
+  "contractStatus": "PROJECT",
+  "progressStatus": "DEROG_DONE",
+  "contractCancelled": false,
+  "proposal": {
+    "smartCase": false,
+    "smartCofalinkStatus": false,
+    "smartServiceResult": null,
+    "fileTransferredToGCC": false,
+    "transfertToGCCXmlAvailable": false,
+    "newBusiness": true,
+    "renewal": false,
+    "transform": false,
+    "checkMigration": false,
+    "clo": false,
+    "salesDiscussionsCount": 0,
+    "cancellationProjectReason": null,
+    "cancellationProjectDate": null,
+    "projectCancelledByFullName": null,
+    "creationDate": 1530027699955,
+    "createdByFullName": null,
+    "contractStatus": "PROJECT",
+    "progressStatus": "DEROG_DONE",
+    "contractCancelled": false,
+    "id": 3915559,
+    "nbContractDownloaded": 0,
+    "nbNBIDownloaded": 0,
+    "nbBUYERSTUDYDownloaded": 1,
+    "commercialComment": null,
+    "scenarioPricingObsolete": false,
+    "hasQuoted": true,
+    "derogationPending": false,
+    "nbDerogationAccepted": 1,
+    "nbDerogationPending": 0,
+    "scenarioName": null,
+    "scenarioDescription": null,
+    "validationDerogationRight": true,
+    "displayClauseName": false,
+    "displayClauseDescription": false,
+    "displayAllClauses": false,
+    "checkValidationActive": false,
+    "hasPriceForValidScenario": false,
+    "buyerStudyDoc": {
+      "visible": true,
+      "template": "AUTY_BUYERSTUDY_MODEL_FRA",
+      "format": "PDF"
+    },
+    "nbiDoc": {
+      "visible": true,
+      "template": "AUTY_NBI_MODEL_FRA",
+      "format": "PDF"
+    },
+    "contractDoc": {
+      "visible": true,
+      "template": "AUTY_CONTRACT_MODEL_FRA",
+      "format": "PDF"
+    },
+    "buyerStudyDocType": "PDF",
+    "nbiDocType": null,
+    "contractDocType": null,
+    "filenetUrl": null,
+    "requestContractEditionTaskId": null,
+    "firstInsPeriodFrom": 1530396000000,
+    "firstInsPeriodTo": 1561932000000,
+    "contactInformationEmpty": false,
+    "accessNBIWordDocument": true,
+    "accessContractWordDocument": true,
+    "docBuyerStudyName": "534905-01_CLO_FFF FABRICATION FRAN_20180627.pdf",
+    "docNbiName": null,
+    "docContractName": null,
+    "docXmlName": "534905-01_FLUX_BDOC_FFF FABRICATION FRAN_20180627.xml",
+    "docExcelQuestionnaireName": null,
+    "editionCodeLang": null,
+    "buyerStudyEditionLanguages": [
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      },
+      {
+        "isoCode": "en",
+        "label": "English"
+      }
+    ],
+    "nbiEditionLanguages": [
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      }
+    ],
+    "contractEditionLanguages": [
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      },
+      {
+        "isoCode": "de",
+        "label": "Deutsch"
+      }
+    ],
+    "derogationSummary": {
+      "derogationsAccepted": [
+        {
+          "level": 5,
+          "derogationSubject": null,
+          "derogationField": "pendingOrdersPeriod",
+          "value": "90",
+          "acceptedBy": "Jean-Carlo SINI",
+          "acceptedDate": "27/06/2018"
+        }
+      ],
+      "nbDerogationsAccepted": 1,
+      "pendingsDerogations": [
+        
+      ],
+      "nbPendingDerogations": 0
+    },
+    "docNbiEditedBy": null,
+    "docNbiEditedDate": null,
+    "docContractEditedBy": null,
+    "docContractEditedDate": null,
+    "derogationWorkflow": {
+      "currentStep": "L2",
+      "derogationProcesses": [
+        {
+          "index": null,
+          "userInfo": {
+            "accountId": "X1281601",
+            "firstName": "Laurent",
+            "lastName": "MIGNOT",
+            "info": "Laurent MIGNOT",
+            "fullName": "Laurent MIGNOT"
+          },
+          "statusI18n": "proposal.derogation.process.creation.label",
+          "processDate": "26/06/2018",
+          "currentLevel": "STD",
+          "nextLevel": null,
+          "comments": null
+        },
+        {
+          "index": null,
+          "userInfo": {
+            "accountId": "X1220701",
+            "firstName": "Jean-Carlo",
+            "lastName": "SINI",
+            "info": "Jean-Carlo SINI",
+            "fullName": "Jean-Carlo SINI"
+          },
+          "statusI18n": "proposal.derogation.process.finished.label",
+          "processDate": "27/06/2018",
+          "currentLevel": "2",
+          "nextLevel": null,
+          "comments": "test"
+        }
+      ],
+      "validateButtonDisable": false,
+      "validationButtonDisableStatus": null,
+      "validateButtonDisableStatusI18N": null,
+      "pendingLevels": null,
+      "validateButton18NValue": "proposal.derogation.process.button.validation.finished.label",
+      "derogationWorkflowFinished": true,
+      "derogationWorkflowStopped": false,
+      "derogationSummary": null
+    },
+    "discussions": [
+      {
+        "id": 3922247,
+        "discussionDate": "27/06/2018 14:54",
+        "discussionBy": "Jean-Carlo SINI",
+        "discussionById": "X1220701",
+        "comments": "test",
+        "sendToId": "X1281601",
+        "parentDiscussionId": null,
+        "waitForResponse": true,
+        "subDiscussion": null,
+        "urlContext": null
+      }
+    ],
+    "contractCurrency": "EUR",
+    "nbiWordGenerationReason": null,
+    "nbiWordGenerationBy": null,
+    "nbiWordGenerationDate": null,
+    "contractWordGenerationReason": null,
+    "contractWordGenerationBy": null,
+    "contractWordGenerationDate": null,
+    "contractEditionCodeLang": "fr",
+    "signedQuestionnary": false,
+    "backofficeComments": null,
+    "ignoredFields": [
+      "id",
+      "nbContractDownloaded",
+      "nbNBIDownloaded",
+      "nbBUYERSTUDYDownloaded",
+      "docBuyerStudyName",
+      "docNbiName",
+      "docContractName",
+      "docXmlName",
+      "docExcelQuestionnaireName",
+      "nbiWordGenerationBy",
+      "contractWordGenerationBy",
+      "nbiWordGenerationDate",
+      "contractWordGenerationDate"
+    ]
+  },
+  "id": null,
+  "easyNumber": "00000147870338",
+  "transferToGCC": false,
+  "roleReferenceId": "RR-THIR-01-11339679",
+  "companyName": "FFF FABRICATION FRANCAISE DE FER",
+  "hasContractId": true,
+  "transfertDate": null,
+  "transfertDoneBy": null,
+  "civility": "Mrs",
+  "civilityLabel": null,
+  "firstName": "Claire",
+  "lastName": "ECLAIR",
+  "companyJobTitle": "PDG",
+  "companyPhone": null,
+  "companyMobilePhone": null,
+  "companyEmail": null,
+  "signatoryCivility": null,
+  "signatoryFirstName": null,
+  "signatoryLastName": null,
+  "signatoryJobTitle": null,
+  "signatoryPhone": null,
+  "signatoryMobilePhone": null,
+  "signatoryEmail": null,
+  "signatoryContactEnable": false,
+  "scenarioPricingObsolete": false,
+  "agreementElectronicSignature": false,
+  "languageEdition": null,
+  "backofficeComments": null,
+  "partner": "questionnaire.additional.information.partner.none",
+  "partnerName": null,
+  "isReadOnly": false,
+  "cancellationProjectReasonList": {
+    "OFFER_REJECTED": "project.cancel.reason.offer.rejected",
+    "CONTRACT_REJECTED": "project.cancel.reason.contract.rejected",
+    "COFACE_DECISION": "project.cancel.reason.contract.coface.decision"
+  }
+}

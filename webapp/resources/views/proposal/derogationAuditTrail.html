@@ -1,0 +1,90 @@
+
+<div class="form-group col-sm-12">
+	<span class="control-label"><strong
+		translate="proposal.derogation.audit.trail.accepted.derogation.title"
+		translate-values="{p0:proposal.derogationSummary.nbDerogationsAccepted,p1:proposal.derogationSummary.nbDerogationsAccepted > 1 ? 's':''}"
+		></strong></span>
+</div>
+
+<div class="form-group col-sm-12">
+	<table
+		class="table table-cofanet table-bordered table-striped table-responsive fixed-layout">
+		<colgroup>
+			<col span="1" class="col-sm-1">
+			<col span="1" class="col-sm-6">
+			<col span="1" class="col-sm-3">
+			<col span="1" class="col-sm-2">
+		</colgroup>
+		<thead>
+			<tr>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="proposal.derogation.audit.trail.level"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="proposal.derogation.audit.trail.header.subject"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong
+							translate="proposal.derogation.audit.trail.header.accepted.by"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong
+							translate="proposal.derogation.audit.trail.header.accepted.date"></strong>
+					</p></th>
+			</tr>
+		</thead>
+
+		<tbody>
+			<tr
+				ng-repeat="derogationAccepted in proposal.derogationSummary.derogationsAccepted">
+				<td ng-bind="'L'+ {{derogationAccepted.level}}"></td>
+				<td translate="derogation.subject.{{derogationAccepted.derogationField}}" translate-values="{p0:derogationAccepted.value,p1:proposal.contractCurrency}"></td>
+				<td ng-bind="derogationAccepted.acceptedBy"></td>
+				<td ng-bind="derogationAccepted.acceptedDate"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+
+<div class="form-group col-sm-12">
+	<span class="text-danger">
+		<strong	translate="proposal.derogation.audit.trail.pending.derogation.title" 
+		translate-values="{p0:proposal.derogationSummary.nbPendingDerogations,p1:proposal.derogationSummary.nbPendingDerogations > 1 ? 's':''}"></strong>
+	</span>
+</div>
+
+<div class="form-group">
+	<div class="col-sm-7">
+		<table
+			class="table table-cofanet table-bordered table-striped table-responsive fixed-layout">
+			<colgroup>
+				<col span="1" class="col-sm-1">
+				<col span="1" class="col-sm-6">
+			</colgroup>
+			<thead>
+				<tr>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="proposal.derogation.audit.trail.level"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong
+								translate="proposal.derogation.audit.trail.pending.header.nb"></strong>
+						</p></th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr class="text-danger"
+					ng-repeat="pendingsDerogation in proposal.derogationSummary.pendingsDerogations">
+					<td ng-bind="'L' + {{pendingsDerogation.level}}"></td>
+					<td
+						translate="proposal.derogation.audit.trail.pending.derogation.title"
+						translate-values="{p0:pendingsDerogation.nbPendings,p1:pendingsDerogation.nbPendings > 1 ? 's':''}"></td>
+				</tr>
+
+			</tbody>
+		</table>
+
+	</div>
+</div>
+

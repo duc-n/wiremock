@@ -1,0 +1,416 @@
+<!-- Notification Threshold... -->
+<div class="panel panel-default">
+	<div class="panel-body">
+		<!-- Notification Threshold -->
+		<div class="form-group">
+			<label class="col-sm-3 control-label"><strong
+				translate="policy.indem.notif.threshold.label"></strong></label>
+
+			<div class="col-sm-2">
+				<div class="input-group">
+					<input ng-disabled="policy.isReadOnly" type="number"
+						aty-input-number id="notificationThreshold"
+						name="notificationThreshold" class="form-control"
+						ng-model="policy.notificationThreshold" aty-maxlength="15" />
+				</div>
+			</div>
+			<div class="col-sm-2">
+				<div class="input-group">
+					<currency ng-bind="policy.contractCurrency" />
+					<!-- Defect1002:New Derogation Rule on Notification Threshold - Specific France -->
+					<atyDerogation 	drg-input="policy.notificationThreshold" drg-section="indemnificationDerogation" drg-field="notificationThreshold"	drg-lower="true" />
+				</div>
+			</div>
+
+		</div>
+		<!--Time limit for the Notification...-->
+		<div class="form-inline col-sm-12">
+			<div class="form-group">
+				<label for="timeLimitNOA" class="form-control-static"><strong
+					translate="policy.indem.time.limit.noa.label"></strong> <i
+					popover="{{'policy.indem.time.limit.noa.tooltip.label'|translate}}"
+					popover-trigger="mouseenter" class="fa fa-info-circle"></i> </label> <input
+					class="form-control width-50 margin-left-20 input-visible-print"
+					ng-disabled="policy.isReadOnly" type="number" id="timeLimitNOA"
+					name="timeLimitNOA" ng-model="policy.timeLimitNOA"
+					aty-maxlength="3" />
+				<span class="control-label margin-left-10"
+					translate="policy.indem.time.limit.noa.description.label"
+					translate-values="{p0:policy.indemDelayNOAAfterInsolvency}"></span>
+        <atyDerogation drg-input="policy.timeLimitNOA"
+                       drg-section="indemnificationDerogation" drg-field="timeLimitNOA" />
+			</div>
+		</div>
+
+		<!--Waiting period... -->
+		<div class="form-group">
+			<label class="form-control-static col-sm-3"> <strong
+				translate="policy.indem.wait.period.noa.before.label"></strong>
+			</label>
+
+			<div class="col-sm-1">
+				<div class="input-group">
+					<input type="number" class="form-control input-visible-print"
+						id="waitingPeriodAfterNOA" ng-disabled="policy.isReadOnly"
+						ng-model="policy.waitingPeriodAfterNOA" />
+				</div>
+			</div>
+      <div class="col-sm-8">
+        <div class="input-group">
+          <label class="form-control-static"> <strong
+            translate="policy.indem.wait.period.noa.after.label"></strong>
+          </label>
+          <atyDerogation drg-input="policy.waitingPeriodAfterNOA"
+                         drg-section="indemnificationDerogation"
+                         drg-field="waitingPeriodAfterNOA" drg-lower="true" />
+          </div>
+        </div>
+		</div>
+<!--Maximum Liability-->
+		<div class="form-group" bs-modifiable="true">
+
+			<label class="col-sm-3 control-label" for="maxLiabilityAmount"><strong
+				translate="policy.indem.max.liability.label"></strong></label>
+
+			<div class="col-sm-3">
+				<label class="radio-inline"><input
+					ng-click="getMaxLiabilityCalculated()"
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.contractualMLBasis" value="FACT" />
+					<span translate="policy.indem.contractual.ml.basis.factor.label"></span>
+				</label>
+			</div>
+
+
+			<div class="col-sm-2">
+				<!--Factor of -->
+				<div class="input-group">
+					<input
+						ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly || policy.contractualMLBasis == 'AMNT'"
+						type="number" id="maxLiabilityMultiple"
+						name="maxLiabilityMultiple" class="form-control"
+						ng-model="policy.maxLiabilityMultiple" aty-maxlength="5" size="5"
+						ng-change="getMaxLiabilityCalculated()" />
+				</div>
+			</div>
+
+			<div class="col-sm-4">
+				<!--Factor of -->
+				<div class="input-group">
+					<label class="control-label"
+						translate="policy.indem.minimum.premium.after.label"></label>
+					<atyDerogation drg-input="policy.maxLiabilityMultiple"
+						drg-section="indemnificationDerogation"
+						drg-field="maxLiabilityMultiple" />
+
+				</div>
+			</div>
+		</div>
+
+		<div class="form-group" bs-modifiable="true">
+			<!--Maximum Liability-->
+			<label class="col-sm-3 control-label" for="maxLiabilityAmount"></label>
+
+			<div class="col-sm-3">
+				<label class="radio-inline"> <input
+					ng-click="getMaxLiabilityCalculated()"
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.contractualMLBasis" value="AMNT" />
+					<span translate="policy.indem.contractual.ml.basis.amount.label"></span>
+				</label>
+			</div>
+
+			<div class="col-sm-3">
+				<div class="input-group">
+					<!--Amount of -->
+					<input
+						ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly || policy.contractualMLBasis == 'FACT'"
+						type="number" name="maxLiabilityAmount" aty-input-number
+						id="maxLiabilityAmount" 
+						ng-change="getMaxLiabilityCalculated()"
+						class="form-control"
+						ng-model="policy.maxLiabilityAmount" aty-maxlength="15" size="15" />
+				</div>
+			</div>
+			<div class="col-sm-3">
+				<div class="input-group">
+					<currency ng-bind="policy.contractCurrency" />
+					<!-- defect #377 : Business Rule Check Max Liability against Max Outstanding and Buyer STudy -->
+					<atyDerogation drg-id="maxLiability-derogation"
+						drg-input="maxLiabilityCalculated"
+						drg-section="indemnificationDerogation"
+						drg-threshold-dynamic="computeMaxLiabilityThd()"
+						drg-field="maxLiability" drg-lower="true" />
+				</div>
+			</div>
+
+
+
+
+		</div>
+		<div class="form-group" ng-if="maxLiabilityDerogationVisible()">
+			<span class="col-sm-9 col-sm-offset-3 removed"
+				translate="policy.indem.max.liability.derogation.msg"
+				translate-values="{p0:computeMaxLiabilityThd()}" />
+		</div>
+
+	</div>
+</div>
+<!-- -->
+
+<!-- Specific Maximum Liability per Buyer -->
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-6 control-label" for="mlBuyerEnabled"><strong
+				translate="policy.indem.specific.ml.buyer.label"></strong></label>
+
+			<div class="col-sm-2">
+				<label class="radio-inline">
+					<input	ng-disabled="policy.isReadOnly"
+					type="radio" id="mlBuyerEnabled" ng-model="policy.mlBuyerEnabled"
+					ng-value="false" />
+					<span translate="no.label"></span>
+				</label>
+				 <label class="radio-inline">
+				  	<input ng-disabled="policy.isReadOnly"
+						type="radio" ng-model="policy.mlBuyerEnabled" ng-value="true" />
+					 <span translate="yes.label"></span>
+				</label>
+			</div>
+			
+			<div class="col-sm-1">
+				<div class="input-group">
+					<atyDerogation drg-input="policy.mlBuyerEnabled"
+						drg-section="indemnificationDerogation" drg-field="mlBuyerEnabled"
+						drg-visible="true" />
+				</div>
+			</div>
+		</div>
+		
+		<div ng-if="policy.mlBuyerEnabled">
+			<div class="form-group col-sm-12" >
+				<table
+					class="table table-cofanet table-bordered table-striped table-responsive fixed-layout align-center">
+					<colgroup>
+						<col span="1" class="col-sm-5">
+						<col span="1" class="col-sm-3">
+						<col span="1" class="col-sm-3">
+						<col span="1" class="col-sm-1">
+					</colgroup>
+					<thead>
+						<tr>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="policy.indem.specific.ml.buyer.company.name"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="policy.indem.specific.ml.buyer.agreed.amount" translate-values="{p0: policy.contractCurrency}"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong
+										translate="policy.indem.specific.ml.buyer.amount" translate-values="{p0: policy.contractCurrency}"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">								
+							</p></th>
+						</tr>
+					</thead>
+			
+					<tbody>
+						<tr	ng-repeat="maximumLiabilityBuyer in policy.maximumLiabilityBuyers">
+							<td ng-bind="maximumLiabilityBuyer.companyName"></td>
+							<td ng-bind="maximumLiabilityBuyer.agreedAmount | atyNumber"></td>
+							<td class="text-center">
+					          <div class="input-group">
+					            <input type="number" aty-input-number name="maximumLiabilityBuyer{{$index}}" required id="maximumLiabilityBuyer{{$index}}" class="form-control text-center"
+				                     ng-model="maximumLiabilityBuyer.amount" aty-maxlength="15"
+				                     ng-disabled="policy.isReadOnly"/>
+					          </div>
+					        </td>
+							<td >
+								<span class="input-group-btn">
+					            	<button class="btn btn-default" popover="{{'remove.title'|translate}}" popover-trigger="mouseenter" type="button"
+					                    ng-click="removeMaximumLiabilityBuyer(maximumLiabilityBuyer)" ng-disabled="policy.isReadOnly"><i
+					              class="fa fa-trash"></i></button>
+					            </span>
+					       	</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		   
+			<div class="form-group">
+				<div class="col-sm-5">   
+        			<div class="input-group">  
+		   		 		<select ng-model="policy.maximumLiabilityBuyerRefSelected" class="form-control" ng-disabled="policy.isReadOnly"
+		       			ng-options="maximumLiabilityBuyerRef.companyName disable when maximumLiabilityBuyerRef.disabled for maximumLiabilityBuyerRef in policy.maximumLiabilityBuyerRefs">
+		       				 <option value="">{{'policy.indem.specific.ml.buyer.company.select.label'|translate}}</option>
+		       			</select>	  		
+		    		</div>
+		    	</div>
+		    	<div class="col-sm-1">   
+        			<div class="input-group">  
+						<button class="btn btn-default"
+		                    popover="{{'policy.indem.specific.ml.buyer.add.company.label'|translate}}" popover-trigger="mouseenter" type="button"
+		                    ng-click="addMaximumLiabilityBuyer()" ng-disabled="policy.isReadOnly"><i
+		              		class="fa fa-plus"></i>
+		           		 </button>
+		   		 		  		
+		    		</div>
+		    	</div>
+		    	
+		    </div>
+		
+		</div>
+				
+	</div>
+</div>
+<!-- -->
+
+<!-- Deductible -->
+<div class="panel panel-default" bs-modifiable="true">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-3 control-label" for="deductible"><strong
+				translate="policy.indem.deductible.label"></strong></label>
+
+			<div class="col-sm-9">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" id="deductible" ng-model="policy.deductible"
+					value="NONE" /> <span translate="none.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.deductible" value="EEL" /> <span
+					translate="policy.indem.deductible.each.and.every.loss.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.deductible" value="MNR" /> <span
+					translate="policy.indem.deductible.min.retention.label"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+					type="radio" ng-model="policy.deductible" value="NQL" /> <span
+					translate="policy.indem.deductible.non.qualif.loss.label"></span>
+				</label>
+			</div>
+		</div>
+		<div class="row form-group" ng-if="isDeductibleEEL()">
+
+			<div class="col-sm-3 col-sm-offset-4">
+				<div class="input-group">
+					<input
+						ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+						type="number" name="eelosAmount" aty-input-number id="eelosAmount"
+						class="form-control" ng-model="policy.eelosAmount"
+						aty-maxlength="15" />
+				</div>
+			</div>
+			<div class="col-sm-1">
+				<currency ng-bind="policy.contractCurrency" />
+			</div>
+			<div class="col-sm-4">
+				<p class="form-control-static"
+					translate="policy.indem.deductible.eelos.description.label"></p>
+			</div>
+		</div>
+		<div class="row form-group" ng-if="isDeductibleMNR()">
+			<div class="col-sm-3 col-sm-offset-4">
+				<div class="input-group">
+					<input
+						ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+						type="number" name="minrtAmount" aty-input-number id="minrtAmount"
+						class="form-control" ng-model="policy.minrtAmount"
+						aty-maxlength="15" />
+				</div>
+			</div>
+			<div class="col-sm-1">
+				<currency ng-bind="policy.contractCurrency" />
+			</div>
+			<div class="col-sm-4">
+				<p class="form-control-static"
+					translate="policy.indem.deductible.minrt.description.label"></p>
+			</div>
+		</div>
+		<div class="row form-group" ng-if="isDeductibleNQL()">
+			<div class="col-sm-3 col-sm-offset-4">
+				<div class="input-group">
+					<input
+						ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly"
+						type="number" name="nqlAmount" aty-input-number id="nqlAmount"
+						class="form-control" ng-model="policy.nqlAmount"
+						aty-maxlength="15" />
+				</div>
+			</div>
+			<div class="col-sm-1">
+				<currency ng-bind="policy.contractCurrency" />
+			</div>
+			<div class="col-sm-4">
+				<p class="form-control-static"
+					translate="policy.indem.deductible.nql.description.label"></p>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- -->
+<!-- Recovery notification period -->
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-3 control-label"><strong
+				translate="policy.indem.recovery.notif.period.before.label"></strong></label>
+
+			<div class="col-sm-1">
+				<div class="input-group">
+					<input type="number" readonly class="form-control"
+						ng-model="policy.recoveryNotificationPeriod" />
+				</div>
+			</div>
+			<label class="col-sm-8 control-label"><strong
+				translate="policy.indem.recovery.notif.period.after.label"></strong></label>
+
+		</div>
+	</div>
+</div>
+<!--End Recovery notification period -->
+
+<!-- Debt collection provider -->
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-3 control-label"><strong
+				translate="policy.indem.debt.collec.prov.label"></strong></label>
+
+			<div class="form-inline col-sm-9">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					id="debtCollectProvider" ng-model="policy.debtCollectProvider"
+					value="CF" /> <span
+					translate="policy.indem.debt.collec.prov.coface"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.debtCollectProvider" value="PH" /> <span
+					translate="policy.indem.debt.collec.prov.policy.holder"></span>
+				</label>
+				<atyDerogation drg-input="policy.debtCollectProvider == 'PH'"
+					drg-section="indemnificationDerogation"
+					drg-field="debtCollectProvider.PH"
+					drg-visible="policy.debtCollectProvider == 'PH'" />
+			</div>
+		</div>
+		<!-- Full Mandate -->
+		<div class="form-group" ng-if="policy.debtCollectProvider == 'CF'">
+			<div class="col-sm-offset-3 col-sm-9">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio" id="mandateOption"
+					ng-model="policy.mandateOption" value="FM" /> <span
+					translate="policy.indem.debt.collec.prov.coface.full.mandate"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.mandateOption" value="LM" /> <span
+					translate="policy.indem.debt.collec.prov.coface.light.mandate"></span>
+				</label>
+			</div>
+
+		</div>
+	</div>
+</div>

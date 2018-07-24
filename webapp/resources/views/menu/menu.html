@@ -1,0 +1,93 @@
+<!-- -->
+<nav class="nav nav-wrapper nav-desktop">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <!-- -->
+        <ul class="nav" id="nav-primary" role="navigation">
+          <!-- -->
+          <li class="{'open': isActive('app')}" role="presentation" ui-sref-active="active">
+            <a id="menu-home" ng-click="gotoPage('app', $event)" ng-disabled="ScenarioDataService.saveInProgress"><i class="fa fa-home"></i><span class="sr-only"
+                                                                                  translate="menu.home"></span></a>
+          </li>
+          <li ng-class="{'open': isActive('app.questionnaire')}" role="presentation" ui-sref-active="active">
+            <a id="menu-questionnaire" ng-click="gotoPage('app.questionnaire', $event)" role="button" translate="menu.questionnaire" ng-disabled="ScenarioDataService.saveInProgress"></a>
+          </li>
+          <li ng-class="{'open': isActive('app.buyerstudy')}" role="presentation" ui-sref-active="active">
+            <a id="menu-buyerstudy" ng-click="gotoPage('app.buyerstudy', $event)" role="button" translate="menu.buyerstudy" ng-disabled="ScenarioDataService.saveInProgress"></a>
+          </li>
+          <li ng-if="!isCheckMigration() && !isCloCase()" ng-class="{'open': isActive('app.policy')}" role="presentation" ui-sref-active="active">
+            <a id="menu-policy" ng-click="gotoPage('app.policy', $event)" role="button" translate="menu.policy" ng-disabled="ScenarioDataService.saveInProgress"></a>
+          </li>
+          <li ng-if="!isCheckMigration() && !isCloCase()" ng-class="{'open': isActive('app.proposal')}" role="presentation" ui-sref-active="active">
+            <a id="menu-proposal" ng-click="gotoPage('app.proposal', $event)" role="button" translate="menu.proposal" ng-disabled="ScenarioDataService.saveInProgress"></a>
+          </li>
+          <li ng-if="!isCheckMigration() && !isCloCase()" ng-class="{'open': isActive('app.finalization')}" role="presentation" ui-sref-active="active">
+            <a id="menu-finalization" ng-click="gotoPage('app.finalization', $event)" role="button" translate="menu.finalization" ng-disabled="ScenarioDataService.saveInProgress"></a>
+          </li>
+          <!-- /-->
+        </ul>
+        <!-- /-->
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="banner">
+ 
+  <div class="container">
+
+    <div class="row">
+      <div class="col-sm-12">
+
+        <div class="col-sm-5">
+        	<div class="dropdown">
+            <div>
+            <span translate="banner.contractNumber.label" translate-values="{p0:ScenarioDataService.getBcContractRight().contractNumber}"></span>
+              </div>
+          </div>
+          <div class="ellipsis" title="{{::ScenarioDataService.getBcContractRight().companyName}}" >{{::ScenarioDataService.getBcContractRight().companyName}}</div>
+        </div>
+
+        <div class="col-sm-3 text-center">
+          <div class="obsolete">
+          	<i popover="{{'scenario.menu.obsolete.tooltip' | translate}}" popover-trigger="mouseenter" ng-class="{'fa fa-2x fa-refresh': ScenarioDataService.getPricingObsolete()}"></i>
+          </div>
+        </div>
+
+        <div class="col-sm-4 text-right">
+          <div class="dropdown">
+          <div>
+            <i popover="{{getCaseLockedInfoMsg()}}" popover-trigger="mouseenter" class="fa fa-lock" ng-if="isCaseLocked()"></i>
+          
+          
+            <span translate="banner.case.id.label" translate-values="{p0:$root.caseId, p1:ScenarioDataService.getBcContractRight().isoCountryCode}"></span>
+          </div>
+            <a onclick="return false;" href="#" data-toggle="dropdown" data-hover="dropdown" aria-haspopup="true" aria-expanded="false" role="button" ng-disabled="isCheckMigration() || isCloCase()">
+              <i popover="{{scenarioFrozenReasons[ScenarioDataService.getCurrentScenario().frozenReason]}}" popover-trigger="mouseenter" class="fa fa-lock" ng-if="ScenarioDataService.getCurrentScenario().frozenReason"></i>
+              <span  popover-html="showPopoverScenario(ScenarioDataService.getCurrentScenario())"  popover-trigger="mouseenter">{{ScenarioDataService.getCurrentScenario().scenarioNumber + ' ' + ScenarioDataService.getCurrentScenario().scenarioName}}</span>
+              <i ng-class="{'fa fa-star-o': ScenarioDataService.getCurrentScenario().favorite}"></i>
+              <i class="fa fa-angle-down" ng-if="!(isCheckMigration() || isCloCase())"></i>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-right scenario-list" ng-if="!(isCheckMigration() || isCloCase())">
+              <li ng-repeat="scenario in ScenarioDataService.getScenarioList() | orderBy:['state','scenarioNumber']" ng-class="{'inactive':scenario.state == 'INACTIVE'}">
+                <a ng-if="scenario.state == 'ACTIVE'" ng-click="scenarioChange(scenario)" >
+                	<span popover-html="showPopoverScenario(scenario)"  popover-trigger="mouseenter">{{scenario.scenarioNumber + ' ' + scenario.scenarioName}}</span>
+                  <i popover="{{scenarioFrozenReasons[scenario.frozenReason]}}" popover-trigger="mouseenter" class="fa fa-lock" ng-if="scenario.frozenReason"></i>
+                	<i ng-class="{'fa fa-star-o': scenario.favorite}"></i>
+                </a>
+                <a ng-if="scenario.state == 'INACTIVE'" disabled="disabled">
+                	<span  popover-html="showPopoverScenario(scenario)"  popover-trigger="mouseenter">{{scenario.scenarioNumber + ' ' + scenario.scenarioName}}</span>
+                  <i popover="{{scenarioFrozenReasons[scenario.frozenReason]}}" popover-trigger="mouseenter" class="fa fa-lock" ng-if="scenario.frozenReason"></i>
+                	<i ng-class="{'fa fa-star-o': scenario.favorite}"></i>
+                </a>
+                <a class="action" popover="{{'scenario.update.tooltip' | translate}}" popover-trigger="mouseenter" ng-click="scenarioUpdate(scenario)"><i
+                  class="fa fa-pencil-square-o"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

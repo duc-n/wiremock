@@ -1,0 +1,31 @@
+<!-- First Insurance Period -->
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong translate="policy.duration.1st.insurance.period.label"></strong></label>
+
+  <div class="col-sm-2" ng-class="{'from-bcc': policy.firstInsPeriodFromFromBCC}">
+    <div class="input-group">
+      <label class="form-control" ng-bind="policy.firstInsPeriodFrom | date : 'MM.dd.yyyy'"></label>
+    </div>
+  </div>
+
+  <div class="col-sm-2" ng-class="{'from-bcc': policy.firstInsPeriodToFromBCC}">
+    <div class="input-group">
+      <label class="form-control" ng-bind="policy.firstInsPeriodTo | date : 'MM.dd.yyyy'"></label>
+    </div>
+  </div>
+</div>
+<!---->
+
+<!-- Contract Period -->
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong translate="policy.duration.contract.period.label"></strong></label>
+
+  <div class="col-sm-1" ng-class="{'from-bcc': policy.contractPeriodFromBCC}">
+    <label class="form-control" ng-bind="policy.contractPeriod"></label>
+  </div>
+  <div class="col-sm-7">
+    <p class="form-control-static" translate="policy.duration.contract.period.description.label"></p>
+  </div>
+</div>
+<!---->
+

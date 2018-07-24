@@ -1,0 +1,656 @@
+
+[4mGruntfile.js[24m
+  [90mline 429[39m  [90mcol 54[39m   [94m'target' is defined but never used.[39m
+
+[4mresources\scripts\script.js[24m
+  [90mline 23[39m   [90mcol 23[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 29[39m   [90mcol 23[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 29[39m   [90mcol 44[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 37[39m   [90mcol 25[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 111[39m  [90mcol 44[39m   [94mStrings must use singlequote.[39m
+  [90mline 126[39m  [90mcol 13[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 126[39m  [90mcol 26[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 129[39m  [90mcol 20[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 129[39m  [90mcol 33[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 140[39m  [90mcol 13[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 140[39m  [90mcol 26[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 143[39m  [90mcol 20[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 143[39m  [90mcol 33[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 156[39m  [90mcol 26[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 156[39m  [90mcol 39[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 157[39m  [90mcol 26[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 157[39m  [90mcol 39[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 162[39m  [90mcol 22[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 162[39m  [90mcol 35[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 163[39m  [90mcol 24[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 163[39m  [90mcol 37[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 171[39m  [90mcol 61[39m   [94mStrings must use singlequote.[39m
+  [90mline 174[39m  [90mcol 23[39m   [94m'$printSection' is already defined.[39m
+  [90mline 174[39m  [90mcol 53[39m   [94mStrings must use singlequote.[39m
+  [90mline 175[39m  [90mcol 38[39m   [94mStrings must use singlequote.[39m
+  [90mline 179[39m  [90mcol 31[39m   [94mStrings must use singlequote.[39m
+  [90mline 184[39m  [90mcol 31[39m   [94mStrings must use singlequote.[39m
+  [90mline 10[39m   [90mcol 1[39m    [94m'$' is not defined.[39m
+  [90mline 12[39m   [90mcol 3[39m    [94m'Chart' is not defined.[39m
+  [90mline 13[39m   [90mcol 3[39m    [94m'Chart' is not defined.[39m
+  [90mline 16[39m   [90mcol 7[39m    [94m'$' is not defined.[39m
+  [90mline 17[39m   [90mcol 5[39m    [94m'$' is not defined.[39m
+  [90mline 21[39m   [90mcol 3[39m    [94m'$' is not defined.[39m
+  [90mline 22[39m   [90mcol 17[39m   [94m'$' is not defined.[39m
+  [90mline 28[39m   [90mcol 17[39m   [94m'$' is not defined.[39m
+  [90mline 34[39m   [90mcol 3[39m    [94m'$' is not defined.[39m
+  [90mline 35[39m   [90mcol 5[39m    [94m'$' is not defined.[39m
+  [90mline 36[39m   [90mcol 19[39m   [94m'$' is not defined.[39m
+  [90mline 44[39m   [90mcol 3[39m    [94m'$' is not defined.[39m
+  [90mline 50[39m   [90mcol 3[39m    [94m'$' is not defined.[39m
+  [90mline 51[39m   [90mcol 5[39m    [94m'$' is not defined.[39m
+  [90mline 58[39m   [90mcol 3[39m    [94m'$' is not defined.[39m
+  [90mline 65[39m   [90mcol 1[39m    [94m'$' is not defined.[39m
+  [90mline 73[39m   [90mcol 1[39m    [94m'$' is not defined.[39m
+  [90mline 74[39m   [90mcol 13[39m   [94m'$' is not defined.[39m
+  [90mline 83[39m   [90mcol 1[39m    [94m'$' is not defined.[39m
+  [90mline 87[39m   [90mcol 17[39m   [94m'$' is not defined.[39m
+  [90mline 88[39m   [90mcol 13[39m   [94m'$' is not defined.[39m
+  [90mline 92[39m   [90mcol 10[39m   [94m'$' is not defined.[39m
+  [90mline 95[39m   [90mcol 20[39m   [94m'$' is not defined.[39m
+  [90mline 95[39m   [90mcol 20[39m   [31mToo many errors. (47% scanned).[39m
+
+[4mresources\scripts\helper.js[24m
+  [90mline 296[39m  [90mcol 29[39m   [94mPossible strict violation.[39m
+  [90mline 297[39m  [90mcol 33[39m   [94mPossible strict violation.[39m
+  [90mline 299[39m  [90mcol 17[39m   [94mPossible strict violation.[39m
+
+[4mresources\scripts\app.js[24m
+  [90mline 305[39m  [90mcol 25[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 308[39m  [90mcol 34[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 313[39m  [90mcol 32[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 477[39m  [90mcol 34[39m   [94m['lang'] is better written in dot notation.[39m
+  [90mline 523[39m  [90mcol 230[39m  [94mStrings must use singlequote.[39m
+  [90mline 532[39m  [90mcol 5[39m    [94mBad line breaking before '+'.[39m
+  [90mline 533[39m  [90mcol 5[39m    [94mBad line breaking before '+'.[39m
+  [90mline 534[39m  [90mcol 5[39m    [94mBad line breaking before '+'.[39m
+  [90mline 535[39m  [90mcol 5[39m    [94mBad line breaking before '+'.[39m
+  [90mline 536[39m  [90mcol 5[39m    [94mBad line breaking before '+'.[39m
+  [90mline 565[39m  [90mcol 55[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 565[39m  [90mcol 96[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 598[39m  [90mcol 91[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 602[39m  [90mcol 99[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 608[39m  [90mcol 74[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 608[39m  [90mcol 148[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 613[39m  [90mcol 34[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 613[39m  [90mcol 59[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 613[39m  [90mcol 82[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 613[39m  [90mcol 122[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 613[39m  [90mcol 161[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 657[39m  [90mcol 68[39m   [94mStrings must use singlequote.[39m
+  [90mline 576[39m  [90mcol 7[39m    [94m'alert' is not defined.[39m
+  [90mline 657[39m  [90mcol 15[39m   [94m'alert' is not defined.[39m
+  [90mline 238[39m  [90mcol 106[39m  [94m'$cookiesProvider' is defined but never used.[39m
+  [90mline 277[39m  [90mcol 57[39m   [94m'USER_ROLES' is defined but never used.[39m
+  [90mline 339[39m  [90mcol 87[39m   [94m'ScenarioDataService' is defined but never used.[39m
+  [90mline 438[39m  [90mcol 27[39m   [94m'cause' is defined but never used.[39m
+  [90mline 438[39m  [90mcol 22[39m   [94m'err' is defined but never used.[39m
+  [90mline 474[39m  [90mcol 28[39m   [94m'value' is defined but never used.[39m
+  [90mline 474[39m  [90mcol 22[39m   [94m'name' is defined but never used.[39m
+  [90mline 476[39m  [90mcol 22[39m   [94m'name' is defined but never used.[39m
+  [90mline 539[39m  [90mcol 67[39m   [94m'data' is defined but never used.[39m
+  [90mline 539[39m  [90mcol 60[39m   [94m'event' is defined but never used.[39m
+  [90mline 545[39m  [90mcol 65[39m   [94m'data' is defined but never used.[39m
+  [90mline 545[39m  [90mcol 58[39m   [94m'event' is defined but never used.[39m
+  [90mline 550[39m  [90mcol 90[39m   [94m'fromParams' is defined but never used.[39m
+  [90mline 550[39m  [90mcol 79[39m   [94m'fromState' is defined but never used.[39m
+  [90mline 564[39m  [90mcol 77[39m   [94m'key' is defined but never used.[39m
+  [90mline 582[39m  [90mcol 54[39m   [94m'fromParams' is defined but never used.[39m
+  [90mline 582[39m  [90mcol 43[39m   [94m'fromState' is defined but never used.[39m
+
+[4mresources\scripts\controllers\authController.js[24m
+  [90mline 55[39m   [90mcol 43[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 54[39m   [90mcol 63[39m   [94m'key' is defined but never used.[39m
+  [90mline 66[39m   [90mcol 68[39m   [94m'key' is defined but never used.[39m
+
+[4mresources\scripts\controllers\buyerStudyController.js[24m
+  [90mline 26[39m   [90mcol 44[39m   [94mStrings must use singlequote.[39m
+  [90mline 26[39m   [90mcol 32[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 99[39m   [90mcol 87[39m   [94m['countryIso'] is better written in dot notation.[39m
+  [90mline 103[39m  [90mcol 87[39m   [94m['countryIso'] is better written in dot notation.[39m
+  [90mline 128[39m  [90mcol 18[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 135[39m  [90mcol 18[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 148[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 148[39m  [90mcol 38[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 148[39m  [90mcol 60[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 163[39m  [90mcol 30[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 164[39m  [90mcol 32[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 164[39m  [90mcol 50[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 166[39m  [90mcol 30[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 170[39m  [90mcol 23[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 172[39m  [90mcol 30[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 186[39m  [90mcol 32[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 187[39m  [90mcol 34[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 187[39m  [90mcol 52[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 189[39m  [90mcol 32[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 193[39m  [90mcol 25[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 195[39m  [90mcol 32[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 234[39m  [90mcol 46[39m   [94mStrings must use singlequote.[39m
+  [90mline 234[39m  [90mcol 34[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 291[39m  [90mcol 45[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 291[39m  [90mcol 90[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 363[39m  [90mcol 16[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 366[39m  [90mcol 22[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 377[39m  [90mcol 41[39m   [94mStrings must use singlequote.[39m
+  [90mline 377[39m  [90mcol 29[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 442[39m  [90mcol 123[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 443[39m  [90mcol 15[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 500[39m  [90mcol 29[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 500[39m  [90mcol 62[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 500[39m  [90mcol 96[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 283[39m  [90mcol 7[39m    [94m'$' is not defined.[39m
+  [90mline 284[39m  [90mcol 7[39m    [94m'$' is not defined.[39m
+  [90mline 319[39m  [90mcol 17[39m   [94m'$' is not defined.[39m
+  [90mline 328[39m  [90mcol 19[39m   [94m'$' is not defined.[39m
+  [90mline 343[39m  [90mcol 7[39m    [94m'alert' is not defined.[39m
+  [90mline 349[39m  [90mcol 5[39m    [94m'alert' is not defined.[39m
+  [90mline 243[39m  [90mcol 12[39m   [94m'callback' is defined but never used.[39m
+  [90mline 72[39m   [90mcol 45[39m   [94m'iDisplayIndexFull' is defined but never used.[39m
+  [90mline 72[39m   [90mcol 30[39m   [94m'iDisplayIndex' is defined but never used.[39m
+  [90mline 72[39m   [90mcol 23[39m   [94m'aData' is defined but never used.[39m
+  [90mline 72[39m   [90mcol 17[39m   [94m'nRow' is defined but never used.[39m
+  [90mline 85[39m   [90mcol 155[39m  [94m'full' is defined but never used.[39m
+  [90mline 85[39m   [90mcol 149[39m  [94m'type' is defined but never used.[39m
+  [90mline 127[39m  [90mcol 108[39m  [94m'full' is defined but never used.[39m
+  [90mline 127[39m  [90mcol 102[39m  [94m'type' is defined but never used.[39m
+  [90mline 134[39m  [90mcol 105[39m  [94m'full' is defined but never used.[39m
+  [90mline 134[39m  [90mcol 105[39m  [31mToo many errors. (25% scanned).[39m
+
+[4mresources\scripts\controllers\calculatorController.js[24m
+  [90mline 56[39m   [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 110[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 110[39m  [90mcol 72[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 118[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 118[39m  [90mcol 70[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 126[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 126[39m  [90mcol 70[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 134[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 134[39m  [90mcol 69[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 142[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 142[39m  [90mcol 69[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 151[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 151[39m  [90mcol 72[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 159[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 159[39m  [90mcol 70[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 167[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 167[39m  [90mcol 70[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 176[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 176[39m  [90mcol 69[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 184[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 184[39m  [90mcol 69[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 193[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 193[39m  [90mcol 78[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 201[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 201[39m  [90mcol 76[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 209[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 209[39m  [90mcol 76[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 217[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 217[39m  [90mcol 75[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 225[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 225[39m  [90mcol 75[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 234[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 234[39m  [90mcol 78[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 242[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 242[39m  [90mcol 76[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 250[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 250[39m  [90mcol 76[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 258[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 258[39m  [90mcol 75[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 266[39m  [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 266[39m  [90mcol 75[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 290[39m  [90mcol 19[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 175[39m  [90mcol 11[39m   [94m'allOption' is defined but never used.[39m
+
+[4mresources\scripts\controllers\diagnosisController.js[24m
+  [90mline 5[39m    [90mcol 102[39m  [94m'$translate' is defined but never used.[39m
+
+[4mresources\scripts\controllers\finalizationController.js[24m
+  [90mline 155[39m  [90mcol 70[39m   [94m'index' is defined but never used.[39m
+
+[4mresources\scripts\controllers\graphController.js[24m
+  [90mline 13[39m   [90mcol 28[39m   [94m['pieChartConfig2D'] is better written in dot notation.[39m
+  [90mline 49[39m   [90mcol 28[39m   [94m['barChartConfig2D'] is better written in dot notation.[39m
+
+[4mresources\scripts\controllers\menuController.js[24m
+  [90mline 46[39m   [90mcol 59[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 67[39m   [90mcol 33[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 80[39m   [90mcol 33[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 84[39m   [90mcol 50[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 148[39m  [90mcol 35[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 156[39m  [90mcol 11[39m   [94mBad line breaking before '||'.[39m
+  [90mline 187[39m  [90mcol 96[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 196[39m  [90mcol 60[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 200[39m  [90mcol 67[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 219[39m  [90mcol 130[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 223[39m  [90mcol 130[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 5[39m    [90mcol 235[39m  [94m'$translate' is defined but never used.[39m
+  [90mline 18[39m   [90mcol 72[39m   [94m'oldVal' is defined but never used.[39m
+  [90mline 45[39m   [90mcol 86[39m   [94m'key' is defined but never used.[39m
+  [90mline 61[39m   [90mcol 65[39m   [94m'data' is defined but never used.[39m
+  [90mline 61[39m   [90mcol 59[39m   [94m'event' is defined but never used.[39m
+  [90mline 66[39m   [90mcol 86[39m   [94m'key' is defined but never used.[39m
+  [90mline 79[39m   [90mcol 86[39m   [94m'key' is defined but never used.[39m
+  [90mline 193[39m  [90mcol 99[39m   [94m'response' is defined but never used.[39m
+  [90mline 195[39m  [90mcol 103[39m  [94m'key' is defined but never used.[39m
+
+[4mresources\scripts\controllers\policyController.js[24m
+  [90mline 46[39m   [90mcol 37[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 54[39m   [90mcol 41[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 67[39m   [90mcol 80[39m   [94mExpected a 'break' statement before 'default'.[39m
+  [90mline 82[39m   [90mcol 102[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 82[39m   [90mcol 158[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 105[39m  [90mcol 53[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 138[39m  [90mcol 41[39m   [94mStrings must use singlequote.[39m
+  [90mline 140[39m  [90mcol 37[39m   [94mStrings must use singlequote.[39m
+  [90mline 143[39m  [90mcol 43[39m   [94mStrings must use singlequote.[39m
+  [90mline 146[39m  [90mcol 36[39m   [94mStrings must use singlequote.[39m
+  [90mline 149[39m  [90mcol 42[39m   [94mStrings must use singlequote.[39m
+  [90mline 152[39m  [90mcol 47[39m   [94mStrings must use singlequote.[39m
+  [90mline 155[39m  [90mcol 43[39m   [94mStrings must use singlequote.[39m
+  [90mline 158[39m  [90mcol 45[39m   [94mStrings must use singlequote.[39m
+  [90mline 161[39m  [90mcol 42[39m   [94mStrings must use singlequote.[39m
+  [90mline 224[39m  [90mcol 41[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 225[39m  [90mcol 46[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 242[39m  [90mcol 19[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 242[39m  [90mcol 33[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 254[39m  [90mcol 26[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 254[39m  [90mcol 57[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 258[39m  [90mcol 10[39m   [94mDon't make functions within a loop.[39m
+  [90mline 276[39m  [90mcol 88[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 343[39m  [90mcol 19[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 347[39m  [90mcol 19[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 351[39m  [90mcol 49[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 355[39m  [90mcol 49[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 355[39m  [90mcol 168[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 368[39m  [90mcol 37[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 368[39m  [90mcol 75[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 372[39m  [90mcol 37[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 383[39m  [90mcol 74[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 383[39m  [90mcol 119[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 383[39m  [90mcol 161[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 396[39m  [90mcol 22[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 421[39m  [90mcol 24[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 450[39m  [90mcol 41[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 495[39m  [90mcol 47[39m   [94m['name'] is better written in dot notation.[39m
+  [90mline 528[39m  [90mcol 41[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 543[39m  [90mcol 40[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 544[39m  [90mcol 43[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 544[39m  [90mcol 101[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 553[39m  [90mcol 45[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 553[39m  [90mcol 90[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 553[39m  [90mcol 132[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 553[39m  [90mcol 185[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 560[39m  [90mcol 41[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 560[39m  [90mcol 83[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 560[39m  [90mcol 126[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 560[39m  [90mcol 171[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 560[39m  [90mcol 171[39m  [31mToo many errors. (52% scanned).[39m
+
+[4mresources\scripts\controllers\proposalController.js[24m
+  [90mline 20[39m   [90mcol 43[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 24[39m   [90mcol 41[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 28[39m   [90mcol 74[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 29[39m   [90mcol 7[39m    [94mBad line breaking before '||'.[39m
+  [90mline 29[39m   [90mcol 45[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 232[39m  [90mcol 76[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 233[39m  [90mcol 9[39m    [94mBad line breaking before '||'.[39m
+  [90mline 233[39m  [90mcol 47[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 246[39m  [90mcol 90[39m   [94mStrings must use singlequote.[39m
+  [90mline 252[39m  [90mcol 103[39m  [94mStrings must use singlequote.[39m
+  [90mline 261[39m  [90mcol 97[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 263[39m  [90mcol 112[39m  [94mStrings must use singlequote.[39m
+  [90mline 265[39m  [90mcol 114[39m  [94mStrings must use singlequote.[39m
+  [90mline 272[39m  [90mcol 95[39m   [94mStrings must use singlequote.[39m
+  [90mline 278[39m  [90mcol 108[39m  [94mStrings must use singlequote.[39m
+  [90mline 287[39m  [90mcol 58[39m   [94mStrings must use singlequote.[39m
+  [90mline 291[39m  [90mcol 56[39m   [94mStrings must use singlequote.[39m
+  [90mline 295[39m  [90mcol 66[39m   [94mStrings must use singlequote.[39m
+  [90mline 299[39m  [90mcol 80[39m   [94mStrings must use singlequote.[39m
+  [90mline 365[39m  [90mcol 45[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 365[39m  [90mcol 125[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 369[39m  [90mcol 50[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 369[39m  [90mcol 140[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 141[39m  [90mcol 27[39m   [94m'data' is defined but never used.[39m
+  [90mline 203[39m  [90mcol 70[39m   [94m'index' is defined but never used.[39m
+
+[4mresources\scripts\controllers\questionnaireController.js[24m
+  [90mline 737[39m  [90mcol 0[39m    [94mIdentifier 'unpaidInvoiceY_1' is not in camel case.[39m
+  [90mline 737[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_1' is not in camel case.[39m
+  [90mline 738[39m  [90mcol 0[39m    [94mIdentifier 'retainedLossY_1' is not in camel case.[39m
+  [90mline 741[39m  [90mcol 0[39m    [94mIdentifier 'retainedLossY_1' is not in camel case.[39m
+  [90mline 741[39m  [90mcol 0[39m    [94mIdentifier 'unpaidInvoiceY_1' is not in camel case.[39m
+  [90mline 741[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_1' is not in camel case.[39m
+  [90mline 745[39m  [90mcol 0[39m    [94mIdentifier 'unpaidInvoiceY_2' is not in camel case.[39m
+  [90mline 745[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_2' is not in camel case.[39m
+  [90mline 746[39m  [90mcol 0[39m    [94mIdentifier 'retainedLossY_2' is not in camel case.[39m
+  [90mline 749[39m  [90mcol 0[39m    [94mIdentifier 'retainedLossY_2' is not in camel case.[39m
+  [90mline 749[39m  [90mcol 0[39m    [94mIdentifier 'unpaidInvoiceY_2' is not in camel case.[39m
+  [90mline 749[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_2' is not in camel case.[39m
+  [90mline 754[39m  [90mcol 0[39m    [94mIdentifier 'unpaidInvoiceY_3' is not in camel case.[39m
+  [90mline 754[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_3' is not in camel case.[39m
+  [90mline 755[39m  [90mcol 0[39m    [94mIdentifier 'retainedLossY_3' is not in camel case.[39m
+  [90mline 758[39m  [90mcol 0[39m    [94mIdentifier 'retainedLossY_3' is not in camel case.[39m
+  [90mline 758[39m  [90mcol 0[39m    [94mIdentifier 'unpaidInvoiceY_3' is not in camel case.[39m
+  [90mline 758[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_3' is not in camel case.[39m
+  [90mline 779[39m  [90mcol 0[39m    [94mIdentifier 'numberLossY_1' is not in camel case.[39m
+  [90mline 779[39m  [90mcol 0[39m    [94mIdentifier 'unpaidInvoiceY_1' is not in camel case.[39m
+  [90mline 779[39m  [90mcol 0[39m    [94mIdentifier 'retainedLossY_1' is not in camel case.[39m
+  [90mline 780[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_1' is not in camel case.[39m
+  [90mline 782[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_1' is not in camel case.[39m
+  [90mline 783[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_1' is not in camel case.[39m
+  [90mline 787[39m  [90mcol 0[39m    [94mIdentifier 'numberLossY_2' is not in camel case.[39m
+  [90mline 787[39m  [90mcol 0[39m    [94mIdentifier 'unpaidInvoiceY_2' is not in camel case.[39m
+  [90mline 787[39m  [90mcol 0[39m    [94mIdentifier 'retainedLossY_2' is not in camel case.[39m
+  [90mline 788[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_2' is not in camel case.[39m
+  [90mline 790[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_2' is not in camel case.[39m
+  [90mline 791[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_2' is not in camel case.[39m
+  [90mline 796[39m  [90mcol 0[39m    [94mIdentifier 'numberLossY_3' is not in camel case.[39m
+  [90mline 796[39m  [90mcol 0[39m    [94mIdentifier 'unpaidInvoiceY_3' is not in camel case.[39m
+  [90mline 796[39m  [90mcol 0[39m    [94mIdentifier 'retainedLossY_3' is not in camel case.[39m
+  [90mline 797[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_3' is not in camel case.[39m
+  [90mline 799[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_3' is not in camel case.[39m
+  [90mline 800[39m  [90mcol 0[39m    [94mIdentifier 'recoveryY_3' is not in camel case.[39m
+  [90mline 954[39m  [90mcol 0[39m    [94mIdentifier 'debtorInvoiceDateY_1' is not in camel case.[39m
+  [90mline 955[39m  [90mcol 0[39m    [94mIdentifier 'debtorInvoiceDateY_2' is not in camel case.[39m
+  [90mline 964[39m  [90mcol 0[39m    [94mIdentifier 'debtorInvoiceDateY_1' is not in camel case.[39m
+  [90mline 967[39m  [90mcol 0[39m    [94mIdentifier 'debtorInvoiceDateY_2' is not in camel case.[39m
+  [90mline 44[39m   [90mcol 16[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 45[39m   [90mcol 38[39m   [94mStrings must use singlequote.[39m
+  [90mline 45[39m   [90mcol 50[39m   [94mStrings must use singlequote.[39m
+  [90mline 77[39m   [90mcol 46[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 77[39m   [90mcol 93[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 82[39m   [90mcol 36[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 85[39m   [90mcol 10[39m   [94mDon't make functions within a loop.[39m
+  [90mline 94[39m   [90mcol 41[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 96[39m   [90mcol 94[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 185[39m  [90mcol 47[39m   [94m['name'] is better written in dot notation.[39m
+  [90mline 185[39m  [90mcol 47[39m   [31mToo many errors. (18% scanned).[39m
+
+[4mresources\scripts\controllers\searchController.js[24m
+  [90mline 29[39m   [90mcol 15[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 32[39m   [90mcol 22[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 37[39m   [90mcol 20[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 66[39m   [90mcol 15[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 69[39m   [90mcol 15[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 82[39m   [90mcol 14[39m   [94m'$q' is not defined.[39m
+  [90mline 81[39m   [90mcol 18[39m   [94m'error' is defined but never used.[39m
+  [90mline 182[39m  [90mcol 23[39m   [94m'failure' is defined but never used.[39m
+  [90mline 341[39m  [90mcol 61[39m   [94m'oldVal' is defined but never used.[39m
+
+[4mresources\scripts\controllers\transformContractController.js[24m
+  [90mline 8[39m    [90mcol 28[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 9[39m    [90mcol 34[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 44[39m   [90mcol 25[39m   [94m'failure' is defined but never used.[39m
+  [90mline 64[39m   [90mcol 25[39m   [94m'failure' is defined but never used.[39m
+  [90mline 81[39m   [90mcol 25[39m   [94m'failure' is defined but never used.[39m
+
+[4mresources\scripts\controllers\transformationController.js[24m
+  [90mline 22[39m   [90mcol 9[39m    [94m'printElement' is not defined.[39m
+
+[4mresources\scripts\controllers\verticalMenuController.js[24m
+  [90mline 151[39m  [90mcol 22[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 156[39m  [90mcol 37[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 161[39m  [90mcol 22[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 169[39m  [90mcol 22[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 176[39m  [90mcol 22[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 183[39m  [90mcol 92[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 187[39m  [90mcol 92[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 194[39m  [90mcol 22[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 203[39m  [90mcol 100[39m  [94m'response' is defined but never used.[39m
+  [90mline 205[39m  [90mcol 26[39m   [94m'error' is defined but never used.[39m
+
+[4mresources\scripts\directives\directives.js[24m
+  [90mline 54[39m   [90mcol 55[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 55[39m   [90mcol 50[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 55[39m   [90mcol 83[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 74[39m   [90mcol 29[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 74[39m   [90mcol 61[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 75[39m   [90mcol 46[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 75[39m   [90mcol 84[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 78[39m   [90mcol 29[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 78[39m   [90mcol 57[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 78[39m   [90mcol 79[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 79[39m   [90mcol 31[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 80[39m   [90mcol 33[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 86[39m   [90mcol 36[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 86[39m   [90mcol 64[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 88[39m   [90mcol 31[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 93[39m   [90mcol 30[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 93[39m   [90mcol 58[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 93[39m   [90mcol 87[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 103[39m  [90mcol 32[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 103[39m  [90mcol 60[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 118[39m  [90mcol 36[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 119[39m  [90mcol 33[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 119[39m  [90mcol 65[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 120[39m  [90mcol 44[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 120[39m  [90mcol 109[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 126[39m  [90mcol 35[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 127[39m  [90mcol 45[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 137[39m  [90mcol 34[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 137[39m  [90mcol 62[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 143[39m  [90mcol 40[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 161[39m  [90mcol 27[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 169[39m  [90mcol 27[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 177[39m  [90mcol 27[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 323[39m  [90mcol 89[39m   [94m['id'] is better written in dot notation.[39m
+  [90mline 323[39m  [90mcol 124[39m  [94m['ngModel'] is better written in dot notation.[39m
+  [90mline 323[39m  [90mcol 168[39m  [94m['atyInputNumber'] is better written in dot notation.[39m
+  [90mline 325[39m  [90mcol 72[39m   [94m['id'] is better written in dot notation.[39m
+  [90mline 325[39m  [90mcol 107[39m  [94m['ngModel'] is better written in dot notation.[39m
+  [90mline 325[39m  [90mcol 151[39m  [94m['atyInputNumber'] is better written in dot notation.[39m
+  [90mline 340[39m  [90mcol 30[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 372[39m  [90mcol 31[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 372[39m  [90mcol 53[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 372[39m  [90mcol 75[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 372[39m  [90mcol 98[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 372[39m  [90mcol 121[39m  [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 259[39m  [90mcol 21[39m   [94m'$' is not defined.[39m
+  [90mline 268[39m  [90mcol 24[39m   [94m'$' is not defined.[39m
+  [90mline 23[39m   [90mcol 11[39m   [94m'logger' is defined but never used.[39m
+  [90mline 156[39m  [90mcol 11[39m   [94m'logger' is defined but never used.[39m
+  [90mline 155[39m  [90mcol 37[39m   [94m'attributes' is defined but never used.[39m
+  [90mline 155[39m  [90mcol 37[39m   [31mToo many errors. (33% scanned).[39m
+
+[4mresources\scripts\filters\filters.js[24m
+  [90mline 53[39m   [90mcol 22[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 54[39m   [90mcol 5[39m    [94mBad line breaking before '?'.[39m
+  [90mline 55[39m   [90mcol 23[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 56[39m   [90mcol 9[39m    [94mBad line breaking before '?'.[39m
+  [90mline 69[39m   [90mcol 16[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 78[39m   [90mcol 16[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 79[39m   [90mcol 27[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 79[39m   [90mcol 52[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 82[39m   [90mcol 26[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 96[39m   [90mcol 17[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 210[39m  [90mcol 18[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 210[39m  [90mcol 57[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 237[39m  [90mcol 30[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 237[39m  [90mcol 43[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 240[39m  [90mcol 35[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 248[39m  [90mcol 22[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 249[39m  [90mcol 13[39m   [94mExpected '{' and instead saw 'includeArrays'.[39m
+  [90mline 279[39m  [90mcol 30[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 279[39m  [90mcol 43[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 282[39m  [90mcol 35[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 290[39m  [90mcol 22[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 291[39m  [90mcol 13[39m   [94mExpected '{' and instead saw 'excludeArrays'.[39m
+  [90mline 45[39m   [90mcol 7[39m    [94m'formats' is defined but never used.[39m
+  [90mline 44[39m   [90mcol 55[39m   [94m'$rootScope' is defined but never used.[39m
+  [90mline 122[39m  [90mcol 42[39m   [94m'$translate' is defined but never used.[39m
+  [90mline 122[39m  [90mcol 37[39m   [94m'$sce' is defined but never used.[39m
+
+[4mresources\scripts\services\authService.js[24m
+  [90mline 11[39m   [90mcol 16[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 121[39m  [90mcol 16[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 32[39m   [90mcol 9[39m    [94m'alert' is not defined.[39m
+  [90mline 76[39m   [90mcol 5[39m    [94m'$' is not defined.[39m
+  [90mline 20[39m   [90mcol 48[39m   [94m'config' is defined but never used.[39m
+  [90mline 20[39m   [90mcol 39[39m   [94m'headers' is defined but never used.[39m
+  [90mline 20[39m   [90mcol 31[39m   [94m'status' is defined but never used.[39m
+  [90mline 31[39m   [90mcol 46[39m   [94m'config' is defined but never used.[39m
+  [90mline 31[39m   [90mcol 37[39m   [94m'headers' is defined but never used.[39m
+  [90mline 31[39m   [90mcol 29[39m   [94m'status' is defined but never used.[39m
+  [90mline 72[39m   [90mcol 34[39m   [94m'credentials' is defined but never used.[39m
+
+[4mresources\scripts\services\buyerStudyService.js[24m
+  [90mline 98[39m   [90mcol 25[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 137[39m  [90mcol 30[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 155[39m  [90mcol 38[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 160[39m  [90mcol 38[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 123[39m  [90mcol 18[39m   [94m'SockJS' is not defined.[39m
+  [90mline 125[39m  [90mcol 20[39m   [94m'Stomp' is not defined.[39m
+  [90mline 154[39m  [90mcol 7[39m    [94m'logger' is not defined.[39m
+  [90mline 159[39m  [90mcol 7[39m    [94m'logger' is not defined.[39m
+  [90mline 80[39m   [90mcol 7[39m    [94m'getMessage' is defined but never used.[39m
+  [90mline 11[39m   [90mcol 220[39m  [94m'spinnerService' is defined but never used.[39m
+  [90mline 106[39m  [90mcol 89[39m   [94m'data' is defined but never used.[39m
+  [90mline 131[39m  [90mcol 170[39m  [94m'growl' is defined but never used.[39m
+  [90mline 144[39m  [90mcol 32[39m   [94m'code' is defined but never used.[39m
+  [90mline 167[39m  [90mcol 32[39m   [94m'code' is defined but never used.[39m
+  [90mline 183[39m  [90mcol 31[39m   [94m'code' is defined but never used.[39m
+  [90mline 198[39m  [90mcol 31[39m   [94m'code' is defined but never used.[39m
+
+[4mresources\scripts\services\contractService.js[24m
+  [90mline 17[39m   [90mcol 31[39m   [94m'code' is defined but never used.[39m
+
+[4mresources\scripts\services\finalizationService.js[24m
+  [90mline 20[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+
+[4mresources\scripts\services\nomenclatureService.js[24m
+  [90mline 30[39m   [90mcol 33[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 32[39m   [90mcol 36[39m   [94mStrings must use singlequote.[39m
+  [90mline 32[39m   [90mcol 51[39m   [94mStrings must use singlequote.[39m
+
+[4mresources\scripts\services\policyService.js[24m
+  [90mline 48[39m   [90mcol 27[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 53[39m   [90mcol 31[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 59[39m   [90mcol 17[39m   [94mStrings must use singlequote.[39m
+  [90mline 59[39m   [90mcol 20[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 59[39m   [90mcol 79[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 59[39m   [90mcol 116[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 65[39m   [90mcol 17[39m   [94mStrings must use singlequote.[39m
+  [90mline 65[39m   [90mcol 20[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 65[39m   [90mcol 81[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 65[39m   [90mcol 120[39m  [94mExpected '===' and instead saw '=='.[39m
+  [90mline 71[39m   [90mcol 35[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 77[39m   [90mcol 35[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 82[39m   [90mcol 43[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 88[39m   [90mcol 33[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 95[39m   [90mcol 36[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 102[39m  [90mcol 31[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 164[39m  [90mcol 21[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 164[39m  [90mcol 41[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 204[39m  [90mcol 20[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 207[39m  [90mcol 20[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 213[39m  [90mcol 20[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 216[39m  [90mcol 20[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 219[39m  [90mcol 20[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 222[39m  [90mcol 20[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 181[39m  [90mcol 9[39m    [94m'alert' is not defined.[39m
+  [90mline 245[39m  [90mcol 9[39m    [94m'saveAs' is not defined.[39m
+  [90mline 10[39m   [90mcol 154[39m  [94m'growl' is defined but never used.[39m
+  [90mline 25[39m   [90mcol 31[39m   [94m'code' is defined but never used.[39m
+  [90mline 127[39m  [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 144[39m  [90mcol 31[39m   [94m'code' is defined but never used.[39m
+  [90mline 155[39m  [90mcol 7[39m    [94m'logger' is defined but never used.[39m
+  [90mline 153[39m  [90mcol 178[39m  [94m'$translate' is defined but never used.[39m
+  [90mline 177[39m  [90mcol 33[39m   [94m'code' is defined but never used.[39m
+  [90mline 196[39m  [90mcol 31[39m   [94m'code' is defined but never used.[39m
+  [90mline 247[39m  [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 247[39m  [90mcol 25[39m   [94m'msg' is defined but never used.[39m
+  [90mline 265[39m  [90mcol 30[39m   [94m'code' is defined but never used.[39m
+
+[4mresources\scripts\services\proposalService.js[24m
+  [90mline 29[39m   [90mcol 24[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 57[39m   [90mcol 24[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 85[39m   [90mcol 19[39m   [94mExpected '!==' and instead saw '!='.[39m
+  [90mline 92[39m   [90mcol 24[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 120[39m  [90mcol 24[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 150[39m  [90mcol 24[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 183[39m  [90mcol 24[39m   [94mExpected '===' and instead saw '=='.[39m
+  [90mline 38[39m   [90mcol 9[39m    [94m'saveAs' is not defined.[39m
+  [90mline 63[39m   [90mcol 9[39m    [94m'saveAs' is not defined.[39m
+  [90mline 101[39m  [90mcol 9[39m    [94m'saveAs' is not defined.[39m
+  [90mline 126[39m  [90mcol 9[39m    [94m'saveAs' is not defined.[39m
+  [90mline 165[39m  [90mcol 9[39m    [94m'saveAs' is not defined.[39m
+  [90mline 189[39m  [90mcol 9[39m    [94m'saveAs' is not defined.[39m
+  [90mline 207[39m  [90mcol 9[39m    [94m'saveAs' is not defined.[39m
+  [90mline 3[39m    [90mcol 110[39m  [94m'localStorageService' is defined but never used.[39m
+  [90mline 23[39m   [90mcol 50[39m   [94m'config' is defined but never used.[39m
+  [90mline 40[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 40[39m   [90mcol 25[39m   [94m'msg' is defined but never used.[39m
+  [90mline 46[39m   [90mcol 27[39m   [94m'proposal' is defined but never used.[39m
+  [90mline 52[39m   [90mcol 50[39m   [94m'config' is defined but never used.[39m
+  [90mline 65[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 65[39m   [90mcol 25[39m   [94m'msg' is defined but never used.[39m
+  [90mline 82[39m   [90mcol 50[39m   [94m'config' is defined but never used.[39m
+  [90mline 103[39m  [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 103[39m  [90mcol 25[39m   [94m'msg' is defined but never used.[39m
+  [90mline 109[39m  [90mcol 30[39m   [94m'proposal' is defined but never used.[39m
+  [90mline 115[39m  [90mcol 50[39m   [94m'config' is defined but never used.[39m
+  [90mline 128[39m  [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 128[39m  [90mcol 25[39m   [94m'msg' is defined but never used.[39m
+  [90mline 144[39m  [90mcol 50[39m   [94m'config' is defined but never used.[39m
+  [90mline 167[39m  [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 167[39m  [90mcol 25[39m   [94m'msg' is defined but never used.[39m
+  [90mline 172[39m  [90mcol 38[39m   [94m'buyerStudyDoc' is defined but never used.[39m
+  [90mline 178[39m  [90mcol 50[39m   [94m'config' is defined but never used.[39m
+  [90mline 191[39m  [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 191[39m  [90mcol 25[39m   [94m'msg' is defined but never used.[39m
+  [90mline 204[39m  [90mcol 50[39m   [94m'config' is defined but never used.[39m
+  [90mline 209[39m  [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 209[39m  [90mcol 25[39m   [94m'msg' is defined but never used.[39m
+  [90mline 225[39m  [90mcol 31[39m   [94m'code' is defined but never used.[39m
+  [90mline 241[39m  [90mcol 31[39m   [94m'code' is defined but never used.[39m
+  [90mline 257[39m  [90mcol 31[39m   [94m'code' is defined but never used.[39m
+  [90mline 274[39m  [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 291[39m  [90mcol 30[39m   [94m'code' is defined but never used.[39m
+
+[4mresources\scripts\services\questionnaireService.js[24m
+  [90mline 3[39m    [90mcol 113[39m  [94m'localStorageService' is defined but never used.[39m
+  [90mline 22[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 35[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 48[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+
+[4mresources\scripts\services\scenarioService.js[24m
+  [90mline 3[39m    [90mcol 162[39m  [94m'localStorageService' is defined but never used.[39m
+  [90mline 3[39m    [90mcol 151[39m  [94m'$rootScope' is defined but never used.[39m
+  [90mline 3[39m    [90mcol 137[39m  [94m'DIVERS_EVENTS' is defined but never used.[39m
+  [90mline 14[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 32[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 45[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 58[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 71[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 88[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+
+[4mresources\scripts\services\searchService.js[24m
+  [90mline 10[39m   [90mcol 15[39m   [94m'$' is not defined.[39m
+  [90mline 27[39m   [90mcol 16[39m   [94m'$' is not defined.[39m
+  [90mline 43[39m   [90mcol 16[39m   [94m'$' is not defined.[39m
+  [90mline 13[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 30[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 46[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 58[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 70[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 82[39m   [90mcol 32[39m   [94m'code' is defined but never used.[39m
+  [90mline 94[39m   [90mcol 32[39m   [94m'code' is defined but never used.[39m
+  [90mline 106[39m  [90mcol 32[39m   [94m'code' is defined but never used.[39m
+  [90mline 122[39m  [90mcol 32[39m   [94m'code' is defined but never used.[39m
+
+[4mresources\scripts\services\transformationService.js[24m
+  [90mline 13[39m   [90mcol 33[39m   [94m'code' is defined but never used.[39m
+
+[4mresources\scripts\services\verticalMenuService.js[24m
+  [90mline 16[39m   [90mcol 9[39m    [94m'saveAs' is not defined.[39m
+  [90mline 18[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+  [90mline 33[39m   [90mcol 30[39m   [94m'code' is defined but never used.[39m
+
+  [31m×[39m  5 errors
+  [33m‼[39m  583 warnings
+

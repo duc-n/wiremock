@@ -1,0 +1,180 @@
+<!-- CCO -->
+<div class="form-group">
+	<label class="col-sm-3 control-label"><strong
+		translate="policy.service.option.information.products.label"></strong></label>
+
+	<div class="col-sm-2">
+		<div class="checkbox disabled"
+			ng-class="{'from-bcc': policy.productCcoOptionFromBCC}">
+			<label> <input type="checkbox" disabled
+				ng-model="policy.productCcoOption" value="true" /> <span
+				translate="policy.service.option.customised.credit.opinion.label"></span>
+			</label>
+		</div>
+	</div>
+	<div class="col-sm-7" ng-show="policy.productCcoOption">
+		<div class="multi-select">
+			<div class="col-sm-12 selected-items"
+				ng-class="{'from-bcc': policy.coveredCountriesCcoListFromBCC}">
+				<div class="form-group">
+					<label class="col-sm-12 control-label"><strong
+						translate="policy.service.option.covered.countries.label"></strong></label>
+				</div>
+				<div class="multi-content multi-column">
+					<ul class="form-control-static">
+						<li ng-repeat="item in policy.coveredCountriesCcoList"><span
+							translate="{{'country.'+item.code}}"></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- @CO -->
+<div class="form-group">
+	<div class="col-sm-offset-3 col-sm-2">
+		<div class="checkbox disabled"
+			ng-class="{'from-bcc': policy.productAtCoOptionFromBCC}">
+			<label> <input type="checkbox" disabled
+				ng-model="policy.productAtCoOption" value="true" /> <span
+				translate="policy.service.option.arating.check.monitored.label"></span>
+			</label>
+		</div>
+	</div>
+	<div class="col-sm-7" ng-show="policy.productAtCoOption">
+		<div class="multi-select">
+			<div class="col-sm-12 selected-items"
+				ng-class="{'from-bcc': policy.coveredCountriesAtCoListFromBCC}">
+				<div class="form-group">
+					<label class="col-sm-12 control-label"><strong
+						translate="policy.service.option.covered.countries.label"></strong></label>
+				</div>
+				<div class="multi-content multi-column">
+					<ul class="form-control-static">
+						<li ng-repeat="item in policy.coveredCountriesAtCoList"><span
+							translate="{{'country.'+item.code}}"></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- @CH -->
+<div class="form-group">
+	<div class="col-sm-offset-3 col-sm-2">
+		<div class="checkbox disabled"
+			ng-class="{'from-bcc': policy.productAtChOptionFromBCC}">
+			<label> <input type="checkbox" disabled
+				ng-model="policy.productAtChOption" value="true" /> <span
+				translate="policy.service.option.unsecured.arating.label"></span>
+			</label>
+		</div>
+	</div>
+	<div class="col-sm-7" ng-show="policy.productAtChOption">
+		<div class="multi-select">
+			<div class="col-sm-12 selected-items"
+				ng-class="{'from-bcc': policy.coveredCountriesAtChListFromBCC}">
+				<div class="form-group">
+					<label class="col-sm-12 control-label"><strong
+						translate="policy.service.option.covered.countries.label"></strong></label>
+				</div>
+				<div class="multi-content multi-column">
+					<ul class="form-control-static">
+						<li ng-repeat="item in policy.coveredCountriesAtChList"><span
+							translate="{{'country.'+item.code}}"></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- Snapshot report -->
+<div class="form-group">
+	<div class="col-sm-offset-4 col-sm-8">
+		<div class="checkbox disabled" ng-class="{'from-bcc': policy.productSnapshotReportFromBCC}">
+			<label> <input type="checkbox" disabled				
+				ng-model="policy.productSnapshotReport" value="true" /> <span
+				translate="policy.service.option.compl.offers.snap.report"></span>
+			</label>
+		</div>
+	</div>
+</div>
+<!-- Full report -->
+<div class="form-group">
+	<div class="col-sm-offset-4 col-sm-8">
+		<div class="checkbox disabled" ng-class="{'from-bcc': policy.productFullReportFromBCC}">
+			<label> <input type="checkbox" disabled ng-model="policy.productFullReport"
+				value="true" /> <span
+				translate="policy.service.option.compl.offers.full.report"></span>
+			</label>
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-offset-1 col-sm-3 control-label"><strong
+		translate="policy.service.option.compl.offers.debt.collect.label"></strong></label>
+	<div class="col-sm-8">
+		<div class="checkbox disabled" ng-class="{'from-bcc': policy.debtCollectionFromBCC}">
+			<label> <input type="checkbox" disabled ng-model="policy.debtCollection"
+				value="true" /> <span
+				translate="policy.service.option.compl.offers.debt.collect.covered.debt"></span>
+			</label>
+		</div>
+	</div>
+
+</div>
+
+<!-- Complementary Services -->
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-12 control-label"><strong
+				translate="policy.service.option.compl.services.label"></strong></label>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-offset-1 col-sm-3 control-label"><strong
+				translate="policy.service.option.compl.services.cofanet"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"
+					ng-class="{'from-bcc': policy.cofanetOptionFromBCC && policy.cofanetOption == 'ES'}">
+					<input disabled type="radio" id="cofanetOption"
+					ng-model="policy.cofanetOption" value="ES" /> <span
+					translate="policy.service.option.compl.services.cofanet.essentials"></span>
+				</label> <label class="radio-inline"
+					ng-class="{'from-bcc': policy.cofanetOptionFromBCC && policy.cofanetOption == 'PM'}">
+					<input disabled type="radio" ng-model="policy.cofanetOption"
+					value="PM" /> <span
+					translate="policy.service.option.compl.services.cofanet.policy.master"></span>
+				</label> <label class="radio-inline"
+					ng-class="{'from-bcc': policy.cofanetOptionFromBCC && policy.cofanetOption == 'PC'}">
+					<input disabled type="radio" ng-model="policy.cofanetOption"
+					value="PC" /> <span
+					translate="policy.service.option.compl.services.cofanet.policy.cash"></span>
+				</label>
+			</div>
+		</div>
+		<!-- Others -->
+		<div class="form-group">
+			<label class="col-sm-offset-1 col-sm-3 control-label"><strong
+				translate="policy.service.option.compl.services.others"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="checkbox-inline"
+					ng-class="{'from-bcc':policy.dashboardFromBCC}"> <input
+					type="checkbox" disabled ng-model="policy.dashboard" value="true" />
+					<span
+					translate="policy.service.option.compl.services.others.dashboard">
+				</span>
+				</label> <label class="checkbox-inline"
+					ng-class="{'from-bcc':policy.cofaServeFromBCC}"> <input
+					type="checkbox" ng-model="policy.cofaServe" value="true" disabled />
+					<span
+					translate="policy.service.option.compl.services.others.cofaServe">
+				</span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>

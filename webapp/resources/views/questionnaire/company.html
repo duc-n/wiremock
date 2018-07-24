@@ -1,0 +1,280 @@
+<div class="form-group">
+  <label class="col-sm-3 control-label"><strong translate="questionnaire.company.easynumber.label"></strong></label>
+
+  <div class="col-sm-8">
+    <p class="form-control-static" ng-bind="questionnaire.easyNumber"></p>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label"><strong translate="questionnaire.company.legalname.label"></strong></label>
+
+  <div class="col-sm-8">
+    <p class="form-control-static" ng-bind="questionnaire.companyLegalName"></p>
+  </div>
+</div>
+<div class="form-group">
+  <label class="col-sm-3 control-label"><strong translate="questionnaire.company.registration.label"></strong></label>
+
+  <div class="col-sm-8">
+    <p class="form-control-static" ng-bind="questionnaire.companyRegistrationNumber"></p>
+  </div>
+</div>
+<!-- VAT Identifier -->
+<div class="form-group">
+  <label class="col-sm-3 control-label"><strong translate="questionnaire.company.vat.identifier.label"></strong></label>
+
+  <div class="col-sm-8" ng-if="questionnaire.vatNumber">
+    <p class="form-control-static" ng-bind="questionnaire.vatNumber"></p>
+  </div>
+  <div class="col-sm-8" ng-if="!questionnaire.vatNumber">
+    <p class="form-control-static" translate="na.label"></p>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label"><strong translate="questionnaire.company.address.label"></strong></label>
+
+  <div class="col-sm-8">
+    <p class="form-control-static" ng-bind="questionnaire.companyRegisteredAddress"></p>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-offset-3 col-sm-4 control-label"><strong translate="questionnaire.company.contact.info.label"></strong></label>
+  <label class="col-sm-5 control-label"><strong translate="questionnaire.company.signatory.info.label"></strong></label>
+</div>
+
+<!-- defect #561 : FR Feedback: Contact Info mandatory for Edition -->
+
+<div class="form-group">	
+	<label class="col-sm-offset-7 col-sm-3 control-label" for="signatoryContactEnable"><strong
+		translate="questionnaire.company.signatory.contact.option.label"></strong></label>		
+	
+	<div class="col-sm-2">
+		<label class="radio-inline">
+			<input type="radio" id="signatoryContactEnable" ng-model="questionnaire.signatoryContactEnable"
+			ng-disabled="::questionnaire.isReadOnly"
+			ng-value="true"/> 
+			<span translate="yes.label"></span>
+		</label>
+		
+		 <label class="radio-inline"> 
+		 	<input type="radio"
+			ng-model="questionnaire.signatoryContactEnable" ng-value="false"
+			ng-disabled="::questionnaire.isReadOnly" /> <span
+			translate="no.label"></span>
+		</label>
+	</div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label"><strong translate="questionnaire.company.civility.label"></strong></label>
+
+  <div class="col-sm-2">
+    <select ng-disabled="::questionnaire.isReadOnly" ng-model="questionnaire.civility" class="form-control need-for-pricing"
+            ng-options="key as value for (key, value) in civilities" ></select>
+  </div>
+  
+  <div ng-if="questionnaire.signatoryContactEnable" class="col-sm-offset-2 col-sm-2">
+    <select ng-disabled="::questionnaire.isReadOnly" ng-model="questionnaire.signatoryCivility" class="form-control need-for-pricing"
+            ng-options="key as value for (key, value) in civilities" ></select>
+  </div>
+  
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="lastName"><strong
+    translate="questionnaire.company.lastname.label"></strong></label>
+
+  <div class="col-sm-4">
+    <input ng-disabled="::questionnaire.isReadOnly" type="text" class="form-control need-for-pricing" ng-model="questionnaire.lastName" id="lastName" name="lastName"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+  </div>
+  
+  <div ng-if="questionnaire.signatoryContactEnable" class="col-sm-4">
+    <input ng-disabled="::questionnaire.isReadOnly" type="text" class="form-control need-for-pricing" ng-model="questionnaire.signatoryLastName" id="signatoryLastName" name="signatoryLastName"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="firstName"><strong
+    translate="questionnaire.company.firstname.label"></strong></label>
+
+  <div class="col-sm-4">
+    <input ng-disabled="::questionnaire.isReadOnly" type="text" class="form-control" ng-model="questionnaire.firstName" id="firstName" name="firstName"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+
+  </div>
+  <div ng-if="questionnaire.signatoryContactEnable" class="col-sm-4">
+    <input ng-disabled="::questionnaire.isReadOnly" type="text" class="form-control" ng-model="questionnaire.signatoryFirstName" id="signatoryFirstName" name="signatoryFirstName"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="companyJobTitle"><strong
+    translate="questionnaire.company.job.label"></strong></label>
+
+  <div class="col-sm-4">
+    <input ng-disabled="::questionnaire.isReadOnly" class="form-control" ng-model="questionnaire.companyJobTitle" id="companyJobTitle" name="companyJobTitle"
+           aty-maxlength="255" ng-maxlength="255"
+           />
+  </div>
+  <div ng-if="questionnaire.signatoryContactEnable" class="col-sm-4">
+    <input ng-disabled="::questionnaire.isReadOnly" class="form-control" ng-model="questionnaire.signatoryJobTitle" id="signatoryJobTitle" name="signatoryJobTitle"
+           aty-maxlength="255" ng-maxlength="255"
+           />
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="companyPhone"><strong
+    translate="questionnaire.company.phone.label"></strong></label>
+
+  <div class="col-sm-3">
+    <input ng-disabled="::questionnaire.isReadOnly" type="tel" class="form-control" ng-model="questionnaire.companyPhone" id="companyPhone" name="companyPhone"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+  </div>
+  <div ng-if="questionnaire.signatoryContactEnable" class="col-sm-offset-1 col-sm-3">
+    <input ng-disabled="::questionnaire.isReadOnly" type="tel" class="form-control" ng-model="questionnaire.signatoryPhone" id="signatoryPhone" name="signatoryPhone"
+           aty-maxlength="50" ng-maxlength="50"
+           />
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="companyMobilePhone"><strong
+    translate="questionnaire.company.contact.mobile.phone.label"></strong></label>
+
+  <div class="col-sm-3">
+    <input ng-disabled="::questionnaire.isReadOnly" class="form-control" ng-model="questionnaire.companyMobilePhone" id="companyMobilePhone" name="companyMobilePhone"
+           aty-maxlength="50" ng-maxlength="50"/>
+  </div>
+  
+    <div ng-if="questionnaire.signatoryContactEnable" class="col-sm-offset-1 col-sm-3">
+    <input ng-disabled="::questionnaire.isReadOnly" class="form-control" ng-model="questionnaire.signatoryMobilePhone" id="signatoryMobilePhone" name="signatoryMobilePhone"
+           aty-maxlength="50" ng-maxlength="50"/>
+  </div>
+
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="companyEmail"><strong
+    translate="questionnaire.company.email.label"></strong></label>
+
+  <div class="col-sm-4">
+    <input ng-disabled="::questionnaire.isReadOnly" type="email" class="form-control" ng-model="questionnaire.companyEmail" id="companyEmail" name="companyEmail"
+           aty-maxlength="100" ng-maxlength="100"
+           ng-pattern='/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'
+           popover="{{'form.invalid.email'|translate : '{p0: 100}'}}"
+           popover-enable="questionnaireForm.companySubForm.companyEmail.$error.pattern || questionnaireForm.companySubForm.companyEmail.$error.maxlength"
+           popover-trigger="focus"
+           />
+  </div>         
+  <div ng-if="questionnaire.signatoryContactEnable" class="col-sm-4">
+    <input ng-disabled="::questionnaire.isReadOnly" type="email" class="form-control" ng-model="questionnaire.signatoryEmail" id="signatoryEmail" name="signatoryEmail"
+           aty-maxlength="100" ng-maxlength="100"
+           ng-pattern='/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/'
+           popover="{{'form.invalid.email'|translate : '{p0: 100}'}}"
+           popover-enable="questionnaireForm.companySubForm.signatoryEmail.$error.pattern || questionnaireForm.companySubForm.signatoryEmail.$error.maxlength"
+           popover-trigger="focus"
+           />
+  </div>
+</div>
+
+<div class="form-group">	
+	<label class="col-sm-3 control-label" for="contractSigneElectronic"><strong
+		translate="questionnaire.company.agreement.electronic.signature.label"></strong></label>		
+	
+	<div class="col-sm-3">
+		<label class="radio-inline">
+			<input ng-disabled="::questionnaire.isReadOnly" type="radio" id="contractSigneElectronic" ng-model="questionnaire.agreementElectronicSignature"
+			ng-disabled="::questionnaire.isReadOnly"
+			ng-value="true"/> 
+			<span translate="yes.label"></span>
+		</label>
+		
+		 <label class="radio-inline"> 
+		 	<input ng-disabled="::questionnaire.isReadOnly" type="radio"
+			ng-model="questionnaire.agreementElectronicSignature" ng-value="false"
+			ng-disabled="::questionnaire.isReadOnly" /> <span
+			translate="no.label"></span>
+		</label>
+	</div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="companyAddress"><strong
+    translate="questionnaire.company.commaddr.label"></strong></label>
+
+  <div class="col-sm-8">
+    <input ng-disabled="::questionnaire.isReadOnly" class="form-control" ng-model="questionnaire.companyAddress" id="companyAddress" name="companyAddress"
+           aty-maxlength="255" ng-maxlength="255"
+           />
+  </div>
+</div>
+
+<!-- defect #247 : supprimer ou griser champs dans company identification sur civilité, job tittle...
+	defect #561 : FR Feedback: Contact Info mandatory for Edition
+-->
+
+<!-- defect #193 : Affichage du DRA et statut de la note KYC dans l'onget questionnaire -->
+<div class="form-group">
+  <label class="col-sm-3 control-label"><strong
+    translate="questionnaire.company.dra.label"></strong></label>
+
+  <div class="col-sm-4" ng-if="questionnaire.companyDRA">
+    <div class="input-group">
+      <p class="form-control-static" ng-bind="questionnaire.companyDRA"></p>
+    </div>
+  </div>
+  <div class="col-sm-4" ng-if="!questionnaire.companyDRA">
+    <div class="input-group">
+      <p class="form-control-static" translate="na.label"></p>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label"><strong
+    translate="questionnaire.company.kyc.label"></strong></label>
+
+  <div class="col-sm-2" ng-if="questionnaire.companyKYC">
+    <div class="input-group">
+      <p class="form-control-static" ng-bind="questionnaire.companyKYC"></p>
+    </div>
+  </div>
+  <div class="col-sm-2" ng-if="!questionnaire.companyKYC">
+    <div class="input-group">
+      <p class="form-control-static" translate="na.label"></p>
+    </div>
+  </div>
+  <div class="col-sm-4">
+    <div class="input-group">
+      <a class="btn btn-primary" ng-disabled="::questionnaire.isReadOnly" id="kyc-btn" ng-click="openCompanyOnCube()"
+				translate="kyc.questionnaire.button"></a>
+    </div>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label"><strong
+    translate="questionnaire.company.aml.notation.and.level.of.risk.label"></strong></label>
+
+  <div class="col-sm-4" ng-if="questionnaire.companyAMLNotationRiskLevel">
+    <div class="input-group">
+      <p class="form-control-static" ng-bind="questionnaire.companyAMLNotationRiskLevel"></p>
+    </div>
+  </div>
+  <div class="col-sm-4" ng-if="!questionnaire.companyAMLNotationRiskLevel">
+    <div class="input-group">
+      <p class="form-control-static" translate="na.label"></p>
+    </div>
+  </div>
+</div>

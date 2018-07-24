@@ -1,0 +1,99 @@
+<div class="panel-heading">
+	<span class="panel-title" translate="search.results"></span><div><span
+		class="panel-title" ng-bind="cases.length"></span>/<span
+		class="panel-title" ng-bind="nbTotalResult"></span>
+	</div>
+</div>
+<div class="panel-body">
+	<spinner class="aty-data-loading" name="searchSpinner">
+	<div class="messaging">
+		<i class="fa fa-refresh fa-spin"></i>
+		<div class="la-ball-circus la-2x">
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+		</div>
+		<h1 translate="spinner.data.loading.title"></h1>
+	</div>
+	</spinner>
+	<table
+		class="table table-cofanet table-bordered table-striped table-responsive fixed-layout">
+		<colgroup>
+			<col style="width:1.3rem" span="1" class="ellipsis col-sm-1">
+			<col style="width:5.5rem" span="1" class="ellipsis col-sm-1">
+			<col style="width:5rem" span="1" class="ellipsis col-sm-1">
+			<col style="width:7rem" span="1" class="ellipsis col-sm-2">
+			<col style="width:8rem" span="1" class="ellipsis col-sm-2">
+			<col style="width:7rem" span="1" class="ellipsis col-sm-1">
+			<col style="width:7rem" span="1" class="col-sm-2">
+			<col  style="width:7rem" span="1" class="col-sm-2">
+		</colgroup>
+		<thead>
+			<tr>
+				<th  class="text-center"><p class="form-control-static">
+						<input type="checkbox" ng-change="computeSelectAll(selected)"
+							ng-model="selected" />
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="search.contract.project.number"></strong>
+					</p></th>
+				<!--<th class="text-center"><p class="form-control-static">
+						<strong translate="search.contract.old.number"></strong>
+					</p></th>-->
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="search.creation.date"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="search.sales.name"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="search.company.name"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="search.business"></strong>
+					</p></th>
+				<th class="text-center" ><p class="form-control-static">
+					<strong translate="search.contract.progress.status"></strong>
+					</p></th>
+					<th class="text-center"><p class="form-control-static">
+						<strong translate="search.contract.status"></strong>
+					</p></th>
+			</tr>
+		</thead>
+		<tfoot>
+			<tr>
+			<td colspan="4" align="right" style="border-right: none"><button ng-click="more()" ng-disabled="buttonMoreDisable"
+				type="button" class="btn btn-primary"
+				popover="{{'search.more.results' | translate}}" popover-trigger="mouseenter">
+				<i class="fa fa-ellipsis-h"></i>
+			</button></td>
+				<td colspan="4" style="border-left: none"><div><span class="panel-title" ng-bind="cases.length"></span><span><span>/</span></span><span
+					class="panel-title" ng-bind="nbTotalResult"></span></div></td>
+			</tr>
+		</tfoot>
+		<tbody>
+			<tr ng-repeat="case in cases">
+				<td   class="text-center"><input type="checkbox"
+					ng-change="updateCasesSelectedList(case.caseId,case.selected)"
+					ng-model="case.selected"></td>
+				<td class="word-break"><a
+					ui-sref=".questionnaire({caseId: case.caseId,scenarioId: case.scenarioId})"
+					ng-bind="case.contractNumber"></a></td>    </td>
+				<!--<td ng-bind="case.contractOldNumber" class="word-break"></td>-->
+				<td ng-bind="case.creationDate"></td>
+				<td class="ellipsis" ng-bind="case.salesName"
+					title="{{case.salesName}}"></td>
+				<td class="ellipsis" ng-bind="case.companyName"
+					title="{{case.companyName}}"></td>
+				<td class="ellipsis"
+					translate="{{case.business | renderBusiness}}" title="{{case.business | renderBusiness | translate}}"></td>
+				<td  colspan="1" class="ellipsis"
+					translate="{{case.progressStatus | renderScenarioProgressStatus}}" title="{{case.progressStatus | renderScenarioProgressStatus | translate}}"></td>
+				<td class="ellipsis"
+					translate="{{case.contractStatus | renderContractStatus}}" title="{{case.contractStatus | renderContractStatus | translate}}"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

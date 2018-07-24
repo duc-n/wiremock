@@ -1,0 +1,34 @@
+{
+  "code": 0,
+  "messages": [
+    {
+      "code": "scenario.successfully.created.msg",
+      "severity": "SUCCESS",
+      "field": null,
+      "errorType": null,
+      "minLength": null,
+      "maxLength": null,
+      "variables": null
+    }
+  ],
+  "errors": null,
+  "data": {
+    "scenarioId": 3922250,
+    "scenarioNumber": 7,
+    "scenarioName": "test",
+    "scenarioDescription": null,
+    "favorite": false,
+    "state": "ACTIVE",
+    "frozenReason": null,
+    "createdById": "X1220701",
+    "createdByFullName": "Jean-Carlo SINI",
+    "fileTransferredToGCC": false,
+    "nbiOrContractGenerated": false,
+    "derogationWorkflowStopped": false,
+    "derogationWorkflowFinished": false,
+    "isReadOnly": null,
+    "initialScenarioValidated": false,
+    "specificQuestionnaireChanged": false,
+    "firstScenario": false
+  }
+}

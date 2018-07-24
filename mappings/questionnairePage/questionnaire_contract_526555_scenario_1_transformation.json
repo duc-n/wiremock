@@ -1,0 +1,20 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/autonomyView/rest/transformation/report/13541444"
+    },
+    "response": {
+        "status": 200,
+        "bodyFileName": "questionnairePage/questionnaire_contract_526555_scenario_1_transformation.json",
+        "headers": {
+            "Content-Type": "application/json",
+			"Access-Control-Allow-Origin" : "http://127.0.0.1:8080",
+			"Access-Control-Allow-Methods" : "POST, PUT, GET, OPTIONS",
+			"Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding",
+			"X-Content-Type-Options" : "nosniff",
+			"x-frame-options" : "DENY",
+			"Access-Control-Allow-Credentials" : "true",
+			"x-xss-protection" : "1; mode=block"
+        }
+    }
+}

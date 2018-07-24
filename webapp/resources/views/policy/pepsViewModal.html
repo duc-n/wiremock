@@ -1,0 +1,20 @@
+<div class="modal-header">
+  <h3 class="modal-title" translate="policy.peps.modal.title"></h3>
+  <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><i
+    class="fa fa-close"></i></button>
+</div>
+<div class="modal-body" id="pepsViewModal">
+  <spinner class="aty-third-party-app-loading" name="pepsViewModalSpinner" show="true">
+    <div class="animated-container">
+      <div class="messaging">
+        <div class="la-ball-scale-multiple la-2x">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <h1 translate="application.loading.title"></h1>
+      </div>
+    </div>
+  </spinner>
+  <iframe height="770" width="100%" ng-src="{{::pepsViewUrl}}" ng-onload="stopSpinner()"></iframe>
+</div>

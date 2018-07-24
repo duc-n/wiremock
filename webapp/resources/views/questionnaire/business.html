@@ -1,0 +1,108 @@
+<div class="form-group" ng-if="::questionnaire.newBusiness">
+  <label class="col-sm-3 control-label"><strong
+    translate="questionnaire.bu.desc.activity.type.label"></strong></label>
+
+  <div class="col-sm-9">
+    <label class="radio-inline"> <input type="radio"
+                                        ng-model="questionnaire.activityType"
+                                        value="MA" ng-disabled="::questionnaire.isReadOnly"/> <span
+      translate="questionnaire.bu.desc.activity.type.manufacturer.label"></span></label>
+    <label class="radio-inline"> <input type="radio"
+                                        ng-model="questionnaire.activityType"
+                                        value="WA" ng-disabled="::questionnaire.isReadOnly"/> <span
+      translate="questionnaire.bu.desc.activity.type.wholessales.agent.label"></span></label>
+    <label class="radio-inline"> <input type="radio"
+                                        ng-model="questionnaire.activityType"
+                                        value="RE" ng-disabled="::questionnaire.isReadOnly"/> <span
+      translate="questionnaire.bu.desc.activity.type.retailers.label"></span></label>
+    <label class="radio-inline"> <input type="radio"
+                                        ng-model="questionnaire.activityType"
+                                        value="SO" ng-disabled="::questionnaire.isReadOnly"/> <span
+      translate="questionnaire.bu.desc.activity.type.services.others.label"></span></label>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-3 control-label" for="scopeBusiness"><strong
+    translate="questionnaire.bu.desc.scope.business.label"></strong>
+    <i
+      popover="{{'questionnaire.scope.business.tooltip.label'|translate}}"
+      popover-trigger="mouseenter"
+      class="fa fa-info-circle"></i>
+  </label>
+
+  <div class="hidden-print col-sm-9">
+    <textarea class="form-control" id="scopeBusiness" ng-model="questionnaire.scopeBusiness" name="scopeBusiness"
+              aty-maxlength="1000" ng-maxlength="1000"
+              popover="{{'form.invalid.length.field'|translate : '{p0: 1000}'}}"
+              popover-toggle="questionnaireForm.businessSubForm.scopeBusiness.$invalid"
+              popover-trigger="focus"
+              ng-disabled="::questionnaire.isReadOnly"
+             
+              />
+  </div>
+  <div class="visible-print col-sm-9">
+    <div class="form-control-static" ng-bind="questionnaire.scopeBusiness"></div>
+  </div>
+</div>
+
+<div class="form-group" ng-if="::questionnaire.newBusiness">
+  <label class="col-sm-3 control-label"><strong translate="questionnaire.bu.desc.portfolio.composition.label"></strong></label>
+
+  <div class="hidden-print col-sm-3">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="questionnaire.pfCompoManufacturer" value="true" ng-disabled="::questionnaire.isReadOnly">
+        <span translate="questionnaire.bu.desc.pf.compo.manufacturer.label"> </span>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="questionnaire.pfCompoDistributors" value="true" ng-disabled="::questionnaire.isReadOnly"/>
+        <span translate="questionnaire.bu.desc.pf.compo.distributors.label"> </span>
+      </label>
+    </div>
+  </div>
+  <div class="hidden-print col-sm-3">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="questionnaire.pfCompoRetailers" value="true" ng-disabled="::questionnaire.isReadOnly"/>
+        <span translate="questionnaire.bu.desc.pf.compo.retailers.label"> </span>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="questionnaire.pfCompoPublicBuyers" value="true" ng-disabled="::questionnaire.isReadOnly"/>
+        <span translate="questionnaire.bu.desc.pf.compo.public.buyers.label"> </span>
+      </label>
+    </div>
+  </div>
+  <div class="hidden-print col-sm-3">
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="questionnaire.pfCompoRelatedComp" value="true" ng-disabled="::questionnaire.isReadOnly"/>
+        <span translate="questionnaire.bu.desc.pf.compo.related.companies.label"> </span>
+      </label>
+    </div>
+    <div class="checkbox">
+      <label>
+        <input type="checkbox" ng-model="questionnaire.pfCompoOthers" value="true" ng-disabled="::questionnaire.isReadOnly"/>
+        <span translate="questionnaire.bu.desc.pf.compo.others.label"> </span>
+      </label>
+    </div>
+  </div>
+  <div class="visible-print col-sm-9">
+    <ul class="form-control-static list-inline">
+      <li ng-if="questionnaire.pfCompoManufacturer"
+            translate="questionnaire.bu.desc.pf.compo.manufacturer.label"> </li>
+      <li ng-if="questionnaire.pfCompoDistributors"
+            translate="questionnaire.bu.desc.pf.compo.distributors.label"> </li>
+      <li ng-if="questionnaire.pfCompoRetailers" translate="questionnaire.bu.desc.pf.compo.retailers.label"> </li>
+      <li ng-if="questionnaire.pfCompoPublicBuyers"
+            translate="questionnaire.bu.desc.pf.compo.public.buyers.label"> </li>
+      <li ng-if="questionnaire.pfCompoRelatedComp"
+            translate="questionnaire.bu.desc.pf.compo.related.companies.label"> </li>
+      <li ng-if="questionnaire.pfCompoOthers" translate="questionnaire.bu.desc.pf.compo.others.label"> </li>
+    </ul>
+  </div>
+</div>

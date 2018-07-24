@@ -1,0 +1,131 @@
+<!-- BEGIn cols -->
+<form name="policyForm" ng-submit="submitForm($event)"
+      class="aty-form form form-horizontal form-custom" novalidate>
+  <div class="container" ng-controller="AccordionCtrl">
+
+    <div class="contentcol row">
+      <div id="content" class="col-sm-12 content-area">
+        <div class="content row">
+          <div class="col-sm-12">
+            <!-- -->
+            <accordion close-others="oneAtATime">
+              <ng-form name="coverSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading>
+                    <span translate="policy.cover.title" id="coverAccordionTitle"></span>
+                    <aty-derogation-section-check drg-derogation-section-id="coverDerogation"></aty-derogation-section-check>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/policy/cover.html'" bs-modifiable="true"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+              <ng-form name="coverOptionSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading>
+                    <span translate="policy.cover.options.title" id="coverOptionAccordionTitle"></span>
+                    <aty-derogation-section-check drg-derogation-section-id="coverOptionDerogation"></aty-derogation-section-check>
+                  </accordion-heading>
+                  <fieldset ng-if="fragment.coverOption" ng-include="'views/policy/coverOption.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+              <ng-form name="riskSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading>
+                    <span translate="policy.risk.management.title" id="riskAccordionTitle"></span>                    
+                    <aty-derogation-section-check drg-derogation-section-id="riskDerogation"></aty-derogation-section-check>
+                  </accordion-heading>
+                  <fieldset ng-if="fragment.risk" ng-include="'views/policy/risk.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+              <ng-form name="riskOptionSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading>
+                    <span translate="policy.risk.options.title" id="riskOptionAccordionTitle"></span>                    
+                    <aty-derogation-section-check drg-derogation-section-id="riskOptionDerogation"></aty-derogation-section-check>
+                  </accordion-heading>
+                  <fieldset ng-if="fragment.riskOption" ng-include="'views/policy/riskOption.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+              <ng-form name="indemnificationSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading>
+                    <span translate="policy.indemnification.title" id="indemnificationAccordionTitle"></span>
+                    <aty-derogation-section-check drg-derogation-section-id="indemnificationDerogation"></aty-derogation-section-check>
+                  </accordion-heading>
+                  <fieldset ng-if="fragment.indemnification" ng-include="'views/policy/indemnification.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+              <ng-form name="claimOptionSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading>
+                    <span translate="policy.claims.options.title" id="claimOptionAccordionTitle"></span>
+                    <aty-derogation-section-check drg-derogation-section-id="claimOptionDerogation"></aty-derogation-section-check>
+                  </accordion-heading>
+                  <fieldset ng-if="fragment.claimOption" ng-include="'views/policy/claimOption.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+              <ng-form name="serviceOptionSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading>
+                    <span translate="policy.services.options.title" id="serviceOptionAccordionTitle"></span>
+                  </accordion-heading>
+                  <fieldset ng-if="fragment.serviceOption" ng-include="'views/policy/serviceOption.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+              <ng-form name="activitiesSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading>
+                    <span translate="policy.activities.title" id="activitiesAccordionTitle"></span>
+                    <aty-derogation-section-check drg-derogation-section-id="activitiesDerogation"></aty-derogation-section-check>
+                  </accordion-heading>
+                  <fieldset ng-if="fragment.activities" ng-include="'views/policy/activities.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+              <ng-form name="durationSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading>
+                    <span translate="policy.duration.title" id="durationAccordionTitle"></span>                    
+                  </accordion-heading>
+                  <fieldset  ng-if="fragment.duration" ng-include="'views/policy/duration.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+              <ng-form name="pricingSubForm" class="aty-sub-form">
+                <accordion-group class="content content-accordion" is-open="$parent.$parent.pricingAccordionOpened">
+                  <accordion-heading >
+                    <div>
+                    	<span translate="policy.pricing.title" id="pricingAccordionTitle"></span>
+                    	<aty-derogation-section-check drg-derogation-section-id="pricingDerogation"></aty-derogation-section-check>
+                    </div>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/policy/pricing.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+				
+			<!-- DEFECT #446 : New Dynamic Block in Contract Terms for Special Clauses -->	
+              <ng-form name="specialClausesSubForm" class="aty-sub-form" ng-if="user.hasSpecialClausesViewRight && policy.specialClauses != null">
+                <accordion-group class="content content-accordion">
+                  <accordion-heading >
+                    <div>
+                    	<span translate="policy.special.clauses.title" id="specialClausesAccordionTitle"></span>
+                    	<aty-derogation-section-check drg-derogation-section-id="specialClausesDerogation"></aty-derogation-section-check>
+                    </div>
+                  </accordion-heading>
+                  <fieldset ng-include="'views/policy/specialClauses.html'"></fieldset>
+                </accordion-group>
+              </ng-form>
+
+            </accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>

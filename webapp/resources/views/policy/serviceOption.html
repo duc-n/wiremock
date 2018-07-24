@@ -1,0 +1,374 @@
+<!-- Complementary Offers -->
+<div class="panel panel-default">
+	<div class="panel-body">
+
+<!-- 		<div class="form-group"> -->
+<!-- 			<label class="col-sm-12 control-label"><strong -->
+<!-- 				translate="policy.service.option.information.products.label"></strong></label> -->
+<!-- 		</div> -->
+
+		<div class="form-group">
+			<label class="col-sm-12 control-label"><strong
+				translate="policy.service.option.information.products.label"></strong></label>
+		</div>
+		<div class="form-group notToPrint"
+			ng-if="policy.productCcoOption || policy.productAtCoOption || policy.productAtChOption">
+			<div class="col-sm-offset-5 col-sm-7">
+				<input type="text"
+					placeholder="{{'policy.search.country.filter.title' | translate}}"
+					class="form-control" ng-model="$parent.searchServOptCountry" />
+			</div>
+		</div>
+		<!-- CCO -->
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-4">
+				<div class="checkbox">
+					<label> <input type="checkbox"
+						ng-disabled="policy.isReadOnly" ng-model="policy.productCcoOption"
+						value="true" /> <span
+						translate="policy.service.option.customised.credit.opinion.label"></span>
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-7" ng-if="policy.productCcoOption">
+				<div class="multi-select notToPrint">
+					<div class="col-sm-5 selected-items">
+						<div class="form-group">
+							<label class="col-sm-12"><strong
+								translate="policy.service.option.covered.countries.label"></strong></label>
+						</div>
+						<div class="multi-content">
+							<ul class="form-control-static" dnd-list
+								dnd-drop="onDrop(policy.zoneCCO,item,index)"
+								dnd-disable-if="policy.isReadOnly" dnd-allowed-types="['CCO']">
+								<li
+									ng-repeat="countryCCO in policy.zoneCCO.countries | searchCountryFilter:searchServOptCountry track by countryCCO.code "
+									dnd-draggable="getSelectedItemsIncluding(policy.zoneCCO, countryCCO)"
+									dnd-dragstart="onDragstart(policy.zoneCCO, event)"
+									dnd-moved="onMoved(policy.zoneCCO);serviceOptionCoveredCountryMovedHandle('CCO',policy.productCcoOption,policy.zoneCCO)"
+									dnd-dragend="policy.zoneCCO.dragging = false"
+									dnd-selected="onSelected(policy.zoneCCO,countryCCO,event)"
+									dnd-type="'CCO'" ng-class="{'selected': countryCCO.selected}"
+									ng-hide="policy.zoneCCO.dragging && countryCCO.selected"
+									class="ellipsis" iso="{{::countryCCO.code}}"
+									><span
+									translate="{{::'country.'+countryCCO.code}}"></span>
+									</li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-offset-2 col-sm-5 selected-items">
+						<div class="form-group">
+							<label class="col-sm-12"><strong
+								translate="policy.service.option.not.covered.countries.label"></strong></label>
+						</div>
+						<div class="multi-content">
+							<ul class="form-control-static" dnd-list
+								dnd-drop="onDrop(excludedCCO,item,index)"
+								dnd-disable-if="policy.isReadOnly" dnd-allowed-types="['CCO']">
+								<li
+									ng-repeat="country in excludedCCO.countries | searchCountryFilter:searchServOptCountry track by country.code "
+									dnd-draggable="getSelectedItemsIncluding(excludedCCO, country)"
+									dnd-dragstart="onDragstart(excludedCCO, event)"
+									dnd-moved="onMoved(excludedCCO)"
+									dnd-dragend="excludedCCO.dragging = false"
+									dnd-selected="onSelected(excludedCCO,country,event)"
+									dnd-type="{{user.hasCountryAreaMoveRight?'CCO':'EXC'}}" ng-class="{'selected': country.selected}"
+									ng-hide="excludedCCO.dragging && country.selected"
+									class="ellipsis" iso="{{::country.code}}"><span
+									translate="{{::'country.'+country.code}}"></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- Printable Section -->
+				<!-- //Defect 492, to be placed into a template due to performance problem
+				<div class="form-group toPrint">
+					<div class="col-sm-12">
+						<div class=" selected-items">
+							<div class="form-group">
+								<label class="col-sm-6"><strong
+									translate="policy.service.option.covered.countries.label"></strong></label>
+							</div>
+							<div class="multi-content multi-column">
+								<ul class="form-control-static">
+									<li
+										ng-repeat="countryCCO in policy.zoneCCO.countries track by countryCCO.code">
+										<span translate="{{::'country.'+countryCCO.code}}"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				-->
+				<!-- Printable Section -->
+			</div>
+		</div>
+
+		<!-- @CO -->
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-4">
+				<div class="checkbox">
+					<label> <input type="checkbox"
+						ng-disabled="policy.isReadOnly"
+						ng-model="policy.productAtCoOption" value="true" /> <span
+						translate="policy.service.option.arating.check.monitored.label"></span>
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-7" ng-if="policy.productAtCoOption">
+				<div class="multi-select notToPrint">
+					<div class="col-sm-5 selected-items">
+						<div class="form-group">
+							<label class="col-sm-12"><strong
+								translate="policy.service.option.covered.countries.label"></strong></label>
+						</div>
+						<div class="multi-content">
+							<ul class="form-control-static" dnd-list
+								dnd-drop="onDrop(policy.zoneATCO,item,index)"
+								dnd-disable-if="policy.isReadOnly" dnd-allowed-types="['ATCO']">
+								<li
+									ng-repeat="countryATCO in policy.zoneATCO.countries | searchCountryFilter:searchServOptCountry track by countryATCO.code"
+									dnd-draggable="getSelectedItemsIncluding(policy.zoneATCO, countryATCO)"
+									dnd-dragstart="onDragstart(policy.zoneATCO, event)"
+									dnd-moved="onMoved(policy.zoneATCO);serviceOptionCoveredCountryMovedHandle('ATCO',policy.productAtCoOption,policy.zoneATCO)"
+									dnd-dragend="policy.zoneATCO.dragging = false"
+									dnd-selected="!policy.isReadOnly && onSelected(policy.zoneATCO,countryATCO,event)"
+									dnd-type="'ATCO'" ng-class="{'selected': countryATCO.selected}"
+									ng-hide="policy.zoneATCO.dragging && countryATCO.selected"
+									class="ellipsis" iso="{{::countryATCO.code}}"><span
+									translate="{{::'country.'+countryATCO.code}}"></span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-offset-2 col-sm-5 selected-items">
+						<div class="form-group">
+							<label class="col-sm-12"><strong
+								translate="policy.service.option.not.covered.countries.label"></strong></label>
+						</div>
+						<div class="multi-content">
+							<ul class="form-control-static" dnd-list
+								dnd-drop="onDrop(excludedATCO,item,index)"
+								dnd-disable-if="policy.isReadOnly" dnd-allowed-types="['ATCO']">
+								<li
+									ng-repeat="country in excludedATCO.countries | searchCountryFilter:searchServOptCountry track by country.code"
+									dnd-draggable="getSelectedItemsIncluding(excludedATCO, country)"
+									dnd-dragstart="onDragstart(excludedATCO, event)"
+									dnd-moved="onMoved(excludedATCO);"
+									dnd-dragend="excludedATCO.dragging = false"
+									dnd-selected="!policy.isReadOnly && onSelected(excludedATCO,country,event)"
+									dnd-type="{{user.hasCountryAreaMoveRight?'ATCO':'EXC'}}" ng-class="{'selected': country.selected}"
+									ng-hide="excludedATCO.dragging && country.selected"
+									class="ellipsis" iso="{{::country.code}}"><span
+									translate="{{::'country.'+country.code}}"></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- Printable Section -->
+				<!-- //Defect 492, to be placed into a template due to performance problem
+				<div class="form-group toPrint">
+					<div class="col-sm-12">
+						<div class=" selected-items">
+							<div class="form-group">
+								<label class="col-sm-6"><strong
+									translate="policy.service.option.covered.countries.label"></strong></label>
+							</div>
+							<div class="multi-content multi-column">
+								<ul class="form-control-static">
+									<li
+										ng-repeat="countryATCO in policy.zoneATCO.countries track by countryATCO.code">
+										<span translate="{{::'country.'+countryATCO.code}}"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				-->
+				<!-- Printable Section -->
+			</div>
+		</div>
+
+		<!-- @CH -->
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-4">
+				<div class="checkbox">
+					<label> <input type="checkbox"
+						ng-disabled="policy.isReadOnly"
+						ng-model="policy.productAtChOption" value="true" /> <span
+						translate="policy.service.option.unsecured.arating.label"></span>
+					</label>
+				</div>
+			</div>
+			<div class="col-sm-7" ng-if="policy.productAtChOption">
+				<div class="multi-select notToPrint">
+					<div class="col-sm-5 selected-items">
+						<div class="form-group">
+							<label class="col-sm-12"><strong
+								translate="policy.service.option.covered.countries.label"></strong></label>
+						</div>
+						<div class="multi-content">
+							<ul class="form-control-static" dnd-list
+								dnd-drop="onDrop(policy.zoneATCH,item,index)"
+								dnd-disable-if="policy.isReadOnly" dnd-allowed-types="['ATCH']">
+								<li
+									ng-repeat="countryATCH in policy.zoneATCH.countries | searchCountryFilter:searchServOptCountry track by countryATCH.code"
+									dnd-draggable="getSelectedItemsIncluding(policy.zoneATCH, countryATCH)"
+									dnd-dragstart="onDragstart(policy.zoneATCH, event)"
+									dnd-moved="onMoved(policy.zoneATCH);serviceOptionCoveredCountryMovedHandle('ATCH',policy.productAtChOption,policy.zoneATCH)"
+									dnd-dragend="policy.zoneATCH.dragging = false"
+									dnd-selected="!policy.isReadOnly && onSelected(policy.zoneATCH,countryATCH,event)"
+									dnd-type="'ATCH'" ng-class="{'selected': countryATCH.selected}"
+									ng-hide="policy.zoneATCH.dragging && countryATCH.selected"
+									class="ellipsis" iso="{{::countryATCH.code}}"><span
+									translate="{{::'country.'+countryATCH.code}}"></span></li>
+							</ul>
+						</div>
+					</div>
+					<div class="col-sm-offset-2 col-sm-5 selected-items">
+						<div class="form-group">
+							<label class="col-sm-12"><strong
+								translate="policy.service.option.not.covered.countries.label"></strong></label>
+						</div>
+						<div class="multi-content">
+							<ul class="form-control-static" dnd-list
+								dnd-drop="onDrop(excludedATCH,item,index)"
+								dnd-disable-if="policy.isReadOnly" dnd-allowed-types="['ATCH']">
+								<li
+									ng-repeat="country in excludedATCH.countries | searchCountryFilter:searchServOptCountry track by country.code"
+									dnd-draggable="getSelectedItemsIncluding(excludedATCH, country)"
+									dnd-dragstart="onDragstart(excludedATCH, event)"
+									dnd-moved="onMoved(excludedATCH);"
+									dnd-dragend="excludedATCH.dragging = false"
+									dnd-selected="!policy.isReadOnly && onSelected(excludedATCH,country,event)"
+									dnd-type="{{user.hasCountryAreaMoveRight?'ATCH':'EXC'}}" ng-class="{'selected': country.selected}"
+									ng-hide="excludedATCH.dragging && country.selected"
+									class="ellipsis" iso="{{::country.code}}"><span
+									translate="{{::'country.'+country.code}}"></span></li>
+							</ul>
+						</div>
+					</div>
+				</div>
+				<!-- Printable Section -->
+				<!-- //Defect 492, to be placed into a template due to performance problem
+				<div class="form-group toPrint">
+					<div class="col-sm-12">
+						<div class=" selected-items">
+							<div class="form-group">
+								<label class="col-sm-6"><strong
+									translate="policy.service.option.covered.countries.label"></strong></label>
+							</div>
+							<div class="multi-content multi-column">
+								<ul class="form-control-static">
+									<li
+										ng-repeat="countryATCH in policy.zoneATCH.countries track by countryATCH.code">
+										<span translate="{{::'country.'+countryATCH.code}}"></span>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				-->
+				<!-- Printable Section -->
+			</div>
+		</div>
+
+		<!-- Snapshot report -->
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-4">
+				<div class="checkbox">
+					<!-- defect #686 : Disable Snapshot/ Full Report -->
+					<label> <input type="checkbox"
+						ng-disabled="policy.isReadOnly"
+						ng-model="policy.productSnapshotReport" value="true" /> <span
+						translate="policy.service.option.compl.offers.snap.report"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+		
+		<!-- Full report -->
+		<div class="form-group">
+			<div class="col-sm-offset-1 col-sm-4">
+				<div class="checkbox">
+					<!-- defect #686 : Disable Snapshot/ Full Report -->
+					<label> 
+						<input type="checkbox"
+							ng-disabled="policy.isReadOnly"
+							ng-model="policy.productFullReport" value="true" /> 
+						<span translate="policy.service.option.compl.offers.full.report"></span>
+					</label>
+				</div>
+			</div>
+		</div>
+
+		<!-- Debt collection -->
+		<div class="form-group">
+			<label class="col-sm-12 control-label"><strong
+				translate="policy.service.option.compl.offers.debt.collect.label"></strong></label>
+		</div>
+		
+		<div class="form-group">				
+			<div class="col-sm-offset-1 col-sm-4">
+				<div class="checkbox">
+					<label> <input type="checkbox"
+						ng-disabled="policy.isReadOnly" ng-model="policy.debtCollection"
+						value="true" /> <span
+						translate="policy.service.option.compl.offers.debt.collect.covered.debt"></span>
+					</label>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+
+<!-- Complementary Services -->
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="form-group">
+			<label class="col-sm-12 control-label"><strong
+				translate="policy.service.option.compl.services.label"></strong></label>
+		</div>
+		<div class="form-group">
+			<label class="col-sm-offset-1 col-sm-3 control-label"><strong
+				translate="policy.service.option.compl.services.cofanet"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio" id="cofanetOption"
+					ng-model="policy.cofanetOption" value="ES" /> <span
+					translate="policy.service.option.compl.services.cofanet.essentials"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.cofanetOption" value="PM" /> <span
+					translate="policy.service.option.compl.services.cofanet.policy.master"></span>
+				</label> <label class="radio-inline"> <input
+					ng-disabled="policy.isReadOnly" type="radio"
+					ng-model="policy.cofanetOption" value="PC" /> <span
+					translate="policy.service.option.compl.services.cofanet.policy.cash"></span>
+				</label>
+			</div>
+		</div>
+		<!-- Others -->
+		<div class="form-group">
+			<label class="col-sm-offset-1 col-sm-3 control-label"><strong
+				translate="policy.service.option.compl.services.others"></strong></label>
+
+			<div class="col-sm-8">
+				<label class="checkbox-inline"> <input type="checkbox"
+					ng-model="policy.dashboard" value="true"
+					ng-disabled="policy.isReadOnly" /> <span translate="policy.service.option.compl.services.others.dashboard">
+				</span>
+				</label> <label class="checkbox-inline"> <input type="checkbox"
+					ng-model="policy.cofaServe" value="true"
+					ng-disabled="policy.isReadOnly" /> <span translate="policy.service.option.compl.services.others.cofaServe">
+				</span>
+				</label>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,104 @@
+<div class="row">
+
+  <div class="col-sm-12">
+    <table id="credit-sales-table"
+           class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+      <colgroup>
+        <col span="1" class="col-sm-5">
+        <col span="1" class="col-sm-4">
+        <col span="1" class="col-sm-1">
+        <col span="1" class="col-sm-2">
+      </colgroup>
+      
+      <thead>
+	      <tr class="">
+	        <th class="text-center"><p class="form-control-static"><strong
+	          translate="country.label"></strong></p></th>
+	        <th class="text-center"><p class="form-control-static"><strong
+	          translate="questionnaire.credit.sales.insurable.turnover"
+	          translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong></p></th>
+	        <th><span class="input-group-btn">
+	            <button ng-hide="questionnaire.specificQuestionnaire.insurableTurnovers.length" class="btn btn-default"
+	                    popover="{{'plus.label'|translate}}" popover-trigger="mouseenter" type="button" ng-click="addInsurableTurnover('',null)" ng-disabled="::questionnaire.isReadOnly">
+	                    <i class="fa fa-plus"></i>
+	            </button>
+	      </span></th>
+	      <th></th>
+	      </tr>
+      </thead>
+      
+      <tbody>
+	      <tr ng-show="questionnaire.specificQuestionnaire.domesticTurnover">
+	        <td translate="{{'country.'+questionnaire.specificQuestionnaire.domesticCountry}}">
+	        </td>
+	        <td>
+	          <div class="input-group col-sm-12">
+	            <input type="number" aty-input-number id="domesticInsurableTurnover" name="domesticTurnover" class="form-control"
+	                   ng-model="questionnaire.specificQuestionnaire.domesticTurnover"
+	                   ng-change="computeInsurableTurnovers();"
+	                   aty-maxlength="15"  ng-maxlength="15"  ng-disabled="::questionnaire.isReadOnly"
+	              />
+	          </div>
+	        </td>
+	        <td></td>
+	         <!-- defect #451 : Offcover countries list -->
+	        <td><span class="removed" translate="questionnaire.offcover.country.msg" ng-if="isOffCoverCountry(questionnaire.specificQuestionnaire.domesticCountry)"/></td>
+	      </tr>
+	      <tr ng-repeat="insurableTurnover in questionnaire.specificQuestionnaire.insurableTurnovers">
+	        <td>
+	          	<ui-select  ui-select-required ng-model="insurableTurnover.country" on-select="checkOffCoverCountryForInsurableTurnover(insurableTurnover)">
+				    <ui-select-match placeholder="{{'policy.search.country.filter.title' | translate}}">{{$select.selected.label || $select.selected}}</ui-select-match>
+				    <ui-select-choices ui-disable-choice="isCountryTurnoverDisabled(country.code)" repeat="country.code as country in countries | propsFilter: {label: $select.search}" position='down'>
+				        <span ng-bind="country.label"></span>
+				    </ui-select-choices>
+				</ui-select>
+	        </td>
+	        <td>
+	          <div class="input-group col-sm-12">
+	            <input type="number" aty-input-number  class="form-control text-center"
+	                   ng-model="insurableTurnover.amount" ng-change="computeInsurableTurnovers();validateExportTurnover(true);" name="insurableTurnovers[{{$index}}].amount"
+	                   id="amount{{$index}}" aty-maxlength="15" ng-maxlength="15" ng-disabled="::questionnaire.isReadOnly"
+	                   required/>
+	          </div>
+	        </td>
+	        <td class="text-left">
+	          	<span class="input-group-btn">
+	       		 	<button class="btn btn-default" popover="{{'remove.title'|translate}}" popover-trigger="mouseenter" type="button"
+		                ng-click="removeInsurableTurnover($index); validateExportTurnover(true);" ng-disabled="::questionnaire.isReadOnly">
+		                <i class="fa fa-trash"></i>
+		          	</button>
+	            	<button ng-show="$last" class="btn btn-default" popover="{{'plus.label'|translate}}" popover-trigger="mouseenter" type="button"
+	                    ng-click="addInsurableTurnover('',null)" ng-disabled="::questionnaire.isReadOnly">
+	                    <i class="fa fa-plus"></i></button>
+	      		</span>
+	        </td>
+	        <!-- defect #451 : Offcover countries list -->
+	        <td><span class="removed" translate="questionnaire.offcover.country.msg" ng-if="insurableTurnover.offCover"/></td>
+	      </tr>
+      </tbody>
+      
+      <tfoot class="align-center">
+	      <tr>
+	        <td class="text-right"><p class="form-control-static"><strong
+	          translate="questionnaire.credit.sales.global.turnover"></strong></p></td>
+	        <td>
+	          <p class="form-control-static"
+	             ng-bind="globalTurnover | atyNumber"></p>
+	        </td>
+	        <td></td>
+	        <td></td>
+	      </tr>
+	      <tr>
+	        <td class="text-right"><p class="form-control-static"><strong
+	          translate="questionnaire.credit.sales.export.turnover"></strong></p></td>
+	        <td>
+	          <p class="form-control-static"
+	             ng-bind="exportTurnover | atyNumber"></p>
+	        </td>
+	        <td></td>
+	        <td></td>
+	      </tr>
+      </tfoot>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,228 @@
+<!-- BEGIn cols -->
+<form name="buyerStudyForm" ng-submit="submitForm($event)"
+	class="aty-form form form-horizontal form-custom" bs-modifiable="true"
+	novalidate>
+	<div class="container">
+
+		<div class="contentcol row" ng-if="buyerStudy.newBusiness">
+			<div class="col-sm-12 content-area">
+				<table
+					class="table table-cofanet table-bordered table-responsive align-center">
+					<thead>
+						<tr>
+							<th></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.requested.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.accepted.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.rate.label"></strong>
+								</p></th>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>
+								<p class="form-control-static">
+									<strong translate="buyerstudy.total.requested.amount.label"></strong>
+								</p>
+							</td>
+							<td>
+								<p class="form-control-static"
+									ng-bind="buyerStudy.buyerStudyResult.portfolioTotals.totalRequestAmount | atyNumber"></p>
+							</td>
+							<td>
+								<p class="form-control-static"
+									ng-bind="buyerStudy.buyerStudyResult.portfolioTotals.totalAcceptedAmount | atyNumber"></p>
+							</td>
+							<td>
+								<p class="form-control-static"
+									ng-bind="buyerStudy.buyerStudyResult.portfolioTotals.requestAcceptedRate"></p>
+							</td>
+						</tr>
+						<tr>
+							<td>
+								<p class="form-control-static">
+									<strong
+										translate="buyerstudy.total.requested.and.answered.label"></strong>
+								</p>
+							</td>
+							<td>
+								<p class="form-control-static"
+									ng-bind="buyerStudy.buyerStudyResult.portfolioTotals.totalRequestAnsweredAmount | atyNumber"></p>
+							</td>
+							<td>
+								<p class="form-control-static"
+									ng-bind="buyerStudy.buyerStudyResult.portfolioTotals.totalAcceptedAmount | atyNumber"></p>
+							</td>
+							<td>
+								<p class="form-control-static"
+									ng-bind="buyerStudy.buyerStudyResult.portfolioTotals.requestAcceptedAnsweredRate"></p>
+							</td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+
+		<!-- Defect #137 : Max capacity usage -->
+		<div class="contentcol row"
+			ng-if="buyerStudy.currentUsedCapacity && buyerStudy.estimatedMaxCapacity">
+			<div class="col-sm-12 content-area">
+				<label class="col-sm-3"> <strong
+					translate="buyerstudy.max.capacity.check.label"></strong>
+				</label>
+				<div class="col-sm-9">
+					<p class="col-sm-12"
+						translate="buyerstudy.current.used.capacity.label"
+						translate-values="{p0: buyerStudy.currentUsedCapacity}"></p>
+					<p class="col-sm-12"
+						translate="buyerstudy.estimated.max.capacity.label"
+						translate-values="{p0: buyerStudy.estimatedMaxCapacity}"></p>
+				</div>
+			</div>
+
+			<div class="col-sm-12 content-area"
+				ng-if="buyerStudy.currentUsedCapacity > buyerStudy.estimatedMaxCapacity">
+				<p class="col-sm-12 text-center text-danger"
+					translate="buyerstudy.max.capacity.exceeded.warning.label"></p>
+			</div>
+		</div>
+
+		<div class="contentcol row">
+			<spinner class="aty-data-loading" name="buyerStudySpinner">
+			<div class="messaging">
+				<!--<i class="fa fa-refresh fa-spin"></i>-->
+				<div class="la-ball-circus la-2x">
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+					<div></div>
+				</div>
+				<h1 translate="spinner.data.loading.title"></h1>
+			</div>
+			</spinner>
+
+			<!-- ========= Table of portfolio result ============== -->
+
+			<div class="col-sm-12 content-area" id="portfolioResult">
+				<table id="portfolioTable" datatable="" dt-options="dtOptions"
+					dt-columns="dtColumns" dt-instance="dtInstance"
+					class="table table-striped table-bordered table-cofanet table-responsive fixed-layout">
+					<colgroup>
+						<!--             Defect # 76 <col span="1" class="col-sm-3 text-center col-sm-1"> -->
+						<col span="1" class="text-center col-sm-1"
+							ng-if="!(buyerStudy.newBusiness || buyerStudy.clo)">
+						<col span="1" class="text-left col-sm-2">
+						<col span="1" class="text-center col-sm-1">
+						<col span="1" class="text-center col-sm-1">
+						<col span="1" class="text-center col-sm-1">
+						<col span="1" class="text-center col-sm-1">
+						<col span="1" class="text-center col-sm-1">
+						<col span="1" class="text-center col-sm-1">
+						<col span="1" class="text-center col-sm-1">
+						<col span="1" class="text-left col-sm-2">
+					</colgroup>
+					<thead>
+						<tr>
+							<!-- Defect # 76 <th class="text-center"><p class="form-control-static"><strong
+	              translate="buyerstudy.visible.prospect.label"></strong></p></th>-->
+							<th ng-if="!(buyerStudy.newBusiness || buyerStudy.clo)"
+								class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.product.compatibility.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.company.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.country.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.product.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.dra.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.requested.amount.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.agreed.amount.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.currency.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.status.label"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="buyerstudy.comments.label"></strong>
+								</p></th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+			<div class="col-sm-12">&nbsp;</div>
+			<div class="col-sm-12 text-center">
+				<button type="button"
+					ng-if="buyerStudy.buyerStudyResult.portfolioTotals.requestedTotalByDra.length >= 0"
+					ng-click="showGraphAnalysis()" class="btn btn-primary"
+					translate="buyerstudy.show.graph.analysis.label"></button>
+
+				<!-- defect #582 : Buyer Study - Block Cofanet Access on Signed contracts -->
+				<button ng-if="buyerStudy.newBusiness || buyerStudy.clo"
+					type="button" ng-click="openCofanetView()" id="cofanetView-btn" class="btn btn-primary"
+					ng-disabled="!buyerStudy.projectContract || openCofanetInProgress"
+					translate="buyerstudy.new.cofanet.request.label"></button>
+				<i
+					ng-if="(buyerStudy.newBusiness || buyerStudy.clo) && !buyerStudy.projectContract"
+					popover="{{'buyerStudy.contract.status.no.more.project.msg' | translate}}"
+					popover-trigger="mouseenter" class="fa fa-info-circle"></i>
+				<button ng-if="buyerStudy.newBusiness || buyerStudy.clo"
+					type="button" ng-click="reloadData()" id="reloadData-btn" class="btn btn-primary"
+					translate="buyerstudy.refresh.label"></button>
+				<button ng-if="!buyerStudy.newBusiness && !buyerStudy.clo"
+					ng-disabled="checkCompatibilityInProgress" type="button"
+					ng-click="checkBuyersCompatibility()" class="btn btn-primary"
+					translate="buyerstudy.check.buyers.compatibility.label"></button>
+				<button
+					ng-if="buyerStudy.buyerStudyResult.portfolioLines.length > 0"
+					ng-disabled="checkCompatibilityInProgress" type="button"
+					id="getCsv-btn"
+					field-separator=";" ng-csv="getCsvArray()" add-bom="true"
+					filename="portfolioLines.csv" class="btn btn-primary">
+					<span translate="buyerstudy.export.csv.label"></span>
+				</button>
+				<button
+					ng-if="buyerStudy.buyerStudyDoc.visible"
+					id="createBuyerStudyProposal-btn"
+					ng-disabled="checkCompatibilityInProgress" type="button"
+					ng-click="createBUYERSTUDYProposal()" class="btn btn-primary"					
+					translate="proposal.generate.buyerStudy.button">
+				</button>
+				<span ng-if="buyerStudy.nbBUYERSTUDYDownloaded > 0"> 
+					<i
+					type="button" ng-click="getBUYERSTUDYProposal()"
+					id="getBuyerStudyProposal-btn"
+					popover="{{'proposal.buyerStudy.download.button.tooltip' | translate}}"
+					popover-trigger="mouseenter" class="fa fa-2x valign-middle"
+					ng-class="{'fa-file-word-o':buyerStudy.buyerStudyDoc.format == 'WORD','fa-file-pdf-o':buyerStudy.buyerStudyDoc.format == 'PDF'}">
+					</i>
+				</span>
+				<span class="fa-stack" ng-if="buyerStudy.nbBUYERSTUDYDownloaded > 0 && user.hasSupervisionRight">
+					<i type="button" ng-click="getProductXml()"
+						id="getProductXml-btn"
+						popover="{{'proposal.xml.download.button.tooltip' | translate}}"
+						popover-trigger="mouseenter"
+						class="fa fa-file-o fa-stack-2x"></i>
+    				<strong class="fa-stack-text">XML</strong>
+  				</span>
+
+			</div>
+
+		</div>
+	</div>
+</form>

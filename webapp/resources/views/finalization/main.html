@@ -1,0 +1,55 @@
+<!-- BEGIn cols -->
+<form name="finalizationForm" ng-submit="submitForm($event)"
+	class="aty-form form form-horizontal form-custom" bs-modifiable="true"
+	novalidate>
+	<div class="container" ng-controller="AccordionCtrl">
+		<div class="contentcol row">
+			<div id="content" class="col-sm-12 content-area">
+				<div class="content row">
+					<div class="col-sm-12">
+					
+						<accordion close-others="false">
+				            <!-- DEROGATIONS AUDIT TRAIL -->
+				              <ng-form name="finalizationContractGenerationSubForm" class="aty-sub-form">
+				                <accordion-group class="content content-accordion" is-open="true">
+									<accordion-heading >
+					                    <div><span translate="finalization.contract.generation.title" id="finalizationContractGenerationAccordionTitle"></span></div>
+					                </accordion-heading>
+									
+				                 	 <fieldset ng-include="'views/finalization/contractGeneration.html'"></fieldset>
+				
+				                </accordion-group>
+				              </ng-form>           
+	          			
+	          				  <!-- DEROGATIONS WORKFLOW -->
+				              <ng-form name="finalizationContractTransfertSubForm" class="aty-sub-form">
+				                <accordion-group class="content content-accordion">
+									<accordion-heading >
+					                    <div><span translate="finalization.contract.transfert.title" id="finalizationContractTransfertAccordionTitle"></span></div>
+					                </accordion-heading>
+									
+				                 	 <fieldset ng-include="'views/finalization/contractTransfert.html'"></fieldset>
+				
+				                </accordion-group>
+				              </ng-form> 
+				              
+				              
+				                <!-- CONTRACT STATUS FOLLOW UP -->
+				              <ng-form name="finalizationContractStatusFollowUpSubForm" class="aty-sub-form">
+				                <accordion-group class="content content-accordion">
+									<accordion-heading >
+					                    <div><span translate="finalization.contract.status.follow.up.title" id="finalizationContractStatusFollowUpAccordionTitle"></span></div>
+					                </accordion-heading>
+									
+				                 	 <fieldset ng-include="'views/finalization/contractStatusFollowUp.html'"></fieldset>
+				
+				                </accordion-group>
+				              </ng-form> 
+				
+						</div>
+				</div>
+				
+			</div>
+		</div>
+	</div>
+</form>

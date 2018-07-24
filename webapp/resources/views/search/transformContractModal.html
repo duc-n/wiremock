@@ -1,0 +1,96 @@
+<form name="contractForm" class="form form-horizontal form-custom">
+  <!-- HEADER -->
+  <div class="modal-header">
+    <h3 class="modal-title" translate="transform.contract.title" ng-if="isTransform()"></h3>
+    <h3 class="modal-title" translate="transform.contract.title" ng-if="isRenewal()"></h3>
+    <h3 class="modal-title" translate="create.clo.case.title" ng-if="isCLO()"></h3>
+    <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><i
+      class="fa fa-close"></i></button>
+  </div>
+
+  <!-- BODY -->
+  <div class="modal-body">
+    <fieldset ng-show="!company && !cases && !link">
+      <div class="form-group">
+        <label class="col-sm-4 control-label"><strong
+          translate="search.contract.number"></strong></label>
+        <div class="col-sm-4">
+          <div class="input-group">
+            <input type="text" id="contractNumber" class="form-control" ng-model="contractNumber" required
+                   aty-maxlength="30"/>
+          </div>
+        </div>
+      </div>
+    </fieldset>
+
+    <!-- ContractNumber check result and confirmation -->
+    <fieldset ng-if="isRenewal() || cases || link" class="max-height-400 scrollable-y">
+      <div class="form-group" ng-show="isRenewal() || cases">
+        <label class="col-sm-12 control-label" ng-if="isRenewal()"><strong
+          translate="search.create.case.renewal.for.tradeliner.contract.confirm.label"></strong></label>
+        <label class="col-sm-12 control-label" ng-if="isTransform() && !link"><strong
+          translate="search.create.case.transform.for.transformed.contract.confirm.label"></strong></label>
+        <label class="col-sm-12 control-label" ng-if="isTransform() && link"><strong
+          translate="search.create.case.check.migration.for.transformed.contract.confirm.label"></strong></label>
+        <label class="col-sm-12 control-label" ng-if="isCLO()"><strong translate="search.create.case.clo.forbidden.label" translate-values="{p0:contractNumber}"></strong></label>
+      </div>
+
+      <!-- existing cases -->
+      <div class="form-group"  ng-show="cases" ng-include="'views/search/existingCasesInfo.html'" bs-modifiable="true"></div>
+
+      <!-- Check Migration confirm -->
+      <div class="form-group" ng-show="isTransform() && link && !cases">
+        <label class="col-sm-12 control-label"><strong
+          translate="search.create.case.check.migration.confirm.label"></strong></label>
+      </div>
+    </fieldset>
+
+    <!-- Company infos -->
+    <fieldset ng-if="company" bs-modifiable="true">
+    	<div class="form-group">
+			<label class="col-sm-12 control-label" ng-if="isTransform()"><strong
+				translate="search.contract.for.transform.confirm.label" translate-values="{p0:contractNumber}"></strong></label>
+			<label class="col-sm-12 control-label" ng-if="isCLO()"><strong
+				translate="search.contract.for.clo.confirm.label" translate-values="{p0:contractNumber}"></strong></label>
+		</div>
+		<ng-include src="'views/search/companyInfo.html'"></ng-include>
+    </fieldset>
+
+    <!-- Contract Test option -->
+    <div class="form-group"  ng-if="(isRenewal() || isTransform()) && hasSupervisionRight && (company || (cases && !link))">
+        <label class="col-sm-4 control-label" for="contractTest"><strong
+          translate="create.case.contract.type.test.label"></strong></label>
+
+        <div class="col-sm-8">
+          <label class="radio-inline">
+            <input type="radio" id="contractTest"
+                   ng-model="param.contractTest" ng-value="false"/>
+            <span translate="no.label"></span>
+          </label>
+          <label class="radio-inline">
+            <input type="radio" ng-model="param.contractTest" ng-value="true"/>
+            <span translate="yes.label"></span>
+          </label>
+        </div>
+      </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="modal-footer">
+    <!-- BUTTONS -->
+    <button ng-if="!company && !cases && !link" class="btn btn-primary" type="button" ng-disabled="!contractForm.$valid"
+            ng-click="checkContractNumber(contractForm)" translate="transform.contract.button"></button>
+    <button ng-if="isTransform() && (company || cases) && !link" class="btn btn-primary" type="button" ng-disabled="!contractForm.$valid"
+            ng-click="createTransformationCase(contractForm)" translate="transform.contract.confirm"></button>
+    <button ng-if="isRenewal() && (company || cases) && !link" class="btn btn-primary" type="button" ng-disabled="!contractForm.$valid"
+            ng-click="createRenewalCase(contractForm)" translate="transform.contract.confirm"></button>
+    <button ng-if="isTransform() && link" class="btn btn-primary" type="button" ng-disabled="!contractForm.$valid"
+            ng-click="createCheckMigrationCase(contractForm)" translate="transform.contract.confirm"></button>
+    <button ng-if="isCLO() && company && !cases" class="btn btn-primary" type="button" ng-disabled="!contractForm.$valid"
+            ng-click="createCloCase(contractForm)" translate="transform.contract.confirm"></button>
+<!--     <button ng-if="company || cases || (isTransform && link)" class="btn btn-default" type="button" ng-click="cancel()" -->
+<!--             translate="transform.cancel.button"></button> -->
+    <button class="btn btn-default" type="button" ng-click="close()"
+            translate="transform.cancel.button"></button>
+  </div>
+</form>

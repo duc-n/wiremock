@@ -1,0 +1,49 @@
+<form name="requestQuotationForm" class="form form-horizontal form-custom">
+	<div class="modal-header">
+		<h3 class="modal-title" translate="policy.quote.request.title"></h3>
+		<button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true">
+			<i class="fa fa-close"></i>
+		</button>
+	</div>
+	<div class="modal-body">
+
+		<fieldset>
+
+
+
+			<div translate="policy.quote.request.description"></div>
+
+			<div class="form-group">
+				<label class="col-sm-4 control-label"><strong  translate="policy.request.completion.due.date"></strong></label>
+
+				<div class="col-sm-6">
+					<div class="input-group">
+						<input required  class="form-control" type="text" readonly ng-model="requestCompletionDueDate" id="requestCompletionDueDate" datepicker-popup="{{format}}"
+							is-open="statusDate.requestDateOpened" datepicker-options="dateOptions" close-text="Close" date-disabled="disabled(date, mode)"  ng-change="computeRequestCompletionDueDays()" /> <span class="input-group-btn"><button
+								type="button" class="btn btn-default" ng-click="openRequestDateCalendar()">
+								<i class="fa fa-calendar"></i>
+							</button></span>
+					</div>
+				</div>
+
+				<label ng-show="requestCompletionDueDate" class="col-sm-2 control-label"><span class="request-priority" ng-class="{'high-priority': requestCompletionDueDays < taskPriorityThreshold[0], 'medium-priority': requestCompletionDueDays >= taskPriorityThreshold[0] && requestCompletionDueDays < taskPriorityThreshold[1], 'low-priority': requestCompletionDueDays >= taskPriorityThreshold[1]}" translate="policy.request.completion.due.days"
+						translate-values="{p0: requestCompletionDueDays}"> </span></label>
+			</div>
+			<div class="form-group">
+				<label class="col-sm-4 control-label"><strong translate="policy.quote.request.comment"></strong></label>
+
+				<div class="col-sm-8">
+					<div class="input-group">
+						<textarea class="form-control" id="comment" ng-model="requestQuoteComments" name="comment" aty-maxlength="1000" ng-maxlength="1000" required />
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button" ng-disabled="!requestQuotationForm.$valid || requestInProgress" ng-click="submit(requestQuotationForm)"
+			translate="policy.quote.request.confirm.btn"></button>
+		<button class="btn btn-default" type="button" ng-click="close()"  ng-disabled="requestInProgress" translate="policy.quote.request.cancel.btn"></button>
+	</div>
+</form>

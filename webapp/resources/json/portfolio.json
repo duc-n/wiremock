@@ -1,0 +1,29 @@
+{
+  "portfolioLines": [
+    
+  ],
+  "easyNumbers": [
+    
+  ],
+  "portfolioTotals": {
+    "totalRequestAmount": 0,
+    "totalRequestAnsweredAmount": 0,
+    "totalAcceptedAmount": 0,
+    "requestAcceptedRate": null,
+    "requestAcceptedAnsweredRate": null,
+    "nbRequests": 0,
+    "maxCLRequest": null,
+    "nbDecisions": 0,
+    "dras": null,
+    "requestedTotalByDra": null,
+    "acceptedTotalByDra": null,
+    "totalFullAcceptedAmount": null,
+    "totalPendingAmount": null,
+    "totalPartialAcceptedAmount": null,
+    "totalRefusalAmount": null,
+    "totalFullAcceptedPercentage": 0.0,
+    "totalPendingPercentage": 0.0,
+    "totalPartialAcceptedPercentage": 0.0,
+    "totalRefusalPercentage": 0.0
+  }
+}

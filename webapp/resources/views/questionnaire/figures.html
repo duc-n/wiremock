@@ -1,0 +1,222 @@
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="contractCurrency"><strong
+    translate="questionnaire.figures.contract.currency.label"></strong></label>
+
+  <div class="col-sm-3">
+    <select id="contractCurrency" ng-change="updateCurrency(questionnaire.specificQuestionnaire.contractCurrency)" class="form-control need-for-pricing"
+            ng-model="questionnaire.specificQuestionnaire.contractCurrency"
+            ng-options="'currency.'+currency | translate for currency in questionnaire.specificQuestionnaire.contractCurrencyList"
+            ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration">
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong
+    translate="questionnaire.figures.domestic.country.label"></strong></label>
+
+  <div class="col-sm-4">
+    <select ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration" class="form-control need-for-pricing" id="domesticCountry" ng-model="questionnaire.specificQuestionnaire.domesticCountry">
+      <option ng-selected="country == questionnaire.specificQuestionnaire.domesticCountry" ng-repeat="country in questionnaire.specificQuestionnaire.domesticCountriesList" value="{{country}}" translate="{{'country.'+country}}">
+      </option>
+    </select>
+  </div>
+  <div class="col-sm-2">
+  	<span class="removed" translate="questionnaire.offcover.country.msg" ng-if="isOffCoverCountry(questionnaire.specificQuestionnaire.domesticCountry)"/>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong translate="questionnaire.figures.activity.sector"></strong></label>
+
+  <div class="col-sm-7">
+    <select class="form-control need-for-pricing" ng-model="questionnaire.specificQuestionnaire.activitySector" ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration" ng-change="setNacesCodeByActivitySector();">
+      <option value="" translate="select.activity.sector.option.label"></option>
+
+      <option ng-repeat="sector in sectors | orderBy:'id'  track by sector.id" value="{{::sector.id}}" ng-selected="questionnaire.specificQuestionnaire.activitySector == sector.id">{{::sector.value}}</option>
+
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label"><strong translate="questionnaire.figures.nace.code"></strong></label>
+
+  <div class="col-sm-7">
+    <select class="form-control need-for-pricing" ng-model="questionnaire.specificQuestionnaire.napceCode" ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration" ng-change="selectNace();">
+      <option ng-repeat="nace in nacesCodeByActivitySector | orderBy:nace" value="{{nace}}" ng-selected="questionnaire.specificQuestionnaire.napceCode == nace">{{nace}} - {{naces[nace]}}</option>
+    </select>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-12"><strong translate="questionnaire.figures.turnover.description"></strong></label>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="numberCustomer"><strong
+    translate="questionnaire.figures.number.customer"></strong>
+    <i popover="{{'number.customer.max.tooltip'|translate: '{p0: 10000}'}}"
+      	popover-trigger="mouseenter"
+      	class="fa fa-info-circle" data-container="body"></i>
+  </label>
+
+  <div class="col-sm-2">
+    <div class="input-group">
+      <input type="number" aty-input-number  id="numberCustomer" class="form-control need-for-pricing" name="numberCustomer" max="10000"
+             ng-model="questionnaire.specificQuestionnaire.numberCustomer" aty-maxlength="6" ng-maxlength="6" ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration"
+             />
+    </div>
+  </div>
+</div>
+
+<div class="form-group" ng-if="::questionnaire.newBusiness">
+  <label class="col-sm-4 control-label" for="domesticTurnover"><strong
+    translate="questionnaire.figures.estimated.domestic.turnover"></strong>
+    <i popover="{{'questionnaire.figures.estimated.domestic.turnover.tooltip.label'|translate}}"
+      popover-trigger="mouseenter"
+      class="fa fa-info-circle" data-container="body"></i></label>
+
+  <div class="col-sm-3">
+    <div class="input-group">
+      <input type="number" aty-input-number id="domesticTurnover" name="domesticTurnover" class="form-control need-for-pricing"
+             ng-model="questionnaire.specificQuestionnaire.domesticTurnover"
+             ng-change="computeInsurableTurnovers();"
+             aty-maxlength="15"  ng-maxlength="15"  ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration"
+             />
+    </div>
+  </div>
+  <div class="col-sm-1">
+    <currency ng-bind="questionnaire.specificQuestionnaire.contractCurrency"/>
+  </div>
+</div>
+
+<div class="form-group" ng-if="::questionnaire.newBusiness">
+  <label class="col-sm-4 control-label" for="exportTurnover"><strong
+    translate="questionnaire.figures.estimated.export.turnover"></strong>
+    <i popover="{{'questionnaire.figures.estimated.export.turnover.tooltip.label'|translate}}"
+       popover-trigger="mouseenter"
+       class="fa fa-info-circle" data-container="body"></i></label>
+
+  <div class="col-sm-3">
+    <div class="input-group">
+      <input type="number" aty-input-number id="exportTurnover" class="form-control need-for-pricing" name="exportTurnover"
+             ng-model="questionnaire.specificQuestionnaire.exportTurnover"
+             ng-change="validateExportTurnover(false);"
+             ng-blur="addDefaultInsurableTurnover()"
+             aty-maxlength="15"  ng-maxlength="15" ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration"
+              />
+    </div>
+  </div>
+
+  <div class="col-sm-1">
+	    <p class="form-control-static">{{questionnaire.specificQuestionnaire.contractCurrency}}
+	    <i ng-show="showReportExportTurnover"
+	      popover="{{reportExportTurnoverButtonTooltip}}"
+	      popover-trigger="mouseenter"
+	      class="fa fa-info-circle"></i>
+	    </p>
+  </div>
+
+<!--   <div class="col-sm-1" ng-show="showReportExportTurnover"> -->
+<!--   	<p> -->
+<!-- 	    <i -->
+<!-- 	      popover="{{reportExportTurnoverButtonTooltip}}" -->
+<!-- 	      popover-trigger="mouseenter" -->
+<!-- 	      class="fa fa-info-circle"></i> -->
+<!-- 	 </p>      -->
+<!--   </div> -->
+  <div class="col-sm-2" ng-show="showReportExportTurnover">
+  	<button class="btn btn-primary" type="button" ng-click="reportExportTurnover()" translate="report.button"></button>
+  </div>
+</div>
+
+<div class="form-group" ng-if="::!questionnaire.newBusiness">
+  <label class="col-sm-4 control-label" for="globalTurnover">
+    <strong translate="questionnaire.figures.global.insured.turnover"></strong>
+    <i
+      popover="{{'questionnaire.figures.global.turnover.tooltip.label'|translate}}"
+      popover-trigger="mouseenter"
+      class="fa fa-info-circle"></i>
+  </label>
+
+  <div class="col-sm-3">
+    <div class="input-group">
+      <input type="number" aty-input-number id="globalTurnover" name="globalTurnover" class="form-control need-for-pricing"
+             ng-model="questionnaire.specificQuestionnaire.globalTurnover"
+             ng-change="computeInsurableTurnovers();"
+             aty-maxlength="15"  ng-maxlength="15"  ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration"
+             />
+    </div>
+  </div>
+  <div class="col-sm-1">
+    <currency ng-bind="questionnaire.specificQuestionnaire.contractCurrency"/>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4  control-label" for="greatestOutstandingFigures">
+    <strong translate="questionnaire.debtors.greatest.outstanding"></strong></label>
+  <div class="col-sm-3">
+    <div class="input-group">
+      <input type="number" aty-input-number id="greatestOutstandingFigures" class="form-control need-for-pricing" name="greatestOutstanding"
+             ng-model="questionnaire.specificQuestionnaire.greatestOutstanding" aty-maxlength="15" ng-maxlength="15" ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration"
+             ng-change="validateGreatestOutstanding()"
+      />
+    </div>
+  </div>
+  <div class="col-sm-1">
+    <currency ng-bind="questionnaire.specificQuestionnaire.contractCurrency"/>
+  </div>
+</div>
+
+<div class="form-group">
+  <label class="col-sm-4 control-label" for="theoriticalDSO"><strong translate="questionnaire.bu.desc.dso.label"></strong>
+    <i
+      popover="{{'questionnaire.figures.dso.tooltip.label'|translate}}"
+      popover-trigger="mouseenter"
+      class="fa fa-info-circle"></i>
+  </label>
+
+  <div class="col-sm-1">
+    <div class="input-group">
+      <input type="number" aty-input-number  class="form-control need-for-pricing" ng-model="questionnaire.specificQuestionnaire.theoriticalDSO" name="theoriticalDSO"
+             id="theoriticalDSO" aty-maxlength="3" ng-maxlength="3" ng-disabled="::questionnaire.isReadOnly || questionnaire.checkMigration"/>
+    </div>
+  </div>
+  <div class="col-sm-1">
+    <day/>
+  </div>
+  <div class="col-sm-6">
+    <label class="radio-inline"> <input type="radio"
+                                        ng-model="questionnaire.specificQuestionnaire.dsoOrigin"
+                                        value="PRO" ng-disabled="::questionnaire.isReadOnly"/> <span
+      translate="questionnaire.bu.desc.dso.origin.prospect.label"></span></label>
+    <label class="radio-inline"> <input type="radio"
+                                        ng-model="questionnaire.specificQuestionnaire.dsoOrigin"
+                                        value="EST" ng-disabled="::questionnaire.isReadOnly"/> <span
+      translate="questionnaire.bu.desc.dso.origin.estimated.label"></span></label>
+  </div>
+</div>
+
+
+<div class="form-group" ng-if="::!questionnaire.newBusiness">
+  <label class="col-sm-4 control-label"><strong
+    translate="questionnaire.figures.technical.ratio.label"></strong></label>
+
+  <div class="col-sm-1" ng-if="questionnaire.specificQuestionnaire.technicalRatio">
+    <div class="input-group">
+      <p class="form-control-static" ng-bind="questionnaire.specificQuestionnaire.technicalRatio"></p>
+    </div>
+  </div>
+  <div class="col-sm-1" ng-if="questionnaire.specificQuestionnaire.technicalRatio">
+    <div class="input-group">
+      <percent/>
+    </div>
+  </div>
+  <div class="col-sm-1" ng-if="!questionnaire.specificQuestionnaire.technicalRatio">
+    <div class="input-group">
+      <p class="form-control-static" translate="na.label"></p>
+    </div>
+  </div>
+</div>

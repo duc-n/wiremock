@@ -1,0 +1,92 @@
+{
+  "smartCase": false,
+  "smartCofalinkStatus": false,
+  "smartServiceResult": null,
+  "fileTransferredToGCC": false,
+  "transfertToGCCXmlAvailable": false,
+  "newBusiness": false,
+  "renewal": false,
+  "transform": false,
+  "checkMigration": true,
+  "clo": false,
+  "salesDiscussionsCount": 0,
+  "cancellationProjectReason": null,
+  "cancellationProjectDate": null,
+  "projectCancelledByFullName": null,
+  "creationDate": 1530180521717,
+  "createdByFullName": null,
+  "contractStatus": "PROJECT",
+  "progressStatus": "INIT",
+  "contractCancelled": false,
+  "id": 2432211,
+  "contractId": "CONT-01-244702527",
+  "contractNumber": "522532",
+  "oldContractNumber": "262849",
+  "portfolioNumber": "522532",
+  "prospectVisible": {
+    
+  },
+  "allowCreateRequest": false,
+  "buyerStudyResult": {
+    "portfolioLines": [
+      
+    ],
+    "easyNumbers": [
+      
+    ],
+    "portfolioTotals": {
+      "totalRequestAmount": 0,
+      "totalRequestAnsweredAmount": 0,
+      "totalAcceptedAmount": 0,
+      "requestAcceptedRate": null,
+      "requestAcceptedAnsweredRate": null,
+      "nbRequests": 0,
+      "maxCLRequest": null,
+      "nbDecisions": 0,
+      "dras": null,
+      "requestedTotalByDra": null,
+      "acceptedTotalByDra": null,
+      "totalFullAcceptedAmount": null,
+      "totalPendingAmount": null,
+      "totalPartialAcceptedAmount": null,
+      "totalRefusalAmount": null,
+      "totalFullAcceptedPercentage": 0.0,
+      "totalPendingPercentage": 0.0,
+      "totalPartialAcceptedPercentage": 0.0,
+      "totalRefusalPercentage": 0.0
+    }
+  },
+  "contractCurrency": "EUR",
+  "pricingObsolete": null,
+  "scenarioPricingObsolete": {
+    "2432150": false
+  },
+  "hasQuoted": {
+    "2432150": true
+  },
+  "currentUsedCapacity": null,
+  "estimatedMaxCapacity": null,
+  "companyName": "EUROGLAS",
+  "easyNumber": "00000282075950",
+  "buyerStudyDoc": {
+    "visible": true,
+    "template": "AUTY_BUYERSTUDY_MODEL_GRP",
+    "format": "PDF"
+  },
+  "nbBUYERSTUDYDownloaded": 0,
+  "projectContract": false,
+  "buyerStudyEditionLanguages": [
+    {
+      "isoCode": "fr",
+      "label": "Français"
+    },
+    {
+      "isoCode": "en",
+      "label": "English"
+    },
+    {
+      "isoCode": "nl",
+      "label": "Nederlands"
+    }
+  ]
+}

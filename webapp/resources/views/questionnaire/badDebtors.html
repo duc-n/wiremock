@@ -1,0 +1,522 @@
+<div class="form-inline form-group col-sm-12">
+	<div class="row">
+		<div class="col-md-9">
+			<label class="control-label" for="badDebtsExperience"><strong
+				translate="questionnaire.bad.debts.experience"></strong></label> <label
+				class="radio-inline margin-left-20"> <input type="radio"
+				id="badDebtsExperience" ng-model="questionnaire.specificQuestionnaire.badDebtsExperience"
+				ng-value="true"
+				ng-click="validateTurnoverExperienceForYear(0);validateTurnoverExperienceForYear(1);validateTurnoverExperienceForYear(2);validateTurnoverExperienceForYear(3);"
+				ng-disabled="::questionnaire.isReadOnly" /> <span
+				translate="yes.label"></span>
+			</label> <label class="radio-inline"> <input type="radio"
+				ng-model="questionnaire.specificQuestionnaire.badDebtsExperience" ng-value="false"
+				ng-click="validateTurnoverExperienceForYear(0);validateTurnoverExperienceForYear(1);validateTurnoverExperienceForYear(2);validateTurnoverExperienceForYear(3);"
+				ng-disabled="::questionnaire.isReadOnly" /> <span
+				translate="no.label"></span>
+			</label>
+		</div>
+		<div class="col-md-3">
+			<strong translate="questionnaire.bad.debts.experience.update.date.label" translate-values="{p0:questionnaire.specificQuestionnaire.updateDateBadDebts}"></strong>
+		</div>
+	</div>
+</div>
+
+<div class="form-inline form-group col-sm-12" ng-show="isChangeBadDebtsReferenceYearEnabled()">
+<!-- <div class="form-inline form-group col-sm-12" >-->
+	<label class="control-label" for="updateReferenceYear"><strong
+		translate="questionnaire.bad.debts.experience.update.reference.year.label"  translate-values="{p0:{{today| date:'yyyy'}}}"></strong></label>
+	<label class="radio-inline margin-left-20"> <input type="radio" name="updateReferenceYear"
+		ng-value="true" ng-disabled="::questionnaire.isReadOnly" ng-click="shiftBadDebtsYearRef();" ng-model="badDebtsExperienceChangeRefYear" /> <span
+		translate="yes.label"
+		></span>
+	</label> <label class="radio-inline"> <input type="radio" name="updateReferenceYear"
+		ng-value="false" ng-disabled="::questionnaire.isReadOnly" ng-model="badDebtsExperienceChangeRefYear"/> <span
+		translate="no.label"  ></span>
+	</label>
+</div>
+<!-- defect #380: Questionnaire - Include TO annual Experience in Loss History Block -->
+<div ng-include="'views/questionnaire/turnover.html'"
+	ng-show="questionnaire.specificQuestionnaire.badDebtsExperience" class="row"></div>
+
+<div ng-show="questionnaire.specificQuestionnaire.badDebtsExperience" class="row">
+	<div class="col-sm-12">
+		<table
+			class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+			<colgroup>
+				<col span="1" class="col-sm-1 text-center">
+				<col span="1" class="col-sm-2 text-center">
+				<col span="1" class="col-sm-2 text-center">
+				<col span="1" class="col-sm-2 text-center">
+				<col span="1" class="col-sm-2 text-center">
+				<col span="1" class="col-sm-2 text-center">
+				<col span="1" class="col-sm-1 text-center">
+			</colgroup>
+			<thead>
+				<tr class="">
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="year.label"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="questionnaire.bad.debts.number.loss"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="questionnaire.bad.debts.unpaid.invoices"
+								translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="questionnaire.bad.debts.recovery"
+								translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="questionnaire.bad.debts.final.loss"
+								translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="questionnaire.bad.debts.retained.loss"
+								translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="questionnaire.bad.debts.number.retained.loss"></strong>
+						</p></th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- currentYear -->
+				<tr>
+					<td><label class="control-label"><strong
+							ng-bind="questionnaire.specificQuestionnaire.referenceYearBadDebts"></strong></label></td>
+					<td>
+						<div class="col-sm-offset-2 col-sm-8">
+							<div class="input-group">
+								<input type="number" aty-input-number
+									class="form-control text-center"
+									ng-model="questionnaire.specificQuestionnaire.numberLossCurrentYear"
+									id="numberLossCurrentYear" name="numberLossCurrentYear"
+									aty-maxlength="3"
+									ng-change="validateTurnoverExperienceForYear(0);initRecoveryValue(0);validateNumberRetainedLoss('numberLossCurrentYear','numberRetainedLossCurrentYear');badDebitChanged();"
+									ng-disabled="::questionnaire.isReadOnly" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.unpaidInvoiceCurrentYear"
+								id="unpaidInvoiceCurrentYear" name="unpaidInvoiceCurrentYear"
+								aty-maxlength="15" min="{{questionnaire.specificQuestionnaire.recoveryCurrentYear}}"
+								ng-change="validateBadDebtExperience('unpaidInvoiceCurrentYear','recoveryCurrentYear');validateTurnoverExperienceForYear(0);computeRetainedLossForYear(0);initRecoveryValue(0);badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.recoveryCurrentYear"
+								id="recoveryCurrentYear" name="recoveryCurrentYear"
+								aty-maxlength="15"
+								max="{{questionnaire.specificQuestionnaire.unpaidInvoiceCurrentYear}}"
+								ng-change="validateBadDebtExperience('unpaidInvoiceCurrentYear','recoveryCurrentYear');validateTurnoverExperienceForYear(0);computeRetainedLossForYear(0);badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<p
+							ng-show="questionnaire.specificQuestionnaire.unpaidInvoiceCurrentYear &&
+                      questionnaireForm.badDebtorsSubForm.unpaidInvoiceCurrentYear.$valid &&
+                      questionnaireForm.badDebtorsSubForm.recoveryCurrentYear.$valid"
+							class="form-control-static"
+							ng-bind="questionnaire.specificQuestionnaire.unpaidInvoiceCurrentYear - questionnaire.specificQuestionnaire.recoveryCurrentYear|atyNumber"></p>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.retainedLossCurrentYear"
+								ng-change="validateBadDebtExperience('unpaidInvoiceCurrentYear','recoveryCurrentYear');validateTurnoverExperienceForYear(0);initRecoveryValue(0);badDebitChanged();"
+								id="retainedLossCurrentYear" name="retainedLossCurrentYear"
+								aty-maxlength="15"
+								max="{{questionnaire.specificQuestionnaire.unpaidInvoiceCurrentYear - questionnaire.specificQuestionnaire.recoveryCurrentYear}}"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.numberRetainedLossCurrentYear"
+								id="numberRetainedLossCurrentYear"
+								max="{{questionnaire.specificQuestionnaire.numberLossCurrentYear}}"
+								name="numberRetainedLossCurrentYear" aty-maxlength="3"
+								ng-change="validateTurnoverExperienceForYear(0);validateNumberRetainedLoss('numberLossCurrentYear','numberRetainedLossCurrentYear');badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+				</tr>
+				<!-- currentYear - 1 -->
+				<tr>
+					<td><label class="control-label"><strong
+							ng-bind="questionnaire.specificQuestionnaire.referenceYearBadDebts - 1"></strong></label></td>
+					<td>
+						<div class="col-sm-offset-2 col-sm-8">
+							<div class="input-group">
+								<input type="number" aty-input-number
+									class="form-control text-center"
+									ng-model="questionnaire.specificQuestionnaire.numberLossY_1" id="numberLossY_1"
+									name="numberLossY_1" aty-maxlength="3"
+									ng-change="validateTurnoverExperienceForYear(1);initRecoveryValue(1);validateNumberRetainedLoss('numberLossY_1','numberRetainedLossY_1');badDebitChanged();"
+									ng-disabled="::questionnaire.isReadOnly" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.unpaidInvoiceY_1" id="unpaidInvoiceY_1"
+								name="unpaidInvoiceY_1" aty-maxlength="15"
+								min="{{questionnaire.specificQuestionnaire.recoveryY_1}}"
+								ng-change="validateBadDebtExperience('unpaidInvoiceY_1','recoveryY_1');validateTurnoverExperienceForYear(1);computeRetainedLossForYear(1);initRecoveryValue(1);badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.recoveryY_1" id="recoveryY_1"
+								name="recoveryY_1" aty-maxlength="15"
+								max="{{questionnaire.specificQuestionnaire.unpaidInvoiceY_1}}"
+								ng-change="validateBadDebtExperience('unpaidInvoiceY_1','recoveryY_1');validateTurnoverExperienceForYear(1);computeRetainedLossForYear(1);badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<p
+							ng-show="questionnaire.specificQuestionnaire.unpaidInvoiceY_1 &&
+                      questionnaireForm.badDebtorsSubForm.unpaidInvoiceY_1.$valid &&
+                      questionnaireForm.badDebtorsSubForm.recoveryY_1.$valid"
+							class="form-control-static"
+							ng-bind="questionnaire.specificQuestionnaire.unpaidInvoiceY_1 - questionnaire.specificQuestionnaire.recoveryY_1 | atyNumber"></p>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.retainedLossY_1"
+								ng-change="validateBadDebtExperience('unpaidInvoiceY_1','recoveryY_1');validateTurnoverExperienceForYear(1);initRecoveryValue(1);badDebitChanged();"
+								id="retainedLossY_1" name="retainedLossY_1" aty-maxlength="15"
+								max="{{questionnaire.specificQuestionnaire.unpaidInvoiceY_1 - questionnaire.specificQuestionnaire.recoveryY_1}}"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.numberRetainedLossY_1"
+								max="{{questionnaire.specificQuestionnaire.numberLossY_1}}" id="numberRetainedLossY_1"
+								name="numberRetainedLossY_1" aty-maxlength="3"
+								ng-change="validateTurnoverExperienceForYear(1);validateNumberRetainedLoss('numberLossY_1','numberRetainedLossY_1');badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+				</tr>
+				<!-- currentYear - 2 -->
+				<tr>
+					<td><label class="control-label"><strong
+							ng-bind="questionnaire.specificQuestionnaire.referenceYearBadDebts - 2"></strong></label></td>
+					<td>
+						<div class="col-sm-offset-2 col-sm-8">
+							<div class="input-group">
+								<input type="number" aty-input-number
+									class="form-control text-center"
+									ng-model="questionnaire.specificQuestionnaire.numberLossY_2" id="numberLossY_2"
+									name="numberLossY_2" aty-maxlength="3"
+									ng-change="validateTurnoverExperienceForYear(2);initRecoveryValue(2);validateNumberRetainedLoss('numberLossY_2','numberRetainedLossY_2');badDebitChanged();"
+									ng-disabled="::questionnaire.isReadOnly" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.unpaidInvoiceY_2" id="unpaidInvoiceY_2"
+								name="unpaidInvoiceY_2" aty-maxlength="15"
+								min="{{questionnaire.specificQuestionnaire.recoveryY_2}}"
+								ng-change="validateBadDebtExperience('unpaidInvoiceY_2','recoveryY_2');validateTurnoverExperienceForYear(2);computeRetainedLossForYear(2);initRecoveryValue(2);badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.recoveryY_2" id="recoveryY_2"
+								name="recoveryY_2" aty-maxlength="15"
+								max="{{questionnaire.specificQuestionnaire.unpaidInvoiceY_2}}"
+								ng-change="validateBadDebtExperience('unpaidInvoiceY_2','recoveryY_2');validateTurnoverExperienceForYear(2);computeRetainedLossForYear(2);badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<p
+							ng-show="questionnaire.specificQuestionnaire.unpaidInvoiceY_2 &&
+                      questionnaireForm.badDebtorsSubForm.unpaidInvoiceY_2.$valid &&
+                      questionnaireForm.badDebtorsSubForm.recoveryY_2.$valid"
+							class="form-control-static"
+							ng-bind="questionnaire.specificQuestionnaire.unpaidInvoiceY_2 - questionnaire.specificQuestionnaire.recoveryY_2 | atyNumber"></p>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.retainedLossY_2"
+								ng-change="validateBadDebtExperience('unpaidInvoiceY_2','recoveryY_2');validateTurnoverExperienceForYear(2);initRecoveryValue(2);badDebitChanged();"
+								id="retainedLossY_2" name="retainedLossY_2" aty-maxlength="15"
+								max="{{questionnaire.specificQuestionnaire.unpaidInvoiceY_2 - questionnaire.specificQuestionnaire.recoveryY_2}}"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.numberRetainedLossY_2"
+								max="{{questionnaire.specificQuestionnaire.numberLossY_2}}" id="numberRetainedLossY_2"
+								name="numberRetainedLossY_2" aty-maxlength="3"
+								ng-change="validateTurnoverExperienceForYear(2);validateNumberRetainedLoss('numberLossY_2','numberRetainedLossY_2');badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+				</tr>
+				<!-- currentYear - 3 -->
+				<tr>
+					<td><label class="control-label"><strong
+							ng-bind="questionnaire.specificQuestionnaire.referenceYearBadDebts - 3"></strong></label></td>
+					<td>
+						<div class="col-sm-offset-2 col-sm-8">
+							<div class="input-group">
+								<input type="number" aty-input-number
+									class="form-control text-center"
+									ng-model="questionnaire.specificQuestionnaire.numberLossY_3" id="numberLossY_3"
+									name="numberLossY_3" aty-maxlength="3"
+									ng-change="validateTurnoverExperienceForYear(3);initRecoveryValue(3);validateNumberRetainedLoss('numberLossY_3','numberRetainedLossY_3');badDebitChanged();"
+									ng-disabled="::questionnaire.isReadOnly" />
+							</div>
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.unpaidInvoiceY_3" id="unpaidInvoiceY_3"
+								name="unpaidInvoiceY_3" aty-maxlength="15"
+								min="{{questionnaire.specificQuestionnaire.recoveryY_3}}"
+								ng-change="validateBadDebtExperience('unpaidInvoiceY_3','recoveryY_3');validateTurnoverExperienceForYear(3);computeRetainedLossForYear(3);initRecoveryValue(3);badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.recoveryY_3" id="recoveryY_3"
+								name="recoveryY_3" aty-maxlength="15"
+								max="{{questionnaire.specificQuestionnaire.unpaidInvoiceY_3}}"
+								ng-change="validateBadDebtExperience('unpaidInvoiceY_3','recoveryY_3');validateTurnoverExperienceForYear(3);computeRetainedLossForYear(3);badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<p
+							ng-show="questionnaire.specificQuestionnaire.unpaidInvoiceY_3 &&
+                      questionnaireForm.badDebtorsSubForm.unpaidInvoiceY_3.$valid &&
+                      questionnaireForm.badDebtorsSubForm.recoveryY_3.$valid"
+							class="form-control-static"
+							ng-bind="questionnaire.specificQuestionnaire.unpaidInvoiceY_3 - questionnaire.specificQuestionnaire.recoveryY_3 | atyNumber"></p>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.retainedLossY_3"
+								ng-change="validateBadDebtExperience('unpaidInvoiceY_3','recoveryY_3');validateTurnoverExperienceForYear(3);initRecoveryValue(3);badDebitChanged();"
+								id="retainedLossY_3" name="retainedLossY_3" aty-maxlength="15"
+								max="{{questionnaire.specificQuestionnaire.unpaidInvoiceY_3 - questionnaire.specificQuestionnaire.recoveryY_3}}"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.numberRetainedLossY_3"
+								max="{{questionnaire.specificQuestionnaire.numberLossY_3}}" id="numberRetainedLossY_3"
+								name="numberRetainedLossY_3" aty-maxlength="3"
+								ng-change="validateTurnoverExperienceForYear(3);validateNumberRetainedLoss('numberLossY_3','numberRetainedLossY_3');badDebitChanged();"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>
+<div ng-show="questionnaire.specificQuestionnaire.badDebtsExperience" class="form-group">
+	<p class="col-sm-12 form-control-static">
+		<strong translate="questionnaire.bad.debts.major"></strong>
+	</p>
+</div>
+<div ng-show="questionnaire.specificQuestionnaire.badDebtsExperience" class="row">
+	<div class="col-sm-12">
+		<table
+			class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+			<colgroup>
+				<col span="1" class="col-sm-1">
+				<col span="1" class="col-sm-3">
+				<col span="1" class="col-sm-2">
+				<col span="1" class="col-sm-2">
+				<col span="1" class="col-sm-2">
+				<col span="1" class="col-sm-2">
+			</colgroup>
+			<thead>
+				<tr class="">
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="year.label"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="country.label"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="questionnaire.bad.debts.debtor.legal.name"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="legal.id.label"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="questionnaire.bad.debts.amount.loss"
+								translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong>
+						</p></th>
+					<th class="text-center"><p class="form-control-static">
+							<strong translate="questionnaire.bad.debts.invoice.date"></strong>
+						</p></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><select ng-model="questionnaire.specificQuestionnaire.debtorYear"
+						ng-options="y as y for y in yearsList"></select></td>
+					<td><countrySelect ng-model="questionnaire.specificQuestionnaire.debtorCountryY"
+							ng-disabled="::questionnaire.isReadOnly" /></td>
+					<td><input type="text" class="form-control"
+						ng-model="questionnaire.specificQuestionnaire.debtorAddressY" aty-maxlength="255"
+						ng-disabled="::questionnaire.isReadOnly" /></td>
+					<td><input type="text" class="form-control"
+						ng-model="questionnaire.specificQuestionnaire.debtorLegalIdY" aty-maxlength="50"
+						ng-disabled="::questionnaire.isReadOnly" /></td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.debtorLossY" id="debtorLossY"
+								name="debtorLossY" aty-maxlength="15"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input readonly class="form-control" type="text"
+								ng-model="questionnaire.specificQuestionnaire.debtorInvoiceDateY"
+								id="debtorInvoiceDateY" datepicker-popup="{{format}}"
+								is-open="statusDate.debtorInvoiceDateY"
+								datepicker-options="dateOptions" close-text="Close" /> <span
+								class="input-group-btn"><button
+									ng-disabled="::questionnaire.isReadOnly" type="button"
+									class="btn btn-default"
+									ng-click="openInvoiceDate('debtorInvoiceDateY')">
+									<i class="fa fa-calendar"></i>
+								</button></span>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<td><select ng-model="questionnaire.specificQuestionnaire.debtorYear_1"
+						ng-options="y as y for y in yearsList"></select></td>
+					<td><countrySelect ng-model="questionnaire.specificQuestionnaire.debtorCountryY_1"
+							ng-disabled="::questionnaire.isReadOnly" /></td>
+					<td><input type="text" class="form-control"
+						ng-model="questionnaire.specificQuestionnaire.debtorAddressY_1" aty-maxlength="255"
+						ng-disabled="::questionnaire.isReadOnly" /></td>
+					<td><input type="text" class="form-control"
+						ng-model="questionnaire.specificQuestionnaire.debtorLegalIdY_1" aty-maxlength="50"
+						ng-disabled="::questionnaire.isReadOnly" /></td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.debtorLossY_1" id="debtorLossY_1"
+								name="debtorLossY_1" aty-maxlength="15"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input readonly class="form-control" type="text"
+								ng-model="questionnaire.specificQuestionnaire.debtorInvoiceDateY_1"
+								id="debtorInvoiceDateY_1" datepicker-popup="{{format}}"
+								is-open="statusDate.debtorInvoiceDateY_1"
+								datepicker-options="dateOptions" close-text="Close" /> <span
+								class="input-group-btn"><button
+									ng-disabled="::questionnaire.isReadOnly" type="button"
+									class="btn btn-default"
+									ng-click="openInvoiceDate('debtorInvoiceDateY_1')">
+									<i class="fa fa-calendar"></i>
+								</button></span>
+						</div>
+					</td>
+
+				</tr>
+				<tr>
+					<td><select ng-model="questionnaire.specificQuestionnaire.debtorYear_2"
+						ng-options="y as y for y in yearsList"></select></td>
+					<td><countrySelect ng-model="questionnaire.specificQuestionnaire.debtorCountryY_2"
+							ng-disabled="::questionnaire.isReadOnly" /></td>
+					<td><input type="text" class="form-control"
+						ng-model="questionnaire.specificQuestionnaire.debtorAddressY_2" aty-maxlength="255"
+						ng-disabled="::questionnaire.isReadOnly" /></td>
+					<td><input type="text" class="form-control"
+						ng-model="questionnaire.specificQuestionnaire.debtorLegalIdY_2" aty-maxlength="50"
+						ng-disabled="::questionnaire.isReadOnly" /></td>
+					<td>
+						<div class="input-group">
+							<input type="number" aty-input-number
+								class="form-control text-center"
+								ng-model="questionnaire.specificQuestionnaire.debtorLossY_2" id="debtorLossY_2"
+								name="debtorLossY_2" aty-maxlength="15"
+								ng-disabled="::questionnaire.isReadOnly" />
+						</div>
+					</td>
+					<td>
+						<div class="input-group">
+							<input readonly class="form-control" type="text"
+								ng-model="questionnaire.specificQuestionnaire.debtorInvoiceDateY_2"
+								id="debtorInvoiceDateY_2" datepicker-popup="{{format}}"
+								is-open="statusDate.debtorInvoiceDateY_2"
+								datepicker-options="dateOptions" close-text="Close" /> <span
+								class="input-group-btn"><button
+									ng-disabled="::questionnaire.isReadOnly" type="button"
+									class="btn btn-default"
+									ng-click="openInvoiceDate('debtorInvoiceDateY_2')">
+									<i class="fa fa-calendar"></i>
+								</button></span>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+</div>

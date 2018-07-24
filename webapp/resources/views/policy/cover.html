@@ -1,0 +1,343 @@
+<div class="form-group">
+	<label class="col-sm-3 control-label">
+		<strong translate="policy.cover.contract.currency.label"></strong>
+	</label>
+
+	<div data-ng-if="policy.contractCurrency" class="col-sm-2">
+		<p class="form-control-static" translate="{{'currency.'+policy.contractCurrency}}"></p>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-3 control-label" for="policyPrinciple">
+		<strong translate="policy.cover.policy.principle.label"></strong>
+	</label>
+
+	<div class="col-sm-8">
+		<label class="radio-inline">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" id="policyPrinciple" ng-model="policy.policyPrinciple"
+				value="RA" />
+			<span translate="policy.cover.risk.attaching.label"></span>
+		</label>
+		<label class="radio-inline">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" ng-model="policy.policyPrinciple" value="LO" />
+			<span translate="policy.cover.loss.occuring.label"></span>
+		</label>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-3 control-label" for="causeOfLoss">
+		<strong translate="policy.cover.loss.cause.label"></strong>
+	</label>
+
+	<div class="col-sm-8">
+		<label class="radio-inline">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" name="causeOfLoss" id="causeOfLoss"
+				ng-model="policy.causeOfLoss" value="CO" />
+			<span translate="policy.cover.loss.cause.commercial.label"></span>
+		</label>
+		<label class="radio-inline">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" name="causeOfLoss" ng-model="policy.causeOfLoss" value="IO" />
+			<span translate="policy.cover.loss.cause.insolvency.label"></span>
+		</label>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-3 control-label">
+		<strong translate="policy.cover.covered.activity.label"></strong>
+	</label>
+
+	<div class="col-sm-8">
+		<p data-ng-if="policy.activitySector" class="form-control-static" translate="{{'sector.'+policy.activitySector}}"></p>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-3 control-label">
+		<strong translate="policy.cover.covered.countries.label"></strong>
+	</label>
+
+	<div class="col-sm-9">
+		<spinner class="aty-data-loading" name="countriesZoneSpinner">
+		<div class="messaging">
+			<!--<i class="fa fa-refresh fa-spin"></i>-->
+			<div class="la-ball-circus la-2x">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+			<h1 translate="spinner.data.loading.title"></h1>
+		</div>
+		</spinner>
+
+
+		<div class="form-group">
+			<label class="col-sm-4 control-label">
+				<strong translate="policy.cover.geo.scope.selection.label"></strong>
+			</label>
+
+			<div class="col-sm-4">
+
+				<div class="checkbox-inline">
+					<label>
+						<input type="checkbox" data-ng-change="onZoneScopeChange()" ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly || !policy.exportScope"
+							ng-model="policy.domesticScope" value="true" />
+						<span translate="policy.cover.geo.scope.domestic.title"></span>
+					</label>
+				</div>
+
+				<div class="checkbox-inline">
+					<label>
+						<input type="checkbox" data-ng-change="onZoneScopeChange()" ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly || !policy.domesticScope"
+							ng-model="policy.exportScope" value="true" />
+						<span translate="policy.cover.geo.scope.export.title"></span>
+					</label>
+				</div>
+				
+			</div>
+			
+			<div class="col-sm-3">				
+				<button type="button" ng-click="onPriceZoningChange()" ng-disabled="policy.isReadOnly" class="btn btn-primary" translate="policy.cover.restore.default.btn"></button>	
+			</div>
+
+		</div>
+
+		<div class="form-group">
+			<label class="col-sm-3 control-label">
+				<strong translate="policy.cover.rates.label"></strong>
+			</label>
+
+			<div class="col-sm-5">
+				<div class="input-group">
+
+					<select class="form-control" data-ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" data-convert-to-number ng-model="policy.rates"
+						data-ng-change="onRatesChange()">
+
+						<option value="1" translate="policy.cover.one.rate.title"></option>
+						<option value="2" data-ng-if="(!policy.domesticScope && policy.exportScope) || (policy.domesticScope && policy.exportScope)" translate="policy.cover.two.rates.title"></option>
+						<option value="3" data-ng-if="policy.domesticScope && policy.exportScope" translate="policy.cover.three.rates.title"></option>
+
+					</select>
+
+				</div>
+			</div>
+		</div>
+
+		<!-- Price Zoning -->
+		<div class="form-group">
+			<label class="col-sm-3 control-label">
+				<strong translate="policy.cover.price.zoning.label"></strong>
+			</label>
+			<div class="col-sm-5">
+				<div class="input-group">
+					<select ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" ng-model="policy.priceZoning" class="form-control need-for-pricing"
+						ng-options="key as value | translate for (key, value) in priceZonings" ng-change="onPriceZoningChange()"></select>
+
+				</div>
+			</div>
+		</div>
+		<!-- End Price Zoning -->
+		<div class="form-group notToPrint">
+			<div class="col-sm-12">
+				<input type="text" placeholder="{{'policy.search.country.filter.title' | translate}}" class="form-control" ng-model="searchCountry" />
+			</div>
+		</div>
+
+		<div class="multi-select aside notToPrint">
+			<!-- Area 1 -->
+			<div class="col-sm-4">			
+				<div class=" selected-items">
+					<div class="form-group">
+						<label class="col-sm-12">
+							<strong translate="{{getAreaTitle(1)}}"></strong>
+						</label>
+					</div>					
+					<div class="multi-content">
+						<ul id="domUl" class="form-control-static" dnd-list dnd-drop="onDrop(policy.area1,item,index)"
+							dnd-disable-if="policy.isReadOnly || policy.isNegotiationReadOnly" dnd-allowed-types="policy.area1.allowedTypes">
+							<li ng-repeat="country in policy.area1.countries | searchCountryFilter:searchCountry track by country.code "
+								dnd-draggable="getSelectedItemsIncluding(policy.area1, country)" dnd-dragstart="onDragstart(policy.area1, event)"
+								dnd-moved="onMoved(policy.area1)" dnd-dragend="policy.area1.dragging = false"
+								dnd-selected="onSelected(policy.area1,country,event)"
+								dnd-disable-if="policy.area1.countries.length == 1 || country.code === policy.domesticCountry" dnd-type="policy.area1.type"
+								ng-class="{'selected': country.selected,'coverage':true, 'disabled' : country.code === policy.domesticCountry}"
+								ng-hide="policy.area1.dragging && country.selected" class="ellipsis" iso="{{::country.code}}"><span
+								translate="{{::'country.'+country.code}}"></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--End Area 1 -->
+
+			<!-- Area 2 -->
+			<div class="col-sm-4" data-ng-if="policy.rates >= 2">
+				<div class=" selected-items">
+					<div class="form-group">
+						<label class="col-sm-12">
+							<strong translate="{{getAreaTitle(2)}}"></strong>
+						</label>
+					</div>
+					<div class="multi-content">
+						<ul class="form-control-static" dnd-list dnd-drop="onDrop(policy.area2,item,index)"
+							dnd-disable-if="policy.isReadOnly || policy.isNegotiationReadOnly" dnd-allowed-types="policy.area2.allowedTypes">
+							<li ng-repeat="country in policy.area2.countries | searchCountryFilter:searchCountry track by country.code"
+								dnd-draggable="getSelectedItemsIncluding(policy.area2, country)" dnd-dragstart="onDragstart(policy.area2, event)"
+								dnd-moved="onMoved(policy.area2)" dnd-dragend="policy.area2.dragging = false" dnd-selected="onSelected(policy.area2,country,event)"
+								dnd-type="policy.area2.type" ng-class="{'selected': country.selected,'coverage':true}" ng-hide="policy.area2.dragging && country.selected" class="ellipsis"
+								iso="{{::country.code}}"><span translate="{{::'country.'+country.code}}"></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- End Area 2 -->
+
+			<!-- Area 3 -->
+			<div class="col-sm-4" data-ng-if="policy.rates === 3">
+				<div class=" selected-items">
+					<div class="form-group">
+						<label class="col-sm-12">
+							<strong translate="{{getAreaTitle(3)}}"></strong>
+						</label>
+					</div>
+					<div class="multi-content">
+						<ul class="form-control-static" dnd-list dnd-drop="onDrop(policy.area3,item,index)"
+							dnd-disable-if="policy.isReadOnly || policy.isNegotiationReadOnly" dnd-allowed-types="policy.area3.allowedTypes">
+							<li ng-repeat="country in policy.area3.countries | searchCountryFilter:searchCountry track by country.code"
+								dnd-draggable="getSelectedItemsIncluding(policy.area3, country)" dnd-dragstart="onDragstart(policy.area3, event)"
+								dnd-moved="onMoved(policy.area3)" dnd-dragend="policy.area3.dragging = false" dnd-selected="onSelected(policy.area3,country,event)"
+								dnd-type="policy.area3.type" ng-class="{'selected': country.selected,'coverage':true}" ng-hide="policy.area3.dragging && country.selected" class="ellipsis"
+								iso="{{::country.code}}"><span translate="{{::'country.'+country.code}}"></span></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!-- End Area 3 -->
+
+		</div>
+
+		<div class="form-group"></div>
+		<!-- Countries excluded -->
+		<div class="multi-select">
+			<div class="col-sm-12 selected-items">
+				<div class="form-group">
+					<label class="col-sm-8">
+						<strong translate="policy.cover.not.covered.countries.label"></strong>
+					</label>
+
+				</div>
+				<div class="multi-content multi-column">
+					<ul class="form-control-static" dnd-list dnd-drop="onDrop(policy.areaExcluded,item,index)"
+						dnd-disable-if="policy.isReadOnly || policy.isNegotiationReadOnly" dnd-allowed-types="policy.areaExcluded.allowedTypes">
+						<li ng-repeat="countryExcluded in policy.areaExcluded.countries | searchCountryFilter:searchCountry track by countryExcluded.code"
+							dnd-draggable="getSelectedItemsIncluding(policy.areaExcluded, countryExcluded)" dnd-dragstart="onDragstart(policy.areaExcluded, event)"
+							dnd-moved="onMoved(policy.areaExcluded);" dnd-dragend="policy.areaExcluded.dragging = false"
+							dnd-selected="onSelected(policy.areaExcluded,countryExcluded,event)" dnd-type="policy.areaExcluded.type"
+							ng-class="{'selected': countryExcluded.selected,'coverage':true}" ng-hide="policy.areaExcluded.dragging && countryExcluded.selected"
+							class="ellipsis" iso="{{::countryExcluded.code}}"><span translate="{{::'country.'+countryExcluded.code}}"></span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</div>
+
+</div>
+
+<div class="form-group">
+	<label class="col-sm-3 control-label" for="coverInsuredPercentage">
+		<strong translate="insured.percentage.label"></strong>
+	</label>
+
+	<div class="col-sm-1">
+		<div class="input-group">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number id="coverInsuredPercentage"
+				name="coverInsuredPercentage" class="form-control need-for-pricing" ng-model="policy.coverInsuredPercentage" aty-maxlength="3" />
+		</div>
+	</div>
+	<div class="col-sm-7">
+		<div class="input-group">
+			<percent />
+			<atyDerogation drg-input="policy.coverInsuredPercentage" drg-section="coverDerogation" drg-field="coverInsuredPercentage" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-3 control-label" for="domesticVatCoverage">
+		<strong translate="policy.cover.domestic.vat.coverage.label"></strong>
+	</label>
+
+	<div class="col-sm-8">
+		<label class="radio-inline">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" id="domesticVatCoverage" ng-model="policy.domesticVatCoverage"
+				ng-value="false" />
+			<span translate="no.label"></span>
+		</label>
+		<label class="radio-inline">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" ng-model="policy.domesticVatCoverage" ng-value="true" />
+			<span translate="yes.label"></span>
+		</label>
+	</div>
+</div>
+
+<div class="form-group">
+	<label class="col-sm-3 control-label" for="maxInvoicingPeriod">
+		<strong translate="policy.cover.max.invoicing.period.label"></strong>
+	</label>
+
+	<div class="col-sm-1">
+		<div class="input-group">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number id="maxInvoicingPeriod"
+				name="maxInvoicingPeriod" class="form-control" ng-model="policy.maxInvoicingPeriod" aty-maxlength="3" />
+		</div>
+	</div>
+
+	<div class="col-sm-7">
+		<div class="input-group">
+			<span translate="policy.cover.days.from.delivery.label"></span>
+			<atyDerogation drg-input="policy.maxInvoicingPeriod" drg-section="coverDerogation" drg-field="maxInvoicingPeriod" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group" ng-show="policy.domesticScope">
+	<label class="col-sm-3 control-label" for="maxDomesticCreditPeriod">
+		<strong translate="policy.cover.max.domestic.credit.period.label"></strong>
+	</label>
+
+	<div class="col-sm-1">
+		<div class="input-group">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number id="maxDomesticCreditPeriod"
+				name="maxDomesticCreditPeriod" class="form-control" ng-model="policy.maxDomesticCreditPeriod" aty-maxlength="3" />
+		</div>
+	</div>
+	<div class="col-sm-7">
+		<div class="input-group">
+			<span translate="policy.cover.days.from.invoice.date.label"></span>
+			<atyDerogation drg-input="policy.maxDomesticCreditPeriod" drg-section="coverDerogation" drg-field="maxDomesticCreditPeriod" />
+		</div>
+	</div>
+</div>
+
+<div class="form-group" ng-show="policy.exportScope">
+	<label class="col-sm-3 control-label" for="maxExportCreditPeriod">
+		<strong translate="policy.cover.max.export.credit.period.label"></strong>
+	</label>
+
+	<div class="col-sm-1">
+		<div class="input-group">
+			<input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number id="maxExportCreditPeriod"
+				name="maxExportCreditPeriod" class="form-control" ng-model="policy.maxExportCreditPeriod" aty-maxlength="3" />
+		</div>
+	</div>
+	<div class="col-sm-6">
+		<div class="input-group">
+			<span translate="policy.cover.days.from.invoice.date.label"></span>
+			<atyDerogation drg-input="policy.maxExportCreditPeriod" drg-section="coverDerogation" drg-field="maxExportCreditPeriod" />
+		</div>
+	</div>
+</div>

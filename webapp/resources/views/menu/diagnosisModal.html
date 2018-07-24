@@ -1,0 +1,30 @@
+<form>
+  <div class="modal-header">
+    <h3 class="modal-title" translate="diagnosis.title"></h3>
+    <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+  </div>
+  <div class="modal-body">
+
+  <fieldset ng-include="'views/common/jsonDynamicContent.html'"></fieldset>
+
+<!--     <fieldset> -->
+<!--       <div class="form-group" ng-repeat="field in diagnosis.data" ng-include="'diagnosisTree'"></div> -->
+<!--     </fieldset> -->
+<!--     <fieldset ng-if="obsoleteOptions != null"> -->
+<!--     	<div class="form-group"> -->
+<!-- 	    	<label translate="diagnosis.obsolete.options" class="col-sm-4"></label> -->
+<!-- 	      	<div class="col-sm-8"> -->
+<!-- 		      	<ul> -->
+<!-- 			    <li ng-repeat="(key, value) in obsoleteOptions"> -->
+<!-- 			        <span>{{::key}} : {{::value}}</span> -->
+<!-- 			    </li> -->
+<!-- 			  </ul> -->
+<!-- 			 </div> -->
+<!--     	</div> -->
+<!--     </fieldset> -->
+  </div>
+  <div class="modal-footer">
+    <button class="btn btn-primary" type="button" ng-click="saveDiagnosis()" translate="save.title"></button>
+    <button class="btn btn-primary" type="button" ng-click="close()" translate="close.title"></button>
+  </div>
+</form>

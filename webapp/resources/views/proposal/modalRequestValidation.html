@@ -1,0 +1,37 @@
+<form name="requestValidationForm"
+	class="form form-horizontal form-custom">
+	<div class="modal-header">
+		<h3 class="modal-title" translate="proposal.request.validation.title"></h3>
+		<button type="button" ng-click="close()" class="close"
+			data-dismiss="modal" aria-hidden="true">
+			<i class="fa fa-close"></i>
+		</button>
+	</div>
+	<div class="modal-body">
+
+		<fieldset>
+			<div translate="proposal.request.validation.description"></div>
+			<div class="form-group">
+				<label class="col-sm-2 control-label"><strong
+					translate="proposal.request.validation.comment"></strong></label>
+
+				<div class="col-sm-10">
+					<div class="input-group">
+						<textarea class="form-control" id="comment"
+							ng-model="requestValidation.comment" name="comment"
+							aty-maxlength="200" ng-maxlength="200" required />
+					</div>
+				</div>
+			</div>
+		</fieldset>
+	</div>
+
+	<div class="modal-footer">
+		<button class="btn btn-primary" type="button"
+			ng-disabled="!requestValidationForm.$valid || clicked"
+			ng-click="submit(requestValidationForm)"
+			translate="proposal.request.validation.confirm.btn"></button>
+		<button class="btn btn-default" type="button" ng-click="close()"
+			translate="proposal.request.validation.cancel.btn"></button>
+	</div>
+</form>

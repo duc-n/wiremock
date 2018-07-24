@@ -1,0 +1,22 @@
+
+<script type="text/ng-template" id="discussions_tree_renderer.html">
+      
+
+<div ng-style="{'padding-left': (discussion.parentDiscussionId)? '25px':'0px', 'margin-bottom' : (discussion.subDiscussion)? '0px':'20px' }">
+	<strong   translate="proposal.discussion.user.date.label" translate-values="{p0:discussion.discussionBy,p1:discussion.discussionDate}"></strong>
+	<pre  ng-style="{'margin-top':'5px','margin-bottom':'5px'}" ng-bind="discussion.comments">	</pre>
+    <a  ng-style="{'margin-top':'0px'}" ng-show="discussion.waitForResponse && discussion.sendToId == user.accountId"  class="btn btn-primary"  ng-click="addDiscussion(discussion)" translate="proposal.discussion.reply.comment.btn"> </a>       
+</div>      
+<div ng-if="discussion.subDiscussion" ng-include="'discussions_tree_renderer.html'" ng-init="discussion=discussion.subDiscussion"></div>
+
+</script>
+
+<div class="form-group col-sm-12" ng-style="{'padding-top':'0px','padding-bottom':'0px', 'margin-bottom':'0px'}" ng-repeat="discussion in proposal.discussions | filter:{ parentDiscussionId:'!' }" ng-include="'discussions_tree_renderer.html'"/>
+
+
+<div class="form-group">
+	
+	<div class="col-sm-4">
+		<a class="btn btn-primary" ng-click="addDiscussion()" id="addDiscussion-btn" translate="proposal.discussion.add.comment.btn"> </a>				
+	</div>
+</div>

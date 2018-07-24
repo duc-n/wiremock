@@ -1,0 +1,91 @@
+{
+  "propertiesEnvironment": {
+    "searchPageLength": 20,
+    "questionnaireMaxNumberBuyers": 30,
+    "searchCompanyViewUrl": "http://easypreex.coface.dns:80/companyView/search/begin.do?returnUrl=http%3A%2F%2Fautonomypreex.coface.dns%2FautonomyView%2FreceiveCompanyViewResponse&applicationId=AUTONOMY",
+    "policyPepsViewUrl": "http://pepspreex.coface.dns/pepsAgentView/jsf/simulation/show.jsf?simulationId={0}&projectId={1}",
+    "searchContractFollowupViewCubeCompanyUrl": "http://corepreex.coface.dns:80/contractFollowupView/faces/Cube/Company/companyDetails.jsf?easyNumber={0}&applicationId=Autonomy&organization={1}",
+    "searchContractFollowupViewUrl": "http://corepreex.coface.dns:80/contractFollowupView/faces/Cube/Company/companyDetails.jsf?easyNumber={0}&applicationId=Autonomy&organization={1}&returnUrl=http%3A%2F%2Fautonomypreex.coface.dns%2FautonomyView%2FreceiveContractfollowupviewResponse%3FreturnValue%3D%7B0%7D%26fileId%3D%7B1%7D",
+    "searchPartnerContractFollowupViewUrl": "http://corepreex.coface.dns:80/contractFollowupView/faces/Cube/globalSearch.jsf?applicationId=Autonomy&organization={0}&returnUrl=http%3A%2F%2Fautonomypreex.coface.dns%2FautonomyView%2FreceiveContractfollowupviewPartnerResponse%3FreturnValue%3D%7B0%7D%26fileId%3D%7B1%7D",
+    "buyerStudyCofanetViewUrl": "https://cofanetpreex.ua.coface.com/subscriberonlineview/portfolio?contractId={contractId}",
+    "buyerStudyCofanetViewLogoutUrl": "https://cofanetpreex.ua.coface.com/subscriberonlineservices/api/public/authentication/logout",
+    "buyerStudyPortalViewWebUrl": "https://cofanetpreex.ua.coface.com/portalViewWeb/?tokenFromLoginAs={0}",
+    "elanLoginUrl": "http://portalpreex.coface.dns/SSO/",
+    "fileNetWebServiceUrl": "http://edms-ua.coface.dns/coface-webservices/rest/doxdcm/urlPolicy/{0}",
+    "searchAffiliateFromCubeViewUrl": "http://corepreex.coface.dns:80/contractFollowupView/faces/Cube/globalSearch.jsf?applicationId=Autonomy&organization={0}&returnUrl=http%3A%2F%2Fautonomypreex.coface.dns%2FautonomyView%2FreceiveSearchAffiliateResponse%3FreturnValue%3D%7B0%7D%26fileId%3D%7B1%7D%26policyId%3D%7B2%7D",
+    "sessionDuration": 1800,
+    "updateSmart": true,
+    "dateFormat": "dd/MM/yyyy",
+    "policyMaxNumberAffiliates": 10,
+    "defaultTaskDelayDays": 5,
+    "taskPriorityThreshold": [
+      3,
+      5
+    ]
+  },
+  "userManager": {
+    "accountId": "FR1E2029",
+    "title": "M",
+    "lastName": "NGUYEN",
+    "firstName": "Duc Thang",
+    "fullName": "Duc Thang NGUYEN",
+    "email": "ducthan.nguyen-ext@coface.com",
+    "phone": null,
+    "mobilePhone": null,
+    "type": null,
+    "groups": null,
+    "isoCountryCode": "FRA",
+    "orgEmployeeType": null,
+    "subscriberId": null,
+    "currentLanguage": "en",
+    "languages": [
+      {
+        "isoCode": "de",
+        "label": "Deutsch"
+      },
+      {
+        "isoCode": "en",
+        "label": "English"
+      },
+      {
+        "isoCode": "es",
+        "label": "Español"
+      },
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      },
+      {
+        "isoCode": "nl",
+        "label": "Nederlands"
+      }
+    ],
+    "hasSupervisionRight": false,
+    "hasBackofficeRight": false,
+    "technicalAdministrator": false,
+    "pepsAuthorized": false,
+    "hasAdminUploadRight": false,
+    "hasSupersedeNegotiationRight": false,
+    "hasSpecialClausesViewRight": false,
+    "hasContractEditionRight": false,
+    "hasGenerateWordDocumentRight": false,
+    "hasCountryAreaMoveRight": false,
+    "currentRateInPercent": true,
+    "currentRateLabel": "%",
+    "rateInPercents": [
+      {
+        "rateInPercent": true,
+        "label": "%"
+      },
+      {
+        "rateInPercent": false,
+        "label": "‰"
+      }
+    ],
+    "pricingPlatforms": [
+      
+    ],
+    "derogationLevel": null,
+    "managedEmployees": null
+  }
+}

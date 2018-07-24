@@ -1,0 +1,21 @@
+[
+  {
+    "scenarioId": 2432150,
+    "scenarioNumber": 1,
+    "scenarioName": "Initial",
+    "scenarioDescription": null,
+    "favorite": true,
+    "state": "ACTIVE",
+    "frozenReason": null,
+    "createdById": null,
+    "createdByFullName": null,
+    "fileTransferredToGCC": false,
+    "nbiOrContractGenerated": false,
+    "derogationWorkflowStopped": false,
+    "derogationWorkflowFinished": false,
+    "isReadOnly": false,
+    "initialScenarioValidated": false,
+    "specificQuestionnaireChanged": false,
+    "firstScenario": true
+  }
+]

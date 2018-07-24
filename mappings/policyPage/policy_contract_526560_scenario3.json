@@ -1,0 +1,20 @@
+{
+    "request": {
+        "method": "GET",
+        "url": "/autonomyView/rest/policy/2554955?caseId=17640485"
+    },
+    "response": {
+        "status": 200,
+        "bodyFileName": "policyPage/policy_contract_526560_scenario3.json",
+        "headers": {
+            "Content-Type": "application/json",
+			"Access-Control-Allow-Origin" : "http://127.0.0.1:8080",
+			"Access-Control-Allow-Methods" : "POST, PUT, GET, OPTIONS",
+			"Access-Control-Allow-Headers": "Accept, Content-Type, Content-Encoding, Server, Transfer-Encoding",
+			"X-Content-Type-Options" : "nosniff",
+			"x-frame-options" : "DENY",
+			"Access-Control-Allow-Credentials" : "true",
+			"x-xss-protection" : "1; mode=block"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<div class="modal-header">
+  <h3 class="modal-title" translate="search.companyview.modal.title"></h3>
+  <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><i
+    class="fa fa-close"></i></button>
+</div>
+<div class="modal-body" id="companyViewModal">
+  <spinner class="aty-third-party-app-loading" name="companyViewModalSpinner" show="true">
+    <div class="animated-container">
+      <div class="messaging">
+        <div class="la-ball-scale-multiple la-2x">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <h1 translate="application.loading.title"></h1>
+      </div>
+    </div>
+  </spinner>
+  <iframe height="770" width="100%" ng-src="{{::companyViewUrl}}" ng-onload="stopSpinner()"></iframe>
+  <script>
+    function createNewCase(easyNumber, casesExist) {
+      angular.element('main.main').scope().createCase(easyNumber, casesExist);
+    }
+  </script>
+</div>

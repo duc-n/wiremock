@@ -1,0 +1,174 @@
+<!-- Pending Orders Option -->
+<div class="panel panel-default" bs-modifiable="true">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label"><strong translate="policy.risk.opts.pending.orders.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" id="pendingOrdersOption"
+                 ng-model="policy.pendingOrdersOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" ng-model="policy.pendingOrdersOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+    <div ng-show="policy.pendingOrdersOption" class="form-group">
+      <label class="col-sm-offset-4 col-sm-3 control-label" for="pendingOrdersPeriod"
+             translate="policy.risk.opts.pending.orders.period.label"></label>
+
+      <div class="col-sm-1">
+        <div class="input-group">
+          <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number id="pendingOrdersPeriod" name="pendingOrdersPeriod" class="form-control"
+                 ng-model="policy.pendingOrdersPeriod" aty-maxlength="3"/>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group">
+          <day/>
+          <atyDerogation drg-input="policy.pendingOrdersPeriod" drg-section="riskOptionDerogation" drg-field="pendingOrdersPeriod" drg-visible="policy.pendingOrdersOption"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -->
+<!-- Binding Orders Option -->
+<div class="panel panel-default" bs-modifiable="true">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label"><strong translate="policy.risk.opts.binding.orders.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" id="bindingOrdersOption"
+                 ng-model="policy.bindingOrdersOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="radio" ng-model="policy.bindingOrdersOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+    <div ng-show="policy.bindingOrdersOption" class="form-group">
+      <label class="col-sm-offset-4 col-sm-3 control-label" for="bindingOrdersPeriod"
+             translate="policy.risk.opts.binding.orders.period.label"></label>
+
+      <div class="col-sm-1">
+        <div class="input-group">
+          <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number id="bindingOrdersPeriod" name="bindingOrdersPeriod" class="form-control"
+                 ng-model="policy.bindingOrdersPeriod" aty-maxlength="3"/>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group">
+          <day/>
+          <atyDerogation drg-input="policy.bindingOrdersPeriod" drg-section="riskOptionDerogation" drg-field="bindingOrdersPeriod"  drg-visible="policy.bindingOrdersOption"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -->
+<!-- Cover of Existing Debts Option -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label"><strong
+        translate="policy.risk.opts.cover.exist.debt.opt.label"></strong></label>
+
+      <div class="col-sm-8">
+        <!-- Radio buttons -->
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" id="coverExistDebtOption"
+                 ng-model="policy.coverExistDebtOption" value="NONE"/>
+          <span translate="none.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" ng-model="policy.coverExistDebtOption" value="RATE"/>
+          <span translate="policy.risk.opts.cover.exist.debt.rate.opt.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" ng-model="policy.coverExistDebtOption" value="FLAT"/>
+          <span translate="policy.risk.opts.cover.exist.debt.flat.opt.label"></span>
+        </label>
+        <!-- -->
+      </div>
+    </div>
+    <div ng-show="isCoverExistDebtRateOptionSelected() || isCoverExistDebtFlatOptionSelected()" class="form-group">
+      <!-- Restrospective Period -->
+      <label class="col-sm-offset-4 col-sm-3 control-label" for="restrospectivePeriod"
+             translate="policy.risk.opts.cover.exist.debt.restro.period.label"></label>
+
+      <div class="col-sm-2">
+        <div class="input-group">
+          <input ng-disabled="policy.isReadOnly" type="number" aty-input-number id="restrospectivePeriod" name="restrospectivePeriod" class="form-control"
+                 ng-model="policy.restrospectivePeriod" aty-maxlength="3"/>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group">
+          <day/>
+          <atyDerogation drg-input="policy.restrospectivePeriod" drg-section="riskOptionDerogation" drg-field="restrospectivePeriod" drg-visible="isCoverExistDebtRateOptionSelected() || isCoverExistDebtFlatOptionSelected()"/>
+        </div>
+      </div>
+    </div>
+    <div ng-show="isCoverExistDebtRateOptionSelected()" class="form-group">
+      <!--Existing Debt Premium rate-->
+      <label class="col-sm-offset-4 col-sm-3 control-label" for="existDebtPremRate"
+             translate="policy.risk.opts.cover.exist.debt.prem.rate.label"></label>
+
+      <div class="col-sm-2">
+        <div class="input-group">
+          <input ng-disabled="policy.isReadOnly" type="number" aty-input-number id="existDebtPremRate" name="existDebtPremRate" class="form-control"
+                 ng-model="policy.existDebtPremRate" aty-decimal max="100"/>
+        </div>
+
+      </div>
+      <div class="col-sm-1">
+        <percent/>
+      </div>
+    </div>
+    <div ng-if="isCoverExistDebtFlatOptionSelected()" class="form-group">
+      <!--Existing Debt Premium -->
+      <label class="col-sm-offset-4 col-sm-3  control-label" for="existDebtPrem"
+             translate="policy.risk.opts.cover.exist.debt.prem.label"></label>
+
+      <div class="col-sm-3">
+        <div class="input-group">
+          <input ng-disabled="policy.isReadOnly" type="number" aty-input-number id="existDebtPrem" name="existDebtPrem" class="form-control"
+                 ng-model="policy.existDebtPrem" aty-maxlength="15"/>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <currency ng-bind="policy.contractCurrency"/>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -->
+<!-- Top Liner Option -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label"><strong translate="policy.risk.opts.top.liner.opt.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" id="topLinerOption"
+                 ng-model="policy.topLinerOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" ng-model="policy.topLinerOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -->

@@ -1,0 +1,166 @@
+<!-- <div class="row" ng-show="questionnaire.badDebtsExperience"> -->
+  <div class="col-sm-12">
+    <table class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+      <colgroup>
+        <col span="1" class="col-sm-3 text-center">
+        <col span="1" class="col-sm-3 text-center">
+        <col span="1" class="col-sm-3 text-center">
+        <col span="1" class="col-sm-3 text-center">
+      </colgroup>
+      <thead>
+      <tr class="">
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="questionnaire.final.year.reference"></strong></p></th>
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="questionnaire.global.annual.turnover"
+          translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong></p></th>
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="questionnaire.domestic.turnover"
+          translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong></p></th>
+        <th class="text-center"><p class="form-control-static"><strong
+          translate="questionnaire.export.turnover"
+          translate-values="{p0: questionnaire.specificQuestionnaire.contractCurrency}"></strong></p></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+        <td><label class="control-label" for="domesticTurnoverForecast">
+        <strong ng-if="today.getFullYear() != questionnaire.specificQuestionnaire.referenceYearBadDebts" translate="questionnaire.forecast" translate-values="{p0:questionnaire.specificQuestionnaire.referenceYearBadDebts}"></strong>
+        
+        <strong ng-if="today.getFullYear() == questionnaire.specificQuestionnaire.referenceYearBadDebts" ng-bind="questionnaire.specificQuestionnaire.referenceYearBadDebts"></strong>
+        
+        </label>
+        </td>
+        <td>
+          <p ng-if="questionnaire.specificQuestionnaire.domesticTurnover || questionnaire.specificQuestionnaire.exportTurnover"
+             class="form-control-static"
+             ng-bind="questionnaire.specificQuestionnaire.domesticTurnover + questionnaire.specificQuestionnaire.exportTurnover | atyNumber"></p>
+        </td>
+        <td>
+          <div class="col-sm-12">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.domesticTurnover"
+                     ng-change="computeInsurableTurnovers();badDebitChanged();"
+                     id="domesticTurnoverForecast" aty-maxlength="15" ng-maxlength="15"
+                     name="domesticTurnover" disabled
+              		 />
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="col-sm-12">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.exportTurnover"
+                     id="exportTurnoverForecast" aty-maxlength="15" ng-maxlength="15"
+                     name="exportTurnover" disabled
+              		 />
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><label class="control-label" for="domesticTurnoverY_1"><strong ng-bind="questionnaire.specificQuestionnaire.referenceYearBadDebts - 1"></strong></label>
+        </td>
+        <td>
+          <p ng-if="questionnaire.specificQuestionnaire.domesticTurnoverY_1 || questionnaire.specificQuestionnaire.exportTurnoverY_1"
+             class="form-control-static"
+             ng-bind="questionnaire.specificQuestionnaire.domesticTurnoverY_1 + questionnaire.specificQuestionnaire.exportTurnoverY_1 | atyNumber"></p>
+        </td>
+        <td>
+          <div class="col-sm-12">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.domesticTurnoverY_1"
+                     id="domesticTurnoverY_1" name="domesticTurnoverY_1"
+                     aty-maxlength="15" ng-maxlength="15"
+                     ng-change="validateTurnoverExperienceForYear(1);badDebitChanged();" 
+                     ng-disabled="::questionnaire.isReadOnly"
+                     />
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="col-sm-12">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.exportTurnoverY_1"
+                     id="exportTurnoverY_1" aty-maxlength="15" ng-maxlength="15"
+                     name="exportTurnoverY_1" ng-disabled="::questionnaire.isReadOnly" 
+                     ng-change="validateTurnoverExperienceForYear(1);badDebitChanged();"
+  				/>
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><label class="control-label" for="domesticTurnoverY_2"><strong ng-bind="questionnaire.specificQuestionnaire.referenceYearBadDebts - 2"></strong></label>
+        </td>
+        <td>
+          <p ng-if="questionnaire.specificQuestionnaire.domesticTurnoverY_2 || questionnaire.specificQuestionnaire.exportTurnoverY_2"
+             class="form-control-static"
+             ng-bind="questionnaire.specificQuestionnaire.domesticTurnoverY_2 + questionnaire.specificQuestionnaire.exportTurnoverY_2 | atyNumber"></p>
+        </td>
+        <td>
+          <div class="col-sm-12">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.domesticTurnoverY_2"
+                     id="domesticTurnoverY_2" aty-maxlength="15" 
+                     name="domesticTurnoverY_2"
+                     ng-change="validateTurnoverExperienceForYear(2);badDebitChanged();" ng-disabled="::questionnaire.isReadOnly"
+              		 />
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="col-sm-12">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.exportTurnoverY_2"
+                     id="exportTurnoverY_2" aty-maxlength="15" ng-maxlength="15"
+                     name="exportTurnoverY_2"
+                     ng-change="validateTurnoverExperienceForYear(2);badDebitChanged();" ng-disabled="::questionnaire.isReadOnly"
+              		 />
+            </div>
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <td><label class="control-label" for="domesticTurnoverY_3"><strong ng-bind="questionnaire.specificQuestionnaire.referenceYearBadDebts - 3"></strong></label>
+        </td>
+        <td>
+          <p ng-if="questionnaire.specificQuestionnaire.domesticTurnoverY_3 || questionnaire.specificQuestionnaire.exportTurnoverY_3"
+             class="form-control-static"
+             ng-bind="questionnaire.specificQuestionnaire.domesticTurnoverY_3 + questionnaire.specificQuestionnaire.exportTurnoverY_3 | atyNumber"></p>
+        </td>
+        <td>
+          <div class="col-sm-12">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.domesticTurnoverY_3"
+                     id="domesticTurnoverY_3" aty-maxlength="15" ng-maxlength="15"
+                     name="domesticTurnoverY_3"
+                     ng-change="validateTurnoverExperienceForYear(3);badDebitChanged();" ng-disabled="::questionnaire.isReadOnly"
+              		 />
+            </div>
+          </div>
+        </td>
+        <td>
+          <div class="col-sm-12">
+            <div class="input-group">
+              <input type="number" aty-input-number  class="form-control text-center"
+                     ng-model="questionnaire.specificQuestionnaire.exportTurnoverY_3"
+                     id="exportTurnoverY_3" aty-maxlength="15" ng-maxlength="15"
+                     name="exportTurnoverY_3"
+                     ng-change="validateTurnoverExperienceForYear(3);badDebitChanged();" ng-disabled="::questionnaire.isReadOnly"
+              		 />
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+<!-- </div> -->

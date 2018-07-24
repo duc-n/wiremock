@@ -1,0 +1,480 @@
+<!-- Invoicing Scheme... -->
+<div class="panel panel-default" bs-modifiable="true">
+  <div class="panel-body">
+    <!-- Declaration Basis -->
+    <div class="form-group">
+   		 
+      		<label class="col-sm-10"><strong
+        		translate="policy.activities.invoicing.scheme.desc"></strong></label>      
+         	<atyDerogation class="col-sm-2" drg-input="lowDRARulesDerogated()" drg-section="activitiesDerogation" drg-field="lowDRARulesDerogated"/>
+    </div>
+    
+    
+    <!---->
+    <!-- Invoicing Scheme -->
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="invoicingScheme"><strong
+        translate="policy.activities.invoicing.scheme"></strong></label>
+        
+        
+
+      <div class="col-sm-3">
+        <div class="input-group">         
+           
+           <select class="form-control" ng-model="policy.invoicingScheme" ng-disabled="policy.isReadOnly" ng-change="getPeriodOptionsDisabled()">
+	    		<option ng-repeat="invoicingScheme in policy.invoicingSchemeSelectOptions"
+	            	value="{{invoicingScheme.code}}">
+	      			{{invoicingScheme.label | translate}}
+	    		</option>
+          </select>
+        </div>
+      </div>     
+
+    </div>
+    
+     <!-- Base On -->
+    <div class="form-group" ng-if="policy.invoicingScheme == 'APA'">
+      <label class="col-sm-3 control-label" for="baseOn"><strong
+        translate="policy.activities.invoicing.scheme.based.on"></strong>
+      </label>
+
+      <div class="col-sm-3">
+        <div class="input-group">          
+           <select class="form-control" ng-model="policy.baseOn" ng-disabled="policy.isReadOnly">    		
+	    		<option ng-repeat="baseOn in policy.baseOnSelectOptions"
+		            	value="{{baseOn.code}}">
+		      			{{baseOn.label | translate}}
+		    	</option>    		
+    		</select>
+          
+        </div>
+      </div>
+   		<!-- Amount -->
+   		<div ng-if="policy.baseOn=='OA'">
+	       <label class="col-sm-2 control-label" for="baseOnAmount"><strong
+	        translate="policy.activities.invoicing.scheme.based.on.other.amount"></strong>
+	      </label>
+	
+	      <div class="col-sm-2">
+	        <div class="input-group">         
+	    		 <input ng-disabled="policy.isReadOnly" type="number" aty-input-number  id="baseOnAmount" name="baseOnAmount" class="form-control"
+	                 ng-model="policy.baseOnAmount" aty-maxlength="13"/>
+	        </div>
+	      </div>
+	      <div class="col-sm-1">
+	      	<currency ng-bind="policy.contractCurrency"/>
+	      </div>
+		</div>
+    </div>
+    
+  </div>
+</div>
+
+<!-- End Invoicing Scheme... -->
+
+<!-- Declaration Basis... -->
+<div class="panel panel-default" bs-modifiable="true">
+  <div class="panel-body">
+  
+   <!-- Declaration Basis Description-->
+    <div class="form-group">
+      <label class="col-sm-12 control-label"><strong
+        translate="policy.activities.declaration.basis.desc"></strong></label>      
+    </div>
+  
+    <!-- Declaration Basis -->
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="declarationBasis"><strong
+        translate="policy.activities.declaration.basis.label"></strong></label>
+
+      <div class="col-sm-3">   
+      
+        <div class="input-group">          
+           <select class="form-control" ng-model="policy.declarationBasis" ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly">    		
+	    		<option ng-repeat="declarationBasis in policy.declarationBasisSelectOptions"
+		            	value="{{declarationBasis.code}}">
+		      			{{declarationBasis.label | translate}}
+		    	</option>    		
+    		</select>
+          
+        </div>
+      
+      </div>
+    </div>
+    <!---->
+    <!-- Reporting Period -->
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="reportingPeriod"><strong
+        translate="policy.activities.reporting.period.label"></strong></label>
+
+      <div class="col-sm-3">     
+   		 <select bs-modifiable="false" class="form-control" ng-model="policy.reportingPeriod" ng-disabled="policy.isReadOnly" ng-change="getPeriodOptionsDisabled()"
+       
+       		ng-options="reportingPeriod.code as reportingPeriod.label | translate disable when reportingPeriod.disabled for reportingPeriod in policy.reportingPeriodSelectOptions">  		
+   		</select>   		
+      </div>
+    </div>
+    <!---->
+    <!-- Declaration Period -->
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="declarationPeriod"><strong
+        translate="policy.activities.declaration.period.label"></strong></label>
+
+      <div class="col-sm-1">
+        <div class="input-group">
+          <input ng-disabled="policy.isReadOnly" type="number" aty-input-number  id="declarationPeriod" name="declarationPeriod" class="form-control"
+                 ng-model="policy.declarationPeriod" aty-maxlength="3"/>
+        </div>
+      </div>
+      <div class="col-sm-7">
+        <div class="input-group">
+          <span translate="policy.activities.declaration.period.description.label"></span>
+          <atyDerogation drg-input="policy.declarationPeriod" drg-section="activitiesDerogation" drg-field="declarationPeriod" />
+        </div>
+      </div>
+    </div>
+    <!---->  
+  </div>
+</div>
+<!---->
+
+<!-- Premium payment mode.. -->
+<div class="panel panel-default" bs-modifiable="true">
+  <div class="panel-body">
+	  <div class="form-group">
+	      <label class="col-sm-12 control-label"><strong
+	        translate="policy.activities.premium.payment.desc"></strong></label>      
+	  </div>
+  	
+  	<!-- DEFECT #109 : Policy Pricing Additional parameters -->
+	<!-- Paiment period (=reporting period) & Deposit amount(=1/4 Expected Annual Premium) -->
+	<div class="form-group">
+	  	<label class="col-sm-3 control-label" for="paimentPeriod"><strong
+	    translate="policy.pricing.paiment.period.label"></strong></label>
+	
+		<div class="col-sm-3">
+			 <div class="input-group">
+				<select class="form-control" ng-model="policy.paimentPeriod" ng-disabled="policy.isReadOnly" ng-change="initDepositAmount()"
+	       			ng-options="paimentPeriod.code as paimentPeriod.label | translate disable when paimentPeriod.disabled for paimentPeriod in policy.paimentPeriodsSelectOptions">  		
+	   			</select>
+	   		</div>	
+		</div>
+		
+	  <!-- // defect 975 : GUI modification for "Activitity declaration and Premium payment" chapter - Integration of premium payment clauses -->
+	  <div ng-show="policy.invoicingScheme === 'AAD' && policy.paimentPeriod === 'QU'">
+			<label class="col-sm-2 control-label" for="depositAmount"><strong
+	    translate="policy.pricing.deposit.amount.label"></strong></label>
+	
+		  <div class="col-sm-2">
+		    <div class="input-group">
+		      <input ng-disabled="policy.isReadOnly || policy.isNegotiationReadOnly" type="number" aty-input-number class="form-control" id="depositAmount"
+		             name="depositAmount"
+		             bs-modifiable="false"
+		             ng-model="policy.depositAmount" aty-maxlength="15"/>
+		    </div>
+		  </div>
+		  <div class="col-sm-1">
+		    <div class="input-group">
+		     <currency ng-bind="policy.contractCurrency"/>
+		     <atyDerogation drg-input="policy.depositAmount" drg-section="activitiesDerogation"
+		      				 drg-threshold-dynamic="policy.depositAmountThd" drg-field="depositAmount"
+		                     drg-lower="true"
+		                     drg-visible="policy.paimentPeriod === 'QU'"
+		                     />
+		    </div>
+		  </div>
+	  <!-- defect #201 : Pricing : Deposit not required when paiement period is Monthly -->
+	
+	  </div>
+	</div>
+	
+	<!-- Adjustment Period -->
+	<div class="form-group" ng-if="policy.invoicingScheme === 'APA'">
+	  	<label class="col-sm-3 control-label" for="paimentPeriod"><strong
+	    translate="policy.activities.premium.payment.adjustment.period"></strong></label>
+	
+		<div class="col-sm-3">
+			 <div class="input-group">
+				<select class="form-control" ng-model="policy.adjustmentPeriod" ng-disabled="policy.isReadOnly"
+	       			ng-options="adjustmentPeriod.code as adjustmentPeriod.label | translate disable when adjustmentPeriod.disabled for adjustmentPeriod in policy.adjustmentPeriodSelectOptions">  		
+	   			</select>
+	   		</div>	
+		</div>
+	  
+	</div>
+  
+  </div>
+</div>
+<!---->
+
+<!-- Bonus... -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <!-- Labels -->
+    <div class="form-group">
+      <label class="col-sm-3 control-label" for="bonusOption"><strong
+        translate="policy.activities.bonus.option.label"></strong></label>
+
+      <div class="col-sm-9">
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" id="bonusOption"
+                 ng-model="policy.bonusOption" value="NONE"/>
+          <span translate="none.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" ng-model="policy.bonusOption" value="BONUS" ng-change="checkActiveMalus()"/>
+          <span translate="policy.activities.bonus.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" ng-model="policy.bonusOption" value="NCB"/>
+          <span translate="policy.activities.no.claim.bonus.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" ng-model="policy.bonusOption" value="PS"/>
+          <span translate="policy.activities.profit.sharing.label"></span>
+        </label>
+        <atyDerogation drg-input="policy.bonusOption == 'BONUS'" drg-section="activitiesDerogation" drg-field="bonusOption.BONUS"/>
+        <atyDerogation drg-input="policy.bonusOption == 'NCB'" drg-section="activitiesDerogation" drg-field="bonusOption.NCB"/>
+        <atyDerogation drg-input="policy.bonusOption == 'PS'" drg-section="activitiesDerogation" drg-field="bonusOption.PS"/>
+      </div>
+    </div>
+    <!-- reduction pourcentage -->
+    <div class="row form-group" ng-if="policy.bonusOption == 'NCB'">
+      	<label class="col-sm-3 col-sm-offset-4 control-label" for="reducPercent"
+             translate="policy.activities.reduc.percentage.label"></label>
+
+      	<div class="col-sm-1">
+        	<div class="input-group">
+          		<input ng-disabled="policy.isReadOnly" type="number" id="reducPercent" name="reducPercent" aty-input-number  class="form-control" ng-model="policy.reducPercent"
+                 aty-maxlength="3"/>
+        	</div>
+      	</div>
+      	<div class="col-sm-1">
+        	<div class="input-group">
+          		<percent/>
+      		</div>
+    	</div>
+    </div>
+    <!-- START defect #228 : Policy-Activities Profit Share: specific parameters -->
+    <!-- Please don't change the ng-show to ng-if in this section because the drg-visible watch is not fired with ng-if -->
+    <div class="row form-group" ng-show="policy.bonusOption == 'PS'">
+      	<label class="col-sm-3 col-sm-offset-4 control-label" for="premiumCostPercent"
+             translate="policy.activities.premium.cost.percentage.label"></label>
+
+      	<div class="col-sm-1">
+        	<div class="input-group">
+          		<input ng-disabled="policy.isReadOnly" type="number" id="premiumCostPercent" name="premiumCostPercent" aty-input-number  class="form-control" ng-model="policy.premiumCostPercent"
+                 aty-maxlength="3"/>
+        	</div>
+      	</div>
+      	<div class="col-sm-4">
+        	<div class="input-group">
+          		<percent/>
+              <atyDerogation drg-input="policy.premiumCostPercent" drg-section="activitiesDerogation" drg-field="premiumCostPercent" drg-visible="policy.bonusOption == 'PS'" drg-lower="true"
+              />
+      		</div>
+    	</div>
+    </div>
+	<!-- Please don't change the ng-show to ng-if in this section because the drg-visible watch is not fired with ng-if -->
+    <div class="row form-group" ng-show="policy.bonusOption == 'PS'">
+      	<label class="col-sm-3 col-sm-offset-4 control-label" for="profitSharePercent"
+             translate="policy.activities.profit.share.percentage.label"></label>
+
+      	<div class="col-sm-1">
+        	<div class="input-group">
+          		<input ng-disabled="policy.isReadOnly" type="number" id="profitSharePercent" name="profitSharePercent" aty-input-number  class="form-control" ng-model="policy.profitSharePercent"
+                 aty-maxlength="3"/>
+        	</div>
+      	</div>
+      	<div class="col-sm-4">
+        	<div class="input-group">
+          		<percent/>
+              <atyDerogation drg-input="policy.profitSharePercent" drg-section="activitiesDerogation"
+                           drg-field="profitSharePercent" drg-visible="policy.bonusOption == 'PS'"/>
+      		</div>
+    	</div>
+    </div>
+
+    <!-- Period -->
+    <div class="row form-group" ng-if="policy.bonusOption == 'PS'">
+      	<label class="col-sm-3 col-sm-offset-4 control-label" for="profitSharePeriod"
+             translate="policy.activities.profitshare.period.label"></label>
+
+      	<div class="col-sm-3">
+        	<select ng-disabled="policy.isReadOnly" class="form-control" id="profitSharePeriod" ng-model="policy.profitSharePeriod" convert-to-number>
+		      <option value="1" translate="policy.activities.profitshare.period.eachyear"></option>
+		      <option value="2" translate="policy.activities.profitshare.period.each2years"></option>
+		      <option value="3" translate="policy.activities.profitshare.period.each3years"></option>
+		    </select>
+      	</div>
+    </div>
+    <!---->
+
+	<!-- FIN defect #228 : Policy-Activities Profit Share: specific parameters -->
+    <!-- Table -->
+    <!-- Please don't change the ng-show to ng-if in this section because the drg-visible watch is not fired with ng-if -->
+    <div class="col-sm-8 col-sm-offset-4" ng-show="isBonusSelected()">
+      <table class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+        <colgroup>
+          <col span="1" class="col-sm-3">
+          <col span="1" class="col-sm-7">
+        </colgroup>
+        <thead>
+        <tr>
+          <th class="text-center"><p class="form-control-static"><strong
+            translate="policy.activities.loss.ratio.colum.title"></strong></p></th>
+          <th class="text-center">
+          	<p class="form-control-static" ng-class="{'col-sm-11' : policy.bonus_0_X == 0 || policy.bonus_X_Y == 0 || policy.bonus_Y_Z == 0}"><strong translate="policy.activities.bonus.second.colum.title"></strong></p>
+          	<!-- defect #732 : Malus - Bonus Improvment -->
+          	<span class="pull-right form-control-static" ng-if="policy.bonus_0_X == 0 || policy.bonus_X_Y == 0 || policy.bonus_Y_Z == 0">
+          		<i class="fa fa-plus-square-o" aria-hidden="true" data-toggle="collapse" data-target=".bonusCollapse" ng-click="toggleExpandCollapseClass($event);toogleBonus();"></i>
+          	</span>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        	<!-- 0 - X -->
+	        <tr ng-class="{'collapse bonusCollapse':policy.bonus_0_X == 0, 'in':bonusExpanded}">
+	          <td><label class="control-label" translate="policy.activities.0.x.label" translate-values="{p0:policy.bonus_0_X_Limit}"></label></td>
+	          <td>
+	            <div class="col-sm-offset-3 col-sm-6">
+	              <div class="input-group ">
+	                <input ng-disabled="policy.isReadOnly" type="number" aty-input-number  id="bonus_0_X" name="bonus_0_X" ng-model="policy.bonus_0_X" class="form-control text-center"
+	                       aty-maxlength="3"/>
+	              </div>
+	            </div>
+	            <div class="col-sm-2" ng-show="policy.bonus_0_X != 0">
+	             <atyDerogation drg-input="policy.bonus_0_X" drg-section="activitiesDerogation" drg-field="bonus_0_X" drg-visible="isBonusSelected()"/>
+	            </div>
+	          </td>
+	        </tr>
+	        <!-- X - Y -->
+	        <tr ng-class="{'collapse bonusCollapse':policy.bonus_X_Y == 0, 'in':bonusExpanded}">
+	          <td><label class="control-label" translate="policy.activities.x.y.label" translate-values="{p0:policy.bonus_0_X_Limit,p1:policy.bonus_X_Y_Limit}"></label></td>
+
+	          <td>
+	            <div class="col-sm-offset-3 col-sm-6">
+	              <div class="input-group ">
+	                <input ng-disabled="policy.isReadOnly" type="number" aty-input-number  id="bonus_X_Y" name="bonus_X_Y" ng-model="policy.bonus_X_Y" class="form-control text-center"
+	                       aty-maxlength="3"/>
+	              </div>
+	            </div>
+	            <div class="col-sm-2" ng-show="policy.bonus_X_Y != 0">
+	              <atyDerogation drg-input="policy.bonus_X_Y" drg-section="activitiesDerogation" drg-field="bonus_X_Y" drg-visible="isBonusSelected()"/>
+	            </div>
+	          </td>
+	        </tr>
+	        <!-- Y - Z -->
+	        <tr ng-class="{'collapse bonusCollapse':policy.bonus_Y_Z == 0, 'in':bonusExpanded}">
+	          <td><label class="control-label" translate="policy.activities.y.z.label" translate-values="{p0:policy.bonus_X_Y_Limit,p1:policy.bonus_Y_Z_Limit}"></label></td>
+	          <td>
+	            <div class="col-sm-offset-3 col-sm-6">
+	              <div class="input-group ">
+	                <input ng-disabled="policy.isReadOnly" type="number" aty-input-number  id="bonus_Y_Z" name="bonus_Y_Z" ng-model="policy.bonus_Y_Z" class="form-control text-center"
+	                       aty-maxlength="3"/>
+	              </div>
+	            </div>
+	            <div class="col-sm-2" ng-show="policy.bonus_Y_Z != 0">
+	              <atyDerogation drg-input="policy.bonus_Y_Z" drg-section="activitiesDerogation" drg-field="bonus_Y_Z" drg-visible="isBonusSelected()"/>
+	            </div>
+	          </td>
+	        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!---->
+
+<!-- Malus... -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="row form-group">
+      <label class="col-sm-3 control-label" for="malusOption"><strong
+        translate="policy.activities.malus.option.label"></strong></label>
+      <!-- Malus-->
+      <div class="col-sm-9">
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" id="malusOption"
+                 ng-model="policy.malusOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline">
+          <input ng-disabled="policy.isReadOnly" type="radio" ng-model="policy.malusOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+    <!-- Table -->
+    <!-- Please don't change the ng-show to ng-if in this section because the drg-visible watch is not fired with ng-if -->
+    <div class="col-sm-8 col-sm-offset-4" ng-show="policy.malusOption">
+      <table class="table table-cofanet table-condensed table-bordered table-responsive align-center">
+        <colgroup>
+          <col span="1" class="col-sm-3">
+          <col span="1" class="col-sm-7">
+        </colgroup>
+        <thead>
+        <tr>
+          <th class="text-center"><p class="form-control-static"><strong
+            translate="policy.activities.loss.ratio.colum.title"></strong></p></th>
+          <th class="text-center">
+          	<p class="form-control-static" ng-class="{'col-sm-11' : policy.malus_0_X == 0 || policy.malus_X_Y == 0 || policy.malus_Y_Z == 0}"><strong translate="policy.activities.malus.second.colum.title"></strong></p>
+          	<!-- defect #732 : Malus - Bonus Improvment -->
+          	<span class="pull-right form-control-static" ng-if="policy.malus_0_X == 0 || policy.malus_X_Y == 0 || policy.malus_Y_Z == 0">
+          		<i class="fa fa-plus-square-o" aria-hidden="true" data-toggle="collapse" data-target=".malusCollapse" ng-click="toggleExpandCollapseClass($event);toogleMalus();"></i>
+          	</span>
+          </th>
+        </tr>
+        </thead>
+        <tbody>
+        	<!-- 0 - X -->
+	        <tr ng-class="{'collapse malusCollapse':policy.malus_0_X == 0, 'in':malusExpanded}">
+	          <td><label class="control-label" translate="policy.activities.0.x.label" translate-values="{p0:getMalusLimitLabel(policy.malus_0_X_Limit)}"></label></td>
+	          <td>
+	            <div class="col-sm-offset-3 col-sm-6">
+	              <div class="input-group ">
+	                <input ng-disabled="policy.isReadOnly" type="number" aty-input-number  id="malus_0_X" name="malus_0_X" ng-model="policy.malus_0_X" class="form-control text-center"
+	                       aty-maxlength="3"/>
+	              </div>
+	            </div>
+	            <div class="col-sm-2" ng-show="policy.malus_0_X != 0">
+	              <atyDerogation ng-disabled="policy.isReadOnly" drg-section="activitiesDerogation" drg-input="policy.malus_0_X" drg-field="malus_0_X" drg-visible="policy.malusOption && policy.malus_0_X != 0" drg-lower="true"/>
+	            </div>
+	          </td>
+	        </tr>
+	        <!-- X - Y -->
+	        <tr ng-class="{'collapse malusCollapse':policy.malus_X_Y == 0, 'in':malusExpanded}">
+	          <td><label class="control-label" translate="policy.activities.x.y.label" translate-values="{p0:getMalusLimitLabel(policy.malus_0_X_Limit),p1:getMalusLimitLabel(policy.malus_X_Y_Limit)}"></label></td>
+	          <td>
+	            <div class="col-sm-offset-3 col-sm-6">
+	              <div class="input-group ">
+	                <input ng-disabled="policy.isReadOnly" type="number" aty-input-number  id="malus_X_Y" name="malus_X_Y" ng-model="policy.malus_X_Y" class="form-control text-center"
+	                       aty-maxlength="3"/>
+	              </div>
+	            </div>
+	            <div class="col-sm-2" ng-show="policy.malus_X_Y != 0">
+	              <atyDerogation ng-disabled="policy.isReadOnly" drg-section="activitiesDerogation" drg-input="policy.malus_X_Y" drg-field="malus_X_Y" drg-visible="policy.malusOption && policy.malus_X_Y != 0"  drg-lower="true"/>
+	            </div>
+	          </td>
+	        </tr>
+	        <!-- Y - Z -->
+	        <tr ng-class="{'collapse malusCollapse':policy.malus_Y_Z == 0, 'in':malusExpanded}">
+	          <td><label class="control-label" translate="policy.activities.y.z.label" translate-values="{p0:getMalusLimitLabel(policy.malus_X_Y_Limit),p1:getMalusLimitLabel(policy.malus_Y_Z_Limit)}"></label></td>
+	          <td>
+	            <div class="col-sm-offset-3 col-sm-6">
+	              <div class="input-group ">
+	                <input ng-disabled="policy.isReadOnly" type="number" aty-input-number  id="malus_Y_Z" name="malus_Y_Z" ng-model="policy.malus_Y_Z" class="form-control text-center"
+	                       aty-maxlength="3"/>
+	              </div>
+	            </div>
+	            <div class="col-sm-2" ng-show="policy.malus_Y_Z != 0">
+	              <atyDerogation ng-disabled="policy.isReadOnly" drg-section="activitiesDerogation" drg-input="policy.malus_Y_Z" drg-field="malus_Y_Z" drg-visible="policy.malusOption && policy.malus_Y_Z != 0"  drg-lower="true"/>
+	            </div>
+	          </td>
+	        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<!---->

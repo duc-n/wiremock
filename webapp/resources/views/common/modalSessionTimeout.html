@@ -1,0 +1,6 @@
+<!-- Defect #435: Session logging out following a timeout wrongly managed -->
+<div class="modal-header"><h3 class="modal-title" translate="modal.session.timeout.title"></h3></div>
+<div class="modal-body" idle-countdown="countdown" ng-init="countdown=max">
+  <div class="progress-bar-message"><span translate="modal.session.timeout.message" translate-values="{p0: countdown}"></span></div>
+  <progressbar max="max" value="countdown" animate="true" class="active"></progressbar>
+</div>

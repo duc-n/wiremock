@@ -1,0 +1,102 @@
+<!-- GENERATE BUYERSTUDY BUTTON -->
+<div class="form-group" ng-if="proposal.buyerStudyDoc.visible">
+	<div class="col-sm-3">
+		<a class="btn btn-primary" ng-click="createBUYERSTUDYProposal()"
+			id="createBUYERSTUDYProposal-btn"
+			translate="proposal.generate.buyerStudy.button"> </a> <i
+			popover="{{buyerStudyButtonDisabledTooltip.message|translate}}"
+			popover-trigger="mouseenter"
+			ng-class="{'fa fa-info-circle fa-lg': isGenerateBuyerStudyDisable()}"></i>
+	</div>
+
+	<div class="col-sm-2" ng-if="proposal.nbBUYERSTUDYDownloaded > 0">
+		<span class="download-link"> <a class="fa-stack text-center"
+			ng-click="getBUYERSTUDYProposal()"
+			id="getBUYERSTUDYProposal-btn"
+			popover="{{'proposal.buyerStudy.download.button.tooltip' | translate}}"
+			popover-trigger="mouseenter"> <i class="fa fa-2x"
+				ng-class="{'fa-file-word-o':proposal.buyerStudyDocType == 'WORD','fa-file-pdf-o':proposal.buyerStudyDocType == 'PDF'}"></i>
+		</a> <a class="fa-stack text-center" ng-if="user.hasSupervisionRight"
+			ng-click="getProductXml()"
+			id="getProductXml-btn"
+			popover="{{'proposal.xml.download.button.tooltip' | translate}}"
+			popover-trigger="mouseenter"> <i class="fa fa-file-o fa-stack-2x"></i>
+				<strong class="fa-stack-text">XML</strong>
+		</a>
+		</span>
+	</div>
+</div>
+
+<!-- COFALINK STATUS -->
+<div class="form-group" ng-if="proposal.smartCase">
+	<div class="col-sm-12">
+		<label> <span translate="proposal.cofalink.status.label"></span>
+
+			<input disabled="disabled" readonly="readonly" type="checkbox"
+			ng-model="proposal.smartCofalinkStatus" />
+		</label>
+	</div>
+</div>
+
+<!-- GENERATE NBI BUTTON -->
+<div class="form-group" ng-if="proposal.nbiDoc.visible">
+	<div class="col-sm-3">
+		<a class="btn btn-primary" ng-disabled="isGenerateNBIDisable()"
+			ng-click="createNBIProposal()"
+			id="createNBIProposal-btn"
+			translate="proposal.generate.nbi.button"> </a> <i
+			popover="{{nbiButtonDisabledTooltip.message|translate}}"
+			popover-trigger="mouseenter"
+			ng-class="{'fa fa-info-circle fa-lg': isGenerateNBIDisable()}"></i>
+	</div>
+
+	<div ng-if="proposal.nbNBIDownloaded > 0">
+		<span class="download-link col-sm-2"> <a
+			class="fa-stack text-center" ng-click="getNBIProposal()"
+			id="getNBIProposal-btn"
+			popover="{{'proposal.nbi.download.button.tooltip' | translate}}"
+			popover-trigger="mouseenter" ng-if="nbiDocVisible()"> <i
+				class="fa fa-2x"
+				ng-class="{'fa-file-word-o':proposal.nbiDocType == 'WORD','fa-file-pdf-o':proposal.nbiDocType == 'PDF'}"></i>
+		</a> <a class="fa-stack text-center" ng-if="user.hasSupervisionRight"
+			ng-click="getProductXml()"
+			id="getProductXml-btn"
+			popover="{{'proposal.xml.download.button.tooltip' | translate}}"
+			popover-trigger="mouseenter"> <i class="fa fa-file-o fa-stack-2x"></i>
+				<strong class="fa-stack-text">XML</strong>
+		</a>
+		</span> <span
+			ng-if="proposal.docNbiEditedDate && !proposal.nbiWordGenerationBy"
+			class="col-sm-7"
+			translate="proposal.editions.documents.edition.date.title"
+			translate-values="{p0:proposal.docNbiEditedDate,p1:proposal.docNbiEditedBy.info}">
+		</span> <span
+			ng-if="proposal.docNbiEditedDate && proposal.nbiWordGenerationBy"
+			class="col-sm-7" translate="proposal.editions.documents.word.msg"
+			translate-values="{p0:proposal.nbiWordGenerationDate,p1:proposal.nbiWordGenerationBy.info, p2:proposal.nbiWordGenerationReason}">
+		</span>
+	</div>
+</div>
+
+<!-- DOWNLOAD QUESTIONNAIRE LINKED TO PROPOSITION (defect #776) -->
+<div class="form-group"
+	ng-if="proposal.nbiDoc.visible && proposal.nbNBIDownloaded > 0 && proposal.docExcelQuestionnaireName != null">
+	<div class="col-sm-3">
+		<span translate="proposal.questionnaire.excel.download.label"></span>
+	</div>
+	<div class="col-sm-2">
+		<a class="fa-stack text-center" ng-click="getQuestionnaireExcelFile()"
+			id="getQuestionnaireExcelFile-btn"
+			popover="{{'proposal.questionnaire.excel.download.button.tooltip' | translate}}"
+			popover-trigger="mouseenter"> <i class="fa fa-file-excel-o fa-2x"></i>
+		</a>
+	</div>
+</div>
+
+<!-- OPEN FILENET BUTTON -->
+<div class="form-group" ng-if="proposal.filenetUrl">
+	<div class="col-sm-3">
+		<a class="btn btn-primary" href="{{proposal.filenetUrl}}" id="fileNet-btn"
+			target="_blank" translate="proposal.open.file.net.button"></a>
+	</div>
+</div>

@@ -1,0 +1,91 @@
+<form name="changeCaseOwnerForm"
+	class="form form-horizontal form-custom">
+	<div class="modal-header">
+		<h3 class="modal-title" translate="change.cases.owner.title"></h3>
+		<button type="button" ng-click="close()" class="close"
+			data-dismiss="modal" aria-hidden="true">
+			<i class="fa fa-close"></i>
+		</button>
+	</div>
+	<div class="modal-body">
+
+		<fieldset>
+			<div class="form-group">
+
+				<div class="col-sm-4">
+					<div class="input-group">
+						<select class="form-control" ng-model="account.searchType">
+							<option value="IDENTIFIER">Identifier</option>
+							<option value="FULLNAME">Full Name</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="col-sm-5">
+					<div class="input-group">
+						<input type="text" id="searchText" name="searchText"
+							ng-minlength="3" required class="form-control"
+							ng-model="account.searchText" aty-maxlength="30" />
+					</div>
+				</div>
+
+				<div class="col-sm-3">
+					<div class="input-group">
+						<button class="btn btn-primary" type="button"
+							ng-disabled="!changeCaseOwnerForm.$valid"
+							ng-click="searchAccount(changeCaseOwnerForm)"
+							translate="change.cases.owner.search.button"></button>
+					</div>
+				</div>
+
+			</div>
+
+		</fieldset>
+
+		<fieldset ng-if="userInfos">
+			<div class="form-group col-sm-12">
+				<table
+					class="table table-cofanet table-bordered table-striped table-responsive fixed-layout">
+					<colgroup>
+						<col span="1" class="col-sm-1">
+						<col span="1" class="col-sm-5">
+						<col span="1" class="col-sm-6">
+					</colgroup>
+					<thead>
+						<tr>
+							<th class="text-center"><p class="form-control-static"></p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong translate="cases.owner.id"></strong>
+								</p></th>
+							<th class="text-center"><p class="form-control-static">
+									<strong
+										translate="proposal.derogation.process.column.user.label"></strong>
+								</p></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						<tr ng-repeat="user in userInfos">
+							<td><input type="radio" ng-model="account.selectedAccountId"
+								ng-value="user.accountId" /></td>
+							<td ng-bind="user.accountId"></td>
+							<td ng-bind="user.info"></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+
+		</fieldset>
+	</div>
+	<div class="modal-footer">
+
+		<button class="btn btn-primary" type="button"
+			ng-disabled="!changeCaseOwnerForm.$valid || !account.selectedAccountId"
+			ng-click="changeCasesOwner(changeCaseOwnerForm)"
+			translate="change.cases.owner.confirm"></button>
+
+		<button class="btn btn-default" type="button" ng-click="close()"
+			translate="change.cases.owner.cancel.button"></button>
+
+	</div>
+</form>

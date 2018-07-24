@@ -1,0 +1,45 @@
+<div class="container">
+	<div class="contentcol row">
+		<div id="content" class="col-sm-12 content-area">
+			<div class="content row">
+				<div class="col-sm-12">
+					<div class="form-group" ng-if="user.hasBackofficeRight">
+						<div class="col-sm-9"
+							ng-if="!finalization.renewal && !finalization.transferToGCC">
+							<button type="button" class="btn btn-primary"
+								ng-click="updateTransferToGCC()"
+								ng-disabled="isTrasfertGccDisabed()"
+								translate="finalization.transfer.to.gcc">
+							</button>
+							
+							<i popover="{{getTransfertGccDisabledinfoMsg() |translate}}"
+								popover-trigger="mouseenter"
+								ng-class="{'fa fa-info-circle fa-lg': isTrasfertGccDisabed()}">
+							</i>
+							
+						</div>
+					</div>
+					<!-- Defect #811: Traceability transfert to GCC -->
+					<div class="form-group" ng-if="finalization.transferToGCC">
+						<div class="col-sm-12">
+							<span class="message-alert"
+								translate="finalization.transferred.gcc.msg"
+								translate-values="{p0: finalization.transfertDate,p1:finalization.transfertDoneBy}">
+							</span>
+							<a class="fa-stack text-center"
+								ng-if="user.hasSupervisionRight && finalization.transfertToGCCXmlAvailable"
+								ng-click="getTransfertToGCCXml()"
+								popover="{{'proposal.xml.download.button.tooltip' | translate}}"
+								popover-trigger="mouseenter">
+								<i class="fa fa-file-o fa-stack-2x">
+								</i>
+								<strong class="fa-stack-text">XML</strong>
+							</a>
+						</div>
+					</div>
+					<!--  -->
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

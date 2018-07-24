@@ -1,0 +1,270 @@
+{
+  "smartCase": false,
+  "smartCofalinkStatus": false,
+  "smartServiceResult": null,
+  "fileTransferredToGCC": false,
+  "transfertToGCCXmlAvailable": false,
+  "newBusiness": false,
+  "renewal": false,
+  "transform": true,
+  "checkMigration": false,
+  "clo": false,
+  "salesDiscussionsCount": 0,
+  "cancellationProjectReason": null,
+  "cancellationProjectDate": null,
+  "projectCancelledByFullName": null,
+  "creationDate": 1531901461643,
+  "createdByFullName": "Sylvie MARIE",
+  "contractStatus": "PROJECT",
+  "progressStatus": "INIT",
+  "contractCancelled": false,
+  "proposal": {
+    "smartCase": false,
+    "smartCofalinkStatus": false,
+    "smartServiceResult": null,
+    "fileTransferredToGCC": false,
+    "transfertToGCCXmlAvailable": false,
+    "newBusiness": false,
+    "renewal": false,
+    "transform": true,
+    "checkMigration": false,
+    "clo": false,
+    "salesDiscussionsCount": 0,
+    "cancellationProjectReason": null,
+    "cancellationProjectDate": null,
+    "projectCancelledByFullName": null,
+    "creationDate": 1531901461643,
+    "createdByFullName": null,
+    "contractStatus": "PROJECT",
+    "progressStatus": "INIT",
+    "contractCancelled": false,
+    "id": 2546831,
+    "nbContractDownloaded": 0,
+    "nbNBIDownloaded": 0,
+    "nbBUYERSTUDYDownloaded": 0,
+    "commercialComment": null,
+    "scenarioPricingObsolete": false,
+    "hasQuoted": false,
+    "derogationPending": true,
+    "nbDerogationAccepted": 0,
+    "nbDerogationPending": 3,
+    "scenarioName": null,
+    "scenarioDescription": null,
+    "validationDerogationRight": true,
+    "displayClauseName": false,
+    "displayClauseDescription": false,
+    "displayAllClauses": false,
+    "checkValidationActive": true,
+    "hasPriceForValidScenario": false,
+    "buyerStudyDoc": {
+      "visible": true,
+      "template": "AUTY_BUYERSTUDY_MODEL_GRP",
+      "format": "PDF"
+    },
+    "nbiDoc": {
+      "visible": true,
+      "template": "AUTY_NBI_MODEL_FRA",
+      "format": "PDF"
+    },
+    "contractDoc": {
+      "visible": true,
+      "template": "AUTY_CONTRACT_MODEL_FRA",
+      "format": "WORD"
+    },
+    "buyerStudyDocType": null,
+    "nbiDocType": null,
+    "contractDocType": null,
+    "filenetUrl": null,
+    "requestContractEditionTaskId": null,
+    "firstInsPeriodFrom": 1501538400000,
+    "firstInsPeriodTo": 1532988000000,
+    "contactInformationEmpty": true,
+    "accessNBIWordDocument": true,
+    "accessContractWordDocument": true,
+    "docBuyerStudyName": null,
+    "docNbiName": null,
+    "docContractName": null,
+    "docXmlName": null,
+    "docExcelQuestionnaireName": null,
+    "editionCodeLang": null,
+    "buyerStudyEditionLanguages": [
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      },
+      {
+        "isoCode": "en",
+        "label": "English"
+      },
+      {
+        "isoCode": "nl",
+        "label": "Nederlands"
+      },
+      {
+        "isoCode": "es",
+        "label": "Español"
+      },
+      {
+        "isoCode": "de",
+        "label": "Deutsch"
+      }
+    ],
+    "nbiEditionLanguages": [
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      },
+      {
+        "isoCode": "en",
+        "label": "English"
+      },
+      {
+        "isoCode": "nl",
+        "label": "Nederlands"
+      },
+      {
+        "isoCode": "de",
+        "label": "Deutsch"
+      }
+    ],
+    "contractEditionLanguages": [
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      },
+      {
+        "isoCode": "de",
+        "label": "Deutsch"
+      }
+    ],
+    "derogationSummary": {
+      "derogationsAccepted": [
+        
+      ],
+      "nbDerogationsAccepted": 0,
+      "pendingsDerogations": [
+        {
+          "level": 6,
+          "nbPendings": 2
+        },
+        {
+          "level": 2,
+          "nbPendings": 1
+        }
+      ],
+      "nbPendingDerogations": 3
+    },
+    "docNbiEditedBy": null,
+    "docNbiEditedDate": null,
+    "docContractEditedBy": null,
+    "docContractEditedDate": null,
+    "derogationWorkflow": {
+      "currentStep": "STD",
+      "derogationProcesses": [
+        {
+          "index": null,
+          "userInfo": {
+            "accountId": "X1315601",
+            "firstName": "Sylvie",
+            "lastName": "MARIE",
+            "info": "Sylvie MARIE",
+            "fullName": "Sylvie MARIE"
+          },
+          "statusI18n": "proposal.derogation.process.creation.label",
+          "processDate": "18/07/2018",
+          "currentLevel": "STD",
+          "nextLevel": null,
+          "comments": null
+        }
+      ],
+      "validateButtonDisable": true,
+      "validationButtonDisableStatus": "HISTORICAL_PRICE_NOT_CALCULATED",
+      "validateButtonDisableStatusI18N": "proposal.derogation.process.historical.price.not.calculated.tooltip",
+      "pendingLevels": null,
+      "validateButton18NValue": "proposal.derogation.process.button.validation.certify.label",
+      "derogationWorkflowFinished": false,
+      "derogationWorkflowStopped": false,
+      "derogationSummary": {
+        "derogationsAccepted": [
+          
+        ],
+        "nbDerogationsAccepted": 0,
+        "pendingsDerogations": [
+          {
+            "level": 6,
+            "nbPendings": 2
+          },
+          {
+            "level": 2,
+            "nbPendings": 1
+          }
+        ],
+        "nbPendingDerogations": 3
+      }
+    },
+    "discussions": [
+      
+    ],
+    "contractCurrency": "EUR",
+    "nbiWordGenerationReason": null,
+    "nbiWordGenerationBy": null,
+    "nbiWordGenerationDate": null,
+    "contractWordGenerationReason": null,
+    "contractWordGenerationBy": null,
+    "contractWordGenerationDate": null,
+    "contractEditionCodeLang": "fr",
+    "signedQuestionnary": false,
+    "backofficeComments": null,
+    "ignoredFields": [
+      "id",
+      "nbContractDownloaded",
+      "nbNBIDownloaded",
+      "nbBUYERSTUDYDownloaded",
+      "docBuyerStudyName",
+      "docNbiName",
+      "docContractName",
+      "docXmlName",
+      "docExcelQuestionnaireName",
+      "nbiWordGenerationBy",
+      "contractWordGenerationBy",
+      "nbiWordGenerationDate",
+      "contractWordGenerationDate"
+    ]
+  },
+  "id": null,
+  "easyNumber": "00000064527036",
+  "transferToGCC": false,
+  "roleReferenceId": "RR-THIR-01-2269621",
+  "companyName": "2F OUEST",
+  "hasContractId": true,
+  "transfertDate": null,
+  "transfertDoneBy": null,
+  "civility": null,
+  "civilityLabel": null,
+  "firstName": null,
+  "lastName": null,
+  "companyJobTitle": null,
+  "companyPhone": null,
+  "companyMobilePhone": null,
+  "companyEmail": null,
+  "signatoryCivility": null,
+  "signatoryFirstName": null,
+  "signatoryLastName": null,
+  "signatoryJobTitle": null,
+  "signatoryPhone": null,
+  "signatoryMobilePhone": null,
+  "signatoryEmail": null,
+  "signatoryContactEnable": false,
+  "scenarioPricingObsolete": false,
+  "agreementElectronicSignature": false,
+  "languageEdition": null,
+  "backofficeComments": null,
+  "partner": "questionnaire.additional.information.partner.broker",
+  "partnerName": "MAGASIN DE LA HARPE - PARIS 17 - RR-THIR-01-11202072",
+  "isReadOnly": false,
+  "cancellationProjectReasonList": {
+    "OFFER_REJECTED": "project.cancel.reason.offer.rejected",
+    "CONTRACT_REJECTED": "project.cancel.reason.contract.rejected",
+    "COFACE_DECISION": "project.cancel.reason.contract.coface.decision"
+  }
+}

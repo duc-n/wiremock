@@ -1,0 +1,173 @@
+{
+  "smartCase": false,
+  "smartCofalinkStatus": false,
+  "smartServiceResult": null,
+  "fileTransferredToGCC": false,
+  "transfertToGCCXmlAvailable": false,
+  "newBusiness": true,
+  "renewal": false,
+  "transform": false,
+  "checkMigration": false,
+  "clo": false,
+  "salesDiscussionsCount": 0,
+  "cancellationProjectReason": null,
+  "cancellationProjectDate": null,
+  "projectCancelledByFullName": null,
+  "creationDate": 1530027699955,
+  "createdByFullName": null,
+  "contractStatus": "PROJECT",
+  "progressStatus": "QUOTE_DONE",
+  "contractCancelled": false,
+  "id": 3915559,
+  "nbContractDownloaded": 0,
+  "nbNBIDownloaded": 0,
+  "nbBUYERSTUDYDownloaded": 0,
+  "commercialComment": null,
+  "scenarioPricingObsolete": false,
+  "hasQuoted": true,
+  "derogationPending": false,
+  "nbDerogationAccepted": 1,
+  "nbDerogationPending": 0,
+  "scenarioName": null,
+  "scenarioDescription": null,
+  "validationDerogationRight": true,
+  "displayClauseName": false,
+  "displayClauseDescription": false,
+  "displayAllClauses": false,
+  "checkValidationActive": false,
+  "hasPriceForValidScenario": false,
+  "buyerStudyDoc": {
+    "visible": true,
+    "template": "AUTY_BUYERSTUDY_MODEL_FRA",
+    "format": "PDF"
+  },
+  "nbiDoc": {
+    "visible": true,
+    "template": "AUTY_NBI_MODEL_FRA",
+    "format": "PDF"
+  },
+  "contractDoc": {
+    "visible": true,
+    "template": "AUTY_CONTRACT_MODEL_FRA",
+    "format": "PDF"
+  },
+  "buyerStudyDocType": null,
+  "nbiDocType": null,
+  "contractDocType": null,
+  "filenetUrl": null,
+  "requestContractEditionTaskId": null,
+  "firstInsPeriodFrom": 1530396000000,
+  "firstInsPeriodTo": 1561932000000,
+  "contactInformationEmpty": false,
+  "accessNBIWordDocument": true,
+  "accessContractWordDocument": true,
+  "docBuyerStudyName": null,
+  "docNbiName": null,
+  "docContractName": null,
+  "docXmlName": null,
+  "docExcelQuestionnaireName": null,
+  "editionCodeLang": null,
+  "buyerStudyEditionLanguages": [
+    {
+      "isoCode": "fr",
+      "label": "Français"
+    },
+    {
+      "isoCode": "en",
+      "label": "English"
+    }
+  ],
+  "nbiEditionLanguages": [
+    {
+      "isoCode": "fr",
+      "label": "Français"
+    }
+  ],
+  "contractEditionLanguages": [
+    {
+      "isoCode": "fr",
+      "label": "Français"
+    },
+    {
+      "isoCode": "de",
+      "label": "Deutsch"
+    }
+  ],
+  "derogationSummary": {
+    "derogationsAccepted": [
+      {
+        "level": 5,
+        "derogationSubject": null,
+        "derogationField": "pendingOrdersPeriod",
+        "value": "90",
+        "acceptedBy": "Jean-Carlo SINI",
+        "acceptedDate": "27/06/2018"
+      }
+    ],
+    "nbDerogationsAccepted": 1,
+    "pendingsDerogations": [
+      
+    ],
+    "nbPendingDerogations": 0
+  },
+  "docNbiEditedBy": null,
+  "docNbiEditedDate": null,
+  "docContractEditedBy": null,
+  "docContractEditedDate": null,
+  "derogationWorkflow": {
+    "currentStep": "STD",
+    "derogationProcesses": [
+      {
+        "index": null,
+        "userInfo": {
+          "accountId": "X1281601",
+          "firstName": "Laurent",
+          "lastName": "MIGNOT",
+          "info": "Laurent MIGNOT",
+          "fullName": "Laurent MIGNOT"
+        },
+        "statusI18n": "proposal.derogation.process.creation.label",
+        "processDate": "26/06/2018",
+        "currentLevel": "STD",
+        "nextLevel": null,
+        "comments": null
+      }
+    ],
+    "validateButtonDisable": false,
+    "validationButtonDisableStatus": null,
+    "validateButtonDisableStatusI18N": null,
+    "pendingLevels": null,
+    "validateButton18NValue": "proposal.derogation.process.button.final.validation.label",
+    "derogationWorkflowFinished": false,
+    "derogationWorkflowStopped": false,
+    "derogationSummary": null
+  },
+  "discussions": [
+    
+  ],
+  "contractCurrency": "EUR",
+  "nbiWordGenerationReason": null,
+  "nbiWordGenerationBy": null,
+  "nbiWordGenerationDate": null,
+  "contractWordGenerationReason": null,
+  "contractWordGenerationBy": null,
+  "contractWordGenerationDate": null,
+  "contractEditionCodeLang": "fr",
+  "signedQuestionnary": false,
+  "backofficeComments": null,
+  "ignoredFields": [
+    "id",
+    "nbContractDownloaded",
+    "nbNBIDownloaded",
+    "nbBUYERSTUDYDownloaded",
+    "docBuyerStudyName",
+    "docNbiName",
+    "docContractName",
+    "docXmlName",
+    "docExcelQuestionnaireName",
+    "nbiWordGenerationBy",
+    "contractWordGenerationBy",
+    "nbiWordGenerationDate",
+    "contractWordGenerationDate"
+  ]
+}

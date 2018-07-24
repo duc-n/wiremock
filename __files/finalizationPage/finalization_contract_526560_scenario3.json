@@ -1,0 +1,578 @@
+{
+  "smartCase": false,
+  "smartCofalinkStatus": false,
+  "smartServiceResult": null,
+  "fileTransferredToGCC": false,
+  "transfertToGCCXmlAvailable": false,
+  "newBusiness": true,
+  "renewal": false,
+  "transform": false,
+  "checkMigration": false,
+  "clo": false,
+  "salesDiscussionsCount": 2,
+  "cancellationProjectReason": null,
+  "cancellationProjectDate": null,
+  "projectCancelledByFullName": null,
+  "creationDate": 1531932296882,
+  "createdByFullName": "Jean-Christophe CARLIER",
+  "contractStatus": "PROJECT",
+  "progressStatus": "QUOTE_DONE",
+  "contractCancelled": false,
+  "proposal": {
+    "smartCase": false,
+    "smartCofalinkStatus": false,
+    "smartServiceResult": null,
+    "fileTransferredToGCC": false,
+    "transfertToGCCXmlAvailable": false,
+    "newBusiness": true,
+    "renewal": false,
+    "transform": false,
+    "checkMigration": false,
+    "clo": false,
+    "salesDiscussionsCount": 2,
+    "cancellationProjectReason": null,
+    "cancellationProjectDate": null,
+    "projectCancelledByFullName": null,
+    "creationDate": 1531932296882,
+    "createdByFullName": null,
+    "contractStatus": "PROJECT",
+    "progressStatus": "QUOTE_DONE",
+    "contractCancelled": false,
+    "id": 2555371,
+    "nbContractDownloaded": 0,
+    "nbNBIDownloaded": 1,
+    "nbBUYERSTUDYDownloaded": 0,
+    "commercialComment": null,
+    "scenarioPricingObsolete": false,
+    "hasQuoted": true,
+    "derogationPending": false,
+    "nbDerogationAccepted": 33,
+    "nbDerogationPending": 0,
+    "scenarioName": null,
+    "scenarioDescription": null,
+    "validationDerogationRight": true,
+    "displayClauseName": false,
+    "displayClauseDescription": false,
+    "displayAllClauses": false,
+    "checkValidationActive": false,
+    "hasPriceForValidScenario": false,
+    "buyerStudyDoc": {
+      "visible": true,
+      "template": "AUTY_BUYERSTUDY_MODEL_GRP",
+      "format": "PDF"
+    },
+    "nbiDoc": {
+      "visible": true,
+      "template": "AUTY_NBI_MODEL_FRA",
+      "format": "PDF"
+    },
+    "contractDoc": {
+      "visible": true,
+      "template": "AUTY_CONTRACT_MODEL_FRA",
+      "format": "WORD"
+    },
+    "buyerStudyDocType": null,
+    "nbiDocType": "PDF",
+    "contractDocType": null,
+    "filenetUrl": "https://edms-ua.coface.dns/navigator/bookmark.jsp?desktop=DOXDCM&repositoryId=DOXDCM&docid={88D0DE02-07FB-4C20-BF71-598341B54397}",
+    "requestContractEditionTaskId": null,
+    "firstInsPeriodFrom": 1533074400000,
+    "firstInsPeriodTo": 1569794400000,
+    "contactInformationEmpty": false,
+    "accessNBIWordDocument": true,
+    "accessContractWordDocument": true,
+    "docBuyerStudyName": null,
+    "docNbiName": "526560-03_PropositionCommerciale_RTL_PIOUPIOU_20180718.pdf",
+    "docContractName": null,
+    "docXmlName": "526560-03_FLUX_BDOC_PIOUPIOU_20180718.xml",
+    "docExcelQuestionnaireName": "526560-03_QUESTIONNAIRE_PIOUPIOU_20180718.xlsx",
+    "editionCodeLang": null,
+    "buyerStudyEditionLanguages": [
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      },
+      {
+        "isoCode": "en",
+        "label": "English"
+      },
+      {
+        "isoCode": "nl",
+        "label": "Nederlands"
+      },
+      {
+        "isoCode": "es",
+        "label": "Español"
+      },
+      {
+        "isoCode": "de",
+        "label": "Deutsch"
+      }
+    ],
+    "nbiEditionLanguages": [
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      },
+      {
+        "isoCode": "en",
+        "label": "English"
+      },
+      {
+        "isoCode": "nl",
+        "label": "Nederlands"
+      },
+      {
+        "isoCode": "de",
+        "label": "Deutsch"
+      }
+    ],
+    "contractEditionLanguages": [
+      {
+        "isoCode": "fr",
+        "label": "Français"
+      },
+      {
+        "isoCode": "de",
+        "label": "Deutsch"
+      }
+    ],
+    "derogationSummary": {
+      "derogationsAccepted": [
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "specialClauses.C_COV_EXCBY_01_ST",
+          "value": "true",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "bonus_0_X",
+          "value": "10",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "mlBuyerEnabled",
+          "value": "true",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "eclLimit",
+          "value": "19000",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "bonusOption.BONUS",
+          "value": "true",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "blindCoverPercent",
+          "value": "200",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "maxInvoicingPeriod",
+          "value": "15",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "infoReportDCLLimit",
+          "value": "18000",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "specialClauses.C_COV_EXCBY_02_ST",
+          "value": "true",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "blindCoverInsuPercent",
+          "value": "65",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "firstSalesDCLLimit",
+          "value": "5000",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "firstSalesInsuPercent",
+          "value": "60",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 6,
+          "derogationSubject": null,
+          "derogationField": "otherCurrenciesAllowed",
+          "value": "true",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 5,
+          "derogationSubject": null,
+          "derogationField": "feesReduction",
+          "value": "10",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 5,
+          "derogationSubject": null,
+          "derogationField": "specialClauses.C_RIS_HOLDC_02_ST",
+          "value": "true",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 5,
+          "derogationSubject": null,
+          "derogationField": "specialClauses.C_PRE_FFFE2_01_ST",
+          "value": "true",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 5,
+          "derogationSubject": null,
+          "derogationField": "appliedDSO",
+          "value": "50",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 5,
+          "derogationSubject": null,
+          "derogationField": "satisfactoryTradingExperienceLimit",
+          "value": "35000",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 5,
+          "derogationSubject": null,
+          "derogationField": "blindCoverDCLLimit",
+          "value": "17000",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 5,
+          "derogationSubject": null,
+          "derogationField": "minPremiumRate",
+          "value": "70",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 5,
+          "derogationSubject": null,
+          "derogationField": "maxLiabilityMultiple",
+          "value": "41",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 5,
+          "derogationSubject": null,
+          "derogationField": "dclSelfUnderWritingBuyerLimit",
+          "value": "30000",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "satisfactoryTradingExperienceInsuPercent",
+          "value": "91",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "maxDomesticCreditPeriod",
+          "value": "190",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "infoReportInsuPercent",
+          "value": "91",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "dclSelfUnderWritingInsuPercent",
+          "value": "91",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "notificationThreshold",
+          "value": "150",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "maxDeliveryPeriod",
+          "value": "180",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "timeLimitNOA",
+          "value": "31",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "maxExportCreditPeriod",
+          "value": "210",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "coverInsuredPercentage",
+          "value": "91",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "firAdvPayMaxPer1stPayPercentage",
+          "value": "50",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        },
+        {
+          "level": 4,
+          "derogationSubject": null,
+          "derogationField": "waitingPeriodAfterNOA",
+          "value": "4",
+          "acceptedBy": "Jean-Christophe CARLIER",
+          "acceptedDate": "18/07/2018"
+        }
+      ],
+      "nbDerogationsAccepted": 33,
+      "pendingsDerogations": [
+        
+      ],
+      "nbPendingDerogations": 0
+    },
+    "docNbiEditedBy": {
+      "accountId": "FR1E1571",
+      "firstName": "Jean-Christophe",
+      "lastName": "CARLIER",
+      "info": "Jean-Christophe CARLIER",
+      "fullName": "Jean-Christophe CARLIER"
+    },
+    "docNbiEditedDate": "18/07/2018",
+    "docContractEditedBy": null,
+    "docContractEditedDate": null,
+    "derogationWorkflow": {
+      "currentStep": "L4",
+      "derogationProcesses": [
+        {
+          "index": null,
+          "userInfo": {
+            "accountId": "FR1E1571",
+            "firstName": "Jean-Christophe",
+            "lastName": "CARLIER",
+            "info": "Jean-Christophe CARLIER",
+            "fullName": "Jean-Christophe CARLIER"
+          },
+          "statusI18n": "proposal.derogation.process.creation.label",
+          "processDate": "18/07/2018",
+          "currentLevel": "STD",
+          "nextLevel": null,
+          "comments": null
+        },
+        {
+          "index": null,
+          "userInfo": {
+            "accountId": "FR1E1571",
+            "firstName": "Jean-Christophe",
+            "lastName": "CARLIER",
+            "info": "Jean-Christophe CARLIER",
+            "fullName": "Jean-Christophe CARLIER"
+          },
+          "statusI18n": "proposal.derogation.process.finished.label",
+          "processDate": "18/07/2018",
+          "currentLevel": "4",
+          "nextLevel": null,
+          "comments": "final validation"
+        }
+      ],
+      "validateButtonDisable": false,
+      "validationButtonDisableStatus": null,
+      "validateButtonDisableStatusI18N": null,
+      "pendingLevels": null,
+      "validateButton18NValue": "proposal.derogation.process.button.validation.finished.label",
+      "derogationWorkflowFinished": true,
+      "derogationWorkflowStopped": false,
+      "derogationSummary": null
+    },
+    "discussions": [
+      {
+        "id": 2555373,
+        "discussionDate": "18/07/2018 19:27",
+        "discussionBy": "Jean-Christophe CARLIER",
+        "discussionById": "FR1E1571",
+        "comments": "essai",
+        "sendToId": null,
+        "parentDiscussionId": null,
+        "waitForResponse": false,
+        "subDiscussion": null,
+        "urlContext": null
+      },
+      {
+        "id": 2555374,
+        "discussionDate": "18/07/2018 19:27",
+        "discussionBy": "Jean-Christophe CARLIER",
+        "discussionById": "FR1E1571",
+        "comments": "answer",
+        "sendToId": null,
+        "parentDiscussionId": null,
+        "waitForResponse": false,
+        "subDiscussion": null,
+        "urlContext": null
+      },
+      {
+        "id": 2560409,
+        "discussionDate": "19/07/2018 16:27",
+        "discussionBy": "Jean-Christophe CARLIER",
+        "discussionById": "FR1E1571",
+        "comments": "qsdfsdf\ntests\ncong",
+        "sendToId": null,
+        "parentDiscussionId": null,
+        "waitForResponse": false,
+        "subDiscussion": null,
+        "urlContext": null
+      },
+      {
+        "id": 2560410,
+        "discussionDate": "19/07/2018 16:40",
+        "discussionBy": "Jean-Christophe CARLIER",
+        "discussionById": "FR1E1571",
+        "comments": "discussion test\ntoday is friday",
+        "sendToId": null,
+        "parentDiscussionId": null,
+        "waitForResponse": false,
+        "subDiscussion": null,
+        "urlContext": null
+      }
+    ],
+    "contractCurrency": "EUR",
+    "nbiWordGenerationReason": null,
+    "nbiWordGenerationBy": null,
+    "nbiWordGenerationDate": null,
+    "contractWordGenerationReason": null,
+    "contractWordGenerationBy": null,
+    "contractWordGenerationDate": null,
+    "contractEditionCodeLang": "fr",
+    "signedQuestionnary": false,
+    "backofficeComments": null,
+    "ignoredFields": [
+      "id",
+      "nbContractDownloaded",
+      "nbNBIDownloaded",
+      "nbBUYERSTUDYDownloaded",
+      "docBuyerStudyName",
+      "docNbiName",
+      "docContractName",
+      "docXmlName",
+      "docExcelQuestionnaireName",
+      "nbiWordGenerationBy",
+      "contractWordGenerationBy",
+      "nbiWordGenerationDate",
+      "contractWordGenerationDate"
+    ]
+  },
+  "id": null,
+  "easyNumber": "00002263841029",
+  "transferToGCC": false,
+  "roleReferenceId": "RR-THIR-01-11316495",
+  "companyName": "PIOUPIOU",
+  "hasContractId": true,
+  "transfertDate": null,
+  "transfertDoneBy": null,
+  "civility": "Mr",
+  "civilityLabel": null,
+  "firstName": "Jean",
+  "lastName": "LOISEAU",
+  "companyJobTitle": "PDG",
+  "companyPhone": "0151554690",
+  "companyMobilePhone": null,
+  "companyEmail": "test@piou.com",
+  "signatoryCivility": null,
+  "signatoryFirstName": null,
+  "signatoryLastName": null,
+  "signatoryJobTitle": null,
+  "signatoryPhone": null,
+  "signatoryMobilePhone": null,
+  "signatoryEmail": null,
+  "signatoryContactEnable": true,
+  "scenarioPricingObsolete": false,
+  "agreementElectronicSignature": false,
+  "languageEdition": null,
+  "backofficeComments": null,
+  "partner": "questionnaire.additional.information.partner.broker",
+  "partnerName": "MARSH - AUDERGHEM - RR-THIR-01-2446912",
+  "isReadOnly": false,
+  "cancellationProjectReasonList": {
+    "OFFER_REJECTED": "project.cancel.reason.offer.rejected",
+    "CONTRACT_REJECTED": "project.cancel.reason.contract.rejected",
+    "COFACE_DECISION": "project.cancel.reason.contract.coface.decision"
+  }
+}

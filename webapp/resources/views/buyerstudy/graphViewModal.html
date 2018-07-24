@@ -1,0 +1,23 @@
+<div class="modal-header">
+  <h3 class="modal-title">{{modalGraphOption.headerText}}</h3>
+  <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true"><i class="fa fa-close"></i></button>
+</div>
+<div class="modal-body">
+  <div class="row form-group">
+    <div class="col-sm-6 text-center">
+      <h4 class="form-control-static" translate="buyerstudy.graph1.title"></h4>
+      <canvas id="bar" class="chart chart-bar hide" chart-options="modalGraphOption.barChartConfig2D.options"
+              chart-data="modalGraphOption.barChartConfig2D.data"
+              chart-series="modalGraphOption.barChartConfig2D.series"
+              chart-labels="modalGraphOption.barChartConfig2D.labels" chart-legend="true"
+              chart-colours="modalGraphOption.barChartConfig2D.colors"></canvas>
+    </div>
+    <div class="col-sm-6 text-center">
+      <h4 class="form-control-static" translate="buyerstudy.graph2.title"></h4>
+      <canvas id="pie" class="chart chart-pie hide" chart-options="modalGraphOption.pieChartConfig2D.options"
+              chart-data="modalGraphOption.pieChartConfig2D.data"
+              chart-labels="modalGraphOption.pieChartConfig2D.labels" chart-legend="true"
+              chart-colours="modalGraphOption.pieChartConfig2D.colors"></canvas>
+    </div>
+  </div>
+</div>

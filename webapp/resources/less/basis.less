@@ -1,0 +1,154 @@
+// compress: true
+//
+/* Lp digital - v1.0.2 - MAR JUNE 2015 */
+//
+// LESS basis CSS: COFACE COFANET
+//
+
+//
+// CAUTION grid.less is edited to prevent XS RWD
+//
+
+// Importing Custom VAR + Custom RESET + Custom Fonts
+// Importing Minimun Bootstrap3 components
+
+//Bower components
+@bower-path: "../bower_components/";
+
+//Bootstrap
+@boot-path: "../bower_components/bootstrap/less/";
+// Core variables and mixins
+@import "@{boot-path}variables.less";
+@import "@{boot-path}mixins.less";
+
+//** Override Load fonts from this directory.
+@icon-font-path: "@{bower-path}bootstrap/fonts/";
+
+// VAR-iables
+// Variables overridden here below
+// --------------------------------------------------
+@border-radius-base:        0px;
+@border-radius-large:       0px;
+@border-radius-small:       0px;
+@input-border-radius:		0px;
+
+// VAR-iables
+// Variables
+// --------------------------------------------------
+
+//== Grid system
+//
+//## Define your custom responsive grid.
+
+//** Number of columns in the grid.
+@grid-columns:              12;
+//** Padding between columns. Gets divided in half for the left and right.
+@grid-gutter-width:         30px;
+
+//== Container sizes
+//
+//## Define the maximum width of `.container` for different screen sizes.
+
+// Small screen / tablet
+@container-tablet:             ((720px + @grid-gutter-width));
+//** For `@screen-sm-min` and up.
+@container-sm:                 @container-tablet;
+
+// Medium screen / desktop
+// Npx is the GRID width requested by the STUDIO
+@container-desktop:            ((970px + @grid-gutter-width));
+//** For `@screen-md-min` and up.
+@container-md:                 @container-desktop;
+
+// Large screen / wide desktop / 1140px
+@container-large-desktop:      ((970px + @grid-gutter-width));
+//** For `@screen-lg-min` and up.
+@container-lg:                 @container-large-desktop;
+
+// END VAR-iables
+
+// EDITed making 768 the smallest screen size in RWD se also grid.less for editing
+@media (max-width: @screen-xs-max)  {
+	.container {width:@container-tablet;}
+}
+
+
+// Reset
+@import (less) "../styles/style_reset.css";
+@import "@{boot-path}print.less";
+
+// Core CSS
+// Scaffolding Min required
+* {
+  .box-sizing(border-box);
+}
+*:before,
+*:after {
+  .box-sizing(border-box);
+}
+@import "@{boot-path}grid.less";
+@import "@{boot-path}tables.less";
+@import "@{boot-path}forms.less";
+@import "@{boot-path}buttons.less";
+
+// Components
+@import "@{boot-path}dropdowns.less";
+@import "@{boot-path}glyphicons.less";
+@import "@{boot-path}button-groups.less";
+@import "@{boot-path}input-groups.less";
+@import "@{boot-path}pagination.less";
+@import "@{boot-path}pager.less";
+@import "@{boot-path}alerts.less";
+@import "@{boot-path}labels.less";
+@import "@{boot-path}progress-bars.less";
+@import "@{boot-path}badges.less";
+@import "@{boot-path}navs.less";
+@import "@{boot-path}tooltip.less";
+@import "@{boot-path}panels.less";
+@import "@{boot-path}popovers.less";
+@import "@{boot-path}type.less";
+
+
+// Utility classes
+@import "@{boot-path}utilities.less";
+@import "@{boot-path}responsive-utilities.less";
+
+// CSS Transitions
+// See Gen
+
+// JS classes
+@import "@{boot-path}modals.less";
+@import "@{boot-path}component-animations.less";
+
+// Jquery UI
+//@import (less) "../styles/jquery-ui.structure.min.css";
+
+// Custom fonts
+@import "@{bower-path}font-awesome/less/font-awesome.less";
+
+//@import (less) url(http://fonts.googleapis.com/css?family=Open+Sans:300,600,400);
+
+// CSS3 Animations
+/*
+
+Animate.less
+Cross-browser LESS animation library for Bootstrap
+Licensed under the â˜º license (http://licence.visualidiot.com/)
+Documentation: https://github.com/machito/animate.less
+-------------------------------------------------------
+Copyright Â© 2012 Michael Castilla
+Email: yo@machito.co
+Twitter: https://twitter.com/micr0bitz
+
+*/
+@animationLessTime: 1s;
+@animationLessLocation: "@{bower-path}animate.less/source";
+//
+@import "@{animationLessLocation}/animated.less";
+@import "@{animationLessLocation}/fadeIn.less";
+@import "@{animationLessLocation}/fadeOut.less";
+@import "flags.less";
+
+@import (less) "@{bower-path}angular-datatables/dist/plugins/bootstrap/datatables.bootstrap.min.css";
+@import (less) "@{bower-path}load-awesome/css/ball-circus.min.css";
+@import (less) "@{bower-path}load-awesome/css/ball-scale-multiple.min.css";

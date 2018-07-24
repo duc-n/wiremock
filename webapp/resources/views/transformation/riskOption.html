@@ -1,0 +1,165 @@
+<!-- Binding Orders Option -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label"><strong translate="policy.risk.opts.binding.orders.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.bindingOrdersOptionFromBCC && !policy.bindingOrdersOption}">
+          <input disabled type="radio" id="bindingOrdersOption"
+                 ng-model="policy.bindingOrdersOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.bindingOrdersOptionFromBCC && policy.bindingOrdersOption}">
+          <input disabled type="radio" ng-model="policy.bindingOrdersOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+    <div ng-show="policy.bindingOrdersOption" class="form-group">
+      <label class="col-sm-offset-4 col-sm-3 control-label"
+             translate="policy.risk.opts.binding.orders.period.label"></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.bindingOrdersPeriodFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.bindingOrdersPeriod | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group">
+          <day/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -->
+<!-- Pending Orders Option -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label"><strong translate="policy.risk.opts.pending.orders.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.pendingOrdersOptionFromBCC && !policy.pendingOrdersOption}">
+          <input disabled type="radio" id="pendingOrdersOption"
+                 ng-model="policy.pendingOrdersOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.pendingOrdersOptionFromBCC && policy.pendingOrdersOption}">
+          <input disabled type="radio" ng-model="policy.pendingOrdersOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+    <div ng-show="policy.pendingOrdersOption" class="form-group">
+      <label class="col-sm-offset-4 col-sm-3 control-label"
+             translate="policy.risk.opts.pending.orders.period.label"></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.pendingOrdersPeriodFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.pendingOrdersPeriod | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group">
+          <day/>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -->
+<!-- Cover of Existing Debts Option -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label"><strong
+        translate="policy.risk.opts.cover.exist.debt.opt.label"></strong></label>
+
+      <div class="col-sm-8">
+        <!-- Radio buttons -->
+        <label class="radio-inline" ng-class="{'from-bcc': policy.coverExistDebtOptionFromBCC && policy.coverExistDebtOption == 'NONE'}">
+          <input disabled type="radio" id="coverExistDebtOption"
+                 ng-model="policy.coverExistDebtOption" value="NONE"/>
+          <span translate="none.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.coverExistDebtOptionFromBCC && policy.coverExistDebtOption == 'RATE'}">
+          <input disabled type="radio" ng-model="policy.coverExistDebtOption" value="RATE"/>
+          <span translate="policy.risk.opts.cover.exist.debt.rate.opt.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.coverExistDebtOptionFromBCC && policy.coverExistDebtOption == 'FLAT'}">
+          <input disabled type="radio" ng-model="policy.coverExistDebtOption" value="FLAT"/>
+          <span translate="policy.risk.opts.cover.exist.debt.flat.opt.label"></span>
+        </label>
+        <!-- -->
+      </div>
+    </div>
+    <div ng-show="policy.coverExistDebtOption == 'RATE' || policy.coverExistDebtOption == 'FLAT'" class="form-group">
+      <!-- Restrospective Period -->
+      <label class="col-sm-offset-4 col-sm-3 control-label"
+             translate="policy.risk.opts.cover.exist.debt.restro.period.label"></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.restrospectivePeriodFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.restrospectivePeriod | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <div class="input-group">
+          <day/>
+        </div>
+      </div>
+    </div>
+    <div ng-show="isCoverExistDebtRateOptionSelected()" class="form-group">
+      <!--Existing Debt Premium rate-->
+      <label class="col-sm-offset-4 col-sm-3 control-label"
+             translate="policy.risk.opts.cover.exist.debt.prem.rate.label"></label>
+
+      <div class="col-sm-1" ng-class="{'from-bcc': policy.existDebtPremRateFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.existDebtPremRate | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-1">
+        <percent/>
+      </div>
+    </div>
+    <div ng-show="isCoverExistDebtFlatOptionSelected()" class="form-group">
+      <!--Existing Debt Premium -->
+      <label class="col-sm-offset-4 col-sm-3  control-label"
+             translate="policy.risk.opts.cover.exist.debt.prem.label"></label>
+
+      <div class="col-sm-3" ng-class="{'from-bcc': policy.existDebtPremFromBCC}">
+        <div class="input-group">
+          <label class="form-control" ng-bind="policy.existDebtPrem | atyNumber"></label>
+        </div>
+      </div>
+      <div class="col-sm-2">
+        <currency ng-bind="policy.contractCurrency"/>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -->
+<!-- Top Liner Option -->
+<div class="panel panel-default">
+  <div class="panel-body">
+    <div class="form-group">
+      <label class="col-sm-4 control-label"><strong translate="policy.risk.opts.top.liner.opt.label"></strong></label>
+
+      <div class="col-sm-8">
+        <label class="radio-inline" ng-class="{'from-bcc': policy.topLinerOptionFromBCC && !policy.topLinerOption}">
+          <input disabled type="radio" id="topLinerOption"
+                 ng-model="policy.topLinerOption" ng-value="false"/>
+          <span translate="no.label"></span>
+        </label>
+        <label class="radio-inline" ng-class="{'from-bcc': policy.topLinerOptionFromBCC && policy.topLinerOption}">
+          <input disabled type="radio" ng-model="policy.topLinerOption" ng-value="true"/>
+          <span translate="yes.label"></span>
+        </label>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -->

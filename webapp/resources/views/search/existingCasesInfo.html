@@ -1,0 +1,37 @@
+<!-- Existing cases infos -->
+<div class="col-sm-12">
+	<table
+		class="table table-cofanet table-bordered table-striped table-responsive fixed-layout">
+		<colgroup>
+			<col span="1" class="col-sm-4">
+			<col span="1" class="col-sm-4">
+			<col span="1" class="col-sm-4">
+		</colgroup>
+		<thead>
+			<tr>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="search.case.id"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="search.sales.name"></strong>
+					</p></th>
+				<th class="text-center"><p class="form-control-static">
+						<strong translate="search.business"></strong>
+					</p></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="case in cases">
+				<td class="text-center" ng-if="case.consultable"><a
+					ui-sref=".questionnaire({caseId: case.caseId,scenarioId: case.scenarioId})"
+					ng-bind="case.caseId"></a></td>
+				<td class="text-center" ng-if="!case.consultable"
+					ng-bind="case.caseId"></td>
+				<td class="text-center" ng-bind="case.salesName"
+					title="{{case.salesName}}"></td>
+				<td class="text-center"
+					translate="{{case.businessType | renderBusiness}}"></td>
+			</tr>
+		</tbody>
+	</table>
+</div>

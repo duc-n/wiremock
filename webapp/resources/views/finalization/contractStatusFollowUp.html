@@ -1,0 +1,53 @@
+<div class="form-group">
+
+
+	<div class="col-sm-12 form-group ng-scope">
+		<div class="col-sm-4" style="padding-right :0">
+			<strong
+				translate="finalization.contract.status.follow.up.current.status.label"
+				class="ng-scope"></strong> <span
+				class="form-control-static ng-binding"
+				translate="{{finalization.contractStatus| renderContractStatus}}"></span>
+		</div>
+		
+		<div class="col-sm-4" style="padding-left :0;padding-right:0">
+			<strong
+				translate="finalization.contract.status.follow.up.current.progress.status.label"
+				class="ng-scope"></strong> <span
+				class="form-control-static ng-binding"
+				translate="{{finalization.progressStatus| renderScenarioProgressStatus}}"></span>
+		</div>
+		
+		<div class="col-sm-4" ng-if="finalization.cancellationProjectReason" style="padding-right:0">
+			<strong
+				translate="finalization.contract.status.follow.up.complementary.information.label"
+				class="ng-scope"></strong> <span
+				class="form-control-static ng-binding"
+				translate="{{finalization.cancellationProjectReason| renderCancelProjectReason}}"></span>
+		</div>
+	</div>
+	
+	<div ng-if="finalization.cancellationProjectDate" class="form-group ng-scope col-sm-12">
+		<div class="col-sm-12" translate="finalization.contract.status.follow.up.cancel.summary"
+			translate-values="{p0:(finalization.cancellationProjectDate|date:'MM.dd.yyyy'),p1: finalization.projectCancelledByFullName}"></div>
+	</div>
+
+	<div class="form-group ng-scope col-sm-12">
+		<div class="col-sm-12" translate="finalization.contract.status.follow.up.summary"
+			translate-values="{p0:(finalization.creationDate|date:'MM.dd.yyyy'),p1: finalization.createdByFullName,p2 : getProjectOrigin()}"></div>
+	</div>
+	
+
+	
+
+	<div class="control-label col-sm-12">
+		<div form-group ng-scope>
+			<a class="btn btn-primary" ng-click="cancelProject()"
+				translate="finalization.contract.status.follow.up.cancel.project.btn" ng-disabled="isCancelProjectDisabed()">
+			</a> <i ng-if="isCancelProjectDisabed()"
+				popover="{{getCancelProjectDisabledinfoMsg()}}"
+				popover-trigger="mouseenter" class="fa fa-info-circle fa-lg"></i>
+		</div>
+	</div>
+
+</div>
